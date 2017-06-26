@@ -12,8 +12,10 @@ node {
       stage('Checkout destination') {
         sh 'rm -rf lpr3-docs'
         sh 'git clone git@github.com:scandihealth/lpr3-docs.git'
-        sh 'git checkout gh-pages'
-        sh 'git pull'
+        dir('lpr3-docs') {
+          sh 'git checkout gh-pages'
+          sh 'git pull'
+        }
       }
     }
     stage('Collect build results') {
