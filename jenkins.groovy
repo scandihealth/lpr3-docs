@@ -19,7 +19,8 @@ node {
       }
       dir('lpr3-docs') {
         stage('Collect build results') {
-           sh 'cp -r ../master/site/* .' 
+          sh 'pwd'
+          sh 'cp -r ../master/site/* .' 
         }
         stage('Publish') {
           sh 'git add *'
