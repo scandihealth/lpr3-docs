@@ -15,9 +15,11 @@ node {
      sh 'cp -r ../master/site/* .' 
     }
     stage('Publish') {
-      sh 'git add *'
-      sh 'git commit -m "new build"'
-      sh 'git push'
+      sshagent(['scandihealth-git_lpr3-jenkins-master_github.com']) {
+        sh 'git add *'
+        sh 'git commit -m "new build"'
+        sh 'git push'
+      }
     }
   }
 }
