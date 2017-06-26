@@ -13,5 +13,5 @@ child = exec('mkdocs build --clean', function (error, stdout, stderr) {
 });
 
 gulp.task('default', ['markdown'], function() {
-    gulp.watch(['**/*.md', 'mkdocs.yml', 'assets/**/*'], ['markdown']);
+    gulp.watch(['src/**/*.md', 'mkdocs.yml'], ['markdown']);
 });
