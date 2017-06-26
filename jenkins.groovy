@@ -17,14 +17,16 @@ node {
           sh 'git pull'
         }
       }
-    }
-    stage('Collect build results') {
-     sh 'cp -r ../master/site/* .' 
-    }
-    stage('Publish') {
-      sh 'git add *'
-      sh 'git commit -m "new build"'
-      sh 'git push'
+      dir('lpr3-docs') {
+        stage('Collect build results') {
+           sh 'cp -r ../master/site/* .' 
+        }
+        stage('Publish') {
+          sh 'git add *'
+          sh 'git commit -m "new build"'
+          sh 'git push'
+        }
+      }
     }
   }
 }
