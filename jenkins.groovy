@@ -10,6 +10,7 @@ node {
   sshagent(['scandihealth-git_lpr3-jenkins-master_github.com']) {
     dir('gh-pages') {
       stage('Checkout destination') {
+        sh 'rm lpr3-docs'
         sh 'git clone git@github.com:scandihealth/lpr3-docs.git'
         sh 'git checkout gh-pages'
         sh 'git pull'
