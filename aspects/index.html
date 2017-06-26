@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Interface aspects and usage - Landspatientregisteret 3 - Technical documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  <link href="../css/highlight.js/idea.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Interface aspects and usage";
+    var mkdocs_page_input_path = "aspects.md";
+    var mkdocs_page_url = "/aspects/index.html";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="icon icon-home"> Landspatientregisteret 3 - Technical documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../index.html">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Documentation</span>
+    <ul class="subnav">
+                <li class=" current">
+                    
+    <a class="current" href="index.html">Interface aspects and usage</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#the-document-paradigm-and-cda-r2">The document paradigm and CDA R2</a></li>
+    
+
+    <li class="toctree-l3"><a href="#what-documents-can-be-submitted">What documents can be submitted</a></li>
+    
+
+    <li class="toctree-l3"><a href="#documents-and-versioning">Documents and versioning</a></li>
+    
+
+    <li class="toctree-l3"><a href="#what-rules-apply-and-what-errors-can-be-reported-and-how">What rules apply and what errors can be reported and how</a></li>
+    
+
+    <li class="toctree-l3"><a href="#supported-reporting-strategies">Supported reporting strategies</a></li>
+    
+
+    <li class="toctree-l3"><a href="#service-endpoint-setup">Service endpoint setup</a></li>
+    
+
+    <li class="toctree-l3"><a href="#ihe-xdr">IHE XDR</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#batch-oriented-reporting">Batch oriented reporting</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#mapping-to-the-logical-model">Mapping to the logical model</a></li>
+    
+
+    <li class="toctree-l3"><a href="#granularity-and-constraints-to-submitted-documents">Granularity and constraints to submitted documents</a></li>
+    
+
+    <li class="toctree-l3"><a href="#hl7-cda-naming-convention">HL7 CDA Naming convention</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#notes-on-the-use-of-hl7-cda-elements-in-a-danish-setting">Notes on the use of HL7 CDA elements in a danish setting</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#id-usage-and-referencing-in-lpr3">ID usage and referencing in LPR3</a></li>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../interfacedefinitions/index.html">Interface definition</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../examples/index.html">Examples</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../links/index.html">Related material and links</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Landspatientregisteret 3 - Technical documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Documentation &raquo;</li>
+        
+      
+    
+    <li>Interface aspects and usage</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="the-document-paradigm-and-cda-r2">The document paradigm and CDA R2</h2>
+<p>LPR3 is based on a profiled version CDA R2 according to the needs of the LPR3 data model. The reported documents can be considered as containers of information that are bound to a single patient. Each document can contain zero to many elements, where elements can e.g. be episode of care, encounter, procedure, observation and act. The elements are arranged into sections according to CDA R2. Each element shall be marked up with the appropriate templateId in order to be evaluated and stored as part of LPR3. While elements that are not marked up with the corresponding templateId's according to the LPR3 CDA specification are permitted, they are not evaluated and as such should be avoided.</p>
+<h2 id="what-documents-can-be-submitted">What documents can be submitted</h2>
+<p>LPR3 supports two kinds of reporting:</p>
+<ul>
+<li>Full state reporting</li>
+<li>Partial reporting</li>
+</ul>
+<p>Full state reporting concerns the case where the client system reports an entire document covering a set of selected services and treatments chosen by the client where the state of eventual previous reported documents with the same document ID is completely overwritten.</p>
+<p>Partial state reporting concerns the case where the client system reports a document covering a set of selected services and treatments chosen by the client where the state of an eventual previous reported document is updated. The items that are to be updated are explicitly stated within the newly reported document. Within the newly reported document items can be nullified, items can be updated or items can be added.</p>
+<h2 id="documents-and-versioning">Documents and versioning</h2>
+<p>All reported documents (initial state and corrections) must be versioned using ClinicalDocument.id, ClinicalDocument.setId and ClinicalDocument.versionNumber. Initial versionNumber MUST be '1'. Whenever the document is appended to or replaced (collectively known as <em>update</em>), the ClinicalDocument.versionNumber must be incremented and the ClinicalDocument.id must unique. ClinicalDocument.setId must remain the same across all versions.</p>
+<p>Note: <em>Replace</em> will replace all previous documents and addendums.</p>
+<p>This stated use of id, setId and versionNumber ensures that no updates to documents are appended in the wrong order. While this somewhat contradicts the standard (see section 4.2.1.7, 4.2.1.8 and 4.2.3.1 - <a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=7">CDA R2</a>), it is the least ambiguous way to handle document updates.<img alt="" src="../img/L-cda_figure1-changed.png" /></p>
+<h2 id="what-rules-apply-and-what-errors-can-be-reported-and-how">What rules apply and what errors can be reported and how</h2>
+<p>All documents submitted to LPR3 are validated at three levels:</p>
+<ol>
+<li>Execute schema validation (XSD) according to CDA R2 standard.</li>
+<li>Execute schematron validation (SHCEMATRON) according to the profile specificed at the ART-DECOR site</li>
+<li>Execute drools validation rules aka. business rules (BUSINESS_RULE).</li>
+</ol>
+<p><img alt="" src="https://www.websequencediagrams.com/cgi-bin/cdraw?lz=dGl0bGUgVmFsaWRhdGlvbiBzZXF1ZW5jZQoKUmVnaW9uYWwgRUhSLT5MUFIzIFdTOiBJSEUgWERSIFBuUiBDREEtREsKbm90ZSBsZWZ0IG9mIAAgCWViWE1MIGFuZCBER1dTIHYAWwkKb3B0IFByb3RvY29sIGZhaWx1cmUKICAgADQILS0-AHEMOiBJbmNvcnJlY3QgdXNlIG9mAIEABQBRBVBuUiB0cmFuc2FjAFYFZW5kAIEJBm92ZXIAgQMJAIFUDHRlcCAxCgBiCD4AgXALRW5naW5lOiBTY2hlbWEgYXNzZXJ0aW9ucwoAFBEtAIIHClJlcG9ydGVkIGVycm9ycwCBWAVMYWNraW5nIHMARAZjb25mb3JtYW5jAIFJHkRvY3VtZW50IGRvZXMgbm90IGNvbXBseSB3aXRoIHRoZSBzdGFuZGFyZABTB3MAgUknMgCBTSN0cm9uAIE8OACCUCIzAIJVHUJ1c2luZXNzIHJ1bGVzAIJCOACEJhhBY2tub3dsZWRnZQCCWQVhbmQAhQMLIHIAgzwFCgo&amp;s=qsd" /></p>
+<p>Errors in submitted documents can be found at any of the three levels and reported on all three levels at the same time. While level 1 is static and level 2 should be considered static (variance can occour in valuesets dependening on the business needs), level 3 is considered dynamic in that sense that business rules are subject to change or be deprecated over time. Level 3 is referred to as <b>"Dyb validering"</b> in the reporting guidelines supplied by <b>Sundhedsdatastyrelsen</b>.</p>
+<p>All rules are exportable in the formats XSD, Schematron and KIE jar (kjar) files, respectively. The XSD and Schematron files does not include LPR3 assigned error codes - instead, when executed on a document, the XSD and Schematron reported errors will point out exactly where in the document the errors are and what has been violated. That said, XSD reported errors and Schematron reported errors will each be reported within their own category. Below illustrates an example of error codes wrapped in a RegistryResponse according to IHE XDR/XDS ebXml:</p>
+<pre><code>&lt;rs:RegistryResponse status=&quot;urn:oasis:names:tc:ebxml-regrep:ResponseStatusType:Failure&quot;&gt;
+        &lt;rs:RegistryErrorList highestSeverity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot;&gt;
+            &lt;rs:RegistryError codeContext=&quot;XSD|||cvc-complex-type.2.4.a: Invalid content was found starting with element 'assignedAthor'. One of '{&amp;amp;quot;urn:hl7-org:v3&amp;amp;quot;:assignedAuthor}' is expected.&quot; errorCode=&quot;InvalidDocumentContent&quot; location=&quot;1.2.3.999-example-only|||||||||48&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; /&gt;
+            &lt;rs:RegistryError codeContext=&quot;SCHEMATRON|(DKSpecializationLevelAct): The value for code SHALL be selected from value set '1.2.208.176.2.4.18' DK Specialization Level Act Codes (DYNAMIC).&quot; errorCode=&quot;InvalidDocumentContent&quot; location=&quot;1.2.3.999-example-only|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][4]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:entry[namespace-uri()='urn:hl7-org:v3'][1]/*:encounter[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][3]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][1]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]||||||438&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; /&gt;
+            &lt;rs:RegistryError codeContext=&quot;BUSINESS_RULES|||Ved fødsler efter 31.12.1996 skal bidiagnose DUH* findes.&quot; errorCode=&quot;InvalidDocumentContent&quot; location=&quot;1.2.3.999-example-only|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][4]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:entry[namespace-uri()='urn:hl7-org:v3'][1]/*:encounter[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][3]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][1]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]|||dk.sds:lpr-rules:1.0.0#0141#1.1|||148&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; /&gt;
+        &lt;/rs:RegistryErrorList&gt;
+&lt;/rs:RegistryResponse&gt;
+</code></pre>
+
+<p>The <code>codeContext</code> attribute is used in the following way:</p>
+<ul>
+<li>The value of <code>codeContext</code> is split into two mandatory segments separated by <code>|||</code> having the values <code>&lt;validation type&gt;|||&lt;validation text&gt;</code>. <code>&lt;validation type&gt;</code> can be any of the following <code>XSD</code>, <code>SCHEMATRON</code>, <code>BUSINESS_RULE</code>. <code>&lt;validation text&gt;</code> contains an explanation of what has been violated in technical terms.</li>
+</ul>
+<p>The <code>location</code> attribute is used in the following way:</p>
+<ul>
+<li>The value of <code>location</code> is split into one mandatory segment and three conditional segments having the following values <code>&lt;document id&gt;|||(&lt;xpath expression&gt;)|||(&lt;business rule unique identifier&gt;)|||(&lt;line number&gt;)</code>. <code>&lt;document id&gt;</code> is the DocumentEntry.uniqueId - see <a href="http://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol3.pdf">"IHE IT Infrastructure (ITI TF-3) "</a> <em>(section 4.2.3.2.26)</em>. <code>&lt;xpath expression&gt;</code> is the conditional segment containing an XPath expression pointing into the document where the error is detected - this is present only when <code>&lt;validation type&gt;</code> is SCHEMATRON or BUSINESS_RULE. <code>&lt;business rule unique identifier&gt;</code> is the conditional segment containing the unique ID of the violated business rule - this is present only when <code>&lt;validation type&gt;</code> is BUSINESS_RULE.  <code>&lt;line number&gt;</code> is the line in the CDA document where the error is detected - this is present only when <code>&lt;validation type&gt;</code> is XDS. </li>
+</ul>
+<h2 id="supported-reporting-strategies">Supported reporting strategies</h2>
+<p>Submission of reports from a client perspective can be carried out as either synchronous reporting or asynchronous reporting. In a synchronous reporting scenario, the client submitting the reports is immediatly made aware of any errors that are present and either all reports are accepted or none at all, aka. transactions. Because of this nature, reported bundles should be kept as small and atomic as possible. This is also alligned with the strict nature of IHE XDR <a href="#batch-oriented-reporting">Batch oriented reporting</a>. In an asynchronous reporting scenario, the client submitting the reports will immediatly receive errors from level 1 and level 2 (see <a href="#what-rules-apply-and-what-errors-can-be-reported-and-how">What rules apply and what errors can be reported and how</a>). If no errors are present on level 1 and level 2 the submission is preapproved for further processing and the client will receive a positive receipt. If errors are found at level 3 in the given asynchronous submission the error(s) will be reported in a prior-to-submission designated folder, accessible by <b>SFTP</b> in the same <b>ebXML</b>-format as used in IHE XDR.</p>
+<h2 id="service-endpoint-setup">Service endpoint setup</h2>
+<p>In order to support both synchronous and asynchronous reporting three services endpoints are available:</p>
+<ul>
+<li>One service endpoint supporting the synchronous scenario that does validation on level 1, 2 and 3 and reports back accordingly. If the submission contains no errors on all levels the reporting is stored.</li>
+<li>One service endpoint supporting the asynchronous scenario that does validation on level 1, and level 2. If the submission contains no errors on level 1 and level 2 the reporting is stored for further processing. If errors are found at level 3, the error report is available at the prior-to-submission designated folder.</li>
+<li>One service endpoint supporting validation on all three levels but no storing - aka. dry-run validation.</li>
+</ul>
+<p>All three services adhere to the same system interface, making it up to the client to decide which service constallation is the best fit.</p>
+<h2 id="ihe-xdr">IHE XDR</h2>
+<p>The IHE XDR service implemented as part of LPR3 will implement and act as <strong>Document Recipient</strong> and will support transaction <strong>ITI-41</strong> but only metadata compliant with the Metadata-Limited Document Source will processed. 
+Only SOAP with MTOM/XOP optimized content will be processed. Use of HTTP compression is encouraged.</p>
+<h3 id="batch-oriented-reporting">Batch oriented reporting</h3>
+<p>IHE XDR defines that submissions of mulitple documents pr. request are allowed as long as all documents are concerning the same patient. Hence, batch-oriented reporting is supported for a single patient having multiple documents to be reported (see <a href="http://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol3.pdf">"IHE ITI TF-3"</a> <em>(section 4.2.1.2)</em>. If mulitple documents for a single patient are submitted in a single submission the documents shall <b>NOT</b> be different versions of each other as processing order is not guaranteed within a single submission.</p>
+<p>More realistic samples for 
+ * creation of data
+ * update of data
+ * deletion of data </p>
+<h2 id="mapping-to-the-logical-model">Mapping to the logical model</h2>
+<p>The following diagram illustrates the logical model of LPR3:
+<img alt="" src="../img/LPR3.png" />
+This model is mapped to CDA and divided into the following sections:</p>
+<ul>
+<li>CDA Header
+This section contains the elements <code>Patient</code> and <code>Bopael</code> from LPR3. The use of elements in the header follows the national <a href="http://svn.medcom.dk/svn/releases/Standarder/HL7/CDA%20Header/Dokumentation/DK-CDA-Header-v1.1.pdf">"MedCom guidelines"</a> for CDA header usage.</li>
+<li>Episode of Care
+This section contains the main elements <code>ForloebElement</code>, <code>ForloebReference</code> and <code>ForloebMarkoer</code> from LPR3 that maps to <code>DK Episode Of Care Act</code>, <code>DK Episode of Care Link Act</code> and <code>DK Episode of Care Marker Act</code> </li>
+<li>Encounters
+This section contains the main elements <code>Kontakt</code>, <code>Betalingsoplysning</code>, <code>Henvisning</code>, <code>Diagnose</code> og <code>Opholdsaddresse</code> from LPR3 that maps to <code>DK Encounter</code>, <code>DK Payment Contract Act</code>, <code>DK Referral Act</code>, <code>DK Main Condition Observation</code>/<code>DK Minor Condition Observation</code> and <code>DK Service Delivery Location Participant</code>.</li>
+<li>Procedures
+This section contains the main elements <code>Procedure</code> and <code>Betalingsoplysning</code> from LPR3 that maps to <code>DK Procedure Act</code>/<code>DK Procedure Observation</code>/<code>DK Procedure Procedure</code> and <code>DK Payment Contract Act</code>.</li>
+<li>Observation Organizers
+This section contains the main elements <code>Resultatindberetning</code> and <code>Resultat</code> from LPR3 that maps to <code>DK Observation Organizer</code> and <code>DK Observation Organizer Entry Reference Act</code>.</li>
+</ul>
+<p>All attributes on the elements are mapped to CDA elements and can be found in at the ART-DECOR site/LPR3 offline documentation, marked with the description <code>LPR3:</code>.</p>
+<h2 id="granularity-and-constraints-to-submitted-documents">Granularity and constraints to submitted documents</h2>
+<p>The minimum viable document that will be accepted as a valid submission is a document that adheres to the constraints mentioned in <a href="#what-rules-apply-and-what-errors-can-be-reported-and-how">What rules apply and what errors can be reported and how</a> - meaning that cardinalities to other elemets must be respected (as outlined in ART-DECOR), values from valuesets must be part of the valuesets (as outlined in ART-DECOR) and the use of correct template ID's as well as the volatile business rules. Any submitted document that adheres to these rules can be submitted for further processing. This means that documents can contain whatever granularity (that adhere to the rules) the submitter would like it to have regarding submission of addendums, corrections and deletions thereby providing a flexible solution that can fit all submitters. </p>
+<h2 id="hl7-cda-naming-convention">HL7 CDA Naming convention</h2>
+<p>All CDA templates are named after the following naming convention:</p>
+<ul>
+<li>All LPR3 templates prefixed with <code>DK</code></li>
+<li>Templates that are named <code>Internal</code> <code>&lt;some LPR3 term&gt;</code> <code>&lt;CDA type&gt;</code> are used as interal references within the document.</li>
+<li>Templates that are named <code>External</code> <code>&lt;some LPR3 term&gt;</code> <code>&lt;CDA type&gt;</code> are used as external references to other/previous versions of CDA documents.</li>
+<li>Template names that contains the word <code>Nullify</code> are used to delete previous registrations in previous documents.</li>
+<li>The type of the template is found in the name of the template as the last word e.g. <code>Act</code> or <code>Reference</code>, except those that are prefixed with <code>Internal</code>.</li>
+<li>The type of the template for templates that are prefixed with <code>DK Internal</code> is found in the name of the template as the second last word. These templates acts as references to other instances within the same document. </li>
+</ul>
+<p>For instance, using the HL7 CDA definition and following the naming convention explains that the template named <code>DK Internal Procedure Procedure Reference</code> concerns an internal reference to a LPR3 term "Procedure" instance in the document and is represented as a HL7 CDA type <code>Procedure</code>.</p>
+<h3 id="notes-on-the-use-of-hl7-cda-elements-in-a-danish-setting">Notes on the use of HL7 CDA elements in a danish setting</h3>
+<p>HL7 defines procedures, acts and observations (the main building blocks of the LPR3 HL7 CDA documents) in the following terms:</p>
+<p><b>Procedure:</b></p>
+<blockquote>
+<p><em>An Act whose immediate and primary outcome (post-condition) is the alteration of the physical condition of the subject</em> <a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=7"><em>- see 3.1.15 in the specification</em></a></p>
+</blockquote>
+<p><b>Observation:</b></p>
+<blockquote>
+<p><em>An Act of recognizing and noting information about the subject, and whose immediate and primary outcome (post-condition) is new data about a subject. Observations often involve measurement or other elaborate methods of investigation, but may also be simply assertive statements</em> <a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=7"><em>- see 3.1.13 in the specification</em></a></p>
+</blockquote>
+<p><b>Act:</b></p>
+<blockquote>
+<p><em>A record of something that is being done, has been done, can be done, or is intended or requested to be done.</em> <a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=7"><em>- see 3.1.1 in the specification</em></a></p>
+</blockquote>
+<p>The danish term '<a href="http://sundhedsdata.iterm.dk/?TermId=1853&amp;SrcLang=da&amp;TrgLang=en">Procedure</a>' can cover all three HL7 defined terms but doing so violates the standard. Hence, when reporting to LPR3, submitters of reports must differ between the types <code>Procedure</code>, <code>Observation</code> and <code>Act</code>. The distinction between these three types will documented using valuesets by <b>Sundhedsdatastyrelsen</b>.</p>
+<h2 id="id-usage-and-referencing-in-lpr3">ID usage and referencing in LPR3</h2>
+<p>Unique identifiers can be supplied by the submitter to almost all elements using <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier#Versions_3_and_5_.28namespace_name-based.29">UUID v5 identifiers</a>. Unique identifiers are needed when previously submitted entities needs to be referenced, removed or updated. If unique identifiers are not provided, internal references between the entities can be used and must be done using UUID v4 identifiers.</p>
+<p><code>Act</code>s, <code>Procedure</code>s and <code>Observation</code>s references the <code>Encounter</code>/<code>Episode of Care</code>, which means that e.g. nullifying the the <code>Encounter</code> also nullifies all entities that points toward the <code>Encounter</code>. Nullifying only the <code>Act</code>/<code>Procedure</code>/<code>Observation</code> that points towards the encounter removes only the entity itself and the encounter is left unchanged.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../interfacedefinitions/index.html" class="btn btn-neutral float-right" title="Interface definition">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../interfacedefinitions/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>

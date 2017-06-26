@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Examples - Landspatientregisteret 3 - Technical documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  <link href="../css/highlight.js/idea.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Examples";
+    var mkdocs_page_input_path = "examples.md";
+    var mkdocs_page_url = "/examples/index.html";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="icon icon-home"> Landspatientregisteret 3 - Technical documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../index.html">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Documentation</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../aspects/index.html">Interface aspects and usage</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../interfacedefinitions/index.html">Interface definition</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="index.html">Examples</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#example-usage-of-ids-and-uuidv4">Example usage of ID's and UUIDv4</a></li>
+    
+
+    <li class="toctree-l2"><a href="#updating-values-in-documents">Updating values in documents</a></li>
+    
+
+    <li class="toctree-l2"><a href="#adding-new-procedures-to-a-previous-submitted-document">Adding new procedures to a previous submitted document</a></li>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../links/index.html">Related material and links</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Landspatientregisteret 3 - Technical documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Examples</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p><strong>Sample request using MTOM/XOP</strong></p>
+<pre><code class="http">POST /axis2/services/repositoryBonedoc HTTP/1.1
+Content-Type: multipart/related; boundary=MIMEBoundaryurn_uuid_806D8FD2D542EDCC2C1199332890718; type=&quot;application/xop+xml&quot;; start=&quot;0.urn:uuid:806D8FD2D542EDCC2C1199332890719@apache.org&quot;; start-info=&quot;application/soap+xml&quot;; action=&quot;urn:ihe:iti:2007:ProvideAndRegisterDocumentSet-b&quot;
+User-Agent: Axis2
+Host: localhost:9085
+
+--MIMEBoundaryurn_uuid_806D8FD2D542EDCC2C1199332890718
+Content-Type: application/xop+xml; charset=UTF-8; type=&quot;application/soap+xml&quot;
+Content-Transfer-Encoding: binary
+Content-ID: &lt;0.urn:uuid:806D8FD2D542EDCC2C1199332890719@apache.org&gt;
+</code></pre>
+
+<pre><code class="xml">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;soapenv:Envelope xmlns:soapenv=&quot;http://www.w3.org/2003/05/soap-envelope&quot;
+    xmlns:wsa=&quot;http://www.w3.org/2005/08/addressing&quot;&gt;
+    &lt;!-- headers are inserted here --&gt;
+    &lt;soapenv:Body&gt;
+        &lt;xdsb:ProvideAndRegisterDocumentSetRequest
+            xmlns:xdsb=&quot;urn:ihe:iti:xds-b:2007&quot;&gt;
+            &lt;lcm:SubmitObjectsRequest
+                xmlns:lcm=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0&quot;&gt;
+
+                &lt;!-- This submission demonstrates the absolute minimum metadata that 
+                    can be supplied in a Limited Metadata XDR submission --&gt;
+                &lt;rim:RegistryObjectList
+                    xmlns:rim=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0&quot;&gt;
+
+
+                    &lt;!-- DocumentEntry labeled as Limited Metadata --&gt;
+                    &lt;rim:ExtrinsicObject id=&quot;SomeDocument01&quot;
+                        mimeType=&quot;text/plain&quot; objectType=&quot;urn:uuid:7edca82f-054d-47f2-a032-9b2a5b5186c1&quot;&gt;
+
+                        &lt;!-- this classification labels this DocumentEntry as Limited Metadata 
+                            note that each object (DocumentEntry, SubmissionSet, Folder (if this example 
+                            had one) are independently labeled. No requirement that all or none are tagged 
+                            as Limited Metadata --&gt;
+                        &lt;rim:Classification classifiedObject=&quot;SomeDocument01&quot;
+                            classificationNode=&quot;urn:uuid:ab9b591b-83ab-4d03-8f5d-f93b1fb92e85&quot;
+                            id=&quot;ID_6144893_5&quot;
+                            objectType=&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification&quot; /&gt;
+
+                        &lt;!-- uniqueId --&gt;
+                        &lt;rim:ExternalIdentifier
+                            identificationScheme=&quot;urn:uuid:2e82c1f6-a085-4c72-9da3-8640a32e42ab&quot;
+                            value=&quot;1.42.20100312105241.2&quot;
+                            objectType=&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:ExternalIdentifier&quot;
+                            id=&quot;id_10&quot; registryObject=&quot;SomeDocument01&quot;&gt;
+                            &lt;rim:Name&gt;
+                                &lt;rim:LocalizedString value=&quot;XDSDocumentEntry.uniqueId&quot; /&gt;
+                            &lt;/rim:Name&gt;
+                        &lt;/rim:ExternalIdentifier&gt;
+                    &lt;/rim:ExtrinsicObject&gt;
+
+                    &lt;rim:RegistryPackage id=&quot;SubmissionSet01&quot;
+                        objectType=&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:RegistryPackage&quot;&gt;
+
+                        &lt;!-- submissionTime required even for Limited Metadata --&gt;
+                        &lt;rim:Slot name=&quot;submissionTime&quot;&gt;
+                            &lt;rim:ValueList&gt;
+                                &lt;rim:Value&gt;20170225235050&lt;/rim:Value&gt;
+                            &lt;/rim:ValueList&gt;
+                        &lt;/rim:Slot&gt;
+
+                        &lt;!-- this classification labels this SubmissionSet as Limited Metadata 
+                            note that each object (DocumentEntry, SubmissionSet, Folder (if this example 
+                            had one) are independently labeled. No requirement that all or none are tagged 
+                            as Limited Metadata --&gt;
+                        &lt;rim:Classification classifiedObject=&quot;SomeSubmissionSet01&quot;
+                            classificationNode=&quot;urn:uuid:5003a9db-8d8d-49e6-bf0c-990e34ac7707&quot;
+                            id=&quot;ID_6144893_4&quot;
+                            objectType=&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification&quot; /&gt;
+
+                        &lt;!-- uniqueId --&gt;
+                        &lt;rim:ExternalIdentifier
+                            identificationScheme=&quot;urn:uuid:96fdda7c-d067-4183-912e-bf5ee74998a8&quot;
+                            value=&quot;1.42.20100312105241.4&quot;
+                            objectType=&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:ExternalIdentifier&quot;
+                            id=&quot;id_22&quot; registryObject=&quot;SomeSubmissionSet01&quot;&gt;
+                            &lt;rim:Name&gt;
+                                &lt;rim:LocalizedString value=&quot;XDSSubmissionSet.uniqueId&quot; /&gt;
+                            &lt;/rim:Name&gt;
+                        &lt;/rim:ExternalIdentifier&gt;
+
+                        &lt;!-- sourceId --&gt;
+                        &lt;rim:ExternalIdentifier
+                            identificationScheme=&quot;urn:uuid:554ac39e-e3fe-47fe-b233-965d2a147832&quot;
+                            value=&quot;1.42.2012105241.4.1.1.1&quot;
+                            objectType=&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:ExternalIdentifier&quot;
+                            id=&quot;id_122&quot; registryObject=&quot;SomeSubmissionSet01&quot;&gt;
+                            &lt;rim:Name&gt;
+                                &lt;rim:LocalizedString value=&quot;XDSSubmissionSet.sourceId&quot; /&gt;
+                            &lt;/rim:Name&gt;
+                        &lt;/rim:ExternalIdentifier&gt;
+                    &lt;/rim:RegistryPackage&gt;
+
+                    &lt;rim:Association
+                        associationType=&quot;urn:oasis:names:tc:ebxml-regrep:AssociationType:HasMember&quot;
+                        sourceObject=&quot;SomeSubmissionSet01&quot; targetObject=&quot;SomeDocument01&quot;
+                        id=&quot;ID_6144893_1&quot;
+                        objectType=&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Association&quot;&gt;
+                        &lt;rim:Slot name=&quot;SubmissionSetStatus&quot;&gt;
+                            &lt;rim:ValueList&gt;
+                                &lt;rim:Value&gt;Original&lt;/rim:Value&gt;
+                            &lt;/rim:ValueList&gt;
+                        &lt;/rim:Slot&gt;
+                    &lt;/rim:Association&gt;
+
+                    &lt;rim:Classification classifiedObject=&quot;SomeSubmissionSet01&quot;
+                        classificationNode=&quot;urn:uuid:a54d6aa5-d40d-43f9-88c5-b4633d873bdd&quot;
+                        id=&quot;ID_6144893_3&quot;
+                        objectType=&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification&quot; /&gt;
+                &lt;/rim:RegistryObjectList&gt;
+            &lt;/lcm:SubmitObjectsRequest&gt;
+            &lt;xdsb:Document id=&quot;SomeDocument01&quot;&gt;
+                &lt;xop:Include
+                    href=&quot;cid:1.urn:uuid:806D8FD2D542EDCC2C1199332890776@apache.org&quot;
+                    xmlns:xop=&quot;http://www.w3.org/2004/08/xop/include&quot; /&gt;
+            &lt;/xdsb:Document&gt;
+        &lt;/xdsb:ProvideAndRegisterDocumentSetRequest&gt;
+    &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;
+</code></pre>
+
+<pre><code class="http">--MIMEBoundaryurn_uuid_806D8FD2D542EDCC2C1199332890718
+Content-Type: text/plain
+Content-Transfer-Encoding: binary
+Content-ID: &lt;1.urn:uuid:806D8FD2D542EDCC2C1199332890776@apache.org&gt;
+</code></pre>
+
+<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;https://raw.githubusercontent.com/chb/sample_ccdas/master/CDA.xsl&quot;?&gt;
+&lt;ClinicalDocument xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation=&quot;https://raw.githubusercontent.com/cdaapi/cdaapi_core/master/reference/CDA.xsd&quot;
+    xmlns=&quot;urn:hl7-org:v3&quot; xmlns:cda=&quot;urn:hl7-org:v3&quot; xmlns:sdtc=&quot;urn:hl7-org:sdtc&quot;&gt;
+    &lt;realmCode code=&quot;DK&quot; /&gt;
+    &lt;typeId extension=&quot;POCD_HD000040&quot; root=&quot;2.16.840.1.113883.1.3&quot; /&gt;
+    &lt;templateId root=&quot;1.2.208.176.7.1.10.71&quot; /&gt;
+    &lt;templateId root=&quot;2.16.840.1.113883.10.12.1&quot; /&gt;
+...
+&lt;/ClinicalDocument&gt;
+</code></pre>
+
+<pre><code class="http">--MIMEBoundaryurn_uuid_806D8FD2D542EDCC2C1199332890718--
+</code></pre>
+
+<p><strong>Sample response with a valid document</strong></p>
+<pre><code class="http">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Content-Type: multipart/related; boundary=MIMEBoundaryurn_uuid_7BFFF2BD24C642EA531247750913327; type=&quot;application/xop+xml&quot;; 
+start=&quot;&lt;0.urn:uuid:7BFFF2BD24C642EA531247750913328@apache.org&gt;&quot;; 
+start-info=&quot;application/soap+xml&quot;; action=&quot;urn:ihe:iti:2007:ProvideAndRegisterDocumentSet-bResponse&quot;
+Date: Thu, 16 Jul 2009 13:28:32 GMT
+
+--MIMEBoundaryurn_uuid_7BFFF2BD24C642EA531247750913327
+Content-Type: application/xop+xml; charset=UTF-8; type=&quot;application/soap+xml&quot;
+Content-Transfer-Encoding: binary
+Content-ID: &lt;0.urn:uuid:7BFFF2BD24C642EA531247750913328@apache.org&gt;
+</code></pre>
+
+<pre><code class="xml">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;soapenv:Envelope xmlns:soapenv=&quot;http://www.w3.org/2003/05/soap-envelope&quot;&gt;
+    &lt;soapenv:Header xmlns:wsa=&quot;http://www.w3.org/2005/08/addressing&quot;&gt;
+        &lt;wsa:Action soapenv:mustUnderstand=&quot;true&quot;&gt;urn:ihe:iti:2007:ProvideAndRegisterDocumentSet-bResponse&lt;/wsa:Action&gt;
+        &lt;wsa:RelatesTo&gt;urn:uuid:AD33D8190CB655E8751247750894152&lt;/wsa:RelatesTo&gt;
+    &lt;/soapenv:Header&gt;
+    &lt;soapenv:Body&gt;
+        &lt;rs:RegistryResponse xmlns:rs=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0&quot;
+            status=&quot;urn:oasis:names:tc:ebxml-regrep:ResponseStatusType:Success&quot;/&gt;
+    &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;
+</code></pre>
+
+<pre><code class="http">--MIMEBoundaryurn_uuid_7BFFF2BD24C642EA531247750913327--
+</code></pre>
+
+<p><strong>Sample response with an invalid document</strong></p>
+<pre><code class="http">HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Content-Type: multipart/related; boundary=MIMEBoundaryurn_uuid_7BFFF2BD24C642EA531247750913327; type=&quot;application/xop+xml&quot;; 
+start=&quot;&lt;0.urn:uuid:7BFFF2BD24C642EA531247750913328@apache.org&gt;&quot;; 
+start-info=&quot;application/soap+xml&quot;; action=&quot;urn:ihe:iti:2007:ProvideAndRegisterDocumentSet-bResponse&quot;
+Date: Thu, 16 Jul 2009 13:28:32 GMT
+
+--MIMEBoundaryurn_uuid_7BFFF2BD24C642EA531247750913327
+Content-Type: application/xop+xml; charset=UTF-8; type=&quot;application/soap+xml&quot;
+Content-Transfer-Encoding: binary
+Content-ID: &lt;0.urn:uuid:7BFFF2BD24C642EA531247750913328@apache.org&gt;
+</code></pre>
+
+<pre><code class="xml">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;soapenv:Envelope xmlns:soapenv=&quot;http://www.w3.org/2003/05/soap-envelope&quot;&gt;
+    &lt;soapenv:Header xmlns:wsa=&quot;http://www.w3.org/2005/08/addressing&quot;&gt;
+        &lt;wsa:Action soapenv:mustUnderstand=&quot;true&quot;&gt;urn:ihe:iti:2007:ProvideAndRegisterDocumentSet-bResponse&lt;/wsa:Action&gt;
+        &lt;wsa:RelatesTo&gt;urn:uuid:AD33D8190CB655E8751247750894152&lt;/wsa:RelatesTo&gt;
+    &lt;/soapenv:Header&gt;
+    &lt;soapenv:Body&gt;
+        &lt;rs:RegistryResponse
+            status=&quot;urn:oasis:names:tc:ebxml-regrep:ResponseStatusType:Failure&quot;&gt;
+            &lt;rs:RegistryErrorList highestSeverity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot;&gt;
+            &lt;rs:RegistryError codeContext=&quot;XSD|||cvc-complex-type.2.4.a: Invalid content was found starting with element 'assignedAthor'. One of '{&amp;amp;quot;urn:hl7-org:v3&amp;amp;quot;:assignedAuthor}' is expected.&quot; errorCode=&quot;InvalidDocumentContent&quot; location=&quot;1.2.3.999-example-only|||48&quot;      severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; /&gt;
+            &lt;rs:RegistryError codeContext=&quot;SCHEMATRON|(DKSpecializationLevelAct): The value for code SHALL be selected from value set '1.2.208.176.2.4.18' DK Specialization Level Act Codes (DYNAMIC).&quot; errorCode=&quot;InvalidDocumentContent&quot; location=&quot;1.2.3.999-example-only|||438|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][4]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:entry[namespace-uri()='urn:hl7-org:v3'][1]/*:encounter[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][3]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][1]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; /&gt;
+        &lt;/rs:RegistryErrorList&gt;
+        &lt;/rs:RegistryResponse&gt;
+    &lt;/soapenv:Body&gt;
+&lt;/soapenv:Envelope&gt;
+</code></pre>
+
+<pre><code class="http">--MIMEBoundaryurn_uuid_7BFFF2BD24C642EA531247750913327--
+</code></pre>
+
+<h2 id="example-usage-of-ids-and-uuidv4">Example usage of ID's and UUIDv4</h2>
+<p>The sample below shows the essential parts of the initial state of a given document containing a procedure. Note the use of ClinicalDocument.id, ClinicalDocument.setId and ClinicalDocument.versionNumber in the samples.</p>
+<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;ClinicalDocument xmlns=&quot;urn:hl7-org:v3&quot; xmlns:voc=&quot;urn:hl7-org:v3/voc&quot;
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; classCode=&quot;DOCCLIN&quot;
+    moodCode=&quot;EVN&quot;&gt;
+    &lt;realmCode code=&quot;DK&quot; /&gt;
+    &lt;typeId extension=&quot;POCD_HD000040&quot; root=&quot;2.16.840.1.113883.1.3&quot; /&gt;
+    &lt;templateId root=&quot;1.2.208.176.7.1.10.71&quot; /&gt;
+    &lt;templateId root=&quot;2.16.840.1.113883.10.12.2&quot; /&gt;
+    &lt;templateId root=&quot;2.16.840.1.113883.10.12.1&quot; /&gt;
+    &lt;id root=&quot;1.2.345.6789.123&quot; /&gt;
+    &lt;code code=&quot;34133-9&quot; codeSystem=&quot;2.16.840.1.113883.6.1&quot;
+        codeSystemName=&quot;LOINC&quot; displayName=&quot;Summary of episode note&quot; /&gt;
+    &lt;effectiveTime value=&quot;20000407&quot; /&gt;
+    &lt;confidentialityCode code=&quot;N&quot; codeSystem=&quot;2.16.840.1.113883.5.25&quot; /&gt;
+    &lt;setId root=&quot;1.2.345.6789.35&quot; /&gt;
+    &lt;versionNumber value=&quot;1&quot; /&gt;
+    &lt;recordTarget&gt;
+        &lt;templateId root=&quot;1.2.208.176.7.1.10.101&quot; /&gt;
+        &lt;templateId root=&quot;2.16.840.1.113883.10.12.101&quot; /&gt;
+        &lt;patientRole classCode=&quot;PAT&quot;&gt;
+            &lt;templateId root=&quot;1.2.208.176.7.1.10.107&quot; /&gt;
+            &lt;id root=&quot;2.16.840.1.113883.4.3&quot; extension=&quot;08119675AG1&quot;
+                assigningAuthorityName=&quot;Region Nordjylland&quot; /&gt;
+            &lt;addr&gt;
+                &lt;streetAddressLine&gt;P.O. Pedersens Vej 2&lt;/streetAddressLine&gt;
+                &lt;postalCode&gt;8200&lt;/postalCode&gt;
+                &lt;city&gt;Aarhus N&lt;/city&gt;
+                &lt;county&gt;751&lt;/county&gt;
+                &lt;country&gt;5100&lt;/country&gt;
+
+            &lt;/addr&gt;
+            &lt;patient classCode=&quot;PSN&quot;&gt;
+                &lt;name&gt;
+                    &lt;family&gt;Soort-Nielsen&lt;/family&gt;
+                    &lt;given&gt;Jakob&lt;/given&gt;
+                &lt;/name&gt;
+                &lt;administrativeGenderCode code=&quot;M&quot;
+                    displayName=&quot;Male&quot; codeSystem=&quot;2.16.840.1.113883.5.1&quot; /&gt;
+            &lt;/patient&gt;
+        &lt;/patientRole&gt;
+    &lt;/recordTarget&gt;
+    &lt;author typeCode=&quot;AUT&quot;&gt;
+        &lt;templateId root=&quot;1.2.208.176.7.10.102&quot; /&gt;
+        &lt;templateId root=&quot;2.16.840.1.113883.10.12.102&quot; /&gt;
+        &lt;time value=&quot;20170228101500+0100&quot; /&gt;
+        &lt;assignedAuthor classCode=&quot;ASSIGNED&quot;&gt;
+            &lt;id nullFlavor=&quot;NI&quot; /&gt;
+            &lt;representedOrganization classCode=&quot;ORG&quot;
+                determinerCode=&quot;INSTANCE&quot;&gt;
+                &lt;id root=&quot;1.2.208.176.1.1&quot; extension=&quot;6071000016008&quot;
+                    assigningAuthorityName=&quot;SOR&quot; /&gt;
+            &lt;/representedOrganization&gt;
+        &lt;/assignedAuthor&gt;
+    &lt;/author&gt;
+    &lt;custodian typeCode=&quot;CST&quot;&gt;
+        &lt;templateId root=&quot;1.2.208.176.7.1.10.103&quot; /&gt;
+        &lt;templateId root=&quot;2.16.840.1.113883.10.12.104&quot; /&gt;
+        &lt;assignedCustodian classCode=&quot;ASSIGNED&quot;&gt;
+            &lt;representedCustodianOrganization
+                classCode=&quot;ORG&quot; determinerCode=&quot;INSTANCE&quot;&gt;
+                &lt;id root=&quot;2.16.840.1.113883.2.24.1.1&quot; extension=&quot;25469364&quot;
+                    assigningAuthorityName=&quot;Erhvervs- og Selskabsstyrelsen&quot; /&gt;
+            &lt;/representedCustodianOrganization&gt;
+        &lt;/assignedCustodian&gt;
+    &lt;/custodian&gt;
+    &lt;component contextConductionInd=&quot;true&quot;&gt;
+        &lt;structuredBody&gt;
+            &lt;component&gt;
+                &lt;section&gt;
+                    &lt;templateId root=&quot;1.2.208.176.7.1.10.95&quot; /&gt;
+                    &lt;templateId root=&quot;2.16.840.1.113883.10.12.201&quot; /&gt;
+                    &lt;entry&gt;
+                        &lt;act classCode=&quot;PCPR&quot; moodCode=&quot;EVN&quot;&gt;
+                            &lt;templateId root=&quot;1.2.208.176.7.1.10.80&quot; /&gt;
+                            &lt;templateId root=&quot;2.16.840.1.113883.10.12.301&quot; /&gt;
+                            &lt;id root=&quot;1.2.208.176.7.1.2.1&quot; extension=&quot;BBBFA3EA-2AD7-571C-986C-D72F7443BA4B&quot; /&gt;
+                            ...
+                        &lt;/act&gt;
+                    &lt;/entry&gt;
+                &lt;/section&gt;
+            &lt;/component&gt;
+            &lt;component&gt;
+                &lt;section&gt;
+                    &lt;!-- DK Procedures Section --&gt;
+                    &lt;templateId root=&quot;1.2.208.176.7.1.10.76&quot; /&gt;
+                    &lt;templateId root=&quot;2.16.840.1.113883.10.12.201&quot; /&gt;
+                    &lt;entry&gt;
+                        &lt;act classCode=&quot;ACT&quot; moodCode=&quot;EVN&quot;&gt;
+                            &lt;templateId root=&quot;1.2.208.176.7.1.10.25&quot; /&gt;
+                            &lt;templateId root=&quot;2.16.840.1.113883.10.12.301&quot; /&gt;
+                            &lt;id root=&quot;1.2.208.176.7.1.2.1&quot; extension=&quot;50009866-1B81-53FD-BD67-B132A68415FA&quot; /&gt;
+                            &lt;id root=&quot;1.2.208.176.7.1.2.2&quot; extension=&quot;94FF6BDB-2075-43DE-BA33-7DAFD7DC66CC&quot; /&gt;
+                            &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot;
+                                codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;Behandling med protesehæmmer&quot;
+                                code=&quot;BPHM91&quot; /&gt;
+                            &lt;effectiveTime&gt;
+                                &lt;low value=&quot;20170115080000+0200&quot; /&gt;
+                                &lt;high value=&quot;20170115083000+0200&quot; /&gt;
+                            &lt;/effectiveTime&gt;
+                            &lt;!-- ... --&gt;
+                        &lt;/act&gt;
+                    &lt;/entry&gt;
+                &lt;/section&gt;
+            &lt;/component&gt;
+        &lt;/structuredBody&gt;
+    &lt;/component&gt;
+&lt;/ClinicalDocument&gt;
+</code></pre>
+
+<p>The sample below shows the addendum to the initial state where a procedure is removed (nullified). In order to remove a previously submitted entity, the <em>Nullify</em> templates are used.</p>
+<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;ClinicalDocument xmlns=&quot;urn:hl7-org:v3&quot; xmlns:voc=&quot;urn:hl7-org:v3/voc&quot;
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; classCode=&quot;DOCCLIN&quot;
+    moodCode=&quot;EVN&quot;&gt;
+    &lt;realmCode code=&quot;DK&quot; /&gt;
+    &lt;typeId extension=&quot;POCD_HD000040&quot; root=&quot;2.16.840.1.113883.1.3&quot; /&gt;
+    &lt;templateId root=&quot;1.2.208.176.7.1.10.71&quot; /&gt;
+    &lt;templateId root=&quot;2.16.840.1.113883.10.12.2&quot; /&gt;
+    &lt;templateId root=&quot;2.16.840.1.113883.10.12.1&quot; /&gt;
+    &lt;id root=&quot;1.2.345.6789.1234&quot; /&gt;
+    &lt;code code=&quot;34133-9&quot; codeSystem=&quot;2.16.840.1.113883.6.1&quot;
+        codeSystemName=&quot;LOINC&quot; displayName=&quot;Summary of episode note&quot; /&gt;
+    &lt;effectiveTime value=&quot;20000407&quot; /&gt;
+    &lt;confidentialityCode code=&quot;N&quot; codeSystem=&quot;2.16.840.1.113883.5.25&quot; /&gt;
+    &lt;setId root=&quot;1.2.345.6789.35&quot; /&gt;
+    &lt;versionNumber value=&quot;2&quot; /&gt;
+    &lt;!-- ... --&gt;
+    &lt;relatedDocument typeCode=&quot;APND&quot;&gt;
+        &lt;parentDocument classCode=&quot;DOCCLIN&quot; moodCode=&quot;EVN&quot;&gt;
+            &lt;id root=&quot;1.2.345.6789.123&quot; /&gt;
+            &lt;setId root=&quot;1.2.345.6789.35&quot; /&gt;
+            &lt;versionNumber value=&quot;1&quot; /&gt;
+        &lt;/parentDocument&gt;
+    &lt;/relatedDocument&gt;
+    &lt;component contextConductionInd=&quot;true&quot;&gt;
+        &lt;structuredBody&gt;
+            &lt;component&gt;
+                &lt;section&gt;
+                    &lt;!-- DK Procedures Section --&gt;
+                    &lt;templateId root=&quot;1.2.208.176.7.1.10.76&quot; /&gt;
+                    &lt;templateId root=&quot;2.16.840.1.113883.10.12.201&quot; /&gt;
+                    &lt;entry&gt;
+                        &lt;act classCode=&quot;ACT&quot; moodCode=&quot;EVN&quot;&gt;
+                            &lt;templateId root=&quot;1.2.208.176.7.1.10.86&quot; /&gt;
+                            &lt;templateId root=&quot;2.16.840.1.113883.10.12.301&quot; /&gt;
+                            &lt;id root=&quot;1.2.208.176.7.1.2.1&quot; extension=&quot;50009866-1B81-53FD-BD67-B132A68415FA&quot; /&gt;
+                            &lt;code nullFlavor=&quot;NA&quot; /&gt;
+                            &lt;statusCode code=&quot;nullified&quot; /&gt;
+                        &lt;/act&gt;
+                    &lt;/entry&gt;
+                &lt;/section&gt;
+            &lt;/component&gt;
+        &lt;/structuredBody&gt;
+    &lt;/component&gt;
+&lt;/ClinicalDocument&gt;
+</code></pre>
+
+<p>The sample below shows the addendum to the initial state where two encounters and one procedure are added and one of the encounters are referenced from the procedure using temporary UUIDv4 identifiers. As can be seen, the reference link between encounter and procedure is stated within the procedure. This also means that when removing (nullifying) encounters, all entities (procedues, acts, observations) must be updated accordingly to point to the new encounter. Updating eg. a procedure does however not mean that an update is necessary on the encounter. The same goes for procedures that references an Episode Of Care.</p>
+<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;ClinicalDocument xmlns=&quot;urn:hl7-org:v3&quot; xmlns:voc=&quot;urn:hl7-org:v3/voc&quot;
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; classCode=&quot;DOCCLIN&quot;
+    moodCode=&quot;EVN&quot;&gt;
+    &lt;realmCode code=&quot;DK&quot; /&gt;
+    &lt;typeId extension=&quot;POCD_HD000040&quot; root=&quot;2.16.840.1.113883.1.3&quot; /&gt;
+    &lt;templateId root=&quot;1.2.208.176.7.1.10.71&quot; /&gt;
+    &lt;templateId root=&quot;2.16.840.1.113883.10.12.2&quot; /&gt;
+    &lt;templateId root=&quot;2.16.840.1.113883.10.12.1&quot; /&gt;
+    &lt;id root=&quot;1.2.345.6789.1235&quot; /&gt;
+    &lt;code code=&quot;34133-9&quot; codeSystem=&quot;2.16.840.1.113883.6.1&quot;
+        codeSystemName=&quot;LOINC&quot; displayName=&quot;Summary of episode note&quot; /&gt;
+    &lt;effectiveTime value=&quot;20000407&quot; /&gt;
+    &lt;confidentialityCode code=&quot;N&quot; codeSystem=&quot;2.16.840.1.113883.5.25&quot; /&gt;
+    &lt;setId root=&quot;1.2.345.6789.35&quot; /&gt;
+    &lt;versionNumber value=&quot;2&quot; /&gt;
+    &lt;!-- ... --&gt;
+    &lt;relatedDocument typeCode=&quot;APND&quot;&gt;
+        &lt;parentDocument classCode=&quot;DOCCLIN&quot; moodCode=&quot;EVN&quot;&gt;
+            &lt;id root=&quot;1.2.345.6789.1235&quot; /&gt;
+            &lt;setId root=&quot;1.2.345.6789.35&quot; /&gt;
+            &lt;versionNumber value=&quot;1&quot; /&gt;
+        &lt;/parentDocument&gt;
+    &lt;/relatedDocument&gt;
+    &lt;component contextConductionInd=&quot;true&quot;&gt;
+        &lt;structuredBody&gt;
+            &lt;component&gt;
+                &lt;section&gt;
+                    &lt;!-- DK Procedures Section --&gt;
+                    &lt;templateId root=&quot;1.2.208.176.7.1.10.76&quot; /&gt;
+                    &lt;templateId root=&quot;2.16.840.1.113883.10.12.201&quot; /&gt;
+                    &lt;entry&gt;
+                        &lt;act classCode=&quot;ACT&quot; moodCode=&quot;EVN&quot;&gt;
+                            &lt;templateId root=&quot;1.2.208.176.7.1.10.25&quot; /&gt;
+                            &lt;templateId root=&quot;2.16.840.1.113883.10.12.301&quot; /&gt;
+                            &lt;id root=&quot;1.2.208.176.7.1.2.1&quot; extension=&quot;94FF6BDB-2075-43DE-BA33-7DAFD7DC66CE&quot; /&gt;
+                            &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot;
+                                codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;Behandling med direkte aktive antivirale lægemidler&quot;
+                                code=&quot;BPHM92&quot; /&gt;
+                            &lt;effectiveTime&gt;
+                                &lt;low value=&quot;20170115080000+0200&quot; /&gt;
+                                &lt;high value=&quot;20170115083000+0200&quot; /&gt;
+                            &lt;/effectiveTime&gt;
+                            &lt;!-- Reference to the encounter with id 1.2.208.176.7.1.2.2#187EAC1A-D053-4D1C-92DF-F66B429F9B51 --&gt;
+                            &lt;entryRelationship typeCode=&quot;REFR&quot;&gt;
+                                &lt;encounter classCode=&quot;ENC&quot; moodCode=&quot;EVN&quot;&gt;
+                                    &lt;templateId root=&quot;1.2.208.176.7.1.10.77&quot; /&gt;
+                                    &lt;templateId root=&quot;2.16.840.1.113883.10.12.301&quot; /&gt;
+                                    &lt;id root=&quot;1.2.208.176.7.1.2.2&quot; extension=&quot;187EAC1A-D053-4D1C-92DF-F66B429F9B51&quot; /&gt;
+                                    &lt;code nullFlavor=&quot;NA&quot; /&gt;
+                                &lt;/encounter&gt;
+                            &lt;/entryRelationship&gt;
+                        &lt;/act&gt;
+                    &lt;/entry&gt;
+                &lt;/section&gt;
+            &lt;/component&gt;
+            &lt;component&gt;
+                &lt;section&gt;
+                    &lt;!-- DK Encounters Section --&gt;
+                    &lt;templateId root=&quot;1.2.208.176.7.1.10.75&quot; /&gt;
+                    &lt;templateId root=&quot;2.16.840.1.113883.10.12.201&quot; /&gt;
+                    &lt;entry&gt;
+                        &lt;encounter classCode=&quot;ENC&quot; moodCode=&quot;EVN&quot;&gt;
+                            &lt;templateId root=&quot;1.2.208.176.7.1.10.74&quot; /&gt;
+                            &lt;templateId root=&quot;2.16.840.1.113883.10.12.302&quot; /&gt;
+                            &lt;id root=&quot;1.2.208.176.7.1.2.2&quot; extension=&quot;187EAC1A-D053-4D1C-92DF-F66B429F9B51&quot; /&gt;
+                            &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot;
+                                codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;fysisk fremmøde&quot; code=&quot;ALCA00&quot; /&gt;
+                            &lt;effectiveTime&gt;
+                                &lt;low value=&quot;20170216060000+0200&quot; /&gt;
+                                &lt;high value=&quot;20170224120000+0200&quot; /&gt;
+                            &lt;/effectiveTime&gt;
+                            &lt;reference typeCode=&quot;REFR&quot;&gt;
+                                &lt;templateId root=&quot;1.2.208.176.7.1.10.69&quot;/&gt;
+                                &lt;templateId root=&quot;2.16.840.1.113883.10.12.324&quot;/&gt;
+                                &lt;externalAct classCode=&quot;ACT&quot; moodCode=&quot;EVN&quot;&gt;
+                                    &lt;templateId root=&quot;1.2.208.176.7.1.10.65&quot;/&gt;
+                                    &lt;templateId root=&quot;2.16.840.1.113883.10.12.325&quot;/&gt;
+                                    &lt;id root=&quot;1.2.208.176.1.2.1&quot; extension=&quot;BBBFA3EA-2AD7-571C-986C-D72F7443BA4B&quot;/&gt;
+                                &lt;/externalAct&gt;
+                            &lt;/reference&gt;
+                        &lt;/encounter&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;encounter classCode=&quot;ENC&quot; moodCode=&quot;EVN&quot;&gt;
+                            &lt;templateId root=&quot;1.2.208.176.7.1.10.74&quot; /&gt;
+                            &lt;templateId root=&quot;2.16.840.1.113883.10.12.302&quot; /&gt;
+                            &lt;id root=&quot;1.2.208.176.7.1.2.1&quot; extension=&quot;94FF6BDB-2075-43DE-BA33-7DAFD7DC66CF&quot; /&gt;
+                            &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot;
+                                codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;fysisk fremmøde&quot; code=&quot;ALCA00&quot; /&gt;
+                            &lt;effectiveTime&gt;
+                                &lt;low value=&quot;20160216060000+0200&quot; /&gt;
+                                &lt;high value=&quot;20160224120000+0200&quot; /&gt;
+                            &lt;/effectiveTime&gt;
+                            &lt;reference typeCode=&quot;REFR&quot;&gt;
+                                &lt;templateId root=&quot;1.2.208.176.7.1.10.69&quot;/&gt;
+                                &lt;templateId root=&quot;2.16.840.1.113883.10.12.324&quot;/&gt;
+                                &lt;externalAct classCode=&quot;ACT&quot; moodCode=&quot;EVN&quot;&gt;
+                                    &lt;templateId root=&quot;1.2.208.176.7.1.10.65&quot;/&gt;
+                                    &lt;templateId root=&quot;2.16.840.1.113883.10.12.325&quot;/&gt;
+                                    &lt;id root=&quot;1.2.208.176.1.2.1&quot; extension=&quot;BBBFA3EA-2AD7-571C-986C-D72F7443BA4B&quot;/&gt;
+                                &lt;/externalAct&gt;
+                            &lt;/reference&gt;
+                            ...
+                        &lt;/encounter&gt;
+                    &lt;/entry&gt;
+                &lt;/section&gt;
+            &lt;/component&gt;
+        &lt;/structuredBody&gt;
+    &lt;/component&gt;
+&lt;/ClinicalDocument&gt;
+</code></pre>
+
+<h2 id="updating-values-in-documents">Updating values in documents</h2>
+<p>Below shows the inital state of a fragment of a reported encounter within a CDA document.</p>
+<pre><code class="xml">&lt;entry&gt;
+    &lt;encounter classCode=&quot;ENC&quot; moodCode=&quot;EVN&quot;&gt;
+    &lt;templateId root=&quot;1.2.208.176.7.1.10.74&quot;/&gt;
+    &lt;templateId root=&quot;2.16.840.1.113883.10.12.302&quot;/&gt;
+    &lt;id root=&quot;1.2.208.176.7.1.2.1&quot; extension=&quot;47041012-132F-5DE1-B16A-DF273F8F000F&quot;/&gt;
+    &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;fysisk fremmøde&quot; code=&quot;ALCA00&quot;/&gt;
+    &lt;effectiveTime&gt;
+        &lt;low value=&quot;20170216060000+0200&quot;/&gt;
+        &lt;high value=&quot;20170224120000+0200&quot;/&gt;
+    &lt;/effectiveTime&gt;
+    &lt;priorityCode codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;Akut&quot; code=&quot;ATA1&quot;/&gt;
+    ...
+    &lt;/encounter&gt;
+&lt;/entry&gt;
+</code></pre>
+
+<p>In order to eg. update the priorityCode on the encounter either the entire document can be replaced or the encounter can be nullified and replaced with a new encounter containing all the same data but the <code>id</code>. A fragment of the updated CDA is shown below. </p>
+<pre><code class="xml">&lt;entry&gt;
+    &lt;encounter classCode=&quot;ENC&quot; moodCode=&quot;EVN&quot;&gt;
+    &lt;templateId root=&quot;1.2.208.176.7.1.10.87&quot;/&gt;
+    &lt;templateId root=&quot;2.16.840.1.113883.10.12.301&quot;/&gt;
+    &lt;id root=&quot;1.2.208.176.7.1.2.1&quot; extension=&quot;47041012-132F-5DE1-B16A-DF273F8F000F&quot;/&gt;
+    &lt;code nullFlavor=&quot;NA&quot;/&gt;
+    &lt;statusCode code=&quot;nullified&quot;/&gt;
+    &lt;/encounter&gt;
+&lt;/entry&gt;
+&lt;entry&gt;
+    &lt;encounter classCode=&quot;ENC&quot; moodCode=&quot;EVN&quot;&gt;
+    &lt;templateId root=&quot;1.2.208.176.7.1.10.74&quot;/&gt;
+    &lt;templateId root=&quot;2.16.840.1.113883.10.12.302&quot;/&gt;
+    &lt;id root=&quot;1.2.208.176.7.1.2.1&quot; extension=&quot;CB7F4122-9963-56B6-8A34-2FB4E7C640D7&quot;/&gt;
+    &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;fysisk fremmøde&quot; code=&quot;ALCA00&quot;/&gt;
+    &lt;effectiveTime&gt;
+        &lt;low value=&quot;20170216060000+0200&quot;/&gt;
+        &lt;high value=&quot;20170224120000+0200&quot;/&gt;
+    &lt;/effectiveTime&gt;
+    &lt;priorityCode codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;Akut i dagarbejdstiden, uden konsekvens for dagsprogram&quot; code=&quot;ATA11B&quot;/&gt;
+    ...
+    &lt;reference typeCode=&quot;REFR&quot;&gt;
+        &lt;templateId root=&quot;1.2.208.176.7.1.10.69&quot;/&gt;
+        &lt;templateId root=&quot;2.16.840.1.113883.10.12.324&quot;/&gt;
+        &lt;externalAct classCode=&quot;ACT&quot; moodCode=&quot;EVN&quot;&gt;
+            &lt;templateId root=&quot;1.2.208.176.7.1.10.65&quot;/&gt;
+            &lt;templateId root=&quot;2.16.840.1.113883.10.12.325&quot;/&gt;
+            &lt;id root=&quot;1.2.208.176.1.2.1&quot; extension=&quot;BBBFA3EA-2AD7-571C-986C-D72F7443BA4B&quot;/&gt;
+        &lt;/externalAct&gt;
+    &lt;/reference&gt;
+    &lt;/encounter&gt;
+&lt;/entry&gt;
+</code></pre>
+
+<h2 id="adding-new-procedures-to-a-previous-submitted-document">Adding new procedures to a previous submitted document</h2>
+<p>When in a need to add eg. new procedure to a previous submitted document the procedure can reference either an existing encounter or an existing episode of care. Both types of references are shown below. They must however not be present at the same time in submissions.</p>
+<pre><code class="xml">&lt;procedure classCode=&quot;PROC&quot; moodCode=&quot;EVN&quot;&gt;
+  &lt;templateId root=&quot;1.2.208.176.7.1.10.30&quot;/&gt;
+  &lt;templateId root=&quot;2.16.840.1.113883.10.12.306&quot;/&gt;
+  &lt;id root=&quot;1.2.208.176.7.1.2.1&quot; extension=&quot;7dfa91a1-e19e-57d0-bdbe-fea7f8582df5&quot;/&gt;
+  &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;Indlæggelse af intracerebralt trykmålingsudstyr&quot; code=&quot;KAAA27&quot;/&gt;
+  &lt;effectiveTime&gt;
+    &lt;low value=&quot;20170122084500+0200&quot;/&gt;
+    &lt;high value=&quot;20170122123000+0200&quot;/&gt;
+  &lt;/effectiveTime&gt;
+...
+    &lt;!-- External Episode of Care Reference --&gt;
+    &lt;reference typeCode=&quot;REFR&quot;&gt;
+        &lt;templateId root=&quot;1.2.208.176.7.1.10.69&quot;/&gt;
+        &lt;templateId root=&quot;2.16.840.1.113883.10.12.324&quot;/&gt;
+        &lt;externalAct classCode=&quot;ACT&quot; moodCode=&quot;EVN&quot;&gt;
+            &lt;templateId root=&quot;1.2.208.176.7.1.10.65&quot;/&gt;
+            &lt;templateId root=&quot;2.16.840.1.113883.10.12.325&quot;/&gt;
+            &lt;id root=&quot;1.2.208.176.1.2.1&quot; extension=&quot;bbbfa3ea-2ad7-571c-986c-d72f7443ba4b&quot;/&gt;
+        &lt;/externalAct&gt;
+    &lt;/reference&gt;
+
+    &lt;!-- External Encounter Reference --&gt;
+    &lt;reference typeCode=&quot;REFR&quot;&gt;
+        &lt;templateId root=&quot;1.2.208.176.7.1.10.69&quot;/&gt;
+        &lt;templateId root=&quot;2.16.840.1.113883.10.12.324&quot;/&gt;
+        &lt;externalAct classCode=&quot;ACT&quot; moodCode=&quot;EVN&quot;&gt;
+            &lt;templateId root=&quot;1.2.208.176.7.1.10.78&quot;/&gt;
+            &lt;templateId root=&quot;2.16.840.1.113883.10.12.325&quot;/&gt;
+            &lt;id root=&quot;1.2.208.176.1.2.1&quot; extension=&quot;47041012-132f-5de1-b16a-df273f8f000f&quot;/&gt;
+        &lt;/externalAct&gt;
+    &lt;/reference&gt;
+&lt;/procedure&gt;
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../links/index.html" class="btn btn-neutral float-right" title="Related material and links">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../interfacedefinitions/index.html" class="btn btn-neutral" title="Interface definition"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../interfacedefinitions/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../links/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>
