@@ -9,7 +9,10 @@ node {
   }
   dir('gh-pages') {
     stage('Checkout destination') {
-      git branch: 'gh-pages', credentialsId: 'scandihealth-git_lpr3-jenkins-master_github.com', url: 'git@github.com:scandihealth/lpr3-docs.git'
+      sshagent(['scandihealth-git_lpr3-jenkins-master_github.com']) {
+      sh 'git clone git@github.com:scandihealth/lpr3-docs.git'
+      sh 'git checkout gh-pages'
+      sh 'git pull'
     }
     stage('Collect build results') {
      sh 'cp -r ../master/site/* .' 
