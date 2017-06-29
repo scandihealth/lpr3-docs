@@ -49,7 +49,7 @@ The `location` attribute is used in the following way:
 
  * The value of `location` is split into one mandatory segment and three conditional segments having the following values `<document id>|||(<xpath expression>)|||(<business rule unique identifier>)|||(<line number>)`. `<document id>` is the DocumentEntry.uniqueId - see ["IHE IT Infrastructure (ITI TF-3) "](http://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol3.pdf) *(section 4.2.3.2.26)*. `<xpath expression>` is the conditional segment containing an XPath expression pointing into the document where the error is detected - this is present only when `<validation type>` is SCHEMATRON or BUSINESS_RULE. `<business rule unique identifier>` is the conditional segment containing the unique ID of the violated business rule - this is present only when `<validation type>` is BUSINESS_RULE.  `<line number>` is the line in the CDA document where the error is detected - this is present only when `<validation type>` is XDS. 
 
-`<business rule unique identifier>` is an identifier that is a combination of a maven coordinate of the drools bundle jar (the exportable KIE jar), the `LPR3 Fejlnummer` and the `LPR3 Fejl version` (`LPR3 Fejlnummer` and `LPR3 Fejl version` are terms already present in **LPR2**) separated by **#**.
+`<business rule unique identifier>` is an identifier that is a combination of a [maven coordinate](https://maven.apache.org/pom.html#Maven_Coordinates) of the drools bundle jar (the exportable KIE jar), the `LPR3 Fejlnummer` and the `LPR3 Fejl version` (`LPR3 Fejlnummer` and `LPR3 Fejl version` are terms already present in **LPR2**) separated by **#**.
 
 In the sample above, the value of the `<business rule unique identifier>` error with `codeContext` **BUSINESS_RULES** is the following: `dk.sds:lpr-rules:1.0.0#0141#1.1`. Here, the maven coordinate is **dk.sds:lpr-rules:1.0.0**, the LPR3 Fejlnummer is **00141** and the LPR3 Fejl version is **1.1**. 
 
@@ -66,8 +66,7 @@ In order to support both synchronous and asynchronous reporting three services e
 All three services adhere to the same system interface, making it up to the client to decide which service constallation is the best fit.
 
 ## IHE XDR
-The IHE XDR service implemented as part of LPR3 will implement and act as **Document Recipient** and will support transaction **ITI-41** but only metadata compliant with the Metadata-Limited Document Source will processed. 
-Only SOAP with MTOM/XOP optimized content will be processed. Use of HTTP compression is encouraged.
+The IHE XDR service implemented as part of LPR3 will implement and act as **Document Recipient** and will support transaction **ITI-41** but only metadata compliant with the **Metadata-Limited Document Source** will processed (see also [Danish Metadata profile](http://svn.medcom.dk/svn/drafts/Standarder/IHE/DK_profil_metadata/Metadata-v095.docx)). Only SOAP with MTOM/XOP optimized content will be processed. Use of HTTP compression is encouraged.
 
 ### Batch oriented reporting
 IHE XDR defines that submissions of mulitple documents pr. request are allowed as long as all documents are concerning the same patient. Hence, batch-oriented reporting is supported for a single patient having multiple documents to be reported (see ["IHE ITI TF-3"](http://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol3.pdf) *(section 4.2.1.2)*. If mulitple documents for a single patient are submitted in a single submission the documents shall <b>NOT</b> be different versions of each other as processing order is not guaranteed within a single submission.
