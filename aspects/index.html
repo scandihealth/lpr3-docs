@@ -107,6 +107,9 @@
     <li class="toctree-l3"><a href="#id-usage-and-referencing-in-lpr3">ID usage and referencing in LPR3</a></li>
     
 
+    <li class="toctree-l3"><a href="#updating-previously-submitted-entities">Updating previously submitted entities</a></li>
+    
+
     </ul>
                 </li>
     </ul>
@@ -271,7 +274,15 @@ This section contains the main elements <code>Resultatindberetning</code> and <c
 <p>The danish term '<a href="http://sundhedsdata.iterm.dk/?TermId=1853&amp;SrcLang=da&amp;TrgLang=en">Procedure</a>' can cover all three HL7 defined terms but doing so violates the standard. Hence, when reporting to LPR3, submitters of reports must differ between the types <code>Procedure</code>, <code>Observation</code> and <code>Act</code>. The distinction between these three types will documented using valuesets by <b>Sundhedsdatastyrelsen</b>.</p>
 <h2 id="id-usage-and-referencing-in-lpr3">ID usage and referencing in LPR3</h2>
 <p>Unique identifiers can be supplied by the submitter to almost all elements using <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier#Versions_3_and_5_.28namespace_name-based.29">UUID v5 identifiers</a>. Unique identifiers are needed when previously submitted entities needs to be referenced, removed or updated. If unique identifiers are not provided, internal references between the entities can be used and must be done using UUID v4 identifiers.</p>
-<p><code>Act</code>s, <code>Procedure</code>s and <code>Observation</code>s references the <code>Encounter</code>/<code>Episode of Care</code>, which means that e.g. nullifying the the <code>Encounter</code> also nullifies all entities that points toward the <code>Encounter</code>. Nullifying only the <code>Act</code>/<code>Procedure</code>/<code>Observation</code> that points towards the encounter removes only the entity itself and the encounter is left unchanged.</p>
+<p><code>Act</code>s, <code>Procedure</code>s and <code>Observation</code>s references the <code>Encounter</code>/<code>Episode of Care</code>, which means that e.g. nullifying the <code>Encounter</code> also nullifies all entities that points toward the <code>Encounter</code>. Nullifying only the <code>Act</code>/<code>Procedure</code>/<code>Observation</code> that points towards the encounter removes only the entity itself and the encounter is left unchanged. The same goes for nullifying an <code>Episode of Care</code> which removes all <code>Encounter</code>s and transitively all activities below it.</p>
+<h2 id="updating-previously-submitted-entities">Updating previously submitted entities</h2>
+<p>In order to support updating data that tends to change more frequently than other without having to reference all data on e.g. and <code>Encounter</code> or <code>Episode of Care</code> the following semantics are introduced:</p>
+<ul>
+<li>Entities that are uniquely identifiable given their UUIDv5-ids can be updated.</li>
+<li>If a document is submitted with <code>APND</code> as <code>relationship</code> (called an <em>Update_document</em>) and a document previously has been submitted and it contains entities with identifiers equal to the those found in <em>Update_document</em> then the entities will be replaced with those in <em>UD</em>.</li>
+<li>Entities referenced in this way must be located in the same <code>section</code> in both the original document and the <em>Update_document</em>.</li>
+<li>The replacing entity referenced in this manner replaces <b>ALL</b> data on the previous submitted entity, meaning that the update semantic can be considered as <b>full state</b> and giving it the full charactaristic of idempotence.</li>
+</ul>
               
             </div>
           </div>
