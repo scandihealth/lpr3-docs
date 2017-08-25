@@ -126,4 +126,12 @@ The danish term '[Procedure](http://sundhedsdata.iterm.dk/?TermId=1853&SrcLang=d
 ## ID usage and referencing in LPR3
 Unique identifiers can be supplied by the submitter to almost all elements using [UUID v5 identifiers](https://en.wikipedia.org/wiki/Universally_unique_identifier#Versions_3_and_5_.28namespace_name-based.29). Unique identifiers are needed when previously submitted entities needs to be referenced, removed or updated. If unique identifiers are not provided, internal references between the entities can be used and must be done using UUID v4 identifiers.
 
-`Act`s, `Procedure`s and `Observation`s references the `Encounter`/`Episode of Care`, which means that e.g. nullifying the the `Encounter` also nullifies all entities that points toward the `Encounter`. Nullifying only the `Act`/`Procedure`/`Observation` that points towards the encounter removes only the entity itself and the encounter is left unchanged.
+`Act`s, `Procedure`s and `Observation`s references the `Encounter`/`Episode of Care`, which means that e.g. nullifying the `Encounter` also nullifies all entities that points toward the `Encounter`. Nullifying only the `Act`/`Procedure`/`Observation` that points towards the encounter removes only the entity itself and the encounter is left unchanged. The same goes for nullifying an `Episode of Care` which removes all `Encounter`s and transitively all activities below it.
+
+## Updating previously submitted entities
+In order to support updating data that tends to change more frequently than other without having to reference all data on e.g. and `Encounter` or `Episode of Care` the following semantics are introduced:
+
+  * Entities that are uniquely identifiable given their UUIDv5-ids can be updated.
+  * If a document is submitted with `APND` as `relationship` (called an *Update_document*) and a document previously has been submitted and it contains entities with identifiers equal to the those found in *Update_document* then the entities will be replaced with those in *UD*.
+  * Entities referenced in this way must be located in the same `section` in both the original document and the *Update_document*.
+  * The replacing entity referenced in this manner replaces <b>ALL</b> data on the previous submitted entity, meaning that the update semantic can be considered as <b>full state</b> and giving it the full charactaristic of idempotence.
