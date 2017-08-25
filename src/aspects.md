@@ -77,7 +77,7 @@ More realistic samples for
  * deletion of data 
 
 ## Mapping to the logical model
-The following diagram illustrates the logical model of LPR3:
+The following diagram illustrates the logical data model of LPR3:
 ![](/img/LPR3.png)
 This model is mapped to CDA and divided into the following sections:
 
