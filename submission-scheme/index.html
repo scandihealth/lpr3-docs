@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Submission scheme - Landspatientregisteret 3 - Technical documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  <link href="../css/highlight.js/idea.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Submission scheme";
+    var mkdocs_page_input_path = "submission-scheme.md";
+    var mkdocs_page_url = "/submission-scheme/index.html";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="icon icon-home"> Landspatientregisteret 3 - Technical documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../index.html">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Documentation</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../aspects/index.html">Interface aspects and usage</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="index.html">Submission scheme</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#add-single-element">Add single element</a></li>
+    
+
+    <li class="toctree-l3"><a href="#update-single-element">Update single element</a></li>
+    
+
+    <li class="toctree-l3"><a href="#remove-single-element">Remove single element</a></li>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../interfacedefinitions/index.html">Interface definition</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../examples/index.html">Examples</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../links/index.html">Related material and links</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Landspatientregisteret 3 - Technical documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Documentation &raquo;</li>
+        
+      
+    
+    <li>Submission scheme</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="add-single-element">Add single element</h1>
+<table>
+<thead>
+<tr>
+<th>XPath</th>
+<th>Value</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/ClinicalDocument/id/@root</td>
+<td><em>SetId</em></td>
+<td>Only addendums to the same document set are allowed</td>
+</tr>
+<tr>
+<td>/ClinicalDocument/id/@extension</td>
+<td><em>ElementType</em> <strong>|</strong> <em>ElementUUID</em> <strong>^</strong> <em>ElementVersion</em></td>
+<td>The replacement document for a document containing an element must contain the same element</td>
+</tr>
+<tr>
+<td>/ClinicalDocument/setId/@root</td>
+<td><em>SetId</em></td>
+<td>Only addendums to the same document set are allowed</td>
+</tr>
+<tr>
+<td>/ClinicalDocument/versionNumber</td>
+<td><em>SetVersion</em></td>
+<td>Document-set wide concurrency control</td>
+</tr>
+<tr>
+<td>/ClinicalDocument/relatedDocument/@typeCode</td>
+<td><strong>APND</strong></td>
+<td>Document addendum</td>
+</tr>
+<tr>
+<td>/ClinicalDocument/relatedDocument/parentDocument/id/@root</td>
+<td><em>SetId</em></td>
+<td>Only addendums to the same document set are allowed</td>
+</tr>
+<tr>
+<td>/ClinicalDocument/relatedDocument/parentDocument/id/@extension</td>
+<td><strong>BASE |</strong> <em>SetId</em> <strong>^</strong> <em>BaseVersion</em></td>
+<td>Only addendums to base documents are allowed</td>
+</tr>
+<tr>
+<td>/ClinicalDocument/relatedDocument/parentDocument/setId/@root</td>
+<td><em>SetId</em></td>
+<td>Only addendums to the same document set are allowed</td>
+</tr>
+<tr>
+<td>/ClinicalDocument/relatedDocument/parentDocument/versionNumber</td>
+<td>(<em>SetVersion</em> - 1)</td>
+<td>Document-set wide concurrency control</td>
+</tr>
+<tr>
+<td>/ClinicalDocument/component/structuredBody/component/section/entry/*/id/@root</td>
+<td><em>SetId</em></td>
+<td>External references can only be made to elements within the same document set</td>
+</tr>
+<tr>
+<td>/ClinicalDocument/component/structuredBody/component/section/entry/*/id/@extension</td>
+<td><em>ElementType</em> <strong>|</strong> <em>ElementUUID</em></td>
+<td>The replacement document for a document containing an element must contain the same element</td>
+</tr>
+<tr>
+<td>//external*/id/@root</td>
+<td><em>SetId</em></td>
+<td>External references can only be made to elements within the same document set</td>
+</tr>
+<tr>
+<td>//external*/id/@extension</td>
+<td><em>ReferencingElementType</em> <strong>|</strong> <em>ReferencingElementUUID</em></td>
+<td>External references must point to elements of the expected type</td>
+</tr>
+</tbody>
+</table>
+<h1 id="update-single-element">Update single element</h1>
+<table>
+<thead>
+<tr>
+<th>XPath</th>
+<th>Value</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/ClinicalDocument/id/@root</td>
+<td><em>SetId</em></td>
+<td>Only replacements to the same document set are allowed</td>
+</tr>
+<tr>
+<td>/ClinicalDocument/id/@extension</td>
+<td><em>ElementType</em> <strong>|</strong> <em>ElementUUID</em> <strong>^</strong> <em>ElementVersion</em></td>
+<td>The replacement document for a document containing an element must contain a new verion of the same element</td>
+</tr>
+<tr>
+<td>/ClinicalDocument/setId/@root</td>
+<td><em>SetId</em></td>
+<td>Only replacements to the same document set are allowed</td>
+</tr>
+<tr>
+<td>/ClinicalDocument/versionNumber</td>
+<td><em>SetVersion</em></td>
+<td>Document-set wide concurrency control</td>
+</tr>
+<tr>
+<td>/ClinicalDocument/relatedDocument/@typeCode</td>
+<td><strong>RPLC</strong></td>
+<td>Document replacement</td>
+</tr>
+<tr>
+<td>/ClinicalDocument/relatedDocument/parentDocument/id/@root</td>
+<td><em>SetId</em></td>
+<td>Only replacements to the same document set are allowed</td>
+</tr>
+<tr>
+<td>/ClinicalDocument/relatedDocument/parentDocument/id/@extension</td>
+<td><em>ElementType</em> <strong>|</strong> <em>ElementUUID</em> <strong>^</strong> (<em>ElementVersion</em> - 1)</td>
+<td>The replacement document for a document containing an element must contain a new verion of the same element</td>
+</tr>
+<tr>
+<td>/ClinicalDocument/relatedDocument/parentDocument/setId/@root</td>
+<td><em>SetId</em></td>
+<td>Only replacements to the same document set are allowed</td>
+</tr>
+<tr>
+<td>/ClinicalDocument/relatedDocument/parentDocument/versionNumber</td>
+<td>(<em>SetVersion</em> - 1)</td>
+<td>Document-set wide concurrency control</td>
+</tr>
+<tr>
+<td>/ClinicalDocument/component/structuredBody/component/section/entry/*/id/@root</td>
+<td><em>SetId</em></td>
+<td>External references can only be made to elements within the same document set</td>
+</tr>
+<tr>
+<td>/ClinicalDocument/component/structuredBody/component/section/entry/*/id/@extension</td>
+<td><em>ElementType</em> <strong>|</strong> <em>ElementUUID</em></td>
+<td>The replacement document for a document containing an element must contain the same element</td>
+</tr>
+<tr>
+<td>//external*/id/@root</td>
+<td><em>SetId</em></td>
+<td>External references can only be made to elements within the same document set</td>
+</tr>
+<tr>
+<td>//external*/id/@extension</td>
+<td><em>ReferencingElementType</em> <strong>|</strong> <em>ReferencingElementUUID</em></td>
+<td>External references must point to elements of the expected type</td>
+</tr>
+</tbody>
+</table>
+<h1 id="remove-single-element">Remove single element</h1>
+<table>
+<thead>
+<tr>
+<th>XPath</th>
+<th>Value</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/ClinicalDocument/id/@root</td>
+<td><em>SetId</em></td>
+<td>Only removals to the same document set are allowed</td>
+</tr>
+<tr>
+<td>/ClinicalDocument/id/@extension</td>
+<td><strong>DEL</strong> <strong>|</strong> <em>ElementType</em> <strong>|</strong> <em>ElementUUID</em> <strong>^</strong> <em>ElementVersion</em></td>
+<td>The removal document removes a specific version of the element</td>
+</tr>
+<tr>
+<td>/ClinicalDocument/setId/@root</td>
+<td><em>SetId</em></td>
+<td>Only removals to the same document set are allowed</td>
+</tr>
+<tr>
+<td>/ClinicalDocument/versionNumber</td>
+<td><em>SetVersion</em></td>
+<td>Document-set wide concurrency control</td>
+</tr>
+<tr>
+<td>/ClinicalDocument/relatedDocument/@typeCode</td>
+<td><strong>RPLC</strong></td>
+<td>Document replacement</td>
+</tr>
+<tr>
+<td>/ClinicalDocument/relatedDocument/parentDocument/id/@root</td>
+<td><em>SetId</em></td>
+<td>Only removals to the same document set are allowed</td>
+</tr>
+<tr>
+<td>/ClinicalDocument/relatedDocument/parentDocument/id/@extension</td>
+<td><em>ElementType</em> <strong>|</strong> <em>ElementUUID</em> <strong>^</strong> <em>ElementVersion</em></td>
+<td>The removal document removes a specific version of the element</td>
+</tr>
+<tr>
+<td>/ClinicalDocument/relatedDocument/parentDocument/setId/@root</td>
+<td><em>SetId</em></td>
+<td>Only removals to the same document set are allowed</td>
+</tr>
+<tr>
+<td>/ClinicalDocument/relatedDocument/parentDocument/versionNumber</td>
+<td>(<em>SetVersion</em> - 1)</td>
+<td>Document-set wide concurrency control</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../interfacedefinitions/index.html" class="btn btn-neutral float-right" title="Interface definition">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../aspects/index.html" class="btn btn-neutral" title="Interface aspects and usage"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../aspects/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../interfacedefinitions/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>
