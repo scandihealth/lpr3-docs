@@ -4,6 +4,7 @@ pages:
 - Home: index.md
 - Documentation:
   - Interface aspects and usage: aspects.md
+  - Submission scheme: submission-scheme.md
 - Interface definition: interfacedefinitions.md
 - Examples: examples.md  
 - Related material and links: links.md
