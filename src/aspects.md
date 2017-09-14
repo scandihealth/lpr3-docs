@@ -16,7 +16,9 @@ All reported documents (initial state and corrections) must be versioned using C
 
 Note: *Replace* will replace all previous documents and addendums.
 
-This stated use of id, setId and versionNumber ensures that no updates to documents are appended in the wrong order. While this somewhat contradicts the standard (see section 4.2.1.7, 4.2.1.8 and 4.2.3.1 - [CDA R2](http://www.hl7.org/implement/standards/product_brief.cfm?product_id=7)), it is the least ambiguous way to handle document updates.![](/img/L-cda_figure1-changed.png)
+This stated use of id, setId and versionNumber ensures that no updates to documents are appended in the wrong order - a refinement of what is stated in sections 4.2.1.7, 4.2.1.8 and 4.2.3.1 - *"Note that version number must be incremented by one when a report is replaced, but can also be incremented more often to meet local requirements."* - [CDA R2](http://www.hl7.org/implement/standards/product_brief.cfm?product_id=7)).
+
+.![](/img/L-cda_figure1-changed.png)
 
 ## What rules apply and what errors can be reported and how
 All documents submitted to LPR3 are validated at three levels:
@@ -133,5 +135,8 @@ In order to support updating data that tends to change more frequently than othe
 
   * Entities that are uniquely identifiable given their UUIDv5-ids can be updated.
   * If a document is submitted with `APND` as `relationship` (called an *Update_document*) and a document previously has been submitted and it contains entities with identifiers equal to the those found in *Update_document* then the entities will be replaced with those in *UD*.
-  * Entities referenced in this way must be located in the same `section` in both the original document and the *Update_document*.
-  * The replacing entity referenced in this manner replaces <b>ALL</b> data on the previous submitted entity, meaning that the update semantic can be considered as <b>full state</b> and giving it the full charactaristic of idempotence.
+  * Entities referenced in this way must be located in the same `section` and must be of same type in both the original document and the *Update_document*.
+  * The replacing entity referenced in this manner replaces <b>ALL</b> data on the previous submitted entity, meaning that the update semantic can be considered as <b>full state</b>.
+  * The updating entity <b>SHALL</b> use the same ID as the entity it replaces
+  * The updating entity <b>SHALL</b> refer to the previous entity using `reference` with typeCode `RPLC`.
+  * The previous entity <b>SHALL</b> be refered to using `external[Act|Observation|Procedure|Encounter]`.
