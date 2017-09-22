@@ -20,8 +20,16 @@ This stated use of id, setId and versionNumber ensures that no updates to docume
 
 .![](/img/L-cda_figure1-changed.png)
 
+## Rules for updating documents
+  * First submitted document constitutes the ‘base document set’.
+  * Update of entries and/or nullifying entries in the ‘base document set’ are contained within 'addendum documents' to the 'base document set'.
+  * Submitted 'addendum document's becomes part of the ‘base document set’. 
+  * Multiple ‘addendum document’s  are allowed. An ‘addendum document’ can contain multiple updated entries and/or nullified entries that points towards entries in previously submitted ‘addendum document’s or entries part of the ‘base document set’.
+  * Once an entry is nullified, it is permanently removed.
+  * Replacements can be done on ‘base document set’ level. If a document with typeCode ‘RPLC’ submitted, all previously received addendums are removed as well as the ‘base document set’. The replacing document is then the new ‘base document set’.
+
 ## What rules apply and what errors can be reported and how
-All documents submitted to LPR3 are validated at three levels:
+All documents submitted to LPR3 are validated at the following levels:
 
  1. Execute schema validation (XSD) according to CDA R2 standard.
  2. Execute schematron validation (SHCEMATRON) according to the profile specificed at the ART-DECOR site
@@ -29,7 +37,7 @@ All documents submitted to LPR3 are validated at three levels:
 
 ![](https://www.websequencediagrams.com/cgi-bin/cdraw?lz=dGl0bGUgVmFsaWRhdGlvbiBzZXF1ZW5jZQoKUmVnaW9uYWwgRUhSLT5MUFIzIFdTOiBJSEUgWERSIFBuUiBDREEtREsKbm90ZSBsZWZ0IG9mIAAgCWViWE1MIGFuZCBER1dTIHYAWwkKb3B0IFByb3RvY29sIGZhaWx1cmUKICAgADQILS0-AHEMOiBJbmNvcnJlY3QgdXNlIG9mAIEABQBRBVBuUiB0cmFuc2FjAFYFZW5kAIEJBm92ZXIAgQMJAIFUDHRlcCAxCgBiCD4AgXALRW5naW5lOiBTY2hlbWEgYXNzZXJ0aW9ucwoAFBEtAIIHClJlcG9ydGVkIGVycm9ycwCBWAVMYWNraW5nIHMARAZjb25mb3JtYW5jAIFJHkRvY3VtZW50IGRvZXMgbm90IGNvbXBseSB3aXRoIHRoZSBzdGFuZGFyZABTB3MAgUknMgCBTSN0cm9uAIE8OACCUCIzAIJVHUJ1c2luZXNzIHJ1bGVzAIJCOACEJhhBY2tub3dsZWRnZQCCWQVhbmQAhQMLIHIAgzwFCgo&s=qsd)
 
-Errors in submitted documents can be found at any of the three levels and reported on all three levels at the same time. While level 1 is static and level 2 should be considered static (variance can occour in valuesets dependening on the business needs), level 3 is considered dynamic in that sense that business rules are subject to change or be deprecated over time. Level 3 is referred to as <b>"Dyb validering"</b> in the reporting guidelines supplied by <b>Sundhedsdatastyrelsen</b>.
+Errors in submitted documents can be found at any of the levels and reported on all levels at the same time. While level 1 is static and level 2 should be considered static (variance can occour in valuesets dependening on the business needs), level 3 is considered dynamic in that sense that business rules are subject to change or be deprecated over time. Level 3 is referred to as <b>"Dyb validering"</b> in the reporting guidelines supplied by <b>Sundhedsdatastyrelsen</b>.
 
 All rules are exportable in the formats XSD, Schematron and KIE jar (kjar) files, respectively. The XSD and Schematron files does not include LPR3 assigned error codes - instead, when executed on a document, the XSD and Schematron reported errors will point out exactly where in the document the errors are and what has been violated. That said, XSD reported errors and Schematron reported errors will each be reported within their own category. Below illustrates an example of error codes wrapped in a RegistryResponse according to IHE XDR/XDS ebXml:
 
@@ -49,7 +57,7 @@ The `codeContext` attribute is used in the following way:
 
 The `location` attribute is used in the following way:
 
- * The value of `location` is split into one mandatory segment and three conditional segments having the following values `<document id>|||(<xpath expression>)|||(<business rule unique identifier>)|||(<line number>)`. `<document id>` is the DocumentEntry.uniqueId - see ["IHE IT Infrastructure (ITI TF-3) "](http://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol3.pdf) *(section 4.2.3.2.26)*. `<xpath expression>` is the conditional segment containing an XPath expression pointing into the document where the error is detected - this is present only when `<validation type>` is SCHEMATRON or BUSINESS_RULE. `<business rule unique identifier>` is the conditional segment containing the unique ID of the violated business rule - this is present only when `<validation type>` is BUSINESS_RULE.  `<line number>` is the line in the CDA document where the error is detected - this is present only when `<validation type>` is XDS. 
+ * The value of `location` is split into one mandatory segment and three conditional segments having the following values `<document id>|||(<xpath expression>)|||(<business rule unique identifier>)|||(<line number>)`. `<document id>` is the DocumentEntry.uniqueId - see ["IHE IT Infrastructure (ITI TF-3) "](http://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol3.pdf) *(section 4.2.3.2.26)*. `<xpath expression>` is the conditional segment containing an XPath expression pointing into the document where the error is detected - this is present only when `<validation type>` is SCHEMATRON or BUSINESS_RULE. `<business rule unique identifier>` is the conditional segment containing the unique ID of the violated business rule - this is present only when `<validation type>` is BUSINESS_RULE.  `<line number>` is the line in the CDA document where the error is detected - this is present only when `<validation type>` is XSD. 
 
 `<business rule unique identifier>` is an identifier that is a combination of a [maven coordinate](https://maven.apache.org/pom.html#Maven_Coordinates) of the drools bundle jar (the exportable KIE jar), the `LPR3 Fejlnummer` and the `LPR3 Fejl version` (`LPR3 Fejlnummer` and `LPR3 Fejl version` are terms already present in **LPR2**) separated by **#**.
 
@@ -72,11 +80,6 @@ The IHE XDR service implemented as part of LPR3 will implement and act as **Docu
 
 ### Batch oriented reporting
 IHE XDR defines that submissions of mulitple documents pr. request are allowed as long as all documents are concerning the same patient. Hence, batch-oriented reporting is supported for a single patient having multiple documents to be reported (see ["IHE ITI TF-3"](http://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol3.pdf) *(section 4.2.1.2)*. If mulitple documents for a single patient are submitted in a single submission the documents shall <b>NOT</b> be different versions of each other as processing order is not guaranteed within a single submission.
-
-More realistic samples for 
- * creation of data
- * update of data
- * deletion of data 
 
 ## Mapping to the logical model
 The following diagram illustrates the logical data model of LPR3:
@@ -123,20 +126,21 @@ HL7 defines procedures, acts and observations (the main building blocks of the L
 <b>Act:</b>
 > *A record of something that is being done, has been done, can be done, or is intended or requested to be done.* [*- see 3.1.1 in the specification*](http://www.hl7.org/implement/standards/product_brief.cfm?product_id=7)
 
-The danish term '[Procedure](http://sundhedsdata.iterm.dk/?TermId=1853&SrcLang=da&TrgLang=en)' can cover all three HL7 defined terms but doing so violates the standard. Hence, when reporting to LPR3, submitters of reports must differ between the types `Procedure`, `Observation` and `Act`. The distinction between these three types will documented using valuesets by <b>Sundhedsdatastyrelsen</b>.
+The danish term '[Procedure](http://sundhedsdata.iterm.dk/?TermId=1853&SrcLang=da&TrgLang=en)' can cover all three HL7 defined terms but doing so violates the standard. Hence, when reporting to LPR3, submitters of reports must differ between the types `Procedure`, `Observation` and `Act`. The distinction between these three types will documented using valuesets provided by <b>Sundhedsdatastyrelsen</b>.
 
 ## ID usage and referencing in LPR3
 Unique identifiers can be supplied by the submitter to almost all elements using [UUID v5 identifiers](https://en.wikipedia.org/wiki/Universally_unique_identifier#Versions_3_and_5_.28namespace_name-based.29). Unique identifiers are needed when previously submitted entities needs to be referenced, removed or updated. If unique identifiers are not provided, internal references between the entities can be used and must be done using UUID v4 identifiers.
 
 `Act`s, `Procedure`s and `Observation`s references the `Encounter`/`Episode of Care`, which means that e.g. nullifying the `Encounter` also nullifies all entities that points toward the `Encounter`. Nullifying only the `Act`/`Procedure`/`Observation` that points towards the encounter removes only the entity itself and the encounter is left unchanged. The same goes for nullifying an `Episode of Care` which removes all `Encounter`s and transitively all activities below it.
 
-## Updating previously submitted entities
-In order to support updating data that tends to change more frequently than other without having to reference all data on e.g. and `Encounter` or `Episode of Care` the following semantics are introduced:
+## Rules of engagement for updating and replacing entries
+In order to support updating data that tends to change more frequently than other without having to reference all data on e.g. and `Encounter` or `Episode of Care` the following semantics are supported:
 
-  * Entities that are uniquely identifiable given their UUIDv5-ids can be updated.
-  * If a document is submitted with `APND` as `relationship` (called an *Update_document*) and a document previously has been submitted and it contains entities with identifiers equal to the those found in *Update_document* then the entities will be replaced with those in *UD*.
-  * Entities referenced in this way must be located in the same `section` and must be of same type in both the original document and the *Update_document*.
-  * The replacing entity referenced in this manner replaces <b>ALL</b> data on the previous submitted entity, meaning that the update semantic can be considered as <b>full state</b>.
-  * The updating entity <b>SHALL</b> use the same ID as the entity it replaces
-  * The updating entity <b>SHALL</b> refer to the previous entity using `reference` with typeCode `RPLC`.
-  * The previous entity <b>SHALL</b> be refered to using `external[Act|Observation|Procedure|Encounter]`.
+  * Entries that are uniquely identifiable given their UUIDv5-ids can be updated.
+  * If a document is submitted with `APND` as `relationship` (*addendum document*) and a document previously has been submitted and it contains entries with identifiers equal to the those found in *addendum document* then the entities will be replaced with those in *addendum document*.
+  * Entries referenced in this way must be located in the same `section` and must be of same type in both the original document and the *addendum document*.
+  * The replacing entry referenced in this manner replaces <b>ALL</b> data on the previous submitted entry, meaning that the update semantic can be considered as <b>full state</b>.
+  * The updating entry <b>SHALL</b> refer to the previous entry using `reference` with typeCode `RPLC`. The `id` of the `reference` <b>SHALL</b> match the entry to be updated.
+  * The previous entry <b>SHALL</b> be refered to using `external[Act|Observation|Procedure|Encounter]`.
+  
+These stated rules follows the approach outlined by IHE in the draft specification [CDA Entry Content Modules](http://wiki.ihe.net/index.php/CDA_Entry_Content_Modules#Update_Entry_1.3.6.1.4.1.19376.1.5.3.1.4.16)
