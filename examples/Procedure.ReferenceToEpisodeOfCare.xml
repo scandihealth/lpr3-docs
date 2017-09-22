@@ -1,0 +1,115 @@
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="urn:hl7-org:v3">
+	<realmCode code="DK" />
+	<typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3" />
+	<templateId root="1.2.208.176.7.1.10.71" />
+	<templateId root="2.16.840.1.113883.10.12.2" />
+	<templateId root="2.16.840.1.113883.10.12.1" />
+	<id root="4B7F555E-4AF5-527A-81A3-E67A322E5B8A" />
+	<code code="34133-9" codeSystem="2.16.840.1.113883.6.1"
+		codeSystemName="LOINC" displayName="Summary of episode note" />
+	<title>Indberetning af procedure uden kontakt med reference til
+		forløbselement</title>
+	<effectiveTime value="20120912000000-0000" />
+	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" />
+	<setId root="06C20C50-87F0-558B-A16F-B3F3B045AF3B" />
+	<versionNumber value="1" />
+	<recordTarget>
+		<templateId root="1.2.208.176.7.1.10.101" />
+		<templateId root="2.16.840.1.113883.10.12.101" />
+		<patientRole classCode="PAT">
+			<templateId root="1.2.208.176.7.1.10.107" />
+			<id root="1.2.208.176.1.2" extension="08119675AG1"
+				assigningAuthorityName="Region Nordjylland" />
+			<addr use="HP">
+				<streetAddressLine>P.O. Pedersens Vej 2</streetAddressLine>
+				<postalCode>8200</postalCode>
+				<city>Aarhus N</city>
+				<county>751</county>
+				<country>5100</country>
+				<useablePeriod xsi:type="IVL_TS">
+					<low value="20170201000000+0100" />
+					<high value="20170301000000+0100" />
+				</useablePeriod>
+			</addr>
+			<patient classCode="PSN">
+				<name>
+					<family>Soort-Nielsen</family>
+					<given>Jakob</given>
+				</name>
+				<administrativeGenderCode code="M"
+					displayName="Male" codeSystem="2.16.840.1.113883.5.1" />
+			</patient>
+		</patientRole>
+	</recordTarget>
+	<author typeCode="AUT">
+		<templateId root="1.2.208.176.7.10.102" />
+		<templateId root="2.16.840.1.113883.10.12.102" />
+		<time value="20170228101500+0100" />
+		<assignedAuthor classCode="ASSIGNED">
+			<id nullFlavor="NI" />
+			<representedOrganization classCode="ORG"
+				determinerCode="INSTANCE">
+				<id root="1.2.208.176.1.1" extension="6071000016008"
+					assigningAuthorityName="SOR" />
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<custodian typeCode="CST">
+		<templateId root="1.2.208.176.7.1.10.103" />
+		<templateId root="2.16.840.1.113883.10.12.104" />
+		<assignedCustodian classCode="ASSIGNED">
+			<representedCustodianOrganization
+				classCode="ORG" determinerCode="INSTANCE">
+				<id root="2.16.840.1.113883.2.24.1.1" extension="25469364"
+					assigningAuthorityName="Erhvervs- og Selskabsstyrelsen" />
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<component contextConductionInd="true">
+		<structuredBody>
+			<component>
+				<section>
+					<templateId root="1.2.208.176.7.1.10.76" />
+					<templateId root="2.16.840.1.113883.10.12.201" />
+					<entry typeCode="COMP">
+						<act classCode="ACT" moodCode="EVN">
+							<templateId root="1.2.208.176.7.1.10.25" />
+							<templateId root="2.16.840.1.113883.10.12.301" />
+							<id root="1.2.208.176.7.1.2.1" extension="50009866-1b81-53fd-bd67-b132a68415fa" />
+							<id root="1.2.208.176.7.1.2.2" extension="94ff6bdb-2075-43de-ba33-7dafd7dc66cc" />
+							<code codeSystemName="Sundhedsvæsenets Klassifikations System"
+								codeSystem="1.2.208.176.2.4" displayName="Stråleplanlægning - individuel 3D konform (CT)"
+								code="BWGA2A" />
+							<effectiveTime>
+								<low value="20170112100000+0200" />
+								<high value="20170112110000+0200" />
+							</effectiveTime>
+							<participant typeCode="PRF">
+								<templateId root="1.2.208.176.7.1.10.16" />
+								<templateId root="2.16.840.1.113883.10.12.321" />
+								<participantRole classCode="ROL">
+									<code codeSystemName="Sundhedsvæsenets Klassifikations System"
+										codeSystem="1.2.208.176.2.4" displayName="Overradiograf" code="APFE0" />
+									<scopingEntity classCode="ORG">
+										<id root="1.2.208.176.1.1" extension="275861000016001"
+											assigningAuthorityName="SOR" />
+									</scopingEntity>
+								</participantRole>
+							</participant>
+							<reference typeCode="REFR">
+								<templateId root="1.2.208.176.7.1.10.69" />
+								<templateId root="2.16.840.1.113883.10.12.324" />
+								<externalAct classCode="ACT" moodCode="EVN">
+									<templateId root="1.2.208.176.7.1.10.65" />
+									<templateId root="2.16.840.1.113883.10.12.325" />
+									<id root="1.2.208.176.7.1.2.1" extension="bbbfa3ea-2ad7-571c-986c-d72f7443ba4b" />
+								</externalAct>
+							</reference>
+						</act>
+					</entry>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>

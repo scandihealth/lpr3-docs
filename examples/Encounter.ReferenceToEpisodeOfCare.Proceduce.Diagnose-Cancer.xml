@@ -1,0 +1,422 @@
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="urn:hl7-org:v3">
+	<realmCode code="DK" />
+	<typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3" />
+	<templateId root="1.2.208.176.7.1.10.71" />
+	<templateId root="2.16.840.1.113883.10.12.2" />
+	<templateId root="2.16.840.1.113883.10.12.1" />
+	<id root="4B7F555E-4AF5-527A-81A3-E67A322E5B8A" />
+	<code code="34133-9" codeSystem="2.16.840.1.113883.6.1"
+		codeSystemName="LOINC" displayName="Summary of episode note" />
+	<title>Indberetning af komplet kontakt med reference til forløbselement
+		og med tilhørende procedurer og diagnoser og til diagnoserne (cancer)
+		hørende metastaser og lokalrecidiv</title>
+	<effectiveTime value="20120912000000-0000" />
+	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" />
+	<setId root="06C20C50-87F0-558B-A16F-B3F3B045AF3B" />
+	<versionNumber value="1" />
+	<recordTarget>
+		<templateId root="1.2.208.176.7.1.10.101" />
+		<templateId root="2.16.840.1.113883.10.12.101" />
+		<patientRole classCode="PAT">
+			<templateId root="1.2.208.176.7.1.10.107" />
+			<id root="1.2.208.176.1.2" extension="08119675AG1"
+				assigningAuthorityName="Region Nordjylland" />
+			<addr use="HP">
+				<streetAddressLine>P.O. Pedersens Vej 2</streetAddressLine>
+				<postalCode>8200</postalCode>
+				<city>Aarhus N</city>
+				<county>751</county>
+				<country>5100</country>
+				<useablePeriod xsi:type="IVL_TS">
+					<low value="20170201000000+0100" />
+					<high value="20170301000000+0100" />
+				</useablePeriod>
+			</addr>
+			<patient classCode="PSN">
+				<name>
+					<family>Soort-Nielsen</family>
+					<given>Jakob</given>
+				</name>
+				<administrativeGenderCode code="M"
+					displayName="Male" codeSystem="2.16.840.1.113883.5.1" />
+			</patient>
+		</patientRole>
+	</recordTarget>
+	<author typeCode="AUT">
+		<templateId root="1.2.208.176.7.10.102" />
+		<templateId root="2.16.840.1.113883.10.12.102" />
+		<time value="20170228101500+0100" />
+		<assignedAuthor classCode="ASSIGNED">
+			<id nullFlavor="NI" />
+			<representedOrganization classCode="ORG"
+				determinerCode="INSTANCE">
+				<id root="1.2.208.176.1.1" extension="6071000016008"
+					assigningAuthorityName="SOR" />
+			</representedOrganization>
+		</assignedAuthor>
+	</author>
+	<custodian typeCode="CST">
+		<templateId root="1.2.208.176.7.1.10.103" />
+		<templateId root="2.16.840.1.113883.10.12.104" />
+		<assignedCustodian classCode="ASSIGNED">
+			<representedCustodianOrganization
+				classCode="ORG" determinerCode="INSTANCE">
+				<id root="2.16.840.1.113883.2.24.1.1" extension="25469364"
+					assigningAuthorityName="Erhvervs- og Selskabsstyrelsen" />
+			</representedCustodianOrganization>
+		</assignedCustodian>
+	</custodian>
+	<component contextConductionInd="true">
+		<structuredBody>
+			<component>
+				<section>
+					<templateId root="1.2.208.176.7.1.10.75" />
+					<templateId root="2.16.840.1.113883.10.12.201" />
+					<entry typeCode="COMP">
+						<!-- choice: 1..1 include template 1.2.208.176.7.1.10.74 'DK Encounter' 
+							(dynamic) 1..1 include template 1.2.208.176.7.1.10.87 'DK Nullify Encounter 
+							Act' (dynamic) 1..1 -->
+						<encounter classCode="ENC" moodCode="EVN">
+							<templateId root="1.2.208.176.7.1.10.74" />
+							<templateId root="2.16.840.1.113883.10.12.302" />
+							<id root="1.2.208.176.7.1.2.1" extension="7dfa91a1-e19e-57d0-bdbe-fea7f8582df6" />
+							<code code="DZ400B" codeSystem="1.2.208.176.2.4"
+								codeSystemName="Sundhedsvæsenets Klassifikations System" />
+							<effectiveTime value="20160222110000+0200">
+								<low value="20170222110000+0200" />
+							</effectiveTime>
+							<priorityCode code="planlagt" codeSystem="1.2.208.176.2.4"
+								codeSystemName="Sundhedsvæsenets Klassifikations System" />
+							<!-- include template 1.2.208.176.7.1.10.49 'DK Responsible Unit Participant 
+								(Body)' (dynamic) .. O -->
+							<participant typeCode="RESP">
+								<templateId root="1.2.208.176.7.1.10.49" />
+								<templateId root="2.16.840.1.113883.10.12.321" />
+								<participantRole classCode="ROL">
+									<scopingEntity classCode="ORG">
+										<id root="1.2.208.176.1.1" extension="276231000016004"
+											assigningAuthorityName="SOR" />
+									</scopingEntity>
+								</participantRole>
+							</participant>
+							<!-- include template 1.2.208.176.7.1.10.50 'DK Service Delivery Location 
+								Participant (Body)' (dynamic) .. O -->
+							<participant typeCode="LOC">
+								<templateId root="1.2.208.176.7.1.10.50" />
+								<templateId root="2.16.840.1.113883.10.12.321" />
+								<time>
+									<low value="20170222120000+0200" />
+									<high value="20170222130000+0200" />
+								</time>
+								<participantRole classCode="SDLOC">
+									<code codeSystemName="Sundhedsvæsenets Klassifikations System"
+										codeSystem="1.2.208.176.2.4" displayName="længereværende fravær med aftale"
+										code="ALCF02" />
+									<id root="1.2.208.176.1.1" extension="276231000016004"
+										assigningAuthorityName="SOR" />
+								</participantRole>
+							</participant>
+							<entryRelationship typeCode="REFR">
+								<!-- include template 1.2.208.176.7.1.10.7 'DK Payment Contract Act' 
+									(dynamic) .. O -->
+								<act classCode="ACT" moodCode="EVN">
+									<templateId root="1.2.208.176.7.1.10.7" />
+									<id root="1.2.208.176.2.4" extension="--example only--" />
+									<code code="ALFA3" codeSystem="1.2.208.176.2.4" />
+									<effectiveTime>
+										<low value="20170222120000+0200" />
+										<high value="20170222130000+0200" />
+									</effectiveTime>
+									<participant typeCode="IND">
+										<!-- include template 1.2.208.176.7.1.10.8 'DK Payment Contract 
+											Payor Participant (Body) Ex' (dynamic) .. O -->
+										<templateId root="2.16.840.1.113883.10.12.321" />
+										<templateId root="1.2.208.176.7.1.10.8" />
+										<participantRole classCode="PAYOR">
+											<scopingEntity classCode="ORG">
+												<id root="1.2.208.176.2.4" extension="486811000016002"
+													assigningAuthorityName="Sundhedsdatastyrelsen" />
+											</scopingEntity>
+										</participantRole>
+									</participant>
+									<entryRelationship typeCode="COMP">
+										<!-- include template 1.2.208.176.7.1.10.10 'DK Specialization 
+											Level Act Ex' (dynamic) .. O -->
+										<act classCode="ACT" moodCode="EVN">
+											<templateId root="1.2.208.176.7.1.10.10" />
+											<templateId root="2.16.840.1.113883.10.12.301" />
+											<code codeSystemName="Sundhedsvæsenets Klassifikations System"
+												codeSystem="1.2.208.176.2.4" displayName="højt specialiseret funktion"
+												code="ALFC4" />
+										</act>
+									</entryRelationship>
+								</act>
+							</entryRelationship>
+							<entryRelationship typeCode="RSON">
+								<!-- include template 1.2.208.176.7.1.10.48 'DK Encounter Reason 
+									Act' (dynamic) .. O -->
+								<act classCode="REG" moodCode="EVN">
+									<templateId root="1.2.208.176.7.1.10.48" />
+									<code code="ALCC01" codeSystem="1.2.208.176.2.4"
+										codeSystemName="Sundhedsvæsenets Klassifikations System" />
+								</act>
+							</entryRelationship>
+							<!-- include template 1.2.208.176.7.1.10.69 'DK External Episode Of 
+								Care Reference' (dynamic) .. O -->
+							<reference typeCode="REFR">
+								<templateId root="1.2.208.176.7.1.10.69" />
+								<templateId root="2.16.840.1.113883.10.12.324" />
+								<externalAct classCode="ACT" moodCode="EVN">
+									<templateId root="1.2.208.176.7.1.10.65" />
+									<templateId root="2.16.840.1.113883.10.12.325" />
+									<id root="1.2.208.176.7.1.2.1" extension="bbbfa3ea-2ad7-571c-986c-d72f7443ba4b" />
+								</externalAct>
+							</reference>
+						</encounter>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<!-- Section containing added procedures -->
+				<section>
+					<templateId root="1.2.208.176.7.1.10.76" />
+					<templateId root="2.16.840.1.113883.10.12.201" />
+					<entry typeCode="COMP">
+						<act classCode="ACT" moodCode="EVN">
+							<templateId root="1.2.208.176.7.1.10.25" />
+							<templateId root="2.16.840.1.113883.10.12.301" />
+							<id root="1.2.208.176.7.1.2.1" extension="50009866-1b81-53fd-bd67-b132a68415fa" />
+							<id root="1.2.208.176.7.1.2.2" extension="94ff6bdb-2075-43de-ba33-7dafd7dc66cc" />
+							<code codeSystemName="Sundhedsvæsenets Klassifikations System"
+								codeSystem="1.2.208.176.2.4" displayName="Behandling med proteasehæmmer"
+								code="BPHM91" />
+							<effectiveTime>
+								<low value="20170115080000+0200" />
+								<high value="20170115083000+0200" />
+							</effectiveTime>
+							<participant typeCode="PRF">
+								<templateId root="1.2.208.176.7.1.10.16" />
+								<templateId root="2.16.840.1.113883.10.12.321" />
+								<participantRole classCode="ROL">
+									<code codeSystemName="Sundhedsvæsenets Klassifikations System"
+										codeSystem="1.2.208.176.2.4" displayName="Sygeplejerske på klinisk sygehusafdeling"
+										code="APBA1" />
+									<scopingEntity classCode="ORG">
+										<id root="1.2.208.176.1.1" extension="369041000016006"
+											assigningAuthorityName="SOR" />
+									</scopingEntity>
+								</participantRole>
+							</participant>
+							<entryRelationship typeCode="COMP">
+								<act classCode="ACT" moodCode="EVN">
+									<templateId root="1.2.208.176.7.1.10.22" />
+									<templateId root="2.16.840.1.113883.10.12.301" />
+									<code codeSystemName="Sundhedsvæsenets Klassifikations System"
+										codeSystem="1.2.208.176.2.4" displayName="igangsat" code="???" />
+								</act>
+							</entryRelationship>
+							<entryRelationship typeCode="REFR">
+								<encounter classCode="ENC" moodCode="EVN">
+									<templateId root="1.2.208.176.7.1.10.77" />
+									<templateId root="2.16.840.1.113883.10.12.301" />
+									<id root="1.2.208.176.7.1.2.1" extension="7dfa91a1-e19e-57d0-bdbe-fea7f8582df6" />
+									<code nullFlavor="NA" />
+								</encounter>
+							</entryRelationship>
+						</act>
+					</entry>
+					<entry typeCode="COMP">
+						<observation classCode="OBS" moodCode="EVN">
+							<templateId root="1.2.208.176.7.1.10.29" />
+							<templateId root="2.16.840.1.113883.10.12.303" />
+							<id root="1.2.208.176.7.1.2.1" extension="ffa7bcb2-0ca4-57d9-a7f9-f37fbb1c5482" />
+							<id root="1.2.208.176.7.1.2.2" extension="a659b5f7-e5d7-4d48-97f2-591a4a07da09" />
+							<code codeSystemName="Sundhedsvæsenets Klassifikations System"
+								codeSystem="1.2.208.176.2.4" displayName="CT-skanning af cerebrum"
+								code="UXCA00" />
+							<effectiveTime>
+								<low value="20170116080000+0200" />
+								<high value="20170116083000+0200" />
+							</effectiveTime>
+							<participant typeCode="PRF">
+								<templateId root="1.2.208.176.7.1.10.16" />
+								<templateId root="2.16.840.1.113883.10.12.321" />
+								<participantRole classCode="ROL">
+									<code codeSystemName="Sundhedsvæsenets Klassifikations System"
+										codeSystem="1.2.208.176.2.4" displayName="Radiograf" code="APFE2" />
+									<scopingEntity classCode="ORG">
+										<id root="1.2.208.176.1.1" extension="275861000016001"
+											assigningAuthorityName="SOR" />
+									</scopingEntity>
+								</participantRole>
+							</participant>
+							<entryRelationship typeCode="COMP">
+								<act classCode="REG" moodCode="EVN">
+									<templateId root="1.2.208.176.7.1.10.5" />
+									<templateId root="2.16.840.1.113883.10.12.301" />
+									<code codeSystemName="Sundhedsvæsenets Klassifikations System"
+										codeSystem="1.2.208.176.2.4" displayName="med CT-angiografi"
+										code="UXZ41" />
+								</act>
+							</entryRelationship>
+							<entryRelationship typeCode="COMP">
+								<act classCode="REG" moodCode="EVN">
+									<templateId root="1.2.208.176.7.1.10.5" />
+									<templateId root="2.16.840.1.113883.10.12.301" />
+									<code codeSystemName="Sundhedsvæsenets Klassifikations System"
+										codeSystem="1.2.208.176.2.4" displayName="med 3D rekonstruktion"
+										code="UXZ45" />
+								</act>
+							</entryRelationship>
+							<entryRelationship typeCode="COMP">
+								<substanceAdministration classCode="SBADM"
+									moodCode="EVN">
+									<templateId root="1.2.208.176.7.1.10.2" />
+									<templateId root="2.16.840.1.113883.10.12.308" />
+									<consumable typeCode="CSM">
+										<manufacturedProduct classCode="MANU">
+											<templateId root="1.2.208.176.7.1.10.4" />
+											<templateId root="2.16.840.1.113883.10.12.312" />
+											<manufacturedMaterial classCode="MMAT">
+												<templateId root="1.2.208.176.7.1.10.3" />
+												<templateId root="2.16.840.1.113883.10.12.311" />
+												<code codeSystemName="Sundhedsvæsenets Klassifikations System"
+													codeSystem="1.2.208.176.2.4" displayName="diatrizoinsyre"
+													code="MV08AA01" />
+											</manufacturedMaterial>
+										</manufacturedProduct>
+									</consumable>
+								</substanceAdministration>
+							</entryRelationship>
+							<entryRelationship typeCode="COMP">
+								<act classCode="ACT" moodCode="EVN">
+									<templateId root="1.2.208.176.7.1.10.7" />
+									<templateId root="2.16.840.1.113883.10.12.301" />
+									<code codeSystemName="Sundhedsvæsenets Klassifikations System"
+										codeSystem="1.2.208.176.2.4" displayName="højt specialiseret"
+										code="ALFA2" />
+									<effectiveTime>
+										<low value="20170117123000+0200" />
+										<high value="20170117151500+0200" />
+									</effectiveTime>
+									<participant typeCode="IND">
+										<templateId root="1.2.208.176.7.1.10.8" />
+										<templateId root="2.16.840.1.113883.10.12.321" />
+										<participantRole classCode="PAYOR">
+											<scopingEntity>
+												<id root="1.2.208.176.2.4" extension="ALFB01"
+													assigningAuthorityName="Sundhedsdatastyrelsen" />
+											</scopingEntity>
+										</participantRole>
+									</participant>
+									<entryRelationship typeCode="COMP">
+										<act classCode="ACT" moodCode="EVN">
+											<templateId root="1.2.208.176.7.1.10.10" />
+											<templateId root="2.16.840.1.113883.10.12.301" />
+											<code codeSystemName="Sundhedsvæsenets Klassifikations System"
+												codeSystem="1.2.208.176.2.4" displayName="højt specialiseret funktion"
+												code="ALFC4" />
+										</act>
+									</entryRelationship>
+								</act>
+							</entryRelationship>
+							<entryRelationship typeCode="RSON">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="1.2.208.176.7.1.10.19" />
+									<templateId root="2.16.840.1.113883.10.12.303" />
+									<code codeSystemName="Sundhedsvæsenets Klassifikations System"
+										codeSystem="1.2.208.176.2.4" displayName="Traumatisk blødning i lillehjernen"
+										code="DS068B" />
+									<entryRelationship typeCode="COMP">
+										<act classCode="REG" moodCode="EVN">
+											<templateId root="1.2.208.176.7.1.10.5" />
+											<templateId root="2.16.840.1.113883.10.12.301" />
+											<code codeSystemName="Sundhedsvæsenets Klassifikations System"
+												codeSystem="1.2.208.176.2.4"
+												displayName="komplikation opstået i forbindelse med procedure"
+												code="ZDA01" />
+										</act>
+									</entryRelationship>
+								</observation>
+							</entryRelationship>
+							<entryRelationship typeCode="REFR">
+								<encounter classCode="ENC" moodCode="EVN">
+									<templateId root="1.2.208.176.7.1.10.77" />
+									<templateId root="2.16.840.1.113883.10.12.301" />
+									<id root="1.2.208.176.7.1.2.1" extension="7dfa91a1-e19e-57d0-bdbe-fea7f8582df6" />
+									<code nullFlavor="NA" />
+								</encounter>
+							</entryRelationship>
+						</observation>
+					</entry>
+				</section>
+			</component>
+			<component>
+				<section>
+					<templateId root="1.2.208.176.7.1.10.113" />
+					<templateId root="2.16.840.1.113883.10.12.201" />
+					<entry>
+						<observation negationInd="false" classCode="OBS"
+							moodCode="EVN">
+							<templateId root="1.2.208.176.7.1.10.45" />
+							<templateId root="1.2.208.176.7.1.10.36" />
+							<templateId root="2.16.840.1.113883.10.12.303" />
+							<id root="1.2.208.176.7.1.2.1" extension="d0438ac2-bf27-532f-88e8-c029aca9492b" />
+							<id root="1.2.208.176.7.1.2.2" extension="e309346f-8d5e-4f5a-82e9-f1841fb89be8" />
+							<code codeSystemName="Sundhedsvæsenets Klassifikations System"
+								codeSystem="1.2.208.176.2.4" displayName="Kræft i hjernens tindingelap med metastaser"
+								code="DC712M" />
+							<targetSiteCode codeSystemName="Sundhedsvæsenets Klassifikations System"
+								codeSystem="1.2.208.176.2.4" displayName="venstresidig" code="TUL2" />
+							<entryRelationship typeCode="COMP">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="1.2.208.176.7.1.10.40" />
+									<templateId root="2.16.840.1.113883.10.12.303" />
+									<code codeSystemName="Sundhedsvæsenets Klassifikations System"
+										codeSystem="1.2.208.176.2.4" displayName="Lokalrecidiv fra kræft i hjernen"
+										code="DT636C" />
+								</observation>
+							</entryRelationship>
+							<entryRelationship typeCode="COMP">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="1.2.208.176.7.1.10.37" />
+									<templateId root="2.16.840.1.113883.10.12.303" />
+									<code codeSystemName="Sundhedsvæsenets Klassifikations System"
+										codeSystem="1.2.208.176.2.4" displayName="Metastase i rygmarvshinde"
+										code="DC793C" />
+								</observation>
+							</entryRelationship>
+							<entryRelationship typeCode="COMP">
+								<observation classCode="OBS" moodCode="EVN">
+									<templateId root="1.2.208.176.7.1.10.43" />
+									<templateId root="2.16.840.1.113883.10.12.303" />
+									<code codeSystemName="Sundhedsvæsenets Klassifikations System"
+										codeSystem="1.2.208.176.2.4" displayName="aktionsdiagnose"
+										code="ALGA01" />
+								</observation>
+							</entryRelationship>
+							<entryRelationship typeCode="COMP">
+								<act classCode="REG" moodCode="EVN">
+									<templateId root="1.2.208.176.7.1.10.5" />
+									<templateId root="2.16.840.1.113883.10.12.301" />
+									<code codeSystemName="Sundhedsvæsenets Klassifikations System"
+										codeSystem="1.2.208.176.2.4" displayName="behandles ikke"
+										code="ZDW29" />
+								</act>
+							</entryRelationship>
+							<entryRelationship typeCode="REFR">
+								<encounter classCode="ENC" moodCode="EVN">
+									<templateId root="1.2.208.176.7.1.10.77" />
+									<templateId root="2.16.840.1.113883.10.12.301" />
+									<id root="1.2.208.176.7.1.2.1" extension="7dfa91a1-e19e-57d0-bdbe-fea7f8582df6" />
+									<code nullFlavor="NA" />
+								</encounter>
+							</entryRelationship>
+						</observation>
+					</entry>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</ClinicalDocument>
