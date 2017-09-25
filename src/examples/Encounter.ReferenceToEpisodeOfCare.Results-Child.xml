@@ -8,7 +8,7 @@
 	<id root="4B7F555E-4AF5-527A-81A3-E67A322E5B8A" />
 	<code code="34133-9" codeSystem="2.16.840.1.113883.6.1"
 		codeSystemName="LOINC" displayName="Summary of episode note" />
-	<title>6. Indberetning af kontakt med reference til forløbselement og
+	<title>Indberetning af kontakt med reference til forløbselement og
 		hvor der i samme besked er en resultatindberetning af typen
 		”Fødselsanmeldelse - barn” på kontakten med flere resultater
 	</title>
@@ -195,7 +195,8 @@
 										codeSystem="1.2.208.176.2.4" displayName="Fødselsanmeldelse barn (nyfødt)"
 										code="RAA03" />
 									<statusCode code="RAS01" />
-									<participtant typeCode="RESP">
+									<participant typeCode="RESP">
+									
 										<templateId root="1.2.208.176.7.1.10.49" />
 										<templateId root="2.16.840.1.113883.10.12.321" />
 										<participantRole classCode="ROL">
@@ -204,7 +205,8 @@
 													assigningAuthorityName="SOR" />
 											</scopingEntity>
 										</participantRole>
-									</participtant>
+										
+									</participant>
 									<component typeCode="COMP">
 										<observation classCode="OBS" moodCode="EVN">
 											<templateId root="1.2.208.176.7.1.10.89" />
@@ -213,7 +215,7 @@
 												codeSystem="1.2.208.176.2.4" displayName="Res.type: fødselstidspunkt (datoTid)"
 												code="RDA31" />
 											<effectiveTime value="20170222120000+0200" />
-											<value>20170222120000+0200</value>
+											<value xsi:type="ST">20170222120000+0200</value>
 										</observation>
 									</component>
 									<component typeCode="COMP">
@@ -224,7 +226,7 @@
 												codeSystem="1.2.208.176.2.4" displayName="Res.type: gestationsalder [res.gestald]"
 												code="RDA20" />
 											<effectiveTime value="20170222120000+0200" />
-											<value>RGAA0006</value>
+											<value xsi:type="ST">RGAA0006</value>
 										</observation>
 									</component>
 									<component typeCode="COMP">
@@ -235,7 +237,7 @@
 												codeSystem="1.2.208.176.2.4" displayName="Res.type: gestationsalder [res.gestald]"
 												code="RDA20" />
 											<effectiveTime value="20170222120000+0200" />
-											<value>RGAA0006</value>
+											<value xsi:type="ST">RGAA0006</value>
 										</observation>
 									</component>
 									<component typeCode="COMP">
@@ -246,7 +248,7 @@
 												codeSystem="1.2.208.176.2.4" displayName="Res.type: kuld (heltal)"
 												code="RDA32" />
 											<effectiveTime value="20170222120000+0200" />
-											<value>1</value>
+											<value xsi:type="ST">1</value>
 										</observation>
 									</component>
 									<component typeCode="COMP">
@@ -257,7 +259,7 @@
 												codeSystem="1.2.208.176.2.4" displayName="Res.type: fosterpræsentation [res.praesent]"
 												code="RDA34" />
 											<effectiveTime value="20170222120000+0200" />
-											<value>RGAD01</value>
+											<value xsi:type="ST">RGAD01</value>
 										</observation>
 									</component>
 									<component typeCode="COMP">
@@ -268,7 +270,7 @@
 												codeSystem="1.2.208.176.2.4" displayName="Res.type: apgar-5 (heltal)"
 												code="RDA35" />
 											<effectiveTime value="20170222120000+0200" />
-											<value>10</value>
+											<value xsi:type="ST">10</value>
 										</observation>
 									</component>
 								</organizer>
