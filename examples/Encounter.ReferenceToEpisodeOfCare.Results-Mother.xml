@@ -113,8 +113,10 @@
 									<code codeSystemName="Sundhedsvæsenets Klassifikations System"
 										codeSystem="1.2.208.176.2.4" displayName="længereværende fravær med aftale"
 										code="ALCF02" />
+										<scopingEntity classCode="ORG">
 									<id root="1.2.208.176.1.1" extension="276231000016004"
 										assigningAuthorityName="SOR" />
+										</scopingEntity>
 								</participantRole>
 							</participant>
 							<entryRelationship typeCode="REFR">
@@ -195,7 +197,7 @@
 										codeSystem="1.2.208.176.2.4" displayName="Fødselsanmeldelse mor"
 										code="RAA02" />
 									<statusCode code="RAS01" />
-									<participtant typeCode="RESP">
+									<participant typeCode="RESP">
 										<templateId root="1.2.208.176.7.1.10.49" />
 										<templateId root="2.16.840.1.113883.10.12.321" />
 										<participantRole classCode="ROL">
@@ -204,7 +206,7 @@
 													assigningAuthorityName="SOR" />
 											</scopingEntity>
 										</participantRole>
-									</participtant>
+									</participant>
 									<component typeCode="COMP">
 										<observation classCode="OBS" moodCode="EVN">
 											<templateId root="1.2.208.176.7.1.10.89" />
@@ -213,7 +215,7 @@
 												codeSystem="1.2.208.176.2.4" displayName="Res.type: gestationsalder [res.gestald]"
 												code="RDA20" />
 											<effectiveTime value="20170222120000+0200" />
-											<value>RGAA0006"</value>
+											<value xsi:type="ST">RGAA0006</value>
 										</observation>
 									</component>
 									<component typeCode="COMP">
@@ -224,7 +226,7 @@
 												codeSystem="1.2.208.176.2.4" displayName="Res.type: paritet (heltal)"
 												code="RDA22" />
 											<effectiveTime value="20170222120000+0200" />
-											<value>1</value>
+											<value xsi:type="ST">1</value>
 										</observation>
 									</component>
 									<component typeCode="COMP">
@@ -235,7 +237,7 @@
 												codeSystem="1.2.208.176.2.4" displayName="Res.type: antal levendefødte (heltal)"
 												code="RDA23" />
 											<effectiveTime value="20170222120000+0200" />
-											<value>1</value>
+											<value xsi:type="ST">1</value>
 										</observation>
 									</component>
 									<component typeCode="COMP">
@@ -246,7 +248,7 @@
 												codeSystem="1.2.208.176.2.4" displayName="Res.type: antal dødfødte (heltal)"
 												code="RDA24" />
 											<effectiveTime value="20170222120000+0200" />
-											<value>0</value>
+											<value xsi:type="ST">0</value>
 										</observation>
 									</component>
 									<component typeCode="COMP">
@@ -258,7 +260,7 @@
 												displayName="Res.type: tobaksforbrug under graviditet [res.tobakgrav]"
 												code="RDA25" />
 											<effectiveTime value="20170222120000+0200" />
-											<value>RGAB00</value>
+											<value xsi:type="ST">RGAB00</value>
 										</observation>
 									</component>
 									<component typeCode="COMP">
@@ -269,7 +271,7 @@
 												codeSystem="1.2.208.176.2.4" displayName="Res.type: højde før graviditet (heltal: cm)"
 												code="RDA26" />
 											<effectiveTime value="20170222120000+0200" />
-											<value>180</value>
+											<value xsi:type="ST">180</value>
 										</observation>
 									</component>
 									<component typeCode="COMP">
@@ -280,7 +282,7 @@
 												codeSystem="1.2.208.176.2.4" displayName="Res.type: vægt før graviditet (heltal: kg)"
 												code="RDA27" />
 											<effectiveTime value="20170222120000+0200" />
-											<value>65</value>
+											<value xsi:type="ST">65</value>
 										</observation>
 									</component>
 								</organizer>

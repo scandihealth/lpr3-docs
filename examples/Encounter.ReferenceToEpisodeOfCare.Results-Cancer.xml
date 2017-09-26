@@ -112,11 +112,11 @@
 									<high value="20170222130000+0200" />
 								</time>
 								<participantRole classCode="SDLOC">
-									<code codeSystemName="Sundhedsvæsenets Klassifikations System"
-										codeSystem="1.2.208.176.2.4" displayName="længereværende fravær med aftale"
-										code="ALCF02" />
-									<id root="1.2.208.176.1.1" extension="276231000016004"
-										assigningAuthorityName="SOR" />
+									
+										<code codeSystemName="Sundhedsvæsenets Klassifikations System"
+											codeSystem="1.2.208.176.2.4" displayName="længereværende fravær med aftale"
+											code="ALCF02" />
+										  <scopingEntity nullFlavor="NI"/>
 								</participantRole>
 							</participant>
 							<entryRelationship typeCode="REFR">
@@ -197,7 +197,7 @@
 										codeSystem="1.2.208.176.2.4" displayName="canceranmeldelse"
 										code="RAA01" />
 									<statusCode code="RAS01" />
-									<participtant typeCode="RESP">
+									<participant typeCode="RESP">
 										<templateId root="1.2.208.176.7.1.10.49" />
 										<templateId root="2.16.840.1.113883.10.12.321" />
 										<participantRole classCode="ROL">
@@ -206,7 +206,7 @@
 													assigningAuthorityName="SOR" />
 											</scopingEntity>
 										</participantRole>
-									</participtant>
+									</participant>
 									<component typeCode="COMP">
 										<observation classCode="OBS" moodCode="EVN">
 											<templateId root="1.2.208.176.7.1.10.89" />
@@ -215,7 +215,7 @@
 												codeSystem="1.2.208.176.2.4" displayName="makroskopisk diagnosegrundlag"
 												code="RDA02" />
 											<effectiveTime value="20170222120000+0200" />
-											<value>AZCA1</value>
+											<value xsi:type="ST">AZCA1</value>
 										</observation>
 									</component>
 									<component typeCode="COMP">
@@ -226,7 +226,7 @@
 												codeSystem="1.2.208.176.2.4" displayName="makroskopisk diagnosegrundlag"
 												code="AZCL3" />
 											<effectiveTime value="20170222120000+0200" />
-											<value>AZCK2</value>
+											<value xsi:type="ST">AZCK2</value>
 										</observation>
 									</component>
 								</organizer>

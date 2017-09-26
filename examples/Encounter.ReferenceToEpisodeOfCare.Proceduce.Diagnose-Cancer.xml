@@ -113,8 +113,7 @@
 									<code codeSystemName="Sundhedsvæsenets Klassifikations System"
 										codeSystem="1.2.208.176.2.4" displayName="længereværende fravær med aftale"
 										code="ALCF02" />
-									<id root="1.2.208.176.1.1" extension="276231000016004"
-										assigningAuthorityName="SOR" />
+									<scopingEntity nullFlavor="NI"/>
 								</participantRole>
 							</participant>
 							<entryRelationship typeCode="REFR">
