@@ -141,6 +141,6 @@ In order to support updating data that tends to change more frequently than othe
   * Entries referenced in this way must be located in the same `section` and must be of same type in both the original document and the *addendum document*.
   * The replacing entry referenced in this manner replaces <b>ALL</b> data on the previous submitted entry, meaning that the update semantic can be considered as <b>full state</b>.
   * The updating entry <b>SHALL</b> refer to the previous entry using `reference` with typeCode `RPLC`. The `id` of the `reference` <b>SHALL</b> match the entry to be updated.
-  * The previous entry <b>SHALL</b> be refered to using `external[Act|Observation|Procedure|Encounter]`.
+  * The previous entry <b>SHALL</b> be refered to using `external[Act|Observation|Procedure]`.
   
 These stated rules follows the approach outlined by IHE in the draft specification [CDA Entry Content Modules](http://wiki.ihe.net/index.php/CDA_Entry_Content_Modules#Update_Entry_1.3.6.1.4.1.19376.1.5.3.1.4.16)
