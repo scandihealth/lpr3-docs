@@ -11,7 +11,8 @@
 	<title>Indberetning kun med forløbselement</title>
 	<effectiveTime value="20120912000000-0000" />
 	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" />
-	<setId root="06C20C50-87F0-558B-A16F-B3F3B045AF3B" />
+	<setId root="06C20C50-87F0-558B-A16F-B3F3B045AF3B"
+		assigningAuthorityName="Region Nordjylland" />
 	<versionNumber value="1" />
 	<recordTarget>
 		<templateId root="1.2.208.176.7.1.10.101" />
@@ -71,12 +72,11 @@
 				<section>
 					<templateId root="1.2.208.176.7.1.10.95" />
 					<templateId root="2.16.840.1.113883.10.12.201" />
-					<entry>
+					<entry typeCode="COMP">
 						<act classCode="PCPR" moodCode="EVN">
 							<templateId root="1.2.208.176.7.1.10.80" />
 							<templateId root="2.16.840.1.113883.10.12.301" />
 							<id root="1.2.208.176.7.1.2.1" extension="bbbfa3ea-2ad7-571c-986c-d72f7443ba4b" />
-							<id root="1.2.208.176.7.1.2.2" extension="2217c913-c721-498a-a8d5-04a80fe2e0de" />
 							<code nullFlavor="NA" />
 							<effectiveTime>
 								<low value="20170222110000+0200" />
@@ -98,30 +98,11 @@
 											</scopingEntity>
 										</participantRole>
 									</participant>
-									<entryRelationship typeCode="RSON">
-										<act classCode="REG" moodCode="EVN">
-											<templateId root="1.2.208.176.7.1.10.55" />
-											<templateId root="2.16.840.1.113883.10.12.301" />
-											<code codeSystemName="Sundhedsv�senets Klassifikations System"
-												codeSystem="1.2.208.176.2.4"
-												displayName="Tumorer i hjerne- og rygmarvshinder af usikker og ukendt karakter"
-												code="DD42" />
-											<entryRelationship typeCode="COMP">
-												<act classCode="REG" moodCode="EVN">
-													<templateId root="1.2.208.176.7.1.10.5" />
-													<templateId root="2.16.840.1.113883.10.12.301" />
-													<code codeSystemName="Sundhedsv�senets Klassifikations System"
-														codeSystem="1.2.208.176.2.4" displayName="diagnosen stillet f�rste gang"
-														code="ZDW10" />
-												</act>
-											</entryRelationship>
-										</act>
-									</entryRelationship>
 									<entryRelationship typeCode="COMP">
 										<act classCode="REG" moodCode="EVN">
 											<templateId root="1.2.208.176.7.1.10.53" />
 											<templateId root="2.16.840.1.113883.10.12.301" />
-											<code codeSystemName="Sundhedsv�senets Klassifikations System"
+											<code codeSystemName="Sundhedsvæsenets Klassifikations System"
 												codeSystem="1.2.208.176.2.4" displayName="fritvalg ikke relevant"
 												code="ALDB00" />
 										</act>
@@ -130,8 +111,27 @@
 										<act classCode="REG" moodCode="EVN">
 											<templateId root="1.2.208.176.7.1.10.54" />
 											<templateId root="2.16.840.1.113883.10.12.301" />
-											<code codeSystemName="Sundhedsv�senets Klassifikations System"
+											<code codeSystemName="Sundhedsvæsenets Klassifikations System"
 												codeSystem="1.2.208.176.2.4" displayName="akutordning" code="ALDA11" />
+										</act>
+									</entryRelationship>
+									<entryRelationship typeCode="RSON">
+										<act classCode="REG" moodCode="EVN">
+											<templateId root="1.2.208.176.7.1.10.55" />
+											<templateId root="2.16.840.1.113883.10.12.301" />
+											<code codeSystemName="Sundhedsvæsenets Klassifikations System"
+												codeSystem="1.2.208.176.2.4"
+												displayName="Tumorer i hjerne- og rygmarvshinder af usikker og ukendt karakter"
+												code="DD42" />
+											<entryRelationship typeCode="COMP">
+												<act classCode="REG" moodCode="EVN">
+													<templateId root="1.2.208.176.7.1.10.5" />
+													<templateId root="2.16.840.1.113883.10.12.301" />
+													<code codeSystemName="Sundhedsvæsenets Klassifikations System"
+														codeSystem="1.2.208.176.2.4" displayName="diagnosen stillet første gang"
+														code="ZDW10" />
+												</act>
+											</entryRelationship>
 										</act>
 									</entryRelationship>
 								</act>
@@ -140,8 +140,8 @@
 								<act classCode="REG" moodCode="EVN">
 									<templateId root="1.2.208.176.7.1.10.81" />
 									<templateId root="2.16.840.1.113883.10.12.301" />
-									<code codeSystemName="Sundhedsv�senets Klassifikations System"
-										codeSystem="1.2.208.176.2.4" displayName="Kr�ftsygdomme" code="ALAL01" />
+									<code codeSystemName="Sundhedsvæsenets Klassifikations System"
+										codeSystem="1.2.208.176.2.4" displayName="Kræftsygdomme" code="ALAL01" />
 								</act>
 							</entryRelationship>
 							<entryRelationship typeCode="COMP">
@@ -149,10 +149,9 @@
 									<templateId root="1.2.208.176.7.1.10.82" />
 									<templateId root="2.16.840.1.113883.10.12.301" />
 									<id root="1.2.208.176.7.1.2.1" extension="c770b34c-9854-519b-8239-2d7794a94bef" />
-									<id root="1.2.208.176.7.1.2.2" extension="2217c913-c721-498a-a8d5-04a80fe2e0de" />
-									<code codeSystemName="Sundhedsv�senets Klassifikations System"
+									<code codeSystemName="Sundhedsvæsenets Klassifikations System"
 										codeSystem="1.2.208.176.2.4"
-										displayName="Kr�ft i hjernen: beslutning: initial behandling ikke relevant, radikal operation i udredningsforl�bet"
+										displayName="Kræft i hjernen: beslutning: initial behandling ikke relevant, radikal operation i udredningsforl�bet"
 										code="AFB23C2B" />
 									<effectiveTime value="20170222130000+0200" />
 								</act>
@@ -160,14 +159,15 @@
 							<entryRelationship typeCode="COMP">
 								<act classCode="REG" moodCode="EVN">
 									<templateId root="1.2.208.176.7.1.10.83" />
-									<code codeSystemName="Sundhedsv�senets Klassifikations System"
-										codeSystem="1.2.208.176.2.4" displayName="henvist i samme sygdomsforl�b"
+									<templateId root="2.16.840.1.113883.10.12.301" />
+									<code codeSystemName="Sundhedsvæsenets Klassifikations System"
+										codeSystem="1.2.208.176.2.4" displayName="henvist i samme sygdomsforløb"
 										code="ALAA01" />
 									<entryRelationship typeCode="REFR">
 										<act classCode="PCPR" moodCode="EVN">
 											<templateId root="1.2.208.176.7.1.10.72" />
-											<templateId root="2.16.840.1.113883.10.12.301" />
-											<id root="1.2.208.176.7.1.2.2" extension="21157122-1d29-4111-b233-51585dddf9b2" />
+											<templateId root="1.2.208.176.7.1.10.70" />
+											<id root="1.2.208.176.7.1.2.1" extension="21157122-1d29-4111-b233-51585dddf9b2" />
 											<code nullFlavor="NA" />
 										</act>
 									</entryRelationship>
@@ -177,8 +177,8 @@
 								<observation classCode="OBS" moodCode="EVN">
 									<templateId root="1.2.208.176.7.1.10.105" />
 									<templateId root="2.16.840.1.113883.10.12.303" />
-									<code codeSystemName="Sundhedsv�senets Klassifikations System"
-										codeSystem="1.2.208.176.2.4" displayName="afsluttet ved patientens d�d"
+									<code codeSystemName="Sundhedsvæsenets Klassifikations System"
+										codeSystem="1.2.208.176.2.4" displayName="afsluttet ved patientens død"
 										code="ALAC70" />
 								</observation>
 							</entryRelationship>
