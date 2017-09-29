@@ -8,11 +8,15 @@
 	<id root="4B7F555E-4AF5-527A-81A3-E67A322E5B8A" />
 	<code code="34133-9" codeSystem="2.16.840.1.113883.6.1"
 		codeSystemName="LOINC" displayName="Summary of episode note" />
-	<title>Indberetning af kontakt med reference til forløbselement og hvor der i samme besked er en resultatindberetning af typen ”Skadesindberetning” på kontakten med flere resultater</title>
+	<title>Indberetning af kontakt med reference til forløbselement og
+		hvor
+		der i samme besked er en resultatindberetning af typen
+		”Canceranmeldelse” på kontakten med flere resultater
+	</title>
 	<effectiveTime value="20120912000000-0000" />
 	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" />
-	<setId root="06C20C50-87F0-558B-A16F-B3F3B045AF3B" />
-	<versionNumber value="1" />
+	<setId root="06C20C50-87F0-558B-A16F-B3F3B045AF3B" assigningAuthorityName="Region Nordjylland" />
+	<versionNumber value="2" />
 	<recordTarget>
 		<templateId root="1.2.208.176.7.1.10.101" />
 		<templateId root="2.16.840.1.113883.10.12.101" />
@@ -65,6 +69,13 @@
 			</representedCustodianOrganization>
 		</assignedCustodian>
 	</custodian>
+		<relatedDocument typeCode="APND">
+		<parentDocument classCode="DOCCLIN" moodCode="EVN">
+			<id root="5B7F555E-4AF5-527A-81A3-E67A322E5B8A" />
+			<setId root="06C20C50-87F0-558B-A16F-B3F3B045AF3B" />
+			<versionNumber value="1" />
+		</parentDocument>
+	</relatedDocument>
 	<component contextConductionInd="true">
 		<structuredBody>
 			<component>
@@ -108,13 +119,11 @@
 									<high value="20170222130000+0200" />
 								</time>
 								<participantRole classCode="SDLOC">
-									<code codeSystemName="Sundhedsvæsenets Klassifikations System"
-										codeSystem="1.2.208.176.2.4" displayName="længereværende fravær med aftale"
-										code="ALCF02" />
-										<scopingEntity classCode="ORG">
-									<id root="1.2.208.176.1.1" extension="276231000016004"
-										assigningAuthorityName="SOR" />
-										</scopingEntity>
+									
+										<code codeSystemName="Sundhedsvæsenets Klassifikations System"
+											codeSystem="1.2.208.176.2.4" displayName="længereværende fravær med aftale"
+											code="ALCF02" />
+										  <scopingEntity nullFlavor="NI"/>
 								</participantRole>
 							</participant>
 							<entryRelationship typeCode="REFR">
@@ -167,10 +176,10 @@
 							<reference typeCode="REFR">
 								<templateId root="1.2.208.176.7.1.10.69" />
 								<templateId root="2.16.840.1.113883.10.12.324" />
-								<externalAct classCode="ACT" moodCode="EVN">
+								<externalAct classCode="PCPR" moodCode="EVN">
 									<templateId root="1.2.208.176.7.1.10.65" />
 									<templateId root="2.16.840.1.113883.10.12.325" />
-									<id root="1.2.208.176.7.1.2.1" extension="bbbfa3ea-2ad7-571c-986c-d72f7443ba4b" />
+									<id root="1.2.208.176.1.2.1" extension="bbbfa3ea-2ad7-571c-986c-d72f7443ba4b" />
 								</externalAct>
 							</reference>
 						</encounter>
@@ -186,14 +195,15 @@
 							<templateId root="1.2.208.176.7.1.10.90" />
 							<templateId root="2.16.840.1.113883.10.12.301" />
 							<code nullFlavor="NA" />
+							<id root="1.2.208.176.7.1.2.1" extension="bbbfa3ea-2ad7-571c-986c-d72f7443ba4b" />
 							<entryRelationship typeCode="REFR">
 								<organizer classCode="BATTERY" moodCode="EVN">
 									<templateId root="1.2.208.176.7.1.10.88" />
 									<templateId root="2.16.840.1.113883.10.12.305" />
 									<id root="1.2.208.176.7.1.2.1" extension="50790dc33-eb83-5100-858f-fdc5569f13a9" />
 									<code codeSystemName="Sundhedsvæsenets Klassifikations System"
-										codeSystem="1.2.208.176.2.4" displayName="Skadeindberetning"
-										code="RAA05" />
+										codeSystem="1.2.208.176.2.4" displayName="canceranmeldelse"
+										code="RAA01" />
 									<statusCode code="RAS01" />
 									<participant typeCode="RESP">
 										<templateId root="1.2.208.176.7.1.10.49" />
@@ -210,10 +220,10 @@
 											<templateId root="1.2.208.176.7.1.10.89" />
 											<templateId root="2.16.840.1.113883.10.12.303" />
 											<code codeSystemName="Sundhedsvæsenets Klassifikations System"
-												codeSystem="1.2.208.176.2.4" displayName="Res.type: skadetidspunkt (datoTid)"
-												code="RDA60" />
+												codeSystem="1.2.208.176.2.4" displayName="makroskopisk diagnosegrundlag"
+												code="RDA02" />
 											<effectiveTime value="20170222120000+0200" />
-											<value xsi:type="ST">20170222120000+0200</value>
+											<value xsi:type="ST">AZCA1</value>
 										</observation>
 									</component>
 									<component typeCode="COMP">
@@ -221,64 +231,19 @@
 											<templateId root="1.2.208.176.7.1.10.89" />
 											<templateId root="2.16.840.1.113883.10.12.303" />
 											<code codeSystemName="Sundhedsvæsenets Klassifikations System"
-												codeSystem="1.2.208.176.2.4" displayName="Res.type: skademekanisme [res.skademek]"
-												code="RDA61" />
+												codeSystem="1.2.208.176.2.4" displayName="makroskopisk diagnosegrundlag"
+												code="AZCL3" />
 											<effectiveTime value="20170222120000+0200" />
-											<value xsi:type="ST">EUBB</value>
+											<value xsi:type="ST">AZCK2</value>
 										</observation>
 									</component>
-									<component typeCode="COMP">
-										<observation classCode="OBS" moodCode="EVN">
-											<templateId root="1.2.208.176.7.1.10.89" />
-											<templateId root="2.16.840.1.113883.10.12.303" />
-											<code codeSystemName="Sundhedsvæsenets Klassifikations System"
-												codeSystem="1.2.208.176.2.4" displayName="Res.type: skadested [res.skadested]"
-												code="RDA62" />
-											<effectiveTime value="20170222120000+0200" />
-											<value xsi:type="ST">EUG1B</value>
-										</observation>
-									</component>
-									<component typeCode="COMP">
-										<observation classCode="OBS" moodCode="EVN">
-											<templateId root="1.2.208.176.7.1.10.89" />
-											<templateId root="2.16.840.1.113883.10.12.303" />
-											<code codeSystemName="Sundhedsvæsenets Klassifikations System"
-												codeSystem="1.2.208.176.2.4" displayName="Res.type: aktivitet [res.skadeakt]"
-												code="RDA63" />
-											<effectiveTime value="20170222120000+0200" />
-											<value xsi:type="ST">EUA22</value>
-										</observation>
-									</component>
-										<component typeCode="COMP">
-										<observation classCode="OBS" moodCode="EVN">
-											<templateId root="1.2.208.176.7.1.10.89" />
-											<templateId root="2.16.840.1.113883.10.12.303" />
-											<code codeSystemName="Sundhedsvæsenets Klassifikations System"
-												codeSystem="1.2.208.176.2.4" displayName="Res.type: transportform for tilskadekomne [res.tfskadede]"
-												code="RDA64" />
-											<effectiveTime value="20170222120000+0200" />
-											<value xsi:type="ST">EUP8A</value>
-										</observation>
-									</component>
-									<component typeCode="COMP">
-										<observation classCode="OBS" moodCode="EVN">
-											<templateId root="1.2.208.176.7.1.10.89" />
-											<templateId root="2.16.840.1.113883.10.12.303" />
-											<code codeSystemName="Sundhedsvæsenets Klassifikations System"
-												codeSystem="1.2.208.176.2.4" displayName="Res.type: transportform for modpart [res.tfmodpart]"
-												code="RDA65" />
-											<effectiveTime value="20170222120000+0200" />
-											<value xsi:type="ST">EUM0A</value>
-										</observation>
-									</component>
-									
 								</organizer>
 							</entryRelationship>
 							<entryRelationship typeCode="REFR">
 								<encounter classCode="ENC" moodCode="EVN">
 									<templateId root="1.2.208.176.7.1.10.77" />
 									<templateId root="2.16.840.1.113883.10.12.301" />
-									<id root="1.2.208.176.7.1.2.2" extension="3c56bc4d-c2ce-41f3-b921-87f5845302fb" />
+							<id root="1.2.208.176.7.1.2.1" extension="7dfa91a1-e19e-57d0-bdbe-fea7f8582df6" />
 									<code nullFlavor="NA" />
 								</encounter>
 							</entryRelationship>

@@ -11,8 +11,8 @@
 	<title>Indberetning af procedure uden kontakt med reference til	forløbselement</title>
 	<effectiveTime value="20120912000000-0000" />
 	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" />
-	<setId root="06C20C50-87F0-558B-A16F-B3F3B045AF3B" />
-	<versionNumber value="1" />
+	<setId root="06C20C50-87F0-558B-A16F-B3F3B045AF3B" assigningAuthorityName="Region Nordjylland"/>
+	<versionNumber value="2" />
 	<recordTarget>
 		<templateId root="1.2.208.176.7.1.10.101" />
 		<templateId root="2.16.840.1.113883.10.12.101" />
@@ -65,6 +65,13 @@
 			</representedCustodianOrganization>
 		</assignedCustodian>
 	</custodian>
+	<relatedDocument typeCode="APND">
+		<parentDocument classCode="DOCCLIN" moodCode="EVN">
+			<id root="5B7F555E-4AF5-527A-81A3-E67A322E5B8A" />
+			<setId root="06C20C50-87F0-558B-A16F-B3F3B045AF3B" />
+			<versionNumber value="1" />
+		</parentDocument>
+	</relatedDocument>
 	<component contextConductionInd="true">
 		<structuredBody>
 			<component>
@@ -99,7 +106,7 @@
 							<reference typeCode="REFR">
 								<templateId root="1.2.208.176.7.1.10.69" />
 								<templateId root="2.16.840.1.113883.10.12.324" />
-								<externalAct classCode="ACT" moodCode="EVN">
+								<externalAct classCode="PCPR" moodCode="EVN">
 									<templateId root="1.2.208.176.7.1.10.65" />
 									<templateId root="2.16.840.1.113883.10.12.325" />
 									<id root="1.2.208.176.7.1.2.1" extension="bbbfa3ea-2ad7-571c-986c-d72f7443ba4b" />

@@ -10,11 +10,12 @@
 		codeSystemName="LOINC" displayName="Summary of episode note" />
 	<title>Indberetning af kontakt med reference til forløbselement og hvor
 		der i samme besked er en resultatindberetning af typen
-		”Fødselsanmeldelse - mor” på kontakten med flere resultater</title>
+		”Fødselsanmeldelse - mor” på kontakten med flere resultater
+	</title>
 	<effectiveTime value="20120912000000-0000" />
 	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" />
-	<setId root="06C20C50-87F0-558B-A16F-B3F3B045AF3B" />
-	<versionNumber value="1" />
+	<setId root="06C20C50-87F0-558B-A16F-B3F3B045AF3B" assigningAuthorityName="Region Nordjylland" />
+	<versionNumber value="2" />
 	<recordTarget>
 		<templateId root="1.2.208.176.7.1.10.101" />
 		<templateId root="2.16.840.1.113883.10.12.101" />
@@ -67,6 +68,13 @@
 			</representedCustodianOrganization>
 		</assignedCustodian>
 	</custodian>
+	<relatedDocument typeCode="APND">
+		<parentDocument classCode="DOCCLIN" moodCode="EVN">
+			<id root="5B7F555E-4AF5-527A-81A3-E67A322E5B8A" />
+			<setId root="06C20C50-87F0-558B-A16F-B3F3B045AF3B" />
+			<versionNumber value="1" />
+		</parentDocument>
+	</relatedDocument>
 	<component contextConductionInd="true">
 		<structuredBody>
 			<component>
@@ -113,10 +121,7 @@
 									<code codeSystemName="Sundhedsvæsenets Klassifikations System"
 										codeSystem="1.2.208.176.2.4" displayName="længereværende fravær med aftale"
 										code="ALCF02" />
-										<scopingEntity classCode="ORG">
-									<id root="1.2.208.176.1.1" extension="276231000016004"
-										assigningAuthorityName="SOR" />
-										</scopingEntity>
+									<scopingEntity nullFlavor="NI" />
 								</participantRole>
 							</participant>
 							<entryRelationship typeCode="REFR">
@@ -291,7 +296,7 @@
 								<encounter classCode="ENC" moodCode="EVN">
 									<templateId root="1.2.208.176.7.1.10.77" />
 									<templateId root="2.16.840.1.113883.10.12.301" />
-									<id root="1.2.208.176.7.1.2.2" extension="3c56bc4d-c2ce-41f3-b921-87f5845302fb" />
+									<id root="1.2.208.176.7.1.2.1" extension="7dfa91a1-e19e-57d0-bdbe-fea7f8582df6" />
 									<code nullFlavor="NA" />
 								</encounter>
 							</entryRelationship>
