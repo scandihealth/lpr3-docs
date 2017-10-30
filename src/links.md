@@ -1,4 +1,5 @@
 - LPR3 CDA Templates can be found at [Art-Decor](http://art-decor.org/art-decor/decor-project--lpr-)
+- LPR3 Schematrons can be found [here](https://github.com/scandihealth/lpr3-docs/blob/master/152a1be9-6dbb-41e7-961f-c02222f0aefe.zip)
 - Overall details of IHE XDR can be found at [IHE IT Infrastructure (ITI) Technical Framework Volume 1 (ITI TF-1) Rev. 13 Integration Profiles](http://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol1.pdf) *(section 15)*
 - Details on the IHE XDR transaction **ITI-41** can be found at [IHE IT Infrastructure (ITI) Technical Framework Volume 2b (ITI TF-2b) Rev. 13 Transactions Part B – Sections 3.29 – 3.64](http://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol2b.pdf) *(section 3.41)* 
 - Details on the IHE XDR/XDS protocol content can be found at [IHE IT Infrastructure (ITI) Technical Framework Volume 3 (ITI TF-3) Rev. 13 Cross-Transaction Specifications and Content Specifications](http://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol3.pdf) *(section 4)*
