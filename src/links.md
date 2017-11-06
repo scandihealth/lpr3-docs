@@ -7,3 +7,4 @@
 - Details on the Danish Metadata profile can be found at [Danish Metadata profile](http://svn.medcom.dk/svn/drafts/Standarder/IHE/DK_profil_metadata/Metadata-v095.docx)
 - Details on HL7 CDA R2 specification can be found at the HL7 organization site for  [CDA R2](http://www.hl7.org/implement/standards/product_brief.cfm?product_id=7)
 - Example use of IHE XDS in a danish setting (IHE XDR being a subset of IHE XDS) can be found at [the NSP site](https://www.nspop.dk/pages/viewpage.action?pageId=32126754)
+- LPR3 Submission guide can be found at [SDS](https://sundhedsdatastyrelsen.dk/-/media/sds/filer/rammer-og-retningslinjer/patientregistrering/indberetning-til-lpr3/indberetningsvejledning-lpr3.pdf)
