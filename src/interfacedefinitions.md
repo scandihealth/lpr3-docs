@@ -2,7 +2,8 @@
 The specific design details of LPR3 based on Clinical Document Architecture (CDA) is documented at [ART-DECOR](http://art-decor.org/art-decor/decor-project--lpr-)
 
 ### IHE XDR WSDL with national SSI additions ###
-The following section shows the IHE XDR WSDL with the danish national SSI additions
+The following section shows the IHE XDR WSDL with the danish national SSI additions ( - complete set can be found [here](https://github.com/scandihealth/lpr3-docs/raw/master/schema.definitions.zip)):
+
 ```xml
 <?xml version='1.0' encoding='UTF-8'?>
 <definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion" xmlns:rs="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0" xmlns:medcom="http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd" xmlns:ihe="urn:ihe:iti:xds-b:2007" xmlns:hsuid="http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd" xmlns="http://schemas.xmlsoap.org/wsdl/" name="DocumentRepository" targetNamespace="urn:ihe:iti:xds-b:2007">
