@@ -78,6 +78,9 @@
     <a class="current" href="index.html">Examples</a>
     <ul class="subnav">
             
+    <li class="toctree-l2"><a href="#sample-request-using-mtomxop">Sample request using MTOM/XOP</a></li>
+    
+
     <li class="toctree-l2"><a href="#example-usage-of-ids-and-uuidv4">Example usage of ID's and UUIDv4</a></li>
     
 
@@ -133,7 +136,7 @@
           <div role="main">
             <div class="section">
               
-                <p><strong>Sample request using MTOM/XOP</strong></p>
+                <h2 id="sample-request-using-mtomxop">Sample request using MTOM/XOP</h2>
 <pre><code class="http">POST /cda-ws/PatientHealthcareReportingService HTTP/1.1 
 Accept: application/soap+xml, multipart/related 
 Content-Type: multipart/related;start=&quot;&lt;rootpart*a80594a2-e5de-425d-9fdc-f6ba27d58f05@example.jaxws.sun.com&gt;&quot;;type=&quot;application/xop+xml&quot;;boundary=&quot;uuid:a80594a2-e5de-425d-9fdc-f6ba27d58f05&quot;;start-info=&quot;application/soap+xml;action=\&quot;urn:ihe:iti:2007:ProvideAndRegisterDocumentSet-b\&quot;&quot; 
