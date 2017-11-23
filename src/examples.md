@@ -725,7 +725,7 @@ Content-Transfer-Encoding: binary
 --uuid:a80594a2-e5de-425d-9fdc-f6ba27d58f05--
 ```
 
-**Sample response with a valid document**
+## Sample response with an invalid document
 
 ```http
 HTTP/1.1 200 OK 
