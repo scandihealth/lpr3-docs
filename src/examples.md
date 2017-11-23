@@ -1,4 +1,4 @@
-**Sample request using MTOM/XOP**
+## Sample request using MTOM/XOP
 
 ```http
 POST /cda-ws/PatientHealthcareReportingService HTTP/1.1 
