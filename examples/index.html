@@ -94,6 +94,8 @@
     
         <ul>
         
+            <li><a class="toctree-l3" href="#sample-of-how-to-create-a-uuidv5">Sample of how to create a UUIDv5</a></li>
+        
             <li><a class="toctree-l3" href="#examples-from-selected-scenarios">Examples from selected scenarios</a></li>
         
         </ul>
@@ -1334,6 +1336,26 @@ Content-ID: &lt;root.message@cxf.apache.org&gt;
         &lt;/externalAct&gt;
     &lt;/reference&gt;
 &lt;/procedure&gt;
+</code></pre>
+
+<h3 id="sample-of-how-to-create-a-uuidv5">Sample of how to create a UUIDv5</h3>
+<pre><code class="bash">#!/bin/bash
+
+EPISODE_OF_CARE_IDENTIFIER_OID=1.2.208.176.7.1.10.80
+AUTHOR_SOR_IDENTIFIER=$1
+INTERNAL_EPISODE_OF_CARE_UID=$2
+
+CMD='uuid -v5 ns:OID '$EPISODE_OF_CARE_IDENTIFIER_OID
+EPISODE_OF_CARE_IDENTIFIER_UUID=`$CMD`
+CMD='uuid -v5 '$EPISODE_OF_CARE_IDENTIFIER_UUID' '$AUTHOR_SOR_IDENTIFIER
+AUTHOR_SOR_UUID=`$CMD`
+CMD='uuid -v5 '$AUTHOR_SOR_UUID' '$INTERNAL_EPISODE_OF_CARE_UID
+EPISODE_OF_CARE_UUID=`$CMD`
+
+
+echo 'EpisodeOfCareIdentifierUUID: '$EPISODE_OF_CARE_IDENTIFIER_UUID
+echo 'AuthorSORUUID: '$AUTHOR_SOR_UUID
+echo 'EpisodeOfCareUUID: '$EPISODE_OF_CARE_UUID
 </code></pre>
 
 <h3 id="examples-from-selected-scenarios">Examples from selected scenarios</h3>
