@@ -1219,6 +1219,28 @@ When in a need to add eg. new procedure to a previous submitted document the pro
 </procedure>
 ```
 
+### Sample of how to create a UUIDv5
+
+```bash
+#!/bin/bash
+
+EPISODE_OF_CARE_IDENTIFIER_OID=1.2.208.176.7.1.10.80
+AUTHOR_SOR_IDENTIFIER=$1
+INTERNAL_EPISODE_OF_CARE_UID=$2
+
+CMD='uuid -v5 ns:OID '$EPISODE_OF_CARE_IDENTIFIER_OID
+EPISODE_OF_CARE_IDENTIFIER_UUID=`$CMD`
+CMD='uuid -v5 '$EPISODE_OF_CARE_IDENTIFIER_UUID' '$AUTHOR_SOR_IDENTIFIER
+AUTHOR_SOR_UUID=`$CMD`
+CMD='uuid -v5 '$AUTHOR_SOR_UUID' '$INTERNAL_EPISODE_OF_CARE_UID
+EPISODE_OF_CARE_UUID=`$CMD`
+
+
+echo 'EpisodeOfCareIdentifierUUID: '$EPISODE_OF_CARE_IDENTIFIER_UUID
+echo 'AuthorSORUUID: '$AUTHOR_SOR_UUID
+echo 'EpisodeOfCareUUID: '$EPISODE_OF_CARE_UUID
+```
+
 ### Examples from selected scenarios
 [Indberetning af sletning af procedure uden kontakt](/examples/Removal.Procedure.xml)
 
