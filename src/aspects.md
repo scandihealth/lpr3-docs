@@ -56,14 +56,14 @@ All rules are exportable in the formats XSD, Schematron and KIE jar (kjar) files
 			location="1.2.3.999-example-only|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][4]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:entry[namespace-uri()='urn:hl7-org:v3'][1]/*:encounter[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][3]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][1]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]||||||438"
 			severity="urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error" />
 		<rs:RegistryError
-			codeContext="BUSINESS_RULES|||Ved fødsler efter 31.12.1996 skal bidiagnose DUH* findes."
+			codeContext="BUSINESS_RULE|||Ved fødsler efter 31.12.1996 skal bidiagnose DUH* findes."
 			errorCode="InvalidDocumentContent"
-			location="1.2.3.999-example-only|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][4]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:entry[namespace-uri()='urn:hl7-org:v3'][1]/*:encounter[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][3]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][1]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]|||dk.sds:lpr-rules:1.0.0#00141#1.1"
+			location="1.2.3.999-example-only|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][4]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:entry[namespace-uri()='urn:hl7-org:v3'][1]/*:encounter[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][3]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][1]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]|||sds:lpr:3.0.0|||00.141"
 			severity="urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error" />
 		<rs:RegistryError
-			codeContext="BUSINESS_RULES|||Bidiagnoser skal senest være indrapporteret senest 2 uger efter kontaktens slutningstidspunkt"
+			codeContext="BUSINESS_RULE|||Bidiagnoser skal senest være indrapporteret senest 2 uger efter kontaktens slutningstidspunkt"
 			errorCode="InvalidDocumentContent"
-			location="1.2.3.999-example-only|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][4]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:entry[namespace-uri()='urn:hl7-org:v3'][1]/*:encounter[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][3]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][1]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]|||dk.sds:lpr-rules:1.0.0#00142#1.0||||||2017-11-25"
+			location="1.2.3.999-example-only|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][4]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:entry[namespace-uri()='urn:hl7-org:v3'][1]/*:encounter[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][3]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][1]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]|||sds:lpr:3.0.0|||00.142"
 			severity="urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Warning" />
 	</rs:RegistryErrorList>
 </rs:RegistryResponse>
@@ -82,7 +82,7 @@ The `location` attribute is used in the following way:
 The sample above shows 3 errors and 1 warning found in a document submission. One error found at XSD level, one error found at SCHEMATRON level and two findings at the business rule level - error and warning. For instance, the error found at the business level holds the following values:
 
  * `<business rule unique identifier>`: `sds:lpr:3.0.0|||01.01` (The maven coordinate is **sds:lpr:3.0.0** and `rule name` is **01.01**)
- * `codeContext`: **BUSINESS_RULES*
+ * `codeContext`: `BUSINESS_RULE`
  * `severity`: `urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error`
 
 ## Supported reporting strategies
