@@ -77,11 +77,11 @@ The `location` attribute is used in the following way:
 
  * The value of `location` is split into one mandatory segment and four conditional segments having the following values `<document id>|||(<xpath expression>)|||(<business rule unique identifier>)|||(<line number>)|||(<timestamp>)`. `<document id>` is the DocumentEntry.uniqueId - see ["IHE IT Infrastructure (ITI TF-3) "](http://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol3.pdf) *(section 4.2.3.2.26)*. `<xpath expression>` is the conditional segment containing an XPath expression pointing into the document where the error is detected - this is present only when `<validation type>` is SCHEMATRON or BUSINESS_RULE. `<business rule unique identifier>` is the conditional segment containing the unique ID of the violated business rule - this is present only when `<validation type>` is BUSINESS_RULE.  `<line number>` is the line in the CDA document where the error is detected - this is present only when `<validation type>` is XSD. `<timestamp>` is the conditional segment containing the point in time when a given business rule will mark the submission as an error (format is ISO 8601). This can be present only when `<validation type>` is BUSINESS_RULE.
 
-`<business rule unique identifier>` is an identifier that is a combination of a [maven coordinate](https://maven.apache.org/pom.html#Maven_Coordinates) of the drools bundle jar (the exportable KIE jar), the `LPR3 Fejlnummer` and the `LPR3 Fejl version` (`LPR3 Fejlnummer` and `LPR3 Fejl version` are terms already present in **LPR2**) separated by **#**.
+`<business rule unique identifier>` is an identifier that is a combination of a [maven coordinate](https://maven.apache.org/pom.html#Maven_Coordinates) of the drools bundle jar (the exportable kjar) and the Drools `rule name` (`rule name` is unique within a package in the kjar, and the kjar only contains 1 package), separated by **|||**.
 
 The sample above shows 3 errors and 1 warning found in a document submission. One error found at XSD level, one error found at SCHEMATRON level and two findings at the business rule level - error and warning. For instance, the error found at the business level holds the following values:
 
- * `<business rule unique identifier>`: `dk.sds:lpr-rules:1.0.0#0141#1.1` (The maven coordinate is **dk.sds:lpr-rules:1.0.0**, LPR3 Fejlnummer is **00141** and the LPR3 Fejl version is **1.1**. )
+ * `<business rule unique identifier>`: `sds:lpr:3.0.0|||01.01` (The maven coordinate is **sds:lpr:3.0.0** and `rule name` is **01.01**)
  * `codeContext`: **BUSINESS_RULES*
  * `severity`: `urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error`
 
