@@ -1,4 +1,4 @@
-**Sample request using MTOM/XOP**
+## Sample request using MTOM/XOP
 
 ```http
 POST /cda-ws/PatientHealthcareReportingService HTTP/1.1 
@@ -725,7 +725,7 @@ Content-Transfer-Encoding: binary
 --uuid:a80594a2-e5de-425d-9fdc-f6ba27d58f05--
 ```
 
-**Sample response with a valid document**
+## Sample response with an invalid document
 
 ```http
 HTTP/1.1 200 OK 
@@ -1217,6 +1217,28 @@ When in a need to add eg. new procedure to a previous submitted document the pro
         </externalAct>
     </reference>
 </procedure>
+```
+
+### Sample of how to create a UUIDv5
+
+```bash
+#!/bin/bash
+
+EPISODE_OF_CARE_IDENTIFIER_OID=1.2.208.176.7.1.10.80
+AUTHOR_SOR_IDENTIFIER=$1
+INTERNAL_EPISODE_OF_CARE_UID=$2
+
+CMD='uuid -v5 ns:OID '$EPISODE_OF_CARE_IDENTIFIER_OID
+EPISODE_OF_CARE_IDENTIFIER_UUID=`$CMD`
+CMD='uuid -v5 '$EPISODE_OF_CARE_IDENTIFIER_UUID' '$AUTHOR_SOR_IDENTIFIER
+AUTHOR_SOR_UUID=`$CMD`
+CMD='uuid -v5 '$AUTHOR_SOR_UUID' '$INTERNAL_EPISODE_OF_CARE_UID
+EPISODE_OF_CARE_UUID=`$CMD`
+
+
+echo 'EpisodeOfCareIdentifierUUID: '$EPISODE_OF_CARE_IDENTIFIER_UUID
+echo 'AuthorSORUUID: '$AUTHOR_SOR_UUID
+echo 'EpisodeOfCareUUID: '$EPISODE_OF_CARE_UUID
 ```
 
 ### Examples from selected scenarios

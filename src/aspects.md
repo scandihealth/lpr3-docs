@@ -35,7 +35,7 @@ All documents submitted to LPR3 are validated at the following levels:
  2. Execute schematron validation (SHCEMATRON) according to the profile specificed at the ART-DECOR site
  3. Execute drools validation rules aka. business rules (BUSINESS_RULE).
 
-![](https://www.websequencediagrams.com/cgi-bin/cdraw?lz=dGl0bGUgVmFsaWRhdGlvbiBzZXF1ZW5jZQoKUmVnaW9uYWwgRUhSLT5MUFIzIFdTOiBJSEUgWERSIFBuUiBDREEtREsKbm90ZSBsZWZ0IG9mIAAgCWViWE1MIGFuZCBER1dTIHYAWwkKb3B0IFByb3RvY29sIGZhaWx1cmUKICAgADQILS0-AHEMOiBJbmNvcnJlY3QgdXNlIG9mAIEABQBRBVBuUiB0cmFuc2FjAFYFZW5kAIEJBm92ZXIAgQMJAIFUDHRlcCAxCgBiCD4AgXALRW5naW5lOiBTY2hlbWEgYXNzZXJ0aW9ucwoAFBEtAIIHClJlcG9ydGVkIGVycm9ycwCBWAVMYWNraW5nIHMARAZjb25mb3JtYW5jAIFJHkRvY3VtZW50IGRvZXMgbm90IGNvbXBseSB3aXRoIHRoZSBzdGFuZGFyZABTB3MAgUknMgCBTSN0cm9uAIE8OACCUCIzAIJVHUJ1c2luZXNzIHJ1bGVzAIJCOACEJhhBY2tub3dsZWRnZQCCWQVhbmQAhQMLIHIAgzwFCgo&s=qsd)
+![](https://www.websequencediagrams.com/cgi-bin/cdraw?lz=dGl0bGUgVmFsaWRhdGlvbiBzZXF1ZW5jZQoKUmVnaW9uYWwgRUhSLT5MUFIzIFdTOiBJSEUgWERSIFBuUiBDREEtREsKbm90ZSBsZWZ0IG9mIAAgCWViWE1MIGFuZCBER1dTIHYAWwkKb3B0IFByb3RvY29sIGZhaWx1cmUKICAgADQILS0-AHEMOiBJbmNvcnJlY3QgdXNlIG9mAIEABQBRBVBuUiB0cmFuc2FjAFYFZW5kAIEJBm92ZXIAgQMJAIFUDHRlcCAxCgBiCD4AgXALRW5naW5lOiBTY2hlbWEgYXNzZXJ0aW9ucwoAFBEtAIIHClJlcG9ydGVkIGVycm9ycwCBWAVMYWNraW5nIHMARAZjb25mb3JtYW5jAIFJHkRvY3VtZW50IGRvZXMgbm90IGNvbXBseSB3aXRoIHRoZSBzdGFuZGFyZABTB3MAgUknMgCBTSN0cm9uAIEqSgBJBQCBLUsAgRoJAIFLKDMAg0YdQnVzaW5lc3MgcnVsZXMAgzM4AIUXGEFja25vd2xlZGdlAINKBWFuZACFdAsgcgCELQUKCgo&s=qsd)
 
 Errors in submitted documents can be found at any of the levels stated above. If a document fails to meet level 1, no further processing will be conducted and a report will be returned stating the errors on level 1 in <b>ebXML</b>-format as used in IHE XDR. Errors found at level 2 and level 3 will be bundled and both can be present in the same response. While level 1 is static and level 2 should be considered static (variance can occour in valuesets dependening on the business needs), level 3 is considered dynamic in that sense that business rules are subject to change or be deprecated over time. Level 3 is referred to as <b>"Dyb validering"</b> in the reporting guidelines supplied by <b>Sundhedsdatastyrelsen</b>.
 
@@ -48,22 +48,22 @@ All rules are exportable in the formats XSD, Schematron and KIE jar (kjar) files
 		highestSeverity="urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error">
 		<rs:RegistryError
 			codeContext="XSD|||cvc-complex-type.2.4.a: Invalid content was found starting with element 'assignedAthor'. One of '{&amp;quot;urn:hl7-org:v3&amp;quot;:assignedAuthor}' is expected."
-			errorCode="InvalidDocumentContent" location="1.2.3.999-example-only|||||||||48"
+			errorCode="InvalidDocumentContent" location="1.2.3.999-example-only|||48:23"
 			severity="urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error" />
 		<rs:RegistryError
 			codeContext="SCHEMATRON|||(DKSpecializationLevelAct): The value for code SHALL be selected from value set '1.2.208.176.2.4.18' DK Specialization Level Act Codes (DYNAMIC)."
 			errorCode="InvalidDocumentContent"
-			location="1.2.3.999-example-only|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][4]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:entry[namespace-uri()='urn:hl7-org:v3'][1]/*:encounter[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][3]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][1]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]||||||438"
+			location="1.2.3.999-example-only|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][4]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:entry[namespace-uri()='urn:hl7-org:v3'][1]/*:encounter[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][3]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][1]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]
 			severity="urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error" />
 		<rs:RegistryError
-			codeContext="BUSINESS_RULES|||Ved fødsler efter 31.12.1996 skal bidiagnose DUH* findes."
+			codeContext="BUSINESS_RULE|||Ved fødsler efter 31.12.1996 skal bidiagnose DUH* findes."
 			errorCode="InvalidDocumentContent"
-			location="1.2.3.999-example-only|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][4]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:entry[namespace-uri()='urn:hl7-org:v3'][1]/*:encounter[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][3]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][1]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]|||dk.sds:lpr-rules:1.0.0#00141#1.1"
+			location="1.2.3.999-example-only|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][4]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:entry[namespace-uri()='urn:hl7-org:v3'][1]/*:encounter[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][3]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][1]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]|||sds:lpr:3.0.0|||00.141"
 			severity="urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error" />
 		<rs:RegistryError
-			codeContext="BUSINESS_RULES|||Bidiagnoser skal senest være indrapporteret senest 2 uger efter kontaktens slutningstidspunkt"
+			codeContext="BUSINESS_RULE|||Bidiagnoser skal senest være indrapporteret senest 2 uger efter kontaktens slutningstidspunkt"
 			errorCode="InvalidDocumentContent"
-			location="1.2.3.999-example-only|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][4]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:entry[namespace-uri()='urn:hl7-org:v3'][1]/*:encounter[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][3]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][1]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]|||dk.sds:lpr-rules:1.0.0#00142#1.0||||||2017-11-25"
+			location="1.2.3.999-example-only|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][4]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:entry[namespace-uri()='urn:hl7-org:v3'][1]/*:encounter[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][3]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][1]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]|||sds:lpr:3.0.0|||00.142"
 			severity="urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Warning" />
 	</rs:RegistryErrorList>
 </rs:RegistryResponse>
@@ -75,14 +75,19 @@ The `codeContext` attribute is used in the following way:
 
 The `location` attribute is used in the following way:
 
- * The value of `location` is split into one mandatory segment and four conditional segments having the following values `<document id>|||(<xpath expression>)|||(<business rule unique identifier>)|||(<line number>)|||(<timestamp>)`. `<document id>` is the DocumentEntry.uniqueId - see ["IHE IT Infrastructure (ITI TF-3) "](http://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol3.pdf) *(section 4.2.3.2.26)*. `<xpath expression>` is the conditional segment containing an XPath expression pointing into the document where the error is detected - this is present only when `<validation type>` is SCHEMATRON or BUSINESS_RULE. `<business rule unique identifier>` is the conditional segment containing the unique ID of the violated business rule - this is present only when `<validation type>` is BUSINESS_RULE.  `<line number>` is the line in the CDA document where the error is detected - this is present only when `<validation type>` is XSD. `<timestamp>` is the conditional segment containing the point in time when a given business rule will mark the submission as an error (format is ISO 8601). This can be present only when `<validation type>` is BUSINESS_RULE.
+* The value of `location` is split into one mandatory segment and three conditional segments having the following values `<document id>|||(<line:column>)|||(<xpath expression>)|||(<business rule unique identifier>)`.
+ 	* `<document id>` is the DocumentEntry.uniqueId - see ["IHE IT Infrastructure (ITI TF-3) "](http://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol3.pdf) *(section 4.2.3.2.26)*
+	* `<line:column>` is the line and column in the CDA document where the error is detected - this is present only when `<validation type>` is XSD.
+	* `<xpath expression>` is the conditional segment containing an XPath expression pointing into the document where the error is detected - this is present only when `<validation type>` is SCHEMATRON or BUSINESS_RULE.
+	* `<business rule unique identifier>` is the conditional segment containing the unique ID of the violated business rule - this is present only when `<validation type>` is BUSINESS_RULE. 
 
-`<business rule unique identifier>` is an identifier that is a combination of a [maven coordinate](https://maven.apache.org/pom.html#Maven_Coordinates) of the drools bundle jar (the exportable KIE jar), the `LPR3 Fejlnummer` and the `LPR3 Fejl version` (`LPR3 Fejlnummer` and `LPR3 Fejl version` are terms already present in **LPR2**) separated by **#**.
+
+`<business rule unique identifier>` is an identifier that is a combination of a [maven coordinate](https://maven.apache.org/pom.html#Maven_Coordinates) of the drools bundle jar (the exportable kjar) and the Drools `rule name` (`rule name` is unique within a package in the kjar, and the kjar only contains 1 package), separated by **|||**.
 
 The sample above shows 3 errors and 1 warning found in a document submission. One error found at XSD level, one error found at SCHEMATRON level and two findings at the business rule level - error and warning. For instance, the error found at the business level holds the following values:
 
- * `<business rule unique identifier>`: `dk.sds:lpr-rules:1.0.0#0141#1.1` (The maven coordinate is **dk.sds:lpr-rules:1.0.0**, LPR3 Fejlnummer is **00141** and the LPR3 Fejl version is **1.1**. )
- * `codeContext`: **BUSINESS_RULES*
+ * `<business rule unique identifier>`: `sds:lpr:3.0.0|||01.01` (The maven coordinate is **sds:lpr:3.0.0** and `rule name` is **01.01**)
+ * `codeContext`: `BUSINESS_RULE`
  * `severity`: `urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error`
 
 ## Supported reporting strategies
