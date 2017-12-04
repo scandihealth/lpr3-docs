@@ -113,7 +113,8 @@ IHE XDR defines that submissions of mulitple documents pr. request are allowed a
 
 ## Mapping to the logical model
 The following diagram illustrates the logical data model of LPR3:
-![](/img/LPR3.png)
+[![LPR3 logical model](/img/LPR3.png)](/img/LPR3.png)
+A physical ERM for the logical model can be seen [here](/res/LPR3_ACTIVE.pdf)
 This model is mapped to CDA and divided into the following sections:
 
 - CDA Header
