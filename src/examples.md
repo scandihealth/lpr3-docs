@@ -851,6 +851,58 @@ Content-ID: <root.message@cxf.apache.org>
 --uuid:51e51260-f08c-4500-b486-5fd8ffaaddf9--
 ```
 
+## Sample response with a valid document
+
+```http
+HTTP/1.1 200 OK 
+Connection: keep-alive 
+X-Powered-By: Undertow/1 
+Server: WildFly/10 
+Transfer-Encoding: chunked 
+Content-Type: multipart/related; type="application/xop+xml"; boundary="uuid:51e51260-f08c-4500-b486-5fd8ffaaddf9"; start="<root.message@cxf.apache.org>"; start-info="application/soap+xml" 
+Date: Thu, 23 Nov 2017 07:51:32 GMT 
+```
+
+```http
+--uuid:51e51260-f08c-4500-b486-5fd8ffaaddf9 
+Content-Type: application/xop+xml; charset=UTF-8; type="application/soap+xml" 
+Content-Transfer-Encoding: binary 
+Content-ID: <root.message@cxf.apache.org> 
+```
+
+```xml
+<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+	<soap:Header>
+		<ns10:Header xmlns="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0"
+			xmlns:ns10="http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd"
+			xmlns:ns11="http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd" xmlns:ns2="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0"
+			xmlns:ns3="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0" xmlns:ns4="urn:ihe:iti:xds-b:2007"
+			xmlns:ns5="urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0"
+			xmlns:ns6="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+			xmlns:ns7="urn:oasis:names:tc:SAML:2.0:assertion" xmlns:ns8="http://www.w3.org/2000/09/xmldsig#"
+			xmlns:ns9="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+			<ns10:TimeOut>3</ns10:TimeOut>
+			<ns10:FlowStatus>flow_finalized_succesfully</ns10:FlowStatus>
+		</ns10:Header>
+	</soap:Header>
+	<soap:Body>
+		<ns2:RegistryResponse xmlns="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0"
+			xmlns:ns10="http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd"
+			xmlns:ns11="http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd" xmlns:ns2="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0"
+			xmlns:ns3="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0" xmlns:ns4="urn:ihe:iti:xds-b:2007"
+			xmlns:ns5="urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0"
+			xmlns:ns6="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+			xmlns:ns7="urn:oasis:names:tc:SAML:2.0:assertion" xmlns:ns8="http://www.w3.org/2000/09/xmldsig#"
+			xmlns:ns9="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+			status="urn:oasis:names:tc:ebxml-regrep:ResponseStatusType:Success" />
+	</soap:Body>
+</soap:Envelope>
+```
+
+```http
+--uuid:51e51260-f08c-4500-b486-5fd8ffaaddf9--
+```
+
 ## Example usage of ID's and UUIDv4
 The sample below shows the essential parts of the initial state of a given document containing a procedure. Note the use of ClinicalDocument.id, ClinicalDocument.setId and ClinicalDocument.versionNumber in the samples.
 
