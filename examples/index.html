@@ -85,6 +85,9 @@
     <li class="toctree-l2"><a href="#sample-response-with-an-invalid-document">Sample response with an invalid document</a></li>
     
 
+    <li class="toctree-l2"><a href="#sample-response-with-a-valid-document">Sample response with a valid document</a></li>
+    
+
     <li class="toctree-l2"><a href="#example-usage-of-ids-and-uuidv4">Example usage of ID's and UUIDv4</a></li>
     
 
@@ -978,6 +981,53 @@ Content-ID: &lt;root.message@cxf.apache.org&gt;
         &lt;/ns2:RegistryResponse&gt;
     &lt;/soap:Body&gt;
 &lt;/soap:Envelope&gt; 
+</code></pre>
+
+<pre><code class="http">--uuid:51e51260-f08c-4500-b486-5fd8ffaaddf9--
+</code></pre>
+
+<h2 id="sample-response-with-a-valid-document">Sample response with a valid document</h2>
+<pre><code class="http">HTTP/1.1 200 OK 
+Connection: keep-alive 
+X-Powered-By: Undertow/1 
+Server: WildFly/10 
+Transfer-Encoding: chunked 
+Content-Type: multipart/related; type=&quot;application/xop+xml&quot;; boundary=&quot;uuid:51e51260-f08c-4500-b486-5fd8ffaaddf9&quot;; start=&quot;&lt;root.message@cxf.apache.org&gt;&quot;; start-info=&quot;application/soap+xml&quot; 
+Date: Thu, 23 Nov 2017 07:51:32 GMT 
+</code></pre>
+
+<pre><code class="http">--uuid:51e51260-f08c-4500-b486-5fd8ffaaddf9 
+Content-Type: application/xop+xml; charset=UTF-8; type=&quot;application/soap+xml&quot; 
+Content-Transfer-Encoding: binary 
+Content-ID: &lt;root.message@cxf.apache.org&gt; 
+</code></pre>
+
+<pre><code class="xml">&lt;soap:Envelope xmlns:soap=&quot;http://www.w3.org/2003/05/soap-envelope&quot;&gt;
+    &lt;soap:Header&gt;
+        &lt;ns10:Header xmlns=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0&quot;
+            xmlns:ns10=&quot;http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd&quot;
+            xmlns:ns11=&quot;http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd&quot; xmlns:ns2=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0&quot;
+            xmlns:ns3=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0&quot; xmlns:ns4=&quot;urn:ihe:iti:xds-b:2007&quot;
+            xmlns:ns5=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0&quot;
+            xmlns:ns6=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&quot;
+            xmlns:ns7=&quot;urn:oasis:names:tc:SAML:2.0:assertion&quot; xmlns:ns8=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
+            xmlns:ns9=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot;&gt;
+            &lt;ns10:TimeOut&gt;3&lt;/ns10:TimeOut&gt;
+            &lt;ns10:FlowStatus&gt;flow_finalized_succesfully&lt;/ns10:FlowStatus&gt;
+        &lt;/ns10:Header&gt;
+    &lt;/soap:Header&gt;
+    &lt;soap:Body&gt;
+        &lt;ns2:RegistryResponse xmlns=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0&quot;
+            xmlns:ns10=&quot;http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd&quot;
+            xmlns:ns11=&quot;http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd&quot; xmlns:ns2=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0&quot;
+            xmlns:ns3=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0&quot; xmlns:ns4=&quot;urn:ihe:iti:xds-b:2007&quot;
+            xmlns:ns5=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0&quot;
+            xmlns:ns6=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&quot;
+            xmlns:ns7=&quot;urn:oasis:names:tc:SAML:2.0:assertion&quot; xmlns:ns8=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
+            xmlns:ns9=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot;
+            status=&quot;urn:oasis:names:tc:ebxml-regrep:ResponseStatusType:Success&quot; /&gt;
+    &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;
 </code></pre>
 
 <pre><code class="http">--uuid:51e51260-f08c-4500-b486-5fd8ffaaddf9--
