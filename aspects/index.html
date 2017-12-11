@@ -263,9 +263,9 @@
 <h2 id="service-endpoint-setup">Service endpoint setup</h2>
 <p>In order to support both synchronous and asynchronous reporting three services endpoints are available:</p>
 <ul>
-<li>One service endpoint supporting the synchronous scenario that does validation on level 1, 2 and 3 and reports back accordingly. If the submission contains no errors on all levels the reporting is stored. Service is found at https://lprws-test.sds.dsdn.dk/cda-ws/PatientHealthcareSaveIfNoErrorsReportingService</li>
-<li>One service endpoint supporting the asynchronous scenario that does validation on level 1, and level 2. If the submission contains no errors on level 1 and level 2 the reporting is stored for further processing. If errors are found at level 3, the error report is available at the prior-to-submission designated folder. Service is found at https://lprws-test.sds.dsdn.dk/cda-ws/PatientHealthcareReportingService</li>
-<li>One service endpoint supporting validation on all three levels but no storing - aka. dry-run validation. Service is found at https://lprws-test.sds.dsdn.dk/cda-ws/PatientHealthcareValidateReportingService</li>
+<li>One service endpoint supporting the synchronous scenario that does validation on level 1, 2 and 3 and reports back accordingly. If the submission contains no errors on all levels the reporting is stored. Test service is found at <a href="https://lprws-test.sds.dsdn.dk/cda-ws/PatientHealthcareSaveIfNoErrorsReportingService">https://lprws-test.sds.dsdn.dk/cda-ws/PatientHealthcareSaveIfNoErrorsReportingService</a></li>
+<li>One service endpoint supporting the asynchronous scenario that does validation on level 1, and level 2. If the submission contains no errors on level 1 and level 2 the reporting is stored for further processing. If errors are found at level 3, the error report is available at the prior-to-submission designated folder. Test service is found at <a href="https://lprws-test.sds.dsdn.dk/cda-ws/PatientHealthcareReportingService">https://lprws-test.sds.dsdn.dk/cda-ws/PatientHealthcareReportingService</a></li>
+<li>One service endpoint supporting validation on all three levels but no storing - aka. dry-run validation. Service is found at <a href="https://lprws-test.sds.dsdn.dk/cda-ws/PatientHealthcareValidateReportingService">https://lprws-test.sds.dsdn.dk/cda-ws/PatientHealthcareValidateReportingService</a></li>
 </ul>
 <p>All three services adhere to the same system interface, making it up to the client to decide which service constallation is the best fit.</p>
 <h2 id="ihe-xdr">IHE XDR</h2>
