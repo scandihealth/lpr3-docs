@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Related material and links - Landspatientregisteret 3 - Technical documentation</title>
+  <title>Test environment - Landspatientregisteret 3 - Technical documentation</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -19,9 +19,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Related material and links";
-    var mkdocs_page_input_path = "links.md";
-    var mkdocs_page_url = "/links/index.html";
+    var mkdocs_page_name = "Test environment";
+    var mkdocs_page_input_path = "testenvironment.md";
+    var mkdocs_page_url = "/testenvironment/index.html";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -79,9 +79,27 @@
     <a class="" href="../interfacedefinitions/index.html">Interface definition</a>
 	    </li>
           
-            <li class="toctree-l1">
+            <li class="toctree-l1 current">
 		
-    <a class="" href="../testenvironment/index.html">Test environment</a>
+    <a class="current" href="index.html">Test environment</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#test-environment">Test environment</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#address">Address</a></li>
+        
+            <li><a class="toctree-l3" href="#nightly-build-deployments">Nightly build deployments</a></li>
+        
+            <li><a class="toctree-l3" href="#weekly-data-purge">Weekly data purge</a></li>
+        
+            <li><a class="toctree-l3" href="#rules-implemented-on-test-system">Rules implemented on Test System</a></li>
+        
+        </ul>
+    
+
+    </ul>
 	    </li>
           
             <li class="toctree-l1">
@@ -89,12 +107,9 @@
     <a class="" href="../examples/index.html">Examples</a>
 	    </li>
           
-            <li class="toctree-l1 current">
+            <li class="toctree-l1">
 		
-    <a class="current" href="index.html">Related material and links</a>
-    <ul class="subnav">
-            
-    </ul>
+    <a class="" href="../links/index.html">Related material and links</a>
 	    </li>
           
         </ul>
@@ -119,7 +134,7 @@
     
       
     
-    <li>Related material and links</li>
+    <li>Test environment</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -129,20 +144,26 @@
           <div role="main">
             <div class="section">
               
-                <ul>
-<li>LPR3 CDA Templates can be found at <a href="http://art-decor.org/art-decor/decor-project--lpr-">Art-Decor</a></li>
-<li>MedCom CDA Templates can be found at <a href="http://art-decor.org/art-decor/decor-project--medcom-">Art-Decor</a></li>
-<li>LPR3 Schematron files can be found <a href="https://github.com/scandihealth/lpr3-docs/raw/master/lpr-schematron-1.1.zip">here</a></li>
-<li>IHE XDR with national extensions can be found <a href="https://github.com/scandihealth/lpr3-docs/raw/master/schema.definitions.zip">here</a></li>
-<li>Overall details of IHE XDR can be found at <a href="http://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol1.pdf">IHE IT Infrastructure (ITI) Technical Framework Volume 1 (ITI TF-1) Rev. 13 Integration Profiles</a> <em>(section 15)</em></li>
-<li>Details on the IHE XDR transaction <strong>ITI-41</strong> can be found at <a href="http://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol2b.pdf">IHE IT Infrastructure (ITI) Technical Framework Volume 2b (ITI TF-2b) Rev. 13 Transactions Part B – Sections 3.29 – 3.64</a> <em>(section 3.41)</em> </li>
-<li>Details on the IHE XDR/XDS protocol content can be found at <a href="http://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol3.pdf">IHE IT Infrastructure (ITI) Technical Framework Volume 3 (ITI TF-3) Rev. 13 Cross-Transaction Specifications and Content Specifications</a> <em>(section 4)</em></li>
-<li>Details on HL7 CDA R2 specification can be found at the HL7 organization site for  <a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=7">CDA R2</a></li>
-<li>Example use of IHE XDS in a danish setting (IHE XDR being a subset of IHE XDS) can be found at <a href="https://www.nspop.dk/pages/viewpage.action?pageId=32126754">the NSP site</a></li>
-<li>LPR3 Submission guide can be found at <a href="https://sundhedsdatastyrelsen.dk/da/rammer-og-retningslinjer/om-patientregistrering/indberetning-lpr3">SDS</a></li>
-<li>Details on the DK CDA MedCom header profile can be found at <a href="http://svn.medcom.dk/svn/drafts/Standarder/HL7/CDA%20Header/Dokumentation/DK-CDA-Header-v1.1.pdf">MedCom</a></li>
-<li>Details on the Danish Metadata profile can be found at <a href="http://svn.medcom.dk/svn/drafts/Standarder/IHE/DK_profil_metadata/Metadata-v095.docx">MedCom</a></li>
+                <h1 id="test-environment">Test environment</h1>
+<p>DXC hosts a test environment that integrators can use do finalize their solution.</p>
+<h2 id="address">Address</h2>
+<p>Accessing the test environment requires access to the <a href="https://www.medcom.dk/opslag/support">Sundhedsdatanettet (SDN)</a>.
+The following three endpoint are available.</p>
+<ul>
+<li><a href="https://lprws-test.sds.dsdn.dk/cda-ws/PatientHealthcareSaveIfNoErrorsReportingService">Safe if no errors</a></li>
+<li><a href="https://lprws-test.sds.dsdn.dk/cda-ws/PatientHealthcareReportingService">Safe with errors</a></li>
+<li><a href="https://lprws-test.sds.dsdn.dk/cda-ws/PatientHealthcareValidateReportingService">Validate</a></li>
 </ul>
+<h2 id="nightly-build-deployments">Nightly build deployments</h2>
+<p>To increase velocity and success DXC will continuously deliver new versions of the LPR3 solution.
+As such DXC may deploy new builds on a nightly basis.
+New deployments will be notified through GitHub no later than end of business day before nightly deploy.</p>
+<h2 id="weekly-data-purge">Weekly data purge</h2>
+<p>As the test progresses and issues are resolved, it may be necessary to delete data in the test enviroment.
+Therefore, DXC may purge data during weekends.
+Data purges will be notified through GitHub no later than friday end of business day.</p>
+<h2 id="rules-implemented-on-test-system">Rules implemented on Test System</h2>
+<p>The document <a href="../res/Rule implemented on test system.docx">Rules implemented on test system</a> contains a full list of rules from the Indberetningsvejledning implemented on the environment at any given time.</p>
               
             </div>
           </div>
@@ -150,8 +171,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="../examples/index.html" class="btn btn-neutral float-right" title="Examples">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-        <a href="../examples/index.html" class="btn btn-neutral" title="Examples"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+        <a href="../interfacedefinitions/index.html" class="btn btn-neutral" title="Interface definition"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -177,8 +200,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../examples/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../interfacedefinitions/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
+      
+        <span style="margin-left: 15px"><a href="../examples/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
