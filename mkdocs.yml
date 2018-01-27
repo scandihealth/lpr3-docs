@@ -2,10 +2,12 @@ docs_dir: src
 site_name: Landspatientregisteret 3 - Technical documentation
 pages:
 - Home: index.md
+- Governace: governance.md
 - Documentation:
   - Interface aspects and usage: aspects.md
   - Submission scheme: submission-scheme.md
 - Interface definition: interfacedefinitions.md
+- Test environment: testenvironment.md
 - Examples: examples.md  
 - Related material and links: links.md
 #- LPR 2 specifik dokumentation:

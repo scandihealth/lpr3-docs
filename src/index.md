@@ -3,6 +3,3 @@ This documentation covers the aspects and usage of the national Danish patient r
 
 ## What is not the concern of LPR3
 This documentation will not cover the clinical/administrative user oriented aspects of reporting but instead focus on functional aspects. As such, user stories are not part of this documentation.
-
-## Contact
-Questions regarding this documentation can be submitted as [issues to the github project](https://github.com/scandihealth/lpr3-docs/issues).
