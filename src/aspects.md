@@ -113,7 +113,7 @@ The XDR web service is accessible over HTTPS only. Use of this service mandates 
 IHE XDR defines that submissions of mulitple documents pr. request are allowed as long as all documents are concerning the same patient. Hence, batch-oriented reporting is supported for a single patient having multiple documents to be reported (see ["IHE ITI TF-3"](http://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol3.pdf) *(section 4.2.1.2)*. Patient ID's MUST be alligned within the patientRole.id across documents within a submission.
 
 ## Mapping to the logical model
-The following diagram illustrates the logical data model of LPR3:
+The following diagram illustrates the logical data model of LPR3:  
 [![LPR3 logical model](/img/LPR3.png)](/img/LPR3.png)
 
 A physical ERM for the logical model can be seen [here](/res/LPR3_ACTIVE.pdf)
@@ -155,14 +155,15 @@ HL7 defines procedures, acts and observations (the main building blocks of the L
 > *An Act whose immediate and primary outcome (post-condition) is the alteration of the physical condition of the subject* [*- see 3.1.15 in the specification*](http://www.hl7.org/implement/standards/product_brief.cfm?product_id=7)
 
 <b>Observation:</b>
-> *An Act of recognizing and noting information about the subject, and whose immediate and primary outcome (post-condition) is new data about a subject. Observations often involve measurement or other elaborate methods of investigation, but may also be simply assertive statements* [*- see 3.1.13 in the specification*](http://www.hl7.org/implement/standards/product_brief.cfm?product_id=7)
+> *An Act of recognizing and noting information about the subject, and whose immediate and primary outcome (post-condition) is new data about a subject.  
+Observations often involve measurement or other elaborate methods of investigation, but may also be simply assertive statements* [*- see 3.1.13 in the specification*](http://www.hl7.org/implement/standards/product_brief.cfm?product_id=7)
 
 <b>Act:</b>
 > *A record of something that is being done, has been done, can be done, or is intended or requested to be done.* [*- see 3.1.1 in the specification*](http://www.hl7.org/implement/standards/product_brief.cfm?product_id=7)
 
 The danish term '[Procedure](http://sundhedsdata.iterm.dk/?TermId=1853&SrcLang=da&TrgLang=en)' can cover all three HL7 defined terms but doing so violates the standard. Hence, when reporting to LPR3, submitters of reports must differ between the types `Procedure`, `Observation` and `Act`. The distinction between these three types will documented using valuesets provided by **Sundhedsdatastyrelsen**; the valueset `proc.act` `urn:oid:1.2.208.176.2.4.19` for `Act`,`proc.oper` `urn:oid:1.2.208.176.2.4.20` for `Procedure`, and `proc.und` `urn:oid:1.2.208.176.2.4.21` for `Observation`.
 
-***_UPDATE_*** To ease integration **Sundhedsdatastyrelsen** has decided that `proc.oper` `urn:oid:1.2.208.176.2.4.20` will contain values for `Act`, `Procedure`, and `Observation` while the two other valuesets `proc.act` `urn:oid:1.2.208.176.2.4.19` and `proc.und` `urn:oid:1.2.208.176.2.4.21` will be empty allowing organizations to use the template [`DK Procedure Procedure`](http://art-decor.org/art-decor/decor-templates--lpr-?section=templates&id=1.2.208.176.7.1.10.30&language=en-US) for all mandatory procedure reporting to LPR3.
+***_UPDATE_*** To ease integration **Sundhedsdatastyrelsen** has decided that `proc.oper` `urn:oid:1.2.208.176.2.4.20` will contain values for `Act`, `Procedure`, and `Observation` while the two other valuesets `proc.act` `urn:oid:1.2.208.176.2.4.19` and `proc.und` `urn:oid:1.2.208.176.2.4.21` will be empty allowing organizations to use the template [`DK Procedure Procedure`](http://lpr-art-decor.westeurope.cloudapp.azure.com:8080/art-decor/decor-templates--lpr-?section=templates&id=1.2.208.176.7.1.10.30&language=en-US) for all mandatory procedure reporting to LPR3.
 
 ## ID usage and referencing in LPR3
 Unique identifiers can be supplied by the submitter to almost all elements using [UUID v5 identifiers](https://en.wikipedia.org/wiki/Universally_unique_identifier#Versions_3_and_5_.28namespace_name-based.29). Unique identifiers are needed when previously submitted entities needs to be referenced, removed or updated. If unique identifiers are not provided, internal references between the entities can be used and must be done using UUID v4 identifiers.

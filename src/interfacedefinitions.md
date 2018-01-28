@@ -1,7 +1,7 @@
-### Clinical Document Architecture LPR3 definition ###
-The specific design details of LPR3 based on Clinical Document Architecture (CDA) is documented at [ART-DECOR](http://art-decor.org/art-decor/decor-project--lpr-)
+# Clinical Document Architecture LPR3 definition
+The specific design details of LPR3 based on Clinical Document Architecture (CDA) is documented at [ART-DECOR](http://lpr-art-decor.westeurope.cloudapp.azure.com:8080/art-decor/decor-project--lpr-)
 
-### IHE XDR WSDL with national SSI additions ###
+## IHE XDR WSDL with national SSI additions
 The following section shows the IHE XDR WSDL with the danish national SSI additions ( - complete set can be found [here](https://github.com/scandihealth/lpr3-docs/raw/master/schema.definitions.zip)):
 
 ```xml

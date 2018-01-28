@@ -1,5 +1,5 @@
-- LPR3 CDA Templates can be found at [Art-Decor](http://art-decor.org/art-decor/decor-project--lpr-)
-- MedCom CDA Templates can be found at [Art-Decor](http://art-decor.org/art-decor/decor-project--medcom-)
+- LPR3 CDA Templates can be found at [Art-Decor](http://lpr-art-decor.westeurope.cloudapp.azure.com:8080/art-decor/decor-project--lpr-)
+- MedCom CDA Templates can be found at [Art-Decor](http://lpr-art-decor.westeurope.cloudapp.azure.com:8080/art-decor/decor-project--medcom-)
 - LPR3 Schematron files can be found [here](https://github.com/scandihealth/lpr3-docs/raw/master/lpr-schematron-1.1.zip)
 - IHE XDR with national extensions can be found [here](https://github.com/scandihealth/lpr3-docs/raw/master/schema.definitions.zip)
 - Overall details of IHE XDR can be found at [IHE IT Infrastructure (ITI) Technical Framework Volume 1 (ITI TF-1) Rev. 13 Integration Profiles](http://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol1.pdf) *(section 15)*

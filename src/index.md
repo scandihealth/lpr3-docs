@@ -1,4 +1,4 @@
-## Introduction to the material
+# Introduction to the material
 This documentation covers the aspects and usage of the national Danish patient register 'Landspatientregisteret 3' (LPR3) from a technical integration point of view. LPR is one of the cornerstones in the danish national healthcare infrastructure and is responsible for exposing services that allows the danish regions to report conducted medical services and treatments to a central hub with the primary purpose of supporting billing. This documentation outlines the technical aspects of what the requirements are to support such infrastructure from a regional perspective aka. a client to the LPR3 services and what functionality is supported. As the client-faced services are based an IHE XDR infrastructure with the content being modelled in HL7 CDA R2, it is expected that the reader is somewhat familiar with such standards and frameworks.
 
 ## What is not the concern of LPR3

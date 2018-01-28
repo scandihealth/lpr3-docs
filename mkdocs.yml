@@ -20,4 +20,4 @@ use_directory_urls: false
 markdown_extensions: [fenced_code]
 extra_css:
   - css/highlight.js/idea.css
-  - css/custom-width.css
+  - css/theme-overrides.css
