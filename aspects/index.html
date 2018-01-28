@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
   <link rel="stylesheet" href="../css/highlight.css">
   <link href="../css/highlight.js/idea.css" rel="stylesheet">
-  <link href="../css/custom-width.css" rel="stylesheet">
+  <link href="../css/theme-overrides.css" rel="stylesheet">
   
   <script>
     // Current page data
@@ -285,7 +285,7 @@
 <h3 id="batch-oriented-reporting">Batch oriented reporting</h3>
 <p>IHE XDR defines that submissions of mulitple documents pr. request are allowed as long as all documents are concerning the same patient. Hence, batch-oriented reporting is supported for a single patient having multiple documents to be reported (see <a href="http://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol3.pdf">"IHE ITI TF-3"</a> <em>(section 4.2.1.2)</em>. Patient ID's MUST be alligned within the patientRole.id across documents within a submission.</p>
 <h2 id="mapping-to-the-logical-model">Mapping to the logical model</h2>
-<p>The following diagram illustrates the logical data model of LPR3:
+<p>The following diagram illustrates the logical data model of LPR3:<br />
 <a href="../img/LPR3.png"><img alt="LPR3 logical model" src="../img/LPR3.png" /></a></p>
 <p>A physical ERM for the logical model can be seen <a href="../res/LPR3_ACTIVE.pdf">here</a></p>
 <p>This model is mapped to CDA and divided into the following sections:</p>
@@ -323,14 +323,15 @@ This section contains the main elements <code>Resultatindberetning</code> and <c
 </blockquote>
 <p><b>Observation:</b></p>
 <blockquote>
-<p><em>An Act of recognizing and noting information about the subject, and whose immediate and primary outcome (post-condition) is new data about a subject. Observations often involve measurement or other elaborate methods of investigation, but may also be simply assertive statements</em> <a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=7"><em>- see 3.1.13 in the specification</em></a></p>
+<p><em>An Act of recognizing and noting information about the subject, and whose immediate and primary outcome (post-condition) is new data about a subject.<br />
+Observations often involve measurement or other elaborate methods of investigation, but may also be simply assertive statements</em> <a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=7"><em>- see 3.1.13 in the specification</em></a></p>
 </blockquote>
 <p><b>Act:</b></p>
 <blockquote>
 <p><em>A record of something that is being done, has been done, can be done, or is intended or requested to be done.</em> <a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=7"><em>- see 3.1.1 in the specification</em></a></p>
 </blockquote>
 <p>The danish term '<a href="http://sundhedsdata.iterm.dk/?TermId=1853&amp;SrcLang=da&amp;TrgLang=en">Procedure</a>' can cover all three HL7 defined terms but doing so violates the standard. Hence, when reporting to LPR3, submitters of reports must differ between the types <code>Procedure</code>, <code>Observation</code> and <code>Act</code>. The distinction between these three types will documented using valuesets provided by <strong>Sundhedsdatastyrelsen</strong>; the valueset <code>proc.act</code> <code>urn:oid:1.2.208.176.2.4.19</code> for <code>Act</code>,<code>proc.oper</code> <code>urn:oid:1.2.208.176.2.4.20</code> for <code>Procedure</code>, and <code>proc.und</code> <code>urn:oid:1.2.208.176.2.4.21</code> for <code>Observation</code>.</p>
-<p><strong><em><em>UPDATE</em></em></strong> To ease integration <strong>Sundhedsdatastyrelsen</strong> has decided that <code>proc.oper</code> <code>urn:oid:1.2.208.176.2.4.20</code> will contain values for <code>Act</code>, <code>Procedure</code>, and <code>Observation</code> while the two other valuesets <code>proc.act</code> <code>urn:oid:1.2.208.176.2.4.19</code> and <code>proc.und</code> <code>urn:oid:1.2.208.176.2.4.21</code> will be empty allowing organizations to use the template <a href="http://art-decor.org/art-decor/decor-templates--lpr-?section=templates&amp;id=1.2.208.176.7.1.10.30&amp;language=en-US"><code>DK Procedure Procedure</code></a> for all mandatory procedure reporting to LPR3.</p>
+<p><strong><em><em>UPDATE</em></em></strong> To ease integration <strong>Sundhedsdatastyrelsen</strong> has decided that <code>proc.oper</code> <code>urn:oid:1.2.208.176.2.4.20</code> will contain values for <code>Act</code>, <code>Procedure</code>, and <code>Observation</code> while the two other valuesets <code>proc.act</code> <code>urn:oid:1.2.208.176.2.4.19</code> and <code>proc.und</code> <code>urn:oid:1.2.208.176.2.4.21</code> will be empty allowing organizations to use the template <a href="http://lpr-art-decor.westeurope.cloudapp.azure.com:8080/art-decor/decor-templates--lpr-?section=templates&amp;id=1.2.208.176.7.1.10.30&amp;language=en-US"><code>DK Procedure Procedure</code></a> for all mandatory procedure reporting to LPR3.</p>
 <h2 id="id-usage-and-referencing-in-lpr3">ID usage and referencing in LPR3</h2>
 <p>Unique identifiers can be supplied by the submitter to almost all elements using <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier#Versions_3_and_5_.28namespace_name-based.29">UUID v5 identifiers</a>. Unique identifiers are needed when previously submitted entities needs to be referenced, removed or updated. If unique identifiers are not provided, internal references between the entities can be used and must be done using UUID v4 identifiers.</p>
 <p><code>Act</code>, <code>Procedure</code> and <code>Observation</code> references the <code>Encounter</code>/<code>Episode of Care</code>, which means that e.g. nullifying the <code>Encounter</code> also nullifies all entities that points toward the <code>Encounter</code>. Nullifying only the <code>Act</code>/<code>Procedure</code>/<code>Observation</code> that points towards the encounter removes only the entity itself and the encounter is left unchanged. The same goes for nullifying an <code>Episode of Care</code> which removes all <code>Encounter</code>s and transitively all activities below it.</p>
