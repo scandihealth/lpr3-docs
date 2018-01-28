@@ -5,17 +5,18 @@
     margin: 0;
 }
 
-/* Sidebar header (and topbar for mobile) */
-.wy-side-nav-search, .wy-nav-top {
+/* Sidebar */
+
+.wy-side-nav-search {
     background: #00838f
 }
 
-/* Sidebar */
-.wy-nav-side {
-    background: #00838f
+.wy-menu-vertical a:active {
+    background-color: #00838f;
 }
 
 /* Links */
+
 a {
- color: #00838f
+    color: #00838f
 }
