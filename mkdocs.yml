@@ -16,6 +16,9 @@ extra:
   palette:
     primary: 'indigo'
 
+repo_url: https://github.com/scandihealth/lpr3-docs/
+edit_uri: edit/master/src
+
 use_directory_urls: false
 markdown_extensions: [fenced_code]
 extra_css:
