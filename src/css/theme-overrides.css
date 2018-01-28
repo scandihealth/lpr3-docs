@@ -4,3 +4,18 @@
     max-width: 100%;
     margin: 0;
 }
+
+/* Sidebar header (and topbar for mobile) */
+.wy-side-nav-search, .wy-nav-top {
+    background: #00838f
+}
+
+/* Sidebar */
+.wy-nav-side {
+    background: #00838f
+}
+
+/* Links */
+a {
+ color: #00838f
+}

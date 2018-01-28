@@ -12,9 +12,6 @@ pages:
 - Related material and links: links.md
 #- LPR 2 specifik dokumentation:
 theme: readthedocs
-extra:
-  palette:
-    primary: 'indigo'
 
 repo_url: https://github.com/scandihealth/lpr3-docs/
 edit_uri: edit/master/src
