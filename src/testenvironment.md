@@ -5,9 +5,9 @@ DXC hosts a test environment that integrators can use do finalize their solution
 Accessing the test environment requires access to the [Sundhedsdatanettet (SDN)](https://www.medcom.dk/opslag/support).  
 The following three endpoint are available.
 
- * [Safe if no errors](https://lprws-test.sds.dsdn.dk/cda-ws/PatientHealthcareSaveIfNoErrorsReportingService)
- * [Safe with errors](https://lprws-test.sds.dsdn.dk/cda-ws/PatientHealthcareReportingService)
- * [Validate](https://lprws-test.sds.dsdn.dk/cda-ws/PatientHealthcareValidateReportingService)
+ * [Save if no errors](https://lprws-test.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareSaveIfNoErrorsReportingService)
+ * [Save with errors](https://lprws-test.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareReportingService)
+ * [Validate](https://lprws-test.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareValidateReportingService)
 
 ## Nightly build deployments
 To increase velocity and success DXC will continuously deliver new versions of the LPR3 solution.  
