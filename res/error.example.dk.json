@@ -1,0 +1,50 @@
+{
+    "forløbselement": {
+        "identifikator": "bbbfa3ea-2ad7-571c-986c-d72f7443ba4b",
+        "fejl": [{
+            "regelid": "05.202", "regelversion": "1.0.1", "kode": "4302", 
+            "besked": "Hvis et forløbselement er afsluttet, så skal kontakter knyttet til forløbselementet også være afsluttet med et sluttidspunkt, der ligger før eller samtidig med forløbselementets sluttidspunkt"}],
+        "advarsler": [],
+        "patient": {
+            "identifikatorer": [{ "system": "1.2.208.176.1.2", "value": "08119670001"}],
+            "fejl": [],
+            "advarsler": []
+        },
+        "kontakter": [{
+            "identifikator": "47041012-132f-5de1-b16a-df273f8f000f",
+            "fejl": [{
+                "regelid": "05.102", "regelversion": "3.0.1","kode": "5102", 
+                "besked": "Ved en afsluttet kontakt, hvortil der er knyttet opholdsadresse, skal starttidspunkt for første ophold være lig med kontaktens starttidspunkt, og sluttidspunkt for sidste ophold være lig med kontaktens sluttidspunkt."}],
+            "advarsler": [],
+                "diagnoser": [{
+                    "identifikator": "d0438ac2-bf27-532f-88e8-c029aca9492b",
+                    "fejl": [],
+                    "advarsler": [],
+                    "resultatindberetninger": []
+                },
+                {
+                    "identifikator": "d6ad0bc4-28bb-5d02-bbaf-1a92b399febb",
+                    "fejl": [],
+                    "advarsler": [{
+                        "regelid": "12.202", "regelversion": "0.9.1", "kode": "12202",
+                        "besked": "Til en afsluttet kontakt med aktionsdiagnose i kodelisten [diag.foedmor] skal der efter 7 dage indberettes en [fødselsanmeldelse mor] resultatindbertning", "fejler": "2018-02-01T00:00:00+01:00"}],
+                    "resultatindberetninger": []
+                }],
+            "procedurer": [{
+                "identifikator": "7dfa91a1-e19e-57d0-bdbe-fea7f8582df5",
+                "fejl": [],
+                "advarsler": [],
+                "resultatindberetninger": [{
+                    "identifikator": "50790dc33-eb83-5100-858f-fdc5569f13a9",
+                    "fejl": [],
+                    "advarsler": [{
+                        "regelid": "05.102", "regelversion": "3.0.1","kode": "5102",
+                        "besked": "Ved en afsluttet kontakt, hvortil der er knyttet opholdsadresse, skal starttidspunkt for første ophold være lig med kontaktens starttidspunkt, og sluttidspunkt for sidste ophold være lig med kontaktens sluttidspunkt."}]
+                    }]
+                }],
+            "resultatindberetninger": []
+        }],
+        "procedurer": [],
+        "resultatindberetninger": []
+    }
+}
