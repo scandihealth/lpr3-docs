@@ -1,0 +1,50 @@
+{
+    "episodeOfCare": {
+        "identifier": "bbbfa3ea-2ad7-571c-986c-d72f7443ba4b",
+        "errors": [{
+            "ruleId": "05.202", "ruleVersion": "1.0.1", "code": "4302", 
+            "message": "Hvis et episodeOfCare er afsluttet, så skal kontakter knyttet til episodeOfCareet også være afsluttet med et sluttidspunkt, der ligger før eller samtidig med episodeOfCareets sluttidspunkt"}],
+        "warnings": [],
+        "patient": {
+            "identifierer": [{ "system": "1.2.208.176.1.2", "value": "08119670001"}],
+            "errors": [],
+            "warnings": []
+        },
+        "encounters": [{
+            "identifier": "47041012-132f-5de1-b16a-df273f8f000f",
+            "errors": [{
+                "ruleId": "05.102", "ruleVersion": "3.0.1","code": "5102", 
+                "message": "Ved en afsluttet kontakt, hvortil der er knyttet opholdsadresse, skal starttidspunkt for første ophold være lig med kontaktens starttidspunkt, og sluttidspunkt for sidste ophold være lig med kontaktens sluttidspunkt."}],
+            "warnings": [],
+                "conditions": [{
+                    "identifier": "d0438ac2-bf27-532f-88e8-c029aca9492b",
+                    "errors": [],
+                    "warnings": [],
+                    "obervationOrganizers": []
+                },
+                {
+                    "identifier": "d6ad0bc4-28bb-5d02-bbaf-1a92b399febb",
+                    "errors": [],
+                    "warnings": [{
+                        "ruleId": "12.202", "ruleVersion": "0.9.1", "code": "12202",
+                        "message": "Til en afsluttet kontakt med aktionsdiagnose i kodelisten [diag.foedmor] skal der efter 7 dage indberettes en [fødselsanmeldelse mor] resultatindbertning", "errorBy": "2018-02-01T00:00:00+01:00"}],
+                    "obervationOrganizers": []
+                }],
+            "procedures": [{
+                "identifier": "7dfa91a1-e19e-57d0-bdbe-fea7f8582df5",
+                "errors": [],
+                "warnings": [],
+                "obervationOrganizers": [{
+                    "identifier": "50790dc33-eb83-5100-858f-fdc5569f13a9",
+                    "errors": [],
+                    "warnings": [{
+                        "ruleId": "05.102", "ruleVersion": "3.0.1","code": "5102",
+                        "message": "Ved en afsluttet kontakt, hvortil der er knyttet opholdsadresse, skal starttidspunkt for første ophold være lig med kontaktens starttidspunkt, og sluttidspunkt for sidste ophold være lig med kontaktens sluttidspunkt."}]
+                    }]
+                }],
+            "obervationOrganizers": []
+        }],
+        "procedures": [],
+        "obervationOrganizers": []
+    }
+}
