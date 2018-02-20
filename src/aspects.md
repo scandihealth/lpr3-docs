@@ -132,7 +132,7 @@ This section contains the main elements `Procedure` and `Betalingsoplysning` fro
 - Observation Organizers
 This section contains the main elements `Resultatindberetning` and `Resultat` from LPR3 that maps to `DK Observation Organizer` and `DK Observation Organizer Entry Reference Act`.
 
-All attributes on the elements are mapped to CDA elements and can be found in at the ART-DECOR site/LPR3 offline documentation, marked with the description `LPR3:`.
+All attributes on the elements are mapped to CDA elements and can be found in at [the ART-DECOR site](http://lpr-art-decor.westeurope.cloudapp.azure.com:8080/art-decor), marked with the description `LPR3:`.
 
 ## Granularity and constraints to submitted documents
 The minimum viable document that will be accepted as a valid submission is a document that adheres to the constraints mentioned in [What rules apply and what errors can be reported and how](#what-rules-apply-and-what-errors-can-be-reported-and-how) - meaning that cardinalities to other elemets must be respected (as outlined in ART-DECOR), values from valuesets must be part of the valuesets (as outlined in ART-DECOR) and the use of correct template ID's as well as the volatile business rules. Any submitted document that adheres to these rules can be submitted for further processing. This means that documents can contain whatever granularity (that adhere to the rules) the submitter would like it to have regarding submission of addendums, corrections and deletions thereby providing a flexible solution that can fit all submitters. 
