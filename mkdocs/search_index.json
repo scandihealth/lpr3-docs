@@ -182,7 +182,7 @@
         },
         {
             "location": "/developmentresources/index.html",
-            "text": "Development resources\n\n\nSchematron\n\n\nSchematron\n definitions used to validate requests to IHE/XDR HL7 CDA interface to the Danish National Patient Register are available for integrators.\nThe entry point Schematron definition is called \nlpr-lpr3fr.sch\n.\n\n\nNightly builds\n\n\nNightly builds are available in the \nunstable branch\n of \nCDA resources for the Danish National Patient Register",
+            "text": "Development resources\n\n\nSchematron\n\n\nSchematron\n definitions used to validate requests to the IHE/XDR HL7 CDA interface of the Danish National Patient Register are available for integrators.\nThe entry point Schematron definition is called \nlpr-lpr3fr.sch\n.\n\n\nNightly builds\n\n\nNightly builds are available in the \nunstable branch\n of \nCDA resources for the Danish National Patient Register",
             "title": "Development resources"
         },
         {
@@ -192,7 +192,7 @@
         },
         {
             "location": "/developmentresources/index.html#schematron",
-            "text": "Schematron  definitions used to validate requests to IHE/XDR HL7 CDA interface to the Danish National Patient Register are available for integrators.\nThe entry point Schematron definition is called  lpr-lpr3fr.sch .",
+            "text": "Schematron  definitions used to validate requests to the IHE/XDR HL7 CDA interface of the Danish National Patient Register are available for integrators.\nThe entry point Schematron definition is called  lpr-lpr3fr.sch .",
             "title": "Schematron"
         },
         {
