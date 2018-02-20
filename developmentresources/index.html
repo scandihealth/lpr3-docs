@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Test environment - Landspatientregisteret 3 - Technical documentation</title>
+  <title>Development resources - Landspatientregisteret 3 - Technical documentation</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -19,9 +19,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Test environment";
-    var mkdocs_page_input_path = "testenvironment.md";
-    var mkdocs_page_url = "/testenvironment/index.html";
+    var mkdocs_page_name = "Development resources";
+    var mkdocs_page_input_path = "developmentresources.md";
+    var mkdocs_page_url = "/developmentresources/index.html";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -79,32 +79,29 @@
     <a class="" href="../interfacedefinitions/index.html">Interface definition</a>
 	    </li>
           
+            <li class="toctree-l1">
+		
+    <a class="" href="../testenvironment/index.html">Test environment</a>
+	    </li>
+          
             <li class="toctree-l1 current">
 		
-    <a class="current" href="index.html">Test environment</a>
+    <a class="current" href="index.html">Development resources</a>
     <ul class="subnav">
             
-    <li class="toctree-l2"><a href="#test-environment">Test environment</a></li>
+    <li class="toctree-l2"><a href="#development-resources">Development resources</a></li>
     
         <ul>
         
-            <li><a class="toctree-l3" href="#address">Address</a></li>
-        
-            <li><a class="toctree-l3" href="#nightly-build-deployments">Nightly build deployments</a></li>
-        
-            <li><a class="toctree-l3" href="#weekly-data-purge">Weekly data purge</a></li>
-        
-            <li><a class="toctree-l3" href="#rules-implemented-on-test-system">Rules implemented on Test System</a></li>
+            <li><a class="toctree-l3" href="#schematron">Schematron</a></li>
         
         </ul>
     
 
+    <li class="toctree-l2"><a href="#nightly-builds">Nightly builds</a></li>
+    
+
     </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../developmentresources/index.html">Development resources</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -139,10 +136,10 @@
     
       
     
-    <li>Test environment</li>
+    <li>Development resources</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/scandihealth/lpr3-docs/edit/master/src/testenvironment.md"
+        <a href="https://github.com/scandihealth/lpr3-docs/edit/master/src/developmentresources.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -152,26 +149,12 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="test-environment">Test environment</h1>
-<p>DXC hosts a test environment that integrators can use do finalize their solution.</p>
-<h2 id="address">Address</h2>
-<p>Accessing the test environment requires access to the <a href="https://www.medcom.dk/opslag/support">Sundhedsdatanettet (SDN)</a>.<br />
-The following three endpoint are available.</p>
-<ul>
-<li><a href="https://lprws-test.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareSaveIfNoErrorsReportingService">Save if no errors</a></li>
-<li><a href="https://lprws-test.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareReportingService">Save with errors</a></li>
-<li><a href="https://lprws-test.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareValidateReportingService">Validate</a></li>
-</ul>
-<h2 id="nightly-build-deployments">Nightly build deployments</h2>
-<p>To increase velocity and success DXC will continuously deliver new versions of the LPR3 solution.<br />
-As such DXC may deploy new builds on a nightly basis.<br />
-New deployments will be notified through GitHub no later than end of business day before nightly deploy.</p>
-<h2 id="weekly-data-purge">Weekly data purge</h2>
-<p>As the test progresses and issues are resolved, it may be necessary to delete data in the test enviroment.<br />
-Therefore, DXC may purge data during weekends.<br />
-Data purges will be notified through GitHub no later than friday end of business day.</p>
-<h2 id="rules-implemented-on-test-system">Rules implemented on Test System</h2>
-<p>The document <a href="../res/Rule implemented on test system.docx">Rules implemented on test system</a> contains a full list of rules from the Indberetningsvejledning implemented on the environment at any given time.</p>
+                <h2 id="development-resources">Development resources</h2>
+<h3 id="schematron">Schematron</h3>
+<p><a href="http://schematron.com">Schematron</a> definitions used to validate requests to IHE/XDR HL7 CDA interface to the Danish National Patient Register are available for integrators.
+The entry point Schematron definition is called <code>lpr-lpr3fr.sch</code>.</p>
+<h2 id="nightly-builds">Nightly builds</h2>
+<p>Nightly builds are available in the <a href="https://github.com/scandihealth/lpr3-cda/tree/unstable">unstable branch</a> of <a href="https://github.com/scandihealth/lpr3-cda">CDA resources for the Danish National Patient Register</a></p>
               
             </div>
           </div>
@@ -179,10 +162,10 @@ Data purges will be notified through GitHub no later than friday end of business
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../developmentresources/index.html" class="btn btn-neutral float-right" title="Development resources">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../examples/index.html" class="btn btn-neutral float-right" title="Examples">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../interfacedefinitions/index.html" class="btn btn-neutral" title="Interface definition"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../testenvironment/index.html" class="btn btn-neutral" title="Test environment"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -210,10 +193,10 @@ Data purges will be notified through GitHub no later than friday end of business
           <a href="https://github.com/scandihealth/lpr3-docs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../interfacedefinitions/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../testenvironment/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../developmentresources/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../examples/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
