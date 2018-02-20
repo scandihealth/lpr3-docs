@@ -1,7 +1,7 @@
 ## Development resources
 
 ### Schematron
-[Schematron](http://schematron.com) definitions used to validate requests to IHE/XDR HL7 CDA interface to the Danish National Patient Register are available for integrators.
+[Schematron](http://schematron.com) definitions used to validate requests to the IHE/XDR HL7 CDA interface of the Danish National Patient Register are available for integrators.
 The entry point Schematron definition is called `lpr-lpr3fr.sch`.
 
 ## Nightly builds
