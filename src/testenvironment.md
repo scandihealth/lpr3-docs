@@ -20,4 +20,4 @@ Therefore, DXC may purge data during weekends.
 Data purges will be notified through GitHub no later than friday end of business day.
 
 ## Rules implemented on Test System
-The document [Rules implemented on test system](/res/Rule implemented on test system.docx) contains a full list of rules from the Indberetningsvejledning implemented on the environment at any given time.
+The document [Rules implemented on test system](/res/Regel-liste incl fejltekst.xlsx) contains a full list of rules from the Indberetningsvejledning implemented on the environment at any given time.
