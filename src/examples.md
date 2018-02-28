@@ -112,16 +112,16 @@ Content-Transfer-Encoding: binary
                         <ns8:AttributeValue>nsi:HealthcareProfessional</ns8:AttributeValue>
                     </ns8:Attribute>
                     <ns8:Attribute Name="nsi:OrgResponsibleName">
-                        <ns8:AttributeValue>HansemanIT Org.</ns8:AttributeValue>
+                        <ns8:AttributeValue>Region Nordjylland</ns8:AttributeValue>
                     </ns8:Attribute>
                     <ns8:Attribute Name="nsi:SystemOwnerName">
-                        <ns8:AttributeValue>HansemanIT</ns8:AttributeValue>
+                        <ns8:AttributeValue>Region Nordjylland</ns8:AttributeValue>
                     </ns8:Attribute>
                     <ns8:Attribute Name="nsi:SystemName">
-                        <ns8:AttributeValue>Hanseman</ns8:AttributeValue>
+                        <ns8:AttributeValue>Clinical Suite</ns8:AttributeValue>
                     </ns8:Attribute>
                     <ns8:Attribute Name="nsi:SystemVersion">
-                        <ns8:AttributeValue>1.0</ns8:AttributeValue>
+                        <ns8:AttributeValue>14.4</ns8:AttributeValue>
                     </ns8:Attribute>
                 </ns8:AttributeStatement>
             </ns8:Assertion>
