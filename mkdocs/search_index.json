@@ -182,7 +182,7 @@
         },
         {
             "location": "/developmentresources/index.html",
-            "text": "Development resources\n\n\nSchematron\n\n\nSchematron\n definitions used to validate requests to the IHE/XDR HL7 CDA interface of the Danish National Patient Register are available \nas is\n for integrators.\nThe entry point Schematron definition is called \nlpr-lpr3fr.sch\n.\n\n\nNightly builds\n\n\nNightly builds are available in the \nunstable branch\n of \nCDA resources for the Danish National Patient Register",
+            "text": "Development resources\n\n\nSchematron\n\n\nSchematron\n definitions used to validate requests to the IHE/XDR HL7 CDA interface of the Danish National Patient Register are available \nas is\n for integrators.\nThe entry point Schematron definition is called \nlpr-lpr3fr.sch\n.\n\n\nSOAP UI projecy\n\n\nA \nSOAP UI\n \nproject that calls an endpoint in the test environment\n is available \nas is\n for integrators.\n\n\nNightly builds\n\n\nNightly builds are available in the \nunstable branch\n of \nCDA resources for the Danish National Patient Register",
             "title": "Development resources"
         },
         {
@@ -194,6 +194,11 @@
             "location": "/developmentresources/index.html#schematron",
             "text": "Schematron  definitions used to validate requests to the IHE/XDR HL7 CDA interface of the Danish National Patient Register are available  as is  for integrators.\nThe entry point Schematron definition is called  lpr-lpr3fr.sch .",
             "title": "Schematron"
+        },
+        {
+            "location": "/developmentresources/index.html#soap-ui-projecy",
+            "text": "A  SOAP UI   project that calls an endpoint in the test environment  is available  as is  for integrators.",
+            "title": "SOAP UI projecy"
         },
         {
             "location": "/developmentresources/index.html#nightly-builds",
