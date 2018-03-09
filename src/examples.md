@@ -18,143 +18,48 @@ Content-Transfer-Encoding: binary
 ```
 
 ```xml
-<?xml version='1.0' encoding='UTF-8'?>
-<S:Envelope 
-    xmlns:S="http://www.w3.org/2003/05/soap-envelope">
-    <S:Header>
-        <ns11:Security 
-            xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" 
-            xmlns:ns3="urn:ihe:iti:xds-b:2007" 
-            xmlns:ns4="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0" 
-            xmlns:ns5="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0" 
-            xmlns:ns6="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0" 
-            xmlns:ns7="urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0" 
-            xmlns:ns8="http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd" 
-            xmlns:ns9="http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd" 
-            xmlns:ns10="urn:oasis:names:tc:SAML:2.0:assertion" 
-            xmlns:ns11="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" 
-            xmlns:ns12="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
-            <ns10:Assertion IssueInstant="2017-11-23T08:51:30.945+01:00" id="IDCard">
-                <ns10:Conditions NotBefore="2017-11-21T08:51:30.940+01:00" NotOnOrAfter="2017-11-27T08:51:30.945+01:00"/>
-                <ns10:AttributeStatement id="IDCardData">
-                    <ns10:Attribute Name="sosi:IDCardID">
-                        <ns10:AttributeValue>123213131231</ns10:AttributeValue>
-                    </ns10:Attribute>
-                    <ns10:Attribute Name="sosi:IDCardVersion">
-                        <ns10:AttributeValue>1.0</ns10:AttributeValue>
-                    </ns10:Attribute>
-                    <ns10:Attribute Name="sosi:IDCardType">
-                        <ns10:AttributeValue>system</ns10:AttributeValue>
-                    </ns10:Attribute>
-                    <ns10:Attribute Name="sosi:AuthenticationLevel">
-                        <ns10:AttributeValue>3</ns10:AttributeValue>
-                    </ns10:Attribute>
-                    <ns10:Attribute Name="sosi:OCESCertHash">
-                        <ns10:AttributeValue>#hanseman</ns10:AttributeValue>
-                    </ns10:Attribute>
-                </ns10:AttributeStatement>
-                <ns10:AttributeStatement id="SystemLog">
-                    <ns10:Attribute Name="medcom:ITSystemName">
-                        <ns10:AttributeValue>..ge</ns10:AttributeValue>
-                    </ns10:Attribute>
-                    <ns10:Attribute Name="medcom:CareProviderID">
-                        <ns10:AttributeValue>121212</ns10:AttributeValue>
-                    </ns10:Attribute>
-                    <ns10:Attribute Name="medcom:CareProviderName">
-                        <ns10:AttributeValue>Brodtg..rd L..gehus</ns10:AttributeValue>
-                    </ns10:Attribute>
-                </ns10:AttributeStatement>
-                <ns2:Signature id="OCESSignature">
-                    <ns2:SignedInfo>
-                        <ns2:Reference URI="#IDCard">
-                            <ns2:DigestValue>AQID</ns2:DigestValue>
-                        </ns2:Reference>
-                    </ns2:SignedInfo>
-                    <ns2:SignatureValue>BAUG</ns2:SignatureValue>
-                    <ns2:KeyInfo>
-                        <ns2:X509Data>
-                            <ns2:X509Certificate>BwgJ</ns2:X509Certificate>
-                        </ns2:X509Data>
-                    </ns2:KeyInfo>
-                </ns2:Signature>
-            </ns10:Assertion>
-        </ns11:Security>
-        <ns9:Header 
-            xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" 
-            xmlns:ns3="urn:ihe:iti:xds-b:2007" 
-            xmlns:ns4="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0" 
-            xmlns:ns5="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0" 
-            xmlns:ns6="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0" 
-            xmlns:ns7="urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0" 
-            xmlns:ns8="http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd" 
-            xmlns:ns9="http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd" 
-            xmlns:ns10="urn:oasis:names:tc:SAML:2.0:assertion" 
-            xmlns:ns11="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" 
-            xmlns:ns12="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
-            <ns9:TimeOut>3</ns9:TimeOut>
-        </ns9:Header>
-        <ns8:HsuidHeader 
-            xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" 
-            xmlns:ns3="urn:ihe:iti:xds-b:2007" 
-            xmlns:ns4="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0" 
-            xmlns:ns5="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0" 
-            xmlns:ns6="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0" 
-            xmlns:ns7="urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0" 
-            xmlns:ns8="http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd" 
-            xmlns:ns9="http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd" 
-            xmlns:ns10="urn:oasis:names:tc:SAML:2.0:assertion" 
-            xmlns:ns11="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" 
-            xmlns:ns12="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
-            <ns8:Assertion IssueInstant="2017-11-23T08:51:30.946+01:00" id="HSUID">
-                <ns8:Issuer>HansemanIT</ns8:Issuer>
-                <ns8:AttributeStatement id="HSUIDdata">
-                    <ns8:Attribute Name="nsi:UserType">
-                        <ns8:AttributeValue>nsi:HealthcareProfessional</ns8:AttributeValue>
-                    </ns8:Attribute>
-                    <ns8:Attribute Name="nsi:OrgResponsibleName">
-                        <ns8:AttributeValue>Region Nordjylland</ns8:AttributeValue>
-                    </ns8:Attribute>
-                    <ns8:Attribute Name="nsi:SystemOwnerName">
-                        <ns8:AttributeValue>Region Nordjylland</ns8:AttributeValue>
-                    </ns8:Attribute>
-                    <ns8:Attribute Name="nsi:SystemName">
-                        <ns8:AttributeValue>Clinical Suite</ns8:AttributeValue>
-                    </ns8:Attribute>
-                    <ns8:Attribute Name="nsi:SystemVersion">
-                        <ns8:AttributeValue>14.4</ns8:AttributeValue>
-                    </ns8:Attribute>
-                </ns8:AttributeStatement>
-            </ns8:Assertion>
-        </ns8:HsuidHeader>
-    </S:Header>
-    <S:Body>
-        <ns3:ProvideAndRegisterDocumentSetRequest 
-            xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" 
-            xmlns:ns3="urn:ihe:iti:xds-b:2007" 
-            xmlns:ns4="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0" 
-            xmlns:ns5="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0" 
-            xmlns:ns6="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0" 
-            xmlns:ns7="urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0" 
-            xmlns:ns8="http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd" 
-            xmlns:ns9="http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd" 
-            xmlns:ns10="urn:oasis:names:tc:SAML:2.0:assertion" 
-            xmlns:ns11="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" 
-            xmlns:ns12="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
-            <ns6:SubmitObjectsRequest id="a89c96e7-aa32-47b5-856f-2603f8c88ea6" comment="This is a brave comment">
-                <ns4:RegistryObjectList>
-                    <ns4:RegistryPackage/>
-                    <ns4:Association/>
-                    <ns4:ExtrinsicObject mimeType="text/xml" objectType="urn:uuid:7edca82f-054d-47f2-a032-9b2a5b5186c1" id="urn:uuid:35014204-1818-4aa8-b968-4c3d39f280eb"/>
-                    <ns4:ClassificationNode code="urn:uuid:ab9b591b-83ab-4d03-8f5d-f93b1fb92e85"/>
-                </ns4:RegistryObjectList>
-            </ns6:SubmitObjectsRequest>
-            <ns3:Document id="Patient-with-CPR-number-identification.xml">
-                <xop:Include 
-                    xmlns:xop="http://www.w3.org/2004/08/xop/include" href="cid:8ae60adb-d8f5-4837-a779-3a64e25850a3@example.jaxws.sun.com"/>
-            </ns3:Document>
-        </ns3:ProvideAndRegisterDocumentSetRequest>
-    </S:Body>
-</S:Envelope> 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:medcom="http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion" xmlns:sosi="http://www.sosi.dk/sosi/2006/04/sosi-1.0.xsd" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wst="http://schemas.xmlsoap.org/ws/2005/02/trust" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Envelope">
+	<soapenv:Header>
+		<wsse:Security><wsu:Timestamp><wsu:Created>2018-02-21T13:50:39Z</wsu:Created></wsu:Timestamp><saml:Assertion IssueInstant="2018-02-21T13:45:36Z" Version="2.0" id="IDCard"><saml:Issuer>TEST2-NSP-STS</saml:Issuer><saml:Subject><saml:NameID Format="medcom:cvrnumber">25469364</saml:NameID><saml:SubjectConfirmation><saml:ConfirmationMethod>urn:oasis:names:tc:SAML:2.0:cm:holder-of-key</saml:ConfirmationMethod><saml:SubjectConfirmationData><ds:KeyInfo><ds:KeyName>OCESSignature</ds:KeyName></ds:KeyInfo></saml:SubjectConfirmationData></saml:SubjectConfirmation></saml:Subject><saml:Conditions NotBefore="2018-02-21T13:45:36Z" NotOnOrAfter="2018-02-22T13:45:36Z"/><saml:AttributeStatement id="IDCardData"><saml:Attribute Name="sosi:IDCardID"><saml:AttributeValue>KM3Recx+DJb8GHWPax+q2A==</saml:AttributeValue></saml:Attribute><saml:Attribute Name="sosi:IDCardVersion"><saml:AttributeValue>1.0.1</saml:AttributeValue></saml:Attribute><saml:Attribute Name="sosi:IDCardType"><saml:AttributeValue>system</saml:AttributeValue></saml:Attribute><saml:Attribute Name="sosi:AuthenticationLevel"><saml:AttributeValue>3</saml:AttributeValue></saml:Attribute><saml:Attribute Name="sosi:OCESCertHash"><saml:AttributeValue>GXaVFH7J+YHFZ8hYp/7c7l9fvAo=</saml:AttributeValue></saml:Attribute></saml:AttributeStatement><saml:AttributeStatement id="SystemLog"><saml:Attribute Name="medcom:ITSystemName"><saml:AttributeValue>LPR3 Test Client</saml:AttributeValue></saml:Attribute><saml:Attribute Name="medcom:CareProviderID" NameFormat="medcom:cvrnumber"><saml:AttributeValue>25469364</saml:AttributeValue></saml:Attribute><saml:Attribute Name="medcom:CareProviderName"><saml:AttributeValue>DXCTechnology</saml:AttributeValue></saml:Attribute></saml:AttributeStatement><ds:Signature id="OCESSignature"><ds:SignedInfo><ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><ds:Reference URI="#IDCard"><ds:Transforms><ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/><ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></ds:Transforms><ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><ds:DigestValue>y4U4ZeYQ7NnP0p8pmZprxdXUdSI=</ds:DigestValue></ds:Reference></ds:SignedInfo><ds:SignatureValue>XqO3RwhjkWFlOo2EvOV4pRN2pwacn0oeWbMjklVkFg0OhHNdXsfKe2Q/nTBC+2uz8ln8hcju1Iz4Swh+Ph+ZUd6T5uKHx7Vw00OVxXM4ctWi97FQkixkdY0sHdHWeRNHqU8zVnU1SCK9k5Ah3YgVSBLXcA87GzcgeJOARFTqNGp0/1JAWdFgRBGGoDHNN5UkXpOyr5EM14uqOwiQLHf9fpl9RSd3BUICU9b0ATwugCEVAYO1r8gg7SqiXo4cCifnyLIJEykiUUty4KBR8OVyBf485wQ/iFAN0BwZhjX9QTllK4DhR2lu6Wwwb8R0YkA+GZRGh6mKzIinOCM4/GJUXA==</ds:SignatureValue><ds:KeyInfo><ds:X509Data><ds:X509Certificate>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</ds:X509Certificate></ds:X509Data></ds:KeyInfo></ds:Signature></saml:Assertion></wsse:Security>
+		<medcom:Header><medcom:SecurityLevel>3</medcom:SecurityLevel><medcom:Linking><medcom:MessageID>AAABYbihX63aq8iLuo78a1NPU0k=</medcom:MessageID></medcom:Linking><medcom:RequireNonRepudiationReceipt>no</medcom:RequireNonRepudiationReceipt></medcom:Header><ns2:HsuidHeader xmlns:ns2="http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd"><ns2:Assertion IssueInstant="2018-02-21T14:50:39.028+01:00" id="HSUID"><ns2:Issuer>HansemanIT</ns2:Issuer><ns2:AttributeStatement id="HSUIDdata"><ns2:Attribute Name="nsi:UserType"><ns2:AttributeValue>nsi:HealthcareProfessional</ns2:AttributeValue></ns2:Attribute><ns2:Attribute Name="nsi:OrgResponsibleName"><ns2:AttributeValue>Region Nordjylland</ns2:AttributeValue></ns2:Attribute><ns2:Attribute Name="nsi:SystemOwnerName"><ns2:AttributeValue>Region Nordjylland</ns2:AttributeValue></ns2:Attribute><ns2:Attribute Name="nsi:SystemName"><ns2:AttributeValue>Clinical Suite</ns2:AttributeValue></ns2:Attribute><ns2:Attribute Name="nsi:SystemVersion"><ns2:AttributeValue>14.4</ns2:AttributeValue></ns2:Attribute></ns2:AttributeStatement></ns2:Assertion></ns2:HsuidHeader>
+	</soapenv:Header>
+	<soapenv:Body>
+		<urn:ProvideAndRegisterDocumentSetRequest xmlns:urn="urn:ihe:iti:xds-b:2007">
+			<ns3:SubmitObjectsRequest
+				xmlns:ns3="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0"
+				xmlns="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0"
+				xmlns:ns2="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0"
+				xmlns:ns4="urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0"
+				id="fe1a5947-8dc8-455f-81f1-7152b6db84dc">
+				<RegistryObjectList>
+					<RegistryPackage>
+						<Classification
+							classificationScheme="urn:uuid:a7058bb9-b4e4-4307-ba5b-e3f0ab85e12d"
+							classifiedObject="SubmissionSet01"
+							id="id_11"
+							nodeRepresentation=""
+							objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification">
+							<Slot name="authorInstitution">
+								<ValueList>
+									<Value>25469364</Value>
+								</ValueList>
+							</Slot>
+						</Classification>
+					</RegistryPackage>
+					<Association/>
+					<ExtrinsicObject
+						id="urn:uuid:d761a1c4-2fe0-492f-823a-f8ceba48c76f"
+						mimeType="text/xml"
+						objectType="urn:uuid:7edca82f-054d-47f2-a032-9b2a5b5186c1"/>
+					<ClassificationNode code="urn:uuid:ab9b591b-83ab-4d03-8f5d-f93b1fb92e85"/>
+				</RegistryObjectList>
+			</ns3:SubmitObjectsRequest>
+			<urn:Document id="Document01">
+				<xop:Include xmlns:xop="http://www.w3.org/2004/08/xop/include" href="cid:8ae60adb-d8f5-4837-a779-3a64e25850a3@example.jaxws.sun.com"/>
+			</urn:Document>
+		</urn:ProvideAndRegisterDocumentSetRequest>
+	</soapenv:Body>
+</soapenv:Envelope>
 ```
 
 ```http
@@ -248,12 +153,12 @@ Content-Transfer-Encoding: binary
                                         <act classCode="REG" moodCode="EVN">
                                             <templateId root="1.2.208.176.7.1.10.55"/>
                                             <templateId root="2.16.840.1.113883.10.12.301"/>
-                                            <code codeSystemName="Sundhedsv..senets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="Tumorer i hjerne- og rygmarvshinder af usikker og ukendt karakter" code="DD42"/>
+                                            <code codeSystemName="Sundhedsvæsenets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="Tumorer i hjerne- og rygmarvshinder af usikker og ukendt karakter" code="DD42"/>
                                             <entryRelationship typeCode="COMP">
                                                 <act classCode="REG" moodCode="EVN">
                                                     <templateId root="1.2.208.176.7.1.10.5"/>
                                                     <templateId root="2.16.840.1.113883.10.12.301"/>
-                                                    <code codeSystemName="Sundhedsv..senets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="diagnosen stillet f..rste gang" code="ZDW10"/>
+                                                    <code codeSystemName="Sundhedsvæsenets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="diagnosen stillet første gang" code="ZDW10"/>
                                                 </act>
                                             </entryRelationship>
                                         </act>
@@ -262,14 +167,14 @@ Content-Transfer-Encoding: binary
                                         <act classCode="REG" moodCode="EVN">
                                             <templateId root="1.2.208.176.7.1.10.53"/>
                                             <templateId root="2.16.840.1.113883.10.12.301"/>
-                                            <code codeSystemName="Sundhedsv..senets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="fritvalg ikke relevant" code="ALDB00"/>
+                                            <code codeSystemName="Sundhedsvæsenets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="fritvalg ikke relevant" code="ALDB00"/>
                                         </act>
                                     </entryRelationship>
                                     <entryRelationship typeCode="COMP">
                                         <act classCode="REG" moodCode="EVN">
                                             <templateId root="1.2.208.176.7.1.10.54"/>
                                             <templateId root="2.16.840.1.113883.10.12.301"/>
-                                            <code codeSystemName="Sundhedsv..senets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="akutordning" code="ALDA11"/>
+                                            <code codeSystemName="Sundhedsvæsenets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="akutordning" code="ALDA11"/>
                                         </act>
                                     </entryRelationship>
                                 </act>
@@ -278,7 +183,7 @@ Content-Transfer-Encoding: binary
                                 <act classCode="REG" moodCode="EVN">
                                     <templateId root="1.2.208.176.7.1.10.81"/>
                                     <templateId root="2.16.840.1.113883.10.12.301"/>
-                                    <code codeSystemName="Sundhedsv..senets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="Kr..ftsygdomme" code="ALAL01"/>
+                                    <code codeSystemName="Sundhedsvæsenets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="Kræftsygdomme" code="ALAL01"/>
                                 </act>
                             </entryRelationship>
                             <entryRelationship typeCode="COMP">
@@ -287,14 +192,14 @@ Content-Transfer-Encoding: binary
                                     <templateId root="2.16.840.1.113883.10.12.301"/>
                                     <id root="1.2.208.176.7.1.2.1" extension="c770b34c-9854-519b-8239-2d7794a94bef"/>
                                     <id root="1.2.208.176.7.1.2.2" extension="2217c913-c721-498a-a8d5-04a80fe2e0de"/>
-                                    <code codeSystemName="Sundhedsv..senets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="Kr..ft i hjernen: beslutning: initial behandling ikke relevant, radikal operation i udredningsforl..bet" code="AFB23C2B"/>
+                                    <code codeSystemName="Sundhedsvæsenets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="Kræft i hjernen: beslutning: initial behandling ikke relevant, radikal operation i udredningsforløbet" code="AFB23C2B"/>
                                     <effectiveTime value="20170222130000+0200"/>
                                 </act>
                             </entryRelationship>
                             <entryRelationship typeCode="COMP">
                                 <act classCode="REG" moodCode="EVN">
                                     <templateId root="1.2.208.176.7.1.10.83"/>
-                                    <code codeSystemName="Sundhedsv..senets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="henvist i samme sygdomsforl..b" code="ALAA01"/>
+                                    <code codeSystemName="Sundhedsvæsenets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="henvist i samme sygdomsforløb" code="ALAA01"/>
                                     <entryRelationship typeCode="REFR">
                                         <act classCode="PCPR" moodCode="EVN">
                                             <templateId root="1.2.208.176.7.1.10.72"/>
@@ -309,7 +214,7 @@ Content-Transfer-Encoding: binary
                                 <observation classCode="OBS" moodCode="EVN">
                                     <templateId root="1.2.208.176.7.1.10.105"/>
                                     <templateId root="2.16.840.1.113883.10.12.303"/>
-                                    <code codeSystemName="Sundhedsv..senets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="afsluttet ved patientens d..d" code="ALAC70"/>
+                                    <code codeSystemName="Sundhedsvæsenets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="afsluttet ved patientens død" code="ALAC70"/>
                                 </observation>
                             </entryRelationship>
                         </act>
@@ -326,12 +231,12 @@ Content-Transfer-Encoding: binary
                             <templateId root="2.16.840.1.113883.10.12.302"/>
                             <id root="1.2.208.176.7.1.2.1" extension="47041012-132f-5de1-b16a-df273f8f000f"/>
                             <id root="1.2.208.176.7.1.2.2" extension="3c56bc4d-c2ce-41f3-b921-87f5845302fb"/>
-                            <code codeSystemName="Sundhedsv..senets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="fysisk fremm..de" code="ALCA00"/>
+                            <code codeSystemName="Sundhedsvæsenets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="fysisk fremmøde" code="ALCA00"/>
                             <effectiveTime>
                                 <low value="20170216060000+0200"/>
                                 <high value="20170224120000+0200"/>
                             </effectiveTime>
-                            <priorityCode codeSystemName="Sundhedsv..senets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="Akut" code="ATA1"/>
+                            <priorityCode codeSystemName="Sundhedsvæsenets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="Akut" code="ATA1"/>
                             <participtant typeCode="RESP">
                                 <templateId root="1.2.208.176.7.1.10.49"/>
                                 <templateId root="2.16.840.1.113883.10.12.321"/>
@@ -361,34 +266,34 @@ Content-Transfer-Encoding: binary
                                     <templateId root="2.16.840.1.113883.10.12.303"/>
                                     <id root="1.2.208.176.7.1.2.1" extension="d0438ac2-bf27-532f-88e8-c029aca9492b"/>
                                     <id root="1.2.208.176.7.1.2.2" extension="e309346f-8d5e-4f5a-82e9-f1841fb89be8"/>
-                                    <code codeSystemName="Sundhedsv..senets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="Kr..ft i hjernens tindingelap med metastaser" code="DC712M"/>
-                                    <targetSiteCode codeSystemName="Sundhedsv..senets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="venstresidig" code="TUL2"/>
+                                    <code codeSystemName="Sundhedsvæsenets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="Kræft i hjernens tindingelap med metastaser" code="DC712M"/>
+                                    <targetSiteCode codeSystemName="Sundhedsvæsenets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="venstresidig" code="TUL2"/>
                                     <entryRelationship typeCode="COMP">
                                         <observation classCode="OBS" moodCode="EVN">
                                             <templateId root="1.2.208.176.7.1.10.40"/>
                                             <templateId root="2.16.840.1.113883.10.12.303"/>
-                                            <code codeSystemName="Sundhedsv..senets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="Lokalrecidiv fra kr..ft i hjernen" code="DT636C"/>
+                                            <code codeSystemName="Sundhedsvæsenets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="Lokalrecidiv fra kræft i hjernen" code="DT636C"/>
                                         </observation>
                                     </entryRelationship>
                                     <entryRelationship typeCode="COMP">
                                         <observation classCode="OBS" moodCode="EVN">
                                             <templateId root="1.2.208.176.7.1.10.37"/>
                                             <templateId root="2.16.840.1.113883.10.12.303"/>
-                                            <code codeSystemName="Sundhedsv..senets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="Metastase i rygmarvshinde" code="DC793C"/>
+                                            <code codeSystemName="Sundhedsvæsenets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="Metastase i rygmarvshinde" code="DC793C"/>
                                         </observation>
                                     </entryRelationship>
                                     <entryRelationship typeCode="COMP">
                                         <observation classCode="OBS" moodCode="EVN">
                                             <templateId root="1.2.208.176.7.1.10.43"/>
                                             <templateId root="2.16.840.1.113883.10.12.303"/>
-                                            <code codeSystemName="Sundhedsv..senets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="aktionsdiagnose" code="ALGA01"/>
+                                            <code codeSystemName="Sundhedsvæsenets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="aktionsdiagnose" code="ALGA01"/>
                                         </observation>
                                     </entryRelationship>
                                     <entryRelationship typeCode="COMP">
                                         <act classCode="REG" moodCode="EVN">
                                             <templateId root="1.2.208.176.7.1.10.5"/>
                                             <templateId root="2.16.840.1.113883.10.12.301"/>
-                                            <code codeSystemName="Sundhedsv..senets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="behandles ikke" code="ZDW29"/>
+                                            <code codeSystemName="Sundhedsvæsenets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="behandles ikke" code="ZDW29"/>
                                         </act>
                                     </entryRelationship>
                                 </observation>
@@ -401,7 +306,7 @@ Content-Transfer-Encoding: binary
                                 <act classCode="ACT" moodCode="EVN">
                                     <templateId root="1.2.208.176.7.1.10.7"/>
                                     <templateId root="2.16.840.1.113883.10.12.301"/>
-                                    <code codeSystemName="Sundhedsv..senets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="h..jt specialiseret" code="ALFA2"/>
+                                    <code codeSystemName="Sundhedsvæsenets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="højt specialiseret" code="ALFA2"/>
                                     <effectiveTime>
                                         <low value="20170117123000+0200"/>
                                         <high value="20170117151500+0200"/>
@@ -419,7 +324,7 @@ Content-Transfer-Encoding: binary
                                         <act classCode="ACT" moodCode="EVN">
                                             <templateId root="1.2.208.176.7.1.10.10"/>
                                             <templateId root="2.16.840.1.113883.10.12.301"/>
-                                            <code codeSystemName="Sundhedsv..senets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="h..jt specialiseret funktion" code="ALFC4"/>
+                                            <code codeSystemName="Sundhedsvæsenets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="højt specialiseret funktion" code="ALFC4"/>
                                         </act>
                                     </entryRelationship>
                                 </act>
@@ -428,7 +333,7 @@ Content-Transfer-Encoding: binary
                                 <act classCode="REG" moodCode="EVN">
                                     <templateId root="1.2.208.176.7.1.10.48"/>
                                     <templateId root="2.16.840.1.113883.10.12.301"/>
-                                    <code codeSystemName="Sundhedsv..senets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="Sygdom" code="ALCC01"/>
+                                    <code codeSystemName="Sundhedsvæsenets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="Sygdom" code="ALCC01"/>
                                 </act>
                             </entryRelationship>
                             <entryRelationship typeCode="RSON">
@@ -450,12 +355,12 @@ Content-Transfer-Encoding: binary
                                         <act classCode="REG" moodCode="EVN">
                                             <templateId root="1.2.208.176.7.1.10.55"/>
                                             <templateId root="2.16.840.1.113883.10.12.301"/>
-                                            <code codeSystemName="Sundhedsv..senets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="Tumorer i hjerne- og rygmarvshinder af usikker og ukendt karakter" code="DD42"/>
+                                            <code codeSystemName="Sundhedsvæsenets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="Tumorer i hjerne- og rygmarvshinder af usikker og ukendt karakter" code="DD42"/>
                                             <entryRelationship typeCode="COMP">
                                                 <act classCode="REG" moodCode="EVN">
                                                     <templateId root="1.2.208.176.7.1.10.5"/>
                                                     <templateId root="2.16.840.1.113883.10.12.301"/>
-                                                    <code codeSystemName="Sundhedsv..senets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="diagnosen stillet f..rste gang" code="ZDW10"/>
+                                                    <code codeSystemName="Sundhedsvæsenets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="diagnosen stillet første gang" code="ZDW10"/>
                                                 </act>
                                             </entryRelationship>
                                         </act>
@@ -464,14 +369,14 @@ Content-Transfer-Encoding: binary
                                         <act classCode="REG" moodCode="EVN">
                                             <templateId root="1.2.208.176.7.1.10.53"/>
                                             <templateId root="2.16.840.1.113883.10.12.301"/>
-                                            <code codeSystemName="Sundhedsv..senets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="fritvalg ikke relevant" code="ALDB00"/>
+                                            <code codeSystemName="Sundhedsvæsenets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="fritvalg ikke relevant" code="ALDB00"/>
                                         </act>
                                     </entryRelationship>
                                     <entryRelationship typeCode="COMP">
                                         <act classCode="REG" moodCode="EVN">
                                             <templateId root="1.2.208.176.7.1.10.54"/>
                                             <templateId root="2.16.840.1.113883.10.12.301"/>
-                                            <code codeSystemName="Sundhedsv..senets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="akutordning" code="ALDA11"/>
+                                            <code codeSystemName="Sundhedsvæsenets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="akutordning" code="ALDA11"/>
                                         </act>
                                     </entryRelationship>
                                 </act>
@@ -506,7 +411,7 @@ Content-Transfer-Encoding: binary
                             <templateId root="2.16.840.1.113883.10.12.301"/>
                             <id root="1.2.208.176.7.1.2.1" extension="50009866-1b81-53fd-bd67-b132a68415fa"/>
                             <id root="1.2.208.176.7.1.2.2" extension="94ff6bdb-2075-43de-ba33-7dafd7dc66cc"/>
-                            <code codeSystemName="Sundhedsv..senets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="Behandling med proteaseh..mmer" code="BPHM91"/>
+                            <code codeSystemName="Sundhedsvæsenets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="Behandling med proteasehæmmer" code="BPHM91"/>
                             <effectiveTime>
                                 <low value="20170115080000+0200"/>
                                 <high value="20170115083000+0200"/>
@@ -515,7 +420,7 @@ Content-Transfer-Encoding: binary
                                 <templateId root="1.2.208.176.7.1.10.16"/>
                                 <templateId root="2.16.840.1.113883.10.12.321"/>
                                 <participantRole classCode="ROL">
-                                    <code codeSystemName="Sundhedsv..senets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="Sygeplejerske p.. klinisk sygehusafdeling" code="APBA1"/>
+                                    <code codeSystemName="Sundhedsvæsenets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="Sygeplejerske på klinisk sygehusafdeling" code="APBA1"/>
                                     <scopingEntity classCode="ORG">
                                         <id root="1.2.208.176.1.1" extension="369041000016006" assigningAuthorityName="SOR"/>
                                     </scopingEntity>
@@ -525,7 +430,7 @@ Content-Transfer-Encoding: binary
                                 <act classCode="ACT" moodCode="EVN">
                                     <templateId root="1.2.208.176.7.1.10.22"/>
                                     <templateId root="2.16.840.1.113883.10.12.301"/>
-                                    <code codeSystemName="Sundhedsv..senets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="igangsat" code="???"/>
+                                    <code codeSystemName="Sundhedsvæsenets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="igangsat" code="???"/>
                                 </act>
                             </entryRelationship>
                             <entryRelationship typeCode="REFR">
@@ -544,7 +449,7 @@ Content-Transfer-Encoding: binary
                             <templateId root="2.16.840.1.113883.10.12.303"/>
                             <id root="1.2.208.176.7.1.2.1" extension="ffa7bcb2-0ca4-57d9-a7f9-f37fbb1c5482"/>
                             <id root="1.2.208.176.7.1.2.2" extension="a659b5f7-e5d7-4d48-97f2-591a4a07da09"/>
-                            <code codeSystemName="Sundhedsv..senets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="CT-skanning af cerebrum" code="UXCA00"/>
+                            <code codeSystemName="Sundhedsvæsenets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="CT-skanning af cerebrum" code="UXCA00"/>
                             <effectiveTime>
                                 <low value="20170116080000+0200"/>
                                 <high value="20170116083000+0200"/>
@@ -553,7 +458,7 @@ Content-Transfer-Encoding: binary
                                 <templateId root="1.2.208.176.7.1.10.16"/>
                                 <templateId root="2.16.840.1.113883.10.12.321"/>
                                 <participantRole classCode="ROL">
-                                    <code codeSystemName="Sundhedsv..senets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="Radiograf" code="APFE2"/>
+                                    <code codeSystemName="Sundhedsvæsenets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="Radiograf" code="APFE2"/>
                                     <scopingEntity classCode="ORG">
                                         <id root="1.2.208.176.1.1" extension="275861000016001" assigningAuthorityName="SOR"/>
                                     </scopingEntity>
@@ -563,14 +468,14 @@ Content-Transfer-Encoding: binary
                                 <act classCode="REG" moodCode="EVN">
                                     <templateId root="1.2.208.176.7.1.10.5"/>
                                     <templateId root="2.16.840.1.113883.10.12.301"/>
-                                    <code codeSystemName="Sundhedsv..senets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="med CT-angiografi" code="UXZ41"/>
+                                    <code codeSystemName="Sundhedsvæsenets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="med CT-angiografi" code="UXZ41"/>
                                 </act>
                             </entryRelationship>
                             <entryRelationship typeCode="COMP">
                                 <act classCode="REG" moodCode="EVN">
                                     <templateId root="1.2.208.176.7.1.10.5"/>
                                     <templateId root="2.16.840.1.113883.10.12.301"/>
-                                    <code codeSystemName="Sundhedsv..senets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="med 3D rekonstruktion" code="UXZ45"/>
+                                    <code codeSystemName="Sundhedsvæsenets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="med 3D rekonstruktion" code="UXZ45"/>
                                 </act>
                             </entryRelationship>
                             <entryRelationship typeCode="COMP">
@@ -584,7 +489,7 @@ Content-Transfer-Encoding: binary
                                             <manufacturedMaterial classCode="MMAT">
                                                 <templateId root="1.2.208.176.7.1.10.3"/>
                                                 <templateId root="2.16.840.1.113883.10.12.311"/>
-                                                <code codeSystemName="Sundhedsv..senets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="diatrizoinsyre" code="MV08AA01"/>
+                                                <code codeSystemName="Sundhedsvæsenets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="diatrizoinsyre" code="MV08AA01"/>
                                             </manufacturedMaterial>
                                         </manufacturedProduct>
                                     </consumable>
@@ -594,7 +499,7 @@ Content-Transfer-Encoding: binary
                                 <act classCode="ACT" moodCode="EVN">
                                     <templateId root="1.2.208.176.7.1.10.7"/>
                                     <templateId root="2.16.840.1.113883.10.12.301"/>
-                                    <code codeSystemName="Sundhedsv..senets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="h..jt specialiseret" code="ALFA2"/>
+                                    <code codeSystemName="Sundhedsvæsenets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="højt specialiseret" code="ALFA2"/>
                                     <effectiveTime>
                                         <low value="20170117123000+0200"/>
                                         <high value="20170117151500+0200"/>
@@ -612,7 +517,7 @@ Content-Transfer-Encoding: binary
                                         <act classCode="ACT" moodCode="EVN">
                                             <templateId root="1.2.208.176.7.1.10.10"/>
                                             <templateId root="2.16.840.1.113883.10.12.301"/>
-                                            <code codeSystemName="Sundhedsv..senets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="h..jt specialiseret funktion" code="ALFC4"/>
+                                            <code codeSystemName="Sundhedsvæsenets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="højt specialiseret funktion" code="ALFC4"/>
                                         </act>
                                     </entryRelationship>
                                 </act>
@@ -621,12 +526,12 @@ Content-Transfer-Encoding: binary
                                 <observation classCode="OBS" moodCode="EVN">
                                     <templateId root="1.2.208.176.7.1.10.19"/>
                                     <templateId root="2.16.840.1.113883.10.12.303"/>
-                                    <code codeSystemName="Sundhedsv..senets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="Traumatisk bl..dning i lillehjernen" code="DS068B"/>
+                                    <code codeSystemName="Sundhedsvæsenets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="Traumatisk blødning i lillehjernen" code="DS068B"/>
                                     <entryRelationship typeCode="COMP">
                                         <act classCode="REG" moodCode="EVN">
                                             <templateId root="1.2.208.176.7.1.10.5"/>
                                             <templateId root="2.16.840.1.113883.10.12.301"/>
-                                            <code codeSystemName="Sundhedsv..senets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="komplikation opst..et i forbindelse med procedure" code="ZDA01"/>
+                                            <code codeSystemName="Sundhedsvæsenets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="komplikation opstået i forbindelse med procedure" code="ZDA01"/>
                                         </act>
                                     </entryRelationship>
                                 </observation>
@@ -647,7 +552,7 @@ Content-Transfer-Encoding: binary
                             <templateId root="2.16.840.1.113883.10.12.306"/>
                             <id root="1.2.208.176.7.1.2.1" extension="7dfa91a1-e19e-57d0-bdbe-fea7f8582df5"/>
                             <id root="1.2.208.176.7.1.2.2" extension="96f2ea53-41c5-477a-bd02-69962f1be8d6"/>
-                            <code codeSystemName="Sundhedsv..senets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="Indl..ggelse af intracerebralt trykm..lingsudstyr" code="KAAA27"/>
+                            <code codeSystemName="Sundhedsvæsenets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="Indlæggelse af intracerebralt trykmålingsudstyr" code="KAAA27"/>
                             <effectiveTime>
                                 <low value="20170122084500+0200"/>
                                 <high value="20170122123000+0200"/>
@@ -656,7 +561,7 @@ Content-Transfer-Encoding: binary
                                 <templateId root="1.2.208.176.7.1.10.16"/>
                                 <templateId root="2.16.840.1.113883.10.12.321"/>
                                 <participantRole classCode="ROL">
-                                    <code codeSystemName="Sundhedsv..senets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="Overl..ge" code="APAA2"/>
+                                    <code codeSystemName="Sundhedsvæsenets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="Overlæge" code="APAA2"/>
                                     <scopingEntity classCode="ORG">
                                         <id root="1.2.208.176.1.1" extension="635841000016002" assigningAuthorityName="SOR"/>
                                     </scopingEntity>
@@ -666,7 +571,7 @@ Content-Transfer-Encoding: binary
                                 <act classCode="REG" moodCode="EVN">
                                     <templateId root="1.2.208.176.7.1.10.5"/>
                                     <templateId root="2.16.840.1.113883.10.12.301"/>
-                                    <code codeSystemName="Sundhedsv..senets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="Sedation og smertelindring uden bevidsthedstab" code="NAAB"/>
+                                    <code codeSystemName="Sundhedsvæsenets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="Sedation og smertelindring uden bevidsthedstab" code="NAAB"/>
                                 </act>
                             </entryRelationship>
                             <entryRelationship typeCode="COMP">
@@ -674,7 +579,7 @@ Content-Transfer-Encoding: binary
                                     <templateId root="1.2.208.176.7.1.10.7"/>
                                     <templateId root="2.16.840.1.113883.10.12.301"/>
                                     <id root="ASSDD" extension="123123213"/>
-                                    <code codeSystemName="Sundhedsv..senets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="h..jt specialiseret" code="ALFA2"/>
+                                    <code codeSystemName="Sundhedsvæsenets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="højt specialiseret" code="ALFA2"/>
                                     <effectiveTime>
                                         <low value="20170117123000+0200"/>
                                         <high value="20170117151500+0200"/>
@@ -692,7 +597,7 @@ Content-Transfer-Encoding: binary
                                         <act classCode="ACT" moodCode="EVN">
                                             <templateId root="1.2.208.176.7.1.10.10"/>
                                             <templateId root="2.16.840.1.113883.10.12.301"/>
-                                            <code codeSystemName="Sundhedsv..senets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="h..jt specialiseret funktion" code="ALFC4"/>
+                                            <code codeSystemName="Sundhedsvæsenets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="højt specialiseret funktion" code="ALFC4"/>
                                         </act>
                                     </entryRelationship>
                                 </act>
@@ -701,7 +606,7 @@ Content-Transfer-Encoding: binary
                                 <observation classCode="OBS" moodCode="EVN">
                                     <templateId root="1.2.208.176.7.1.10.19"/>
                                     <templateId root="2.16.840.1.113883.10.12.301"/>
-                                    <code codeSystemName="Sundhedsv..senets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="Tumorer i hjerne- og rygmarvshinder af usikker og ukendt karakter" code="DD42"/>
+                                    <code codeSystemName="Sundhedsvæsenets Klassifikations System" codeSystem="1.2.208.176.2.4" displayName="Tumorer i hjerne- og rygmarvshinder af usikker og ukendt karakter" code="DD42"/>
                                 </observation>
                             </entryRelationship>
                             <entryRelationship typeCode="REFR">
