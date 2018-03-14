@@ -41,7 +41,7 @@ Content-Transfer-Encoding: binary
 							objectType="urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification">
 							<Slot name="authorInstitution">
 								<ValueList>
-									<Value>25469364</Value>
+									<Value>Aarhus Universitetshospital^^^^^&1.2.208.176.1.1&ISO^^^^404261000016009</Value>
 								</ValueList>
 							</Slot>
 						</Classification>
