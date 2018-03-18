@@ -1,50 +1,3423 @@
 {
-    "episodeOfCare": {
-        "identifier": "bbbfa3ea-2ad7-571c-986c-d72f7443ba4b",
-        "errors": [{
-            "ruleId": "05.202", "ruleVersion": "1.0.1", "code": "4302", 
-            "message": "Hvis et episodeOfCare er afsluttet, så skal kontakter knyttet til episodeOfCareet også være afsluttet med et sluttidspunkt, der ligger før eller samtidig med episodeOfCareets sluttidspunkt"}],
-        "warnings": [],
-        "patient": {
-            "identifierer": [{ "system": "1.2.208.176.1.2", "value": "08119670001"}],
-            "errors": [],
-            "warnings": []
-        },
-        "encounters": [{
-            "identifier": "47041012-132f-5de1-b16a-df273f8f000f",
-            "errors": [{
-                "ruleId": "05.102", "ruleVersion": "3.0.1","code": "5102", 
-                "message": "Ved en afsluttet kontakt, hvortil der er knyttet opholdsadresse, skal starttidspunkt for første ophold være lig med kontaktens starttidspunkt, og sluttidspunkt for sidste ophold være lig med kontaktens sluttidspunkt."}],
-            "warnings": [],
-                "conditions": [{
-                    "identifier": "d0438ac2-bf27-532f-88e8-c029aca9492b",
-                    "errors": [],
-                    "warnings": [],
-                    "obervationOrganizers": []
+    "patient": {
+        "identifiers": [
+            {
+                "root": "1.2.208.176.1.2",
+                "extension": "2505920423"
+            },
+            {
+                "root": "3938e2c7-450a-5bc7-a212-bc7fb5a82acc",
+                "extension": "d19576d2-e491-4141-a0b4-91726c1151cd"
+            }
+        ],
+        "errors": [
+            {
+                "ruleId": "91.105",
+                "ruleVersion": "1.16.31",
+                "code": "9105",
+                "message": "Some error message"
+            },
+            {
+                "ruleId": "93.349",
+                "ruleVersion": "4.6.4",
+                "code": "9349",
+                "message": "Some error message"
+            },
+            {
+                "ruleId": "60.010",
+                "ruleVersion": "5.3.92",
+                "code": "6010",
+                "message": "Some error message"
+            }
+        ],
+        "warnings": [
+            {
+                "ruleId": "13.222",
+                "ruleVersion": "1.10.64",
+                "code": "13222",
+                "message": "Some warning message"
+            },
+            {
+                "ruleId": "11.828",
+                "ruleVersion": "1.15.71",
+                "code": "11828",
+                "message": "Some warning message"
+            },
+            {
+                "errorBy": "2018-05-11T00:00:00+02:00",
+                "ruleId": "18.117",
+                "ruleVersion": "1.9.67",
+                "code": "18117",
+                "message": "Some warning message"
+            },
+            {
+                "errorBy": "2018-04-11T00:00:00+02:00",
+                "ruleId": "17.290",
+                "ruleVersion": "4.15.12",
+                "code": "17290",
+                "message": "Some warning message"
+            },
+            {
+                "errorBy": "2018-03-26T00:00:00+02:00",
+                "ruleId": "18.767",
+                "ruleVersion": "1.2.0",
+                "code": "18767",
+                "message": "Some warning message"
+            }
+        ]
+    },
+    "encounters": [
+        {
+            "procedures": [
+                {
+                    "observationOrganizers": [
+                        {
+                            "identifier": {
+                                "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                                "extension": "8731f955-a11f-587e-a24d-b53fc88cc416"
+                            },
+                            "errors": [
+                                {
+                                    "ruleId": "86.602",
+                                    "ruleVersion": "1.0.8",
+                                    "code": "8602",
+                                    "message": "Some error message"
+                                },
+                                {
+                                    "ruleId": "96.636",
+                                    "ruleVersion": "4.19.87",
+                                    "code": "9636",
+                                    "message": "Some error message"
+                                }
+                            ],
+                            "warnings": [
+                                {
+                                    "ruleId": "14.351",
+                                    "ruleVersion": "3.6.35",
+                                    "code": "14351",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "ruleId": "14.743",
+                                    "ruleVersion": "1.16.96",
+                                    "code": "14743",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-04-23T00:00:00+02:00",
+                                    "ruleId": "17.765",
+                                    "ruleVersion": "5.14.15",
+                                    "code": "17765",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-05-13T00:00:00+02:00",
+                                    "ruleId": "17.128",
+                                    "ruleVersion": "4.15.99",
+                                    "code": "17128",
+                                    "message": "Some warning message"
+                                }
+                            ]
+                        },
+                        {
+                            "identifier": {
+                                "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                                "extension": "8d513fac-ebef-5907-b86a-c2ec17369841"
+                            },
+                            "errors": [
+                                {
+                                    "ruleId": "88.847",
+                                    "ruleVersion": "1.3.12",
+                                    "code": "8847",
+                                    "message": "Some error message"
+                                },
+                                {
+                                    "ruleId": "99.975",
+                                    "ruleVersion": "5.1.90",
+                                    "code": "9975",
+                                    "message": "Some error message"
+                                },
+                                {
+                                    "ruleId": "88.883",
+                                    "ruleVersion": "1.17.10",
+                                    "code": "8883",
+                                    "message": "Some error message"
+                                }
+                            ],
+                            "warnings": [
+                                {
+                                    "ruleId": "10.471",
+                                    "ruleVersion": "2.17.93",
+                                    "code": "10471",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "ruleId": "13.184",
+                                    "ruleVersion": "2.14.53",
+                                    "code": "13184",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "ruleId": "10.816",
+                                    "ruleVersion": "1.2.74",
+                                    "code": "10816",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-05-12T00:00:00+02:00",
+                                    "ruleId": "16.342",
+                                    "ruleVersion": "5.4.97",
+                                    "code": "16342",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-03-25T00:00:00+01:00",
+                                    "ruleId": "19.744",
+                                    "ruleVersion": "2.15.1",
+                                    "code": "19744",
+                                    "message": "Some warning message"
+                                }
+                            ]
+                        },
+                        {
+                            "identifier": {
+                                "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                                "extension": "2fddfaaa-6192-5742-8e1b-f1723b1375b8"
+                            },
+                            "errors": [
+                                {
+                                    "ruleId": "67.795",
+                                    "ruleVersion": "5.4.91",
+                                    "code": "6795",
+                                    "message": "Some error message"
+                                },
+                                {
+                                    "ruleId": "59.910",
+                                    "ruleVersion": "1.2.24",
+                                    "code": "5910",
+                                    "message": "Some error message"
+                                }
+                            ],
+                            "warnings": [
+                                {
+                                    "ruleId": "14.334",
+                                    "ruleVersion": "1.17.72",
+                                    "code": "14334",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "ruleId": "11.121",
+                                    "ruleVersion": "5.7.77",
+                                    "code": "11121",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-04-03T00:00:00+02:00",
+                                    "ruleId": "15.128",
+                                    "ruleVersion": "1.4.86",
+                                    "code": "15128",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-03-21T00:00:00+01:00",
+                                    "ruleId": "18.214",
+                                    "ruleVersion": "5.0.23",
+                                    "code": "18214",
+                                    "message": "Some warning message"
+                                }
+                            ]
+                        }
+                    ],
+                    "identifier": {
+                        "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                        "extension": "741d8ffc-cd35-52b8-a4ad-a314abaa2b34"
+                    },
+                    "errors": [
+                        {
+                            "ruleId": "63.392",
+                            "ruleVersion": "2.13.98",
+                            "code": "6392",
+                            "message": "Some error message"
+                        },
+                        {
+                            "ruleId": "94.483",
+                            "ruleVersion": "4.1.3",
+                            "code": "9483",
+                            "message": "Some error message"
+                        },
+                        {
+                            "ruleId": "81.186",
+                            "ruleVersion": "3.12.0",
+                            "code": "8186",
+                            "message": "Some error message"
+                        }
+                    ],
+                    "warnings": [
+                        {
+                            "ruleId": "13.805",
+                            "ruleVersion": "2.17.77",
+                            "code": "13805",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "ruleId": "12.411",
+                            "ruleVersion": "5.5.4",
+                            "code": "12411",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-03-19T00:00:00+01:00",
+                            "ruleId": "19.836",
+                            "ruleVersion": "2.5.39",
+                            "code": "19836",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-05-11T00:00:00+02:00",
+                            "ruleId": "18.610",
+                            "ruleVersion": "2.10.72",
+                            "code": "18610",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-05-11T00:00:00+02:00",
+                            "ruleId": "17.348",
+                            "ruleVersion": "3.3.95",
+                            "code": "17348",
+                            "message": "Some warning message"
+                        }
+                    ]
                 },
                 {
-                    "identifier": "d6ad0bc4-28bb-5d02-bbaf-1a92b399febb",
-                    "errors": [],
-                    "warnings": [{
-                        "ruleId": "12.202", "ruleVersion": "0.9.1", "code": "12202",
-                        "message": "Til en afsluttet kontakt med aktionsdiagnose i kodelisten [diag.foedmor] skal der efter 7 dage indberettes en [fødselsanmeldelse mor] resultatindbertning", "errorBy": "2018-02-01T00:00:00+01:00"}],
-                    "obervationOrganizers": []
-                }],
-            "procedures": [{
-                "identifier": "7dfa91a1-e19e-57d0-bdbe-fea7f8582df5",
-                "errors": [],
-                "warnings": [],
-                "obervationOrganizers": [{
-                    "identifier": "50790dc33-eb83-5100-858f-fdc5569f13a9",
-                    "errors": [],
-                    "warnings": [{
-                        "ruleId": "05.102", "ruleVersion": "3.0.1","code": "5102",
-                        "message": "Ved en afsluttet kontakt, hvortil der er knyttet opholdsadresse, skal starttidspunkt for første ophold være lig med kontaktens starttidspunkt, og sluttidspunkt for sidste ophold være lig med kontaktens sluttidspunkt."}]
-                    }]
-                }],
-            "obervationOrganizers": []
-        }],
-        "procedures": [],
-        "obervationOrganizers": []
-    }
+                    "observationOrganizers": [
+                        {
+                            "identifier": {
+                                "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                                "extension": "25959646-6d9f-5843-a10b-0415e26022de"
+                            },
+                            "errors": [
+                                {
+                                    "ruleId": "76.646",
+                                    "ruleVersion": "5.18.4",
+                                    "code": "7646",
+                                    "message": "Some error message"
+                                },
+                                {
+                                    "ruleId": "78.887",
+                                    "ruleVersion": "3.10.48",
+                                    "code": "7887",
+                                    "message": "Some error message"
+                                }
+                            ],
+                            "warnings": [
+                                {
+                                    "ruleId": "11.838",
+                                    "ruleVersion": "3.3.35",
+                                    "code": "11838",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "ruleId": "14.053",
+                                    "ruleVersion": "4.11.23",
+                                    "code": "14053",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-04-01T00:00:00+02:00",
+                                    "ruleId": "19.640",
+                                    "ruleVersion": "5.16.73",
+                                    "code": "19640",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-05-09T00:00:00+02:00",
+                                    "ruleId": "18.452",
+                                    "ruleVersion": "4.1.58",
+                                    "code": "18452",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-03-25T00:00:00+01:00",
+                                    "ruleId": "18.047",
+                                    "ruleVersion": "4.12.13",
+                                    "code": "18047",
+                                    "message": "Some warning message"
+                                }
+                            ]
+                        },
+                        {
+                            "identifier": {
+                                "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                                "extension": "a5ba1e17-5bae-5622-a4a9-e8f1e7505147"
+                            },
+                            "errors": [
+                                {
+                                    "ruleId": "94.421",
+                                    "ruleVersion": "3.15.25",
+                                    "code": "9421",
+                                    "message": "Some error message"
+                                },
+                                {
+                                    "ruleId": "80.022",
+                                    "ruleVersion": "2.8.17",
+                                    "code": "8022",
+                                    "message": "Some error message"
+                                },
+                                {
+                                    "ruleId": "90.019",
+                                    "ruleVersion": "4.10.73",
+                                    "code": "9019",
+                                    "message": "Some error message"
+                                }
+                            ],
+                            "warnings": [
+                                {
+                                    "ruleId": "14.383",
+                                    "ruleVersion": "5.1.45",
+                                    "code": "14383",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "ruleId": "10.522",
+                                    "ruleVersion": "1.5.70",
+                                    "code": "10522",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "ruleId": "10.209",
+                                    "ruleVersion": "5.0.94",
+                                    "code": "10209",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-03-19T00:00:00+01:00",
+                                    "ruleId": "17.081",
+                                    "ruleVersion": "2.19.4",
+                                    "code": "17081",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-04-07T00:00:00+02:00",
+                                    "ruleId": "18.626",
+                                    "ruleVersion": "3.16.80",
+                                    "code": "18626",
+                                    "message": "Some warning message"
+                                }
+                            ]
+                        }
+                    ],
+                    "identifier": {
+                        "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                        "extension": "cc9fdeb4-c53d-54b0-b3e2-1fb4a2f06afc"
+                    },
+                    "errors": [
+                        {
+                            "ruleId": "80.066",
+                            "ruleVersion": "3.12.84",
+                            "code": "8066",
+                            "message": "Some error message"
+                        },
+                        {
+                            "ruleId": "61.155",
+                            "ruleVersion": "5.0.60",
+                            "code": "6155",
+                            "message": "Some error message"
+                        }
+                    ],
+                    "warnings": [
+                        {
+                            "ruleId": "14.614",
+                            "ruleVersion": "2.7.40",
+                            "code": "14614",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "ruleId": "10.140",
+                            "ruleVersion": "2.4.54",
+                            "code": "10140",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-04-02T00:00:00+02:00",
+                            "ruleId": "15.597",
+                            "ruleVersion": "3.17.15",
+                            "code": "15597",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-04-05T00:00:00+02:00",
+                            "ruleId": "17.470",
+                            "ruleVersion": "2.12.61",
+                            "code": "17470",
+                            "message": "Some warning message"
+                        }
+                    ]
+                },
+                {
+                    "observationOrganizers": [
+                        {
+                            "identifier": {
+                                "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                                "extension": "a3c7840a-01cb-59ed-b5c1-7a4796f5a15f"
+                            },
+                            "errors": [
+                                {
+                                    "ruleId": "78.870",
+                                    "ruleVersion": "5.16.46",
+                                    "code": "7870",
+                                    "message": "Some error message"
+                                },
+                                {
+                                    "ruleId": "79.911",
+                                    "ruleVersion": "1.6.22",
+                                    "code": "7911",
+                                    "message": "Some error message"
+                                }
+                            ],
+                            "warnings": [
+                                {
+                                    "ruleId": "13.224",
+                                    "ruleVersion": "2.3.10",
+                                    "code": "13224",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "ruleId": "11.450",
+                                    "ruleVersion": "3.18.16",
+                                    "code": "11450",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "ruleId": "13.803",
+                                    "ruleVersion": "3.2.48",
+                                    "code": "13803",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-04-14T00:00:00+02:00",
+                                    "ruleId": "19.225",
+                                    "ruleVersion": "5.3.21",
+                                    "code": "19225",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-04-12T00:00:00+02:00",
+                                    "ruleId": "17.943",
+                                    "ruleVersion": "5.5.95",
+                                    "code": "17943",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-04-07T00:00:00+02:00",
+                                    "ruleId": "19.722",
+                                    "ruleVersion": "4.8.3",
+                                    "code": "19722",
+                                    "message": "Some warning message"
+                                }
+                            ]
+                        },
+                        {
+                            "identifier": {
+                                "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                                "extension": "75a8789e-b749-5ad4-91e8-a38ca0c6a256"
+                            },
+                            "errors": [
+                                {
+                                    "ruleId": "75.519",
+                                    "ruleVersion": "1.10.48",
+                                    "code": "7519",
+                                    "message": "Some error message"
+                                },
+                                {
+                                    "ruleId": "84.478",
+                                    "ruleVersion": "1.5.3",
+                                    "code": "8478",
+                                    "message": "Some error message"
+                                }
+                            ],
+                            "warnings": [
+                                {
+                                    "ruleId": "12.319",
+                                    "ruleVersion": "3.3.67",
+                                    "code": "12319",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "ruleId": "10.503",
+                                    "ruleVersion": "5.11.9",
+                                    "code": "10503",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-04-19T00:00:00+02:00",
+                                    "ruleId": "18.366",
+                                    "ruleVersion": "3.18.74",
+                                    "code": "18366",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-04-23T00:00:00+02:00",
+                                    "ruleId": "18.491",
+                                    "ruleVersion": "1.17.44",
+                                    "code": "18491",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-03-28T00:00:00+02:00",
+                                    "ruleId": "19.138",
+                                    "ruleVersion": "2.0.80",
+                                    "code": "19138",
+                                    "message": "Some warning message"
+                                }
+                            ]
+                        }
+                    ],
+                    "identifier": {
+                        "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                        "extension": "ab5f19e2-e61c-5e20-aca5-7d6d92e35b53"
+                    },
+                    "errors": [
+                        {
+                            "ruleId": "83.366",
+                            "ruleVersion": "2.17.68",
+                            "code": "8366",
+                            "message": "Some error message"
+                        },
+                        {
+                            "ruleId": "97.706",
+                            "ruleVersion": "5.14.15",
+                            "code": "9706",
+                            "message": "Some error message"
+                        }
+                    ],
+                    "warnings": [
+                        {
+                            "ruleId": "13.124",
+                            "ruleVersion": "1.6.99",
+                            "code": "13124",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "ruleId": "11.460",
+                            "ruleVersion": "4.5.68",
+                            "code": "11460",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-04-26T00:00:00+02:00",
+                            "ruleId": "16.792",
+                            "ruleVersion": "5.17.42",
+                            "code": "16792",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-04-02T00:00:00+02:00",
+                            "ruleId": "16.035",
+                            "ruleVersion": "4.18.32",
+                            "code": "16035",
+                            "message": "Some warning message"
+                        }
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "observationOrganizers": [
+                        {
+                            "identifier": {
+                                "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                                "extension": "e594b38b-ed89-5403-8c70-a9afe2bc51e6"
+                            },
+                            "errors": [
+                                {
+                                    "ruleId": "92.254",
+                                    "ruleVersion": "1.14.43",
+                                    "code": "9254",
+                                    "message": "Some error message"
+                                },
+                                {
+                                    "ruleId": "57.732",
+                                    "ruleVersion": "1.9.54",
+                                    "code": "5732",
+                                    "message": "Some error message"
+                                },
+                                {
+                                    "ruleId": "78.881",
+                                    "ruleVersion": "1.12.2",
+                                    "code": "7881",
+                                    "message": "Some error message"
+                                }
+                            ],
+                            "warnings": [
+                                {
+                                    "ruleId": "10.106",
+                                    "ruleVersion": "4.12.0",
+                                    "code": "10106",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "ruleId": "10.545",
+                                    "ruleVersion": "1.11.93",
+                                    "code": "10545",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "ruleId": "14.306",
+                                    "ruleVersion": "3.19.14",
+                                    "code": "14306",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-04-08T00:00:00+02:00",
+                                    "ruleId": "15.253",
+                                    "ruleVersion": "4.15.51",
+                                    "code": "15253",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-04-17T00:00:00+02:00",
+                                    "ruleId": "19.790",
+                                    "ruleVersion": "3.1.23",
+                                    "code": "19790",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-05-03T00:00:00+02:00",
+                                    "ruleId": "16.112",
+                                    "ruleVersion": "1.3.56",
+                                    "code": "16112",
+                                    "message": "Some warning message"
+                                }
+                            ]
+                        },
+                        {
+                            "identifier": {
+                                "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                                "extension": "b8fa292d-0f8c-5c3d-9274-4cc594f7c5b9"
+                            },
+                            "errors": [
+                                {
+                                    "ruleId": "54.401",
+                                    "ruleVersion": "3.1.5",
+                                    "code": "5401",
+                                    "message": "Some error message"
+                                },
+                                {
+                                    "ruleId": "80.023",
+                                    "ruleVersion": "3.18.1",
+                                    "code": "8023",
+                                    "message": "Some error message"
+                                }
+                            ],
+                            "warnings": [
+                                {
+                                    "ruleId": "11.671",
+                                    "ruleVersion": "3.9.35",
+                                    "code": "11671",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "ruleId": "12.871",
+                                    "ruleVersion": "5.5.59",
+                                    "code": "12871",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "ruleId": "13.053",
+                                    "ruleVersion": "1.9.39",
+                                    "code": "13053",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-03-22T00:00:00+01:00",
+                                    "ruleId": "16.223",
+                                    "ruleVersion": "3.16.74",
+                                    "code": "16223",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-03-26T00:00:00+02:00",
+                                    "ruleId": "15.152",
+                                    "ruleVersion": "4.10.18",
+                                    "code": "15152",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-04-14T00:00:00+02:00",
+                                    "ruleId": "15.536",
+                                    "ruleVersion": "2.19.33",
+                                    "code": "15536",
+                                    "message": "Some warning message"
+                                }
+                            ]
+                        }
+                    ],
+                    "identifier": {
+                        "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                        "extension": "8c38e99c-37bd-5e79-aa5b-482c5f128dfe"
+                    },
+                    "errors": [
+                        {
+                            "ruleId": "61.165",
+                            "ruleVersion": "4.18.28",
+                            "code": "6165",
+                            "message": "Some error message"
+                        },
+                        {
+                            "ruleId": "61.158",
+                            "ruleVersion": "5.2.18",
+                            "code": "6158",
+                            "message": "Some error message"
+                        }
+                    ],
+                    "warnings": [
+                        {
+                            "ruleId": "13.024",
+                            "ruleVersion": "5.15.87",
+                            "code": "13024",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "ruleId": "12.727",
+                            "ruleVersion": "4.18.78",
+                            "code": "12727",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-05-10T00:00:00+02:00",
+                            "ruleId": "18.095",
+                            "ruleVersion": "3.5.95",
+                            "code": "18095",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-04-14T00:00:00+02:00",
+                            "ruleId": "18.479",
+                            "ruleVersion": "2.14.48",
+                            "code": "18479",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-04-24T00:00:00+02:00",
+                            "ruleId": "19.590",
+                            "ruleVersion": "2.15.4",
+                            "code": "19590",
+                            "message": "Some warning message"
+                        }
+                    ]
+                },
+                {
+                    "observationOrganizers": [
+                        {
+                            "identifier": {
+                                "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                                "extension": "a7da0334-a462-5a3e-b0d2-9258a30adb8c"
+                            },
+                            "errors": [
+                                {
+                                    "ruleId": "63.362",
+                                    "ruleVersion": "3.0.73",
+                                    "code": "6362",
+                                    "message": "Some error message"
+                                },
+                                {
+                                    "ruleId": "77.799",
+                                    "ruleVersion": "2.19.46",
+                                    "code": "7799",
+                                    "message": "Some error message"
+                                },
+                                {
+                                    "ruleId": "99.935",
+                                    "ruleVersion": "1.18.37",
+                                    "code": "9935",
+                                    "message": "Some error message"
+                                }
+                            ],
+                            "warnings": [
+                                {
+                                    "ruleId": "14.576",
+                                    "ruleVersion": "5.4.43",
+                                    "code": "14576",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "ruleId": "13.018",
+                                    "ruleVersion": "1.16.38",
+                                    "code": "13018",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-05-03T00:00:00+02:00",
+                                    "ruleId": "18.770",
+                                    "ruleVersion": "4.13.98",
+                                    "code": "18770",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-04-29T00:00:00+02:00",
+                                    "ruleId": "18.843",
+                                    "ruleVersion": "3.7.76",
+                                    "code": "18843",
+                                    "message": "Some warning message"
+                                }
+                            ]
+                        },
+                        {
+                            "identifier": {
+                                "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                                "extension": "a7061e24-f28c-50b8-a97b-9d1710aa1bda"
+                            },
+                            "errors": [
+                                {
+                                    "ruleId": "85.523",
+                                    "ruleVersion": "3.19.19",
+                                    "code": "8523",
+                                    "message": "Some error message"
+                                },
+                                {
+                                    "ruleId": "99.945",
+                                    "ruleVersion": "3.1.49",
+                                    "code": "9945",
+                                    "message": "Some error message"
+                                }
+                            ],
+                            "warnings": [
+                                {
+                                    "ruleId": "10.739",
+                                    "ruleVersion": "1.3.8",
+                                    "code": "10739",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "ruleId": "14.977",
+                                    "ruleVersion": "4.16.50",
+                                    "code": "14977",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "ruleId": "10.677",
+                                    "ruleVersion": "5.14.42",
+                                    "code": "10677",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-05-04T00:00:00+02:00",
+                                    "ruleId": "15.746",
+                                    "ruleVersion": "3.13.98",
+                                    "code": "15746",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-04-13T00:00:00+02:00",
+                                    "ruleId": "18.672",
+                                    "ruleVersion": "2.17.36",
+                                    "code": "18672",
+                                    "message": "Some warning message"
+                                }
+                            ]
+                        },
+                        {
+                            "identifier": {
+                                "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                                "extension": "59400cc0-d893-5477-8806-a35ca84b24b1"
+                            },
+                            "errors": [
+                                {
+                                    "ruleId": "84.417",
+                                    "ruleVersion": "2.6.47",
+                                    "code": "8417",
+                                    "message": "Some error message"
+                                },
+                                {
+                                    "ruleId": "96.647",
+                                    "ruleVersion": "3.0.74",
+                                    "code": "9647",
+                                    "message": "Some error message"
+                                }
+                            ],
+                            "warnings": [
+                                {
+                                    "ruleId": "14.067",
+                                    "ruleVersion": "1.11.99",
+                                    "code": "14067",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "ruleId": "10.091",
+                                    "ruleVersion": "3.3.57",
+                                    "code": "10091",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-04-29T00:00:00+02:00",
+                                    "ruleId": "15.500",
+                                    "ruleVersion": "1.8.57",
+                                    "code": "15500",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-04-25T00:00:00+02:00",
+                                    "ruleId": "15.550",
+                                    "ruleVersion": "1.3.17",
+                                    "code": "15550",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-05-02T00:00:00+02:00",
+                                    "ruleId": "17.573",
+                                    "ruleVersion": "2.15.60",
+                                    "code": "17573",
+                                    "message": "Some warning message"
+                                }
+                            ]
+                        }
+                    ],
+                    "identifier": {
+                        "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                        "extension": "b22e13e5-1de7-5b76-9580-ab35bd6db997"
+                    },
+                    "errors": [
+                        {
+                            "ruleId": "57.721",
+                            "ruleVersion": "1.4.13",
+                            "code": "5721",
+                            "message": "Some error message"
+                        },
+                        {
+                            "ruleId": "69.932",
+                            "ruleVersion": "2.2.48",
+                            "code": "6932",
+                            "message": "Some error message"
+                        },
+                        {
+                            "ruleId": "60.014",
+                            "ruleVersion": "4.16.71",
+                            "code": "6014",
+                            "message": "Some error message"
+                        }
+                    ],
+                    "warnings": [
+                        {
+                            "ruleId": "11.394",
+                            "ruleVersion": "5.3.37",
+                            "code": "11394",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "ruleId": "13.771",
+                            "ruleVersion": "4.10.86",
+                            "code": "13771",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-04-08T00:00:00+02:00",
+                            "ruleId": "18.399",
+                            "ruleVersion": "5.13.43",
+                            "code": "18399",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-04-26T00:00:00+02:00",
+                            "ruleId": "15.402",
+                            "ruleVersion": "3.14.5",
+                            "code": "15402",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-03-19T00:00:00+01:00",
+                            "ruleId": "16.998",
+                            "ruleVersion": "5.19.96",
+                            "code": "16998",
+                            "message": "Some warning message"
+                        }
+                    ]
+                }
+            ],
+            "observationOrganizers": [
+                {
+                    "identifier": {
+                        "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                        "extension": "fb586f13-d5d5-5542-8f9d-0ea3664a466c"
+                    },
+                    "errors": [
+                        {
+                            "ruleId": "62.298",
+                            "ruleVersion": "4.19.31",
+                            "code": "6298",
+                            "message": "Some error message"
+                        },
+                        {
+                            "ruleId": "73.329",
+                            "ruleVersion": "4.15.46",
+                            "code": "7329",
+                            "message": "Some error message"
+                        },
+                        {
+                            "ruleId": "57.744",
+                            "ruleVersion": "4.13.77",
+                            "code": "5744",
+                            "message": "Some error message"
+                        }
+                    ],
+                    "warnings": [
+                        {
+                            "ruleId": "11.113",
+                            "ruleVersion": "1.15.60",
+                            "code": "11113",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "ruleId": "13.375",
+                            "ruleVersion": "5.14.73",
+                            "code": "13375",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "ruleId": "11.107",
+                            "ruleVersion": "5.12.10",
+                            "code": "11107",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-05-03T00:00:00+02:00",
+                            "ruleId": "18.137",
+                            "ruleVersion": "3.6.84",
+                            "code": "18137",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-03-25T00:00:00+01:00",
+                            "ruleId": "19.275",
+                            "ruleVersion": "2.4.92",
+                            "code": "19275",
+                            "message": "Some warning message"
+                        }
+                    ]
+                },
+                {
+                    "identifier": {
+                        "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                        "extension": "7fc8496b-5f76-555f-a0fa-2755e1f6a697"
+                    },
+                    "errors": [
+                        {
+                            "ruleId": "80.007",
+                            "ruleVersion": "4.14.3",
+                            "code": "8007",
+                            "message": "Some error message"
+                        },
+                        {
+                            "ruleId": "71.114",
+                            "ruleVersion": "3.5.0",
+                            "code": "7114",
+                            "message": "Some error message"
+                        }
+                    ],
+                    "warnings": [
+                        {
+                            "ruleId": "11.833",
+                            "ruleVersion": "5.16.28",
+                            "code": "11833",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "ruleId": "14.617",
+                            "ruleVersion": "4.5.15",
+                            "code": "14617",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "ruleId": "13.092",
+                            "ruleVersion": "5.6.90",
+                            "code": "13092",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-04-20T00:00:00+02:00",
+                            "ruleId": "18.854",
+                            "ruleVersion": "1.5.6",
+                            "code": "18854",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-04-08T00:00:00+02:00",
+                            "ruleId": "17.406",
+                            "ruleVersion": "5.8.80",
+                            "code": "17406",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-03-20T00:00:00+01:00",
+                            "ruleId": "19.226",
+                            "ruleVersion": "4.10.72",
+                            "code": "19226",
+                            "message": "Some warning message"
+                        }
+                    ]
+                }
+            ],
+            "identifier": {
+                "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                "extension": "ae21adfc-484f-5e7f-8cf7-25e5102d077a"
+            },
+            "errors": [
+                {
+                    "ruleId": "56.602",
+                    "ruleVersion": "2.5.52",
+                    "code": "5602",
+                    "message": "Some error message"
+                },
+                {
+                    "ruleId": "82.220",
+                    "ruleVersion": "3.1.76",
+                    "code": "8220",
+                    "message": "Some error message"
+                }
+            ],
+            "warnings": [
+                {
+                    "ruleId": "11.323",
+                    "ruleVersion": "3.19.49",
+                    "code": "11323",
+                    "message": "Some warning message"
+                },
+                {
+                    "ruleId": "10.452",
+                    "ruleVersion": "1.5.17",
+                    "code": "10452",
+                    "message": "Some warning message"
+                },
+                {
+                    "errorBy": "2018-03-25T00:00:00+01:00",
+                    "ruleId": "18.094",
+                    "ruleVersion": "4.2.69",
+                    "code": "18094",
+                    "message": "Some warning message"
+                },
+                {
+                    "errorBy": "2018-04-14T00:00:00+02:00",
+                    "ruleId": "15.348",
+                    "ruleVersion": "3.9.87",
+                    "code": "15348",
+                    "message": "Some warning message"
+                },
+                {
+                    "errorBy": "2018-04-19T00:00:00+02:00",
+                    "ruleId": "16.902",
+                    "ruleVersion": "5.7.24",
+                    "code": "16902",
+                    "message": "Some warning message"
+                }
+            ]
+        },
+        {
+            "procedures": [
+                {
+                    "observationOrganizers": [
+                        {
+                            "identifier": {
+                                "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                                "extension": "a06ddefb-0361-5c51-813e-bcd4271d9f08"
+                            },
+                            "errors": [
+                                {
+                                    "ruleId": "93.314",
+                                    "ruleVersion": "1.8.55",
+                                    "code": "9314",
+                                    "message": "Some error message"
+                                },
+                                {
+                                    "ruleId": "64.454",
+                                    "ruleVersion": "2.15.60",
+                                    "code": "6454",
+                                    "message": "Some error message"
+                                }
+                            ],
+                            "warnings": [
+                                {
+                                    "ruleId": "10.980",
+                                    "ruleVersion": "4.14.43",
+                                    "code": "10980",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "ruleId": "12.618",
+                                    "ruleVersion": "1.3.89",
+                                    "code": "12618",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "ruleId": "13.567",
+                                    "ruleVersion": "2.2.84",
+                                    "code": "13567",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-04-21T00:00:00+02:00",
+                                    "ruleId": "18.117",
+                                    "ruleVersion": "4.7.36",
+                                    "code": "18117",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-03-20T00:00:00+01:00",
+                                    "ruleId": "16.188",
+                                    "ruleVersion": "5.18.51",
+                                    "code": "16188",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-05-06T00:00:00+02:00",
+                                    "ruleId": "15.147",
+                                    "ruleVersion": "3.5.73",
+                                    "code": "15147",
+                                    "message": "Some warning message"
+                                }
+                            ]
+                        },
+                        {
+                            "identifier": {
+                                "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                                "extension": "08e7a0b5-6f7c-57e1-8443-7104c594f723"
+                            },
+                            "errors": [
+                                {
+                                    "ruleId": "52.250",
+                                    "ruleVersion": "5.18.36",
+                                    "code": "5250",
+                                    "message": "Some error message"
+                                },
+                                {
+                                    "ruleId": "85.597",
+                                    "ruleVersion": "5.7.24",
+                                    "code": "8597",
+                                    "message": "Some error message"
+                                },
+                                {
+                                    "ruleId": "69.949",
+                                    "ruleVersion": "2.5.8",
+                                    "code": "6949",
+                                    "message": "Some error message"
+                                }
+                            ],
+                            "warnings": [
+                                {
+                                    "ruleId": "11.306",
+                                    "ruleVersion": "3.9.90",
+                                    "code": "11306",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "ruleId": "13.735",
+                                    "ruleVersion": "4.11.67",
+                                    "code": "13735",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-04-20T00:00:00+02:00",
+                                    "ruleId": "16.141",
+                                    "ruleVersion": "2.10.2",
+                                    "code": "16141",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-04-09T00:00:00+02:00",
+                                    "ruleId": "16.838",
+                                    "ruleVersion": "1.18.33",
+                                    "code": "16838",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-03-22T00:00:00+01:00",
+                                    "ruleId": "16.841",
+                                    "ruleVersion": "1.5.96",
+                                    "code": "16841",
+                                    "message": "Some warning message"
+                                }
+                            ]
+                        }
+                    ],
+                    "identifier": {
+                        "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                        "extension": "8abbb9a2-ede8-5497-8463-25eeed2afd00"
+                    },
+                    "errors": [
+                        {
+                            "ruleId": "76.628",
+                            "ruleVersion": "2.4.88",
+                            "code": "7628",
+                            "message": "Some error message"
+                        },
+                        {
+                            "ruleId": "88.858",
+                            "ruleVersion": "3.15.74",
+                            "code": "8858",
+                            "message": "Some error message"
+                        }
+                    ],
+                    "warnings": [
+                        {
+                            "ruleId": "14.679",
+                            "ruleVersion": "3.6.7",
+                            "code": "14679",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "ruleId": "11.891",
+                            "ruleVersion": "4.5.58",
+                            "code": "11891",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "ruleId": "13.359",
+                            "ruleVersion": "1.1.84",
+                            "code": "13359",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-04-10T00:00:00+02:00",
+                            "ruleId": "16.193",
+                            "ruleVersion": "1.5.8",
+                            "code": "16193",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-04-20T00:00:00+02:00",
+                            "ruleId": "18.096",
+                            "ruleVersion": "1.13.23",
+                            "code": "18096",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-05-09T00:00:00+02:00",
+                            "ruleId": "15.444",
+                            "ruleVersion": "1.12.34",
+                            "code": "15444",
+                            "message": "Some warning message"
+                        }
+                    ]
+                },
+                {
+                    "observationOrganizers": [
+                        {
+                            "identifier": {
+                                "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                                "extension": "0a294702-cac2-5c24-8b9a-8e18ca6c35d1"
+                            },
+                            "errors": [
+                                {
+                                    "ruleId": "70.044",
+                                    "ruleVersion": "1.11.23",
+                                    "code": "7044",
+                                    "message": "Some error message"
+                                },
+                                {
+                                    "ruleId": "61.175",
+                                    "ruleVersion": "3.1.65",
+                                    "code": "6175",
+                                    "message": "Some error message"
+                                },
+                                {
+                                    "ruleId": "79.900",
+                                    "ruleVersion": "2.10.22",
+                                    "code": "7900",
+                                    "message": "Some error message"
+                                }
+                            ],
+                            "warnings": [
+                                {
+                                    "ruleId": "11.264",
+                                    "ruleVersion": "5.19.94",
+                                    "code": "11264",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "ruleId": "14.057",
+                                    "ruleVersion": "4.1.1",
+                                    "code": "14057",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-04-29T00:00:00+02:00",
+                                    "ruleId": "19.367",
+                                    "ruleVersion": "3.1.10",
+                                    "code": "19367",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-04-18T00:00:00+02:00",
+                                    "ruleId": "18.774",
+                                    "ruleVersion": "3.19.58",
+                                    "code": "18774",
+                                    "message": "Some warning message"
+                                }
+                            ]
+                        },
+                        {
+                            "identifier": {
+                                "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                                "extension": "2dbb4b01-8f12-5a97-b05b-273439d58f08"
+                            },
+                            "errors": [
+                                {
+                                    "ruleId": "52.241",
+                                    "ruleVersion": "3.12.34",
+                                    "code": "5241",
+                                    "message": "Some error message"
+                                },
+                                {
+                                    "ruleId": "69.974",
+                                    "ruleVersion": "2.8.86",
+                                    "code": "6974",
+                                    "message": "Some error message"
+                                }
+                            ],
+                            "warnings": [
+                                {
+                                    "ruleId": "10.253",
+                                    "ruleVersion": "2.1.61",
+                                    "code": "10253",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "ruleId": "14.436",
+                                    "ruleVersion": "5.11.96",
+                                    "code": "14436",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "ruleId": "14.058",
+                                    "ruleVersion": "5.9.81",
+                                    "code": "14058",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-05-15T00:00:00+02:00",
+                                    "ruleId": "15.354",
+                                    "ruleVersion": "1.11.97",
+                                    "code": "15354",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-04-08T00:00:00+02:00",
+                                    "ruleId": "16.878",
+                                    "ruleVersion": "5.19.56",
+                                    "code": "16878",
+                                    "message": "Some warning message"
+                                }
+                            ]
+                        },
+                        {
+                            "identifier": {
+                                "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                                "extension": "12f8159c-1512-5c9f-8a1e-be308936572c"
+                            },
+                            "errors": [
+                                {
+                                    "ruleId": "58.829",
+                                    "ruleVersion": "5.8.81",
+                                    "code": "5829",
+                                    "message": "Some error message"
+                                },
+                                {
+                                    "ruleId": "97.792",
+                                    "ruleVersion": "5.17.85",
+                                    "code": "9792",
+                                    "message": "Some error message"
+                                }
+                            ],
+                            "warnings": [
+                                {
+                                    "ruleId": "12.619",
+                                    "ruleVersion": "2.14.83",
+                                    "code": "12619",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "ruleId": "14.429",
+                                    "ruleVersion": "5.9.34",
+                                    "code": "14429",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "ruleId": "11.388",
+                                    "ruleVersion": "5.0.48",
+                                    "code": "11388",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-04-13T00:00:00+02:00",
+                                    "ruleId": "19.453",
+                                    "ruleVersion": "4.2.32",
+                                    "code": "19453",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-03-29T00:00:00+02:00",
+                                    "ruleId": "15.846",
+                                    "ruleVersion": "1.0.77",
+                                    "code": "15846",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-04-07T00:00:00+02:00",
+                                    "ruleId": "17.012",
+                                    "ruleVersion": "2.14.72",
+                                    "code": "17012",
+                                    "message": "Some warning message"
+                                }
+                            ]
+                        }
+                    ],
+                    "identifier": {
+                        "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                        "extension": "8e633fe7-c8f9-5617-af38-07edf8d5c55e"
+                    },
+                    "errors": [
+                        {
+                            "ruleId": "81.120",
+                            "ruleVersion": "2.15.7",
+                            "code": "8120",
+                            "message": "Some error message"
+                        },
+                        {
+                            "ruleId": "85.518",
+                            "ruleVersion": "5.6.29",
+                            "code": "8518",
+                            "message": "Some error message"
+                        }
+                    ],
+                    "warnings": [
+                        {
+                            "ruleId": "10.117",
+                            "ruleVersion": "2.4.86",
+                            "code": "10117",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "ruleId": "12.046",
+                            "ruleVersion": "4.18.36",
+                            "code": "12046",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-04-10T00:00:00+02:00",
+                            "ruleId": "19.579",
+                            "ruleVersion": "2.17.65",
+                            "code": "19579",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-03-22T00:00:00+01:00",
+                            "ruleId": "16.134",
+                            "ruleVersion": "1.17.82",
+                            "code": "16134",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-05-13T00:00:00+02:00",
+                            "ruleId": "19.607",
+                            "ruleVersion": "5.6.13",
+                            "code": "19607",
+                            "message": "Some warning message"
+                        }
+                    ]
+                }
+            ],
+            "conditions": [
+                {
+                    "observationOrganizers": [
+                        {
+                            "identifier": {
+                                "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                                "extension": "c0d06e15-d2f7-5c37-a003-ed447afca905"
+                            },
+                            "errors": [
+                                {
+                                    "ruleId": "70.000",
+                                    "ruleVersion": "1.7.31",
+                                    "code": "7000",
+                                    "message": "Some error message"
+                                },
+                                {
+                                    "ruleId": "69.938",
+                                    "ruleVersion": "1.6.21",
+                                    "code": "6938",
+                                    "message": "Some error message"
+                                },
+                                {
+                                    "ruleId": "97.728",
+                                    "ruleVersion": "1.16.58",
+                                    "code": "9728",
+                                    "message": "Some error message"
+                                }
+                            ],
+                            "warnings": [
+                                {
+                                    "ruleId": "10.336",
+                                    "ruleVersion": "1.6.97",
+                                    "code": "10336",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "ruleId": "10.250",
+                                    "ruleVersion": "3.2.33",
+                                    "code": "10250",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "ruleId": "14.795",
+                                    "ruleVersion": "5.6.51",
+                                    "code": "14795",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-04-02T00:00:00+02:00",
+                                    "ruleId": "16.698",
+                                    "ruleVersion": "2.9.0",
+                                    "code": "16698",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-04-16T00:00:00+02:00",
+                                    "ruleId": "15.331",
+                                    "ruleVersion": "1.5.1",
+                                    "code": "15331",
+                                    "message": "Some warning message"
+                                }
+                            ]
+                        },
+                        {
+                            "identifier": {
+                                "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                                "extension": "2e820d3f-47f1-5a3f-8f4c-c62827f9da75"
+                            },
+                            "errors": [
+                                {
+                                    "ruleId": "63.334",
+                                    "ruleVersion": "5.18.29",
+                                    "code": "6334",
+                                    "message": "Some error message"
+                                },
+                                {
+                                    "ruleId": "71.104",
+                                    "ruleVersion": "1.15.68",
+                                    "code": "7104",
+                                    "message": "Some error message"
+                                },
+                                {
+                                    "ruleId": "65.593",
+                                    "ruleVersion": "1.1.60",
+                                    "code": "6593",
+                                    "message": "Some error message"
+                                }
+                            ],
+                            "warnings": [
+                                {
+                                    "ruleId": "11.151",
+                                    "ruleVersion": "3.12.85",
+                                    "code": "11151",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "ruleId": "11.347",
+                                    "ruleVersion": "3.12.14",
+                                    "code": "11347",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "ruleId": "12.941",
+                                    "ruleVersion": "2.7.68",
+                                    "code": "12941",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-04-28T00:00:00+02:00",
+                                    "ruleId": "16.968",
+                                    "ruleVersion": "2.3.95",
+                                    "code": "16968",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-05-13T00:00:00+02:00",
+                                    "ruleId": "19.640",
+                                    "ruleVersion": "1.8.44",
+                                    "code": "19640",
+                                    "message": "Some warning message"
+                                }
+                            ]
+                        }
+                    ],
+                    "identifier": {
+                        "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                        "extension": "17427107-ded4-5373-b118-9b3f8fa5240b"
+                    },
+                    "errors": [
+                        {
+                            "ruleId": "78.819",
+                            "ruleVersion": "3.17.92",
+                            "code": "7819",
+                            "message": "Some error message"
+                        },
+                        {
+                            "ruleId": "65.551",
+                            "ruleVersion": "4.12.31",
+                            "code": "6551",
+                            "message": "Some error message"
+                        },
+                        {
+                            "ruleId": "69.921",
+                            "ruleVersion": "2.13.52",
+                            "code": "6921",
+                            "message": "Some error message"
+                        }
+                    ],
+                    "warnings": [
+                        {
+                            "ruleId": "10.430",
+                            "ruleVersion": "2.10.57",
+                            "code": "10430",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "ruleId": "14.632",
+                            "ruleVersion": "5.16.10",
+                            "code": "14632",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "ruleId": "10.860",
+                            "ruleVersion": "4.12.54",
+                            "code": "10860",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-03-28T00:00:00+02:00",
+                            "ruleId": "17.970",
+                            "ruleVersion": "4.6.91",
+                            "code": "17970",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-03-28T00:00:00+02:00",
+                            "ruleId": "15.112",
+                            "ruleVersion": "5.13.36",
+                            "code": "15112",
+                            "message": "Some warning message"
+                        }
+                    ]
+                },
+                {
+                    "observationOrganizers": [
+                        {
+                            "identifier": {
+                                "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                                "extension": "9e5aca8b-26c9-50a1-b205-ccf3038c85f2"
+                            },
+                            "errors": [
+                                {
+                                    "ruleId": "86.650",
+                                    "ruleVersion": "3.18.7",
+                                    "code": "8650",
+                                    "message": "Some error message"
+                                },
+                                {
+                                    "ruleId": "84.407",
+                                    "ruleVersion": "2.17.71",
+                                    "code": "8407",
+                                    "message": "Some error message"
+                                }
+                            ],
+                            "warnings": [
+                                {
+                                    "ruleId": "14.915",
+                                    "ruleVersion": "5.11.33",
+                                    "code": "14915",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "ruleId": "12.862",
+                                    "ruleVersion": "4.3.13",
+                                    "code": "12862",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-05-07T00:00:00+02:00",
+                                    "ruleId": "15.739",
+                                    "ruleVersion": "1.13.87",
+                                    "code": "15739",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-04-07T00:00:00+02:00",
+                                    "ruleId": "18.245",
+                                    "ruleVersion": "4.14.2",
+                                    "code": "18245",
+                                    "message": "Some warning message"
+                                }
+                            ]
+                        },
+                        {
+                            "identifier": {
+                                "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                                "extension": "e038f628-a7af-521e-bd83-a72201b53afc"
+                            },
+                            "errors": [
+                                {
+                                    "ruleId": "63.358",
+                                    "ruleVersion": "3.9.47",
+                                    "code": "6358",
+                                    "message": "Some error message"
+                                },
+                                {
+                                    "ruleId": "63.363",
+                                    "ruleVersion": "5.19.45",
+                                    "code": "6363",
+                                    "message": "Some error message"
+                                }
+                            ],
+                            "warnings": [
+                                {
+                                    "ruleId": "14.313",
+                                    "ruleVersion": "3.13.62",
+                                    "code": "14313",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "ruleId": "11.782",
+                                    "ruleVersion": "4.2.2",
+                                    "code": "11782",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-05-02T00:00:00+02:00",
+                                    "ruleId": "17.742",
+                                    "ruleVersion": "5.7.89",
+                                    "code": "17742",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-04-17T00:00:00+02:00",
+                                    "ruleId": "16.536",
+                                    "ruleVersion": "5.6.75",
+                                    "code": "16536",
+                                    "message": "Some warning message"
+                                },
+                                {
+                                    "errorBy": "2018-04-14T00:00:00+02:00",
+                                    "ruleId": "15.823",
+                                    "ruleVersion": "3.18.87",
+                                    "code": "15823",
+                                    "message": "Some warning message"
+                                }
+                            ]
+                        }
+                    ],
+                    "identifier": {
+                        "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                        "extension": "241b7083-11cf-515f-bc78-8956427e2bc1"
+                    },
+                    "errors": [
+                        {
+                            "ruleId": "57.774",
+                            "ruleVersion": "3.2.29",
+                            "code": "5774",
+                            "message": "Some error message"
+                        },
+                        {
+                            "ruleId": "95.559",
+                            "ruleVersion": "4.9.21",
+                            "code": "9559",
+                            "message": "Some error message"
+                        },
+                        {
+                            "ruleId": "79.989",
+                            "ruleVersion": "4.4.96",
+                            "code": "7989",
+                            "message": "Some error message"
+                        }
+                    ],
+                    "warnings": [
+                        {
+                            "ruleId": "12.912",
+                            "ruleVersion": "5.15.63",
+                            "code": "12912",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "ruleId": "10.123",
+                            "ruleVersion": "1.7.10",
+                            "code": "10123",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-04-16T00:00:00+02:00",
+                            "ruleId": "19.734",
+                            "ruleVersion": "2.4.59",
+                            "code": "19734",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-04-29T00:00:00+02:00",
+                            "ruleId": "15.973",
+                            "ruleVersion": "2.13.92",
+                            "code": "15973",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-04-18T00:00:00+02:00",
+                            "ruleId": "18.752",
+                            "ruleVersion": "1.18.77",
+                            "code": "18752",
+                            "message": "Some warning message"
+                        }
+                    ]
+                }
+            ],
+            "observationOrganizers": [
+                {
+                    "identifier": {
+                        "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                        "extension": "066ea703-71b9-52c1-bcf2-60c4859f191d"
+                    },
+                    "errors": [
+                        {
+                            "ruleId": "54.418",
+                            "ruleVersion": "3.2.78",
+                            "code": "5418",
+                            "message": "Some error message"
+                        },
+                        {
+                            "ruleId": "55.530",
+                            "ruleVersion": "5.2.77",
+                            "code": "5530",
+                            "message": "Some error message"
+                        },
+                        {
+                            "ruleId": "92.216",
+                            "ruleVersion": "3.17.50",
+                            "code": "9216",
+                            "message": "Some error message"
+                        }
+                    ],
+                    "warnings": [
+                        {
+                            "ruleId": "10.111",
+                            "ruleVersion": "4.17.7",
+                            "code": "10111",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "ruleId": "10.588",
+                            "ruleVersion": "4.10.79",
+                            "code": "10588",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-04-03T00:00:00+02:00",
+                            "ruleId": "19.764",
+                            "ruleVersion": "2.16.42",
+                            "code": "19764",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-05-07T00:00:00+02:00",
+                            "ruleId": "17.882",
+                            "ruleVersion": "5.14.71",
+                            "code": "17882",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-04-10T00:00:00+02:00",
+                            "ruleId": "18.556",
+                            "ruleVersion": "2.16.28",
+                            "code": "18556",
+                            "message": "Some warning message"
+                        }
+                    ]
+                },
+                {
+                    "identifier": {
+                        "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                        "extension": "a04d2c75-919e-5cb6-9801-073e19226467"
+                    },
+                    "errors": [
+                        {
+                            "ruleId": "84.442",
+                            "ruleVersion": "2.12.87",
+                            "code": "8442",
+                            "message": "Some error message"
+                        },
+                        {
+                            "ruleId": "76.624",
+                            "ruleVersion": "3.4.91",
+                            "code": "7624",
+                            "message": "Some error message"
+                        }
+                    ],
+                    "warnings": [
+                        {
+                            "ruleId": "10.674",
+                            "ruleVersion": "4.19.57",
+                            "code": "10674",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "ruleId": "11.274",
+                            "ruleVersion": "5.18.27",
+                            "code": "11274",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "ruleId": "13.640",
+                            "ruleVersion": "2.7.26",
+                            "code": "13640",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-03-19T00:00:00+01:00",
+                            "ruleId": "16.252",
+                            "ruleVersion": "3.19.59",
+                            "code": "16252",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-05-09T00:00:00+02:00",
+                            "ruleId": "18.819",
+                            "ruleVersion": "3.8.96",
+                            "code": "18819",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-04-16T00:00:00+02:00",
+                            "ruleId": "16.057",
+                            "ruleVersion": "1.11.5",
+                            "code": "16057",
+                            "message": "Some warning message"
+                        }
+                    ]
+                }
+            ],
+            "identifier": {
+                "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                "extension": "b40f07bd-e624-5ff2-b703-4262792c8f15"
+            },
+            "errors": [
+                {
+                    "ruleId": "61.185",
+                    "ruleVersion": "3.13.38",
+                    "code": "6185",
+                    "message": "Some error message"
+                },
+                {
+                    "ruleId": "90.068",
+                    "ruleVersion": "1.13.29",
+                    "code": "9068",
+                    "message": "Some error message"
+                }
+            ],
+            "warnings": [
+                {
+                    "ruleId": "13.268",
+                    "ruleVersion": "4.14.51",
+                    "code": "13268",
+                    "message": "Some warning message"
+                },
+                {
+                    "ruleId": "12.936",
+                    "ruleVersion": "1.12.94",
+                    "code": "12936",
+                    "message": "Some warning message"
+                },
+                {
+                    "errorBy": "2018-04-19T00:00:00+02:00",
+                    "ruleId": "17.119",
+                    "ruleVersion": "1.5.39",
+                    "code": "17119",
+                    "message": "Some warning message"
+                },
+                {
+                    "errorBy": "2018-03-18T00:00:00+01:00",
+                    "ruleId": "19.485",
+                    "ruleVersion": "4.2.25",
+                    "code": "19485",
+                    "message": "Some warning message"
+                }
+            ]
+        }
+    ],
+    "procedures": [
+        {
+            "observationOrganizers": [
+                {
+                    "identifier": {
+                        "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                        "extension": "568fa051-1838-55b9-81e2-4b628a9e7b00"
+                    },
+                    "errors": [
+                        {
+                            "ruleId": "73.365",
+                            "ruleVersion": "4.16.56",
+                            "code": "7365",
+                            "message": "Some error message"
+                        },
+                        {
+                            "ruleId": "52.273",
+                            "ruleVersion": "4.15.32",
+                            "code": "5273",
+                            "message": "Some error message"
+                        },
+                        {
+                            "ruleId": "91.181",
+                            "ruleVersion": "3.0.89",
+                            "code": "9181",
+                            "message": "Some error message"
+                        }
+                    ],
+                    "warnings": [
+                        {
+                            "ruleId": "13.311",
+                            "ruleVersion": "1.13.94",
+                            "code": "13311",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "ruleId": "14.854",
+                            "ruleVersion": "2.15.71",
+                            "code": "14854",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "ruleId": "10.073",
+                            "ruleVersion": "4.3.96",
+                            "code": "10073",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-05-01T00:00:00+02:00",
+                            "ruleId": "17.136",
+                            "ruleVersion": "5.6.90",
+                            "code": "17136",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-04-08T00:00:00+02:00",
+                            "ruleId": "15.466",
+                            "ruleVersion": "3.0.14",
+                            "code": "15466",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-05-02T00:00:00+02:00",
+                            "ruleId": "19.645",
+                            "ruleVersion": "1.0.42",
+                            "code": "19645",
+                            "message": "Some warning message"
+                        }
+                    ]
+                },
+                {
+                    "identifier": {
+                        "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                        "extension": "30e01852-8504-53ac-9759-18f6ea56055a"
+                    },
+                    "errors": [
+                        {
+                            "ruleId": "74.415",
+                            "ruleVersion": "5.1.91",
+                            "code": "7415",
+                            "message": "Some error message"
+                        },
+                        {
+                            "ruleId": "92.218",
+                            "ruleVersion": "1.9.77",
+                            "code": "9218",
+                            "message": "Some error message"
+                        },
+                        {
+                            "ruleId": "84.407",
+                            "ruleVersion": "1.15.85",
+                            "code": "8407",
+                            "message": "Some error message"
+                        }
+                    ],
+                    "warnings": [
+                        {
+                            "ruleId": "14.133",
+                            "ruleVersion": "3.19.28",
+                            "code": "14133",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "ruleId": "10.782",
+                            "ruleVersion": "1.0.97",
+                            "code": "10782",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "ruleId": "11.976",
+                            "ruleVersion": "3.8.90",
+                            "code": "11976",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-05-09T00:00:00+02:00",
+                            "ruleId": "19.956",
+                            "ruleVersion": "5.14.45",
+                            "code": "19956",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-04-07T00:00:00+02:00",
+                            "ruleId": "17.613",
+                            "ruleVersion": "4.5.21",
+                            "code": "17613",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-03-19T00:00:00+01:00",
+                            "ruleId": "19.040",
+                            "ruleVersion": "1.4.43",
+                            "code": "19040",
+                            "message": "Some warning message"
+                        }
+                    ]
+                }
+            ],
+            "identifier": {
+                "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                "extension": "8e33f7f0-8500-5c71-bfb5-a1b412c2ac0b"
+            },
+            "errors": [
+                {
+                    "ruleId": "79.940",
+                    "ruleVersion": "4.16.1",
+                    "code": "7940",
+                    "message": "Some error message"
+                },
+                {
+                    "ruleId": "77.774",
+                    "ruleVersion": "5.7.89",
+                    "code": "7774",
+                    "message": "Some error message"
+                },
+                {
+                    "ruleId": "84.406",
+                    "ruleVersion": "5.4.1",
+                    "code": "8406",
+                    "message": "Some error message"
+                }
+            ],
+            "warnings": [
+                {
+                    "ruleId": "14.412",
+                    "ruleVersion": "2.19.36",
+                    "code": "14412",
+                    "message": "Some warning message"
+                },
+                {
+                    "ruleId": "10.287",
+                    "ruleVersion": "2.16.23",
+                    "code": "10287",
+                    "message": "Some warning message"
+                },
+                {
+                    "errorBy": "2018-03-27T00:00:00+02:00",
+                    "ruleId": "19.479",
+                    "ruleVersion": "4.19.32",
+                    "code": "19479",
+                    "message": "Some warning message"
+                },
+                {
+                    "errorBy": "2018-04-06T00:00:00+02:00",
+                    "ruleId": "18.279",
+                    "ruleVersion": "1.19.18",
+                    "code": "18279",
+                    "message": "Some warning message"
+                }
+            ]
+        },
+        {
+            "observationOrganizers": [
+                {
+                    "identifier": {
+                        "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                        "extension": "63e6889f-e774-5a15-85ef-5c61ad726413"
+                    },
+                    "errors": [
+                        {
+                            "ruleId": "86.664",
+                            "ruleVersion": "5.9.1",
+                            "code": "8664",
+                            "message": "Some error message"
+                        },
+                        {
+                            "ruleId": "51.181",
+                            "ruleVersion": "3.12.29",
+                            "code": "5181",
+                            "message": "Some error message"
+                        }
+                    ],
+                    "warnings": [
+                        {
+                            "ruleId": "12.949",
+                            "ruleVersion": "5.11.53",
+                            "code": "12949",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "ruleId": "10.410",
+                            "ruleVersion": "4.0.13",
+                            "code": "10410",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-04-24T00:00:00+02:00",
+                            "ruleId": "18.988",
+                            "ruleVersion": "4.10.0",
+                            "code": "18988",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-04-05T00:00:00+02:00",
+                            "ruleId": "18.442",
+                            "ruleVersion": "4.13.46",
+                            "code": "18442",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-05-13T00:00:00+02:00",
+                            "ruleId": "17.837",
+                            "ruleVersion": "5.16.47",
+                            "code": "17837",
+                            "message": "Some warning message"
+                        }
+                    ]
+                },
+                {
+                    "identifier": {
+                        "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                        "extension": "4d9ae020-eefe-5a89-9a15-dfbc2ff13323"
+                    },
+                    "errors": [
+                        {
+                            "ruleId": "72.216",
+                            "ruleVersion": "4.11.41",
+                            "code": "7216",
+                            "message": "Some error message"
+                        },
+                        {
+                            "ruleId": "83.306",
+                            "ruleVersion": "5.14.21",
+                            "code": "8306",
+                            "message": "Some error message"
+                        }
+                    ],
+                    "warnings": [
+                        {
+                            "ruleId": "12.208",
+                            "ruleVersion": "4.1.37",
+                            "code": "12208",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "ruleId": "11.461",
+                            "ruleVersion": "1.12.69",
+                            "code": "11461",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "ruleId": "12.903",
+                            "ruleVersion": "3.12.8",
+                            "code": "12903",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-03-27T00:00:00+02:00",
+                            "ruleId": "15.585",
+                            "ruleVersion": "2.17.34",
+                            "code": "15585",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-04-01T00:00:00+02:00",
+                            "ruleId": "17.518",
+                            "ruleVersion": "1.10.28",
+                            "code": "17518",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-04-18T00:00:00+02:00",
+                            "ruleId": "16.324",
+                            "ruleVersion": "5.11.84",
+                            "code": "16324",
+                            "message": "Some warning message"
+                        }
+                    ]
+                },
+                {
+                    "identifier": {
+                        "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                        "extension": "f5aa4f40-8295-5209-904a-69fe01fd5dfc"
+                    },
+                    "errors": [
+                        {
+                            "ruleId": "67.756",
+                            "ruleVersion": "1.12.23",
+                            "code": "6756",
+                            "message": "Some error message"
+                        },
+                        {
+                            "ruleId": "74.499",
+                            "ruleVersion": "3.7.50",
+                            "code": "7499",
+                            "message": "Some error message"
+                        }
+                    ],
+                    "warnings": [
+                        {
+                            "ruleId": "13.888",
+                            "ruleVersion": "4.15.52",
+                            "code": "13888",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "ruleId": "14.786",
+                            "ruleVersion": "3.18.43",
+                            "code": "14786",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "ruleId": "14.879",
+                            "ruleVersion": "5.15.59",
+                            "code": "14879",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-05-05T00:00:00+02:00",
+                            "ruleId": "17.581",
+                            "ruleVersion": "2.4.70",
+                            "code": "17581",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-04-05T00:00:00+02:00",
+                            "ruleId": "15.691",
+                            "ruleVersion": "4.19.73",
+                            "code": "15691",
+                            "message": "Some warning message"
+                        }
+                    ]
+                }
+            ],
+            "identifier": {
+                "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                "extension": "dc13bab1-a7ae-56f2-8afd-fbc09807d192"
+            },
+            "errors": [
+                {
+                    "ruleId": "76.643",
+                    "ruleVersion": "1.8.48",
+                    "code": "7643",
+                    "message": "Some error message"
+                },
+                {
+                    "ruleId": "71.133",
+                    "ruleVersion": "3.13.5",
+                    "code": "7133",
+                    "message": "Some error message"
+                }
+            ],
+            "warnings": [
+                {
+                    "ruleId": "11.724",
+                    "ruleVersion": "2.11.90",
+                    "code": "11724",
+                    "message": "Some warning message"
+                },
+                {
+                    "ruleId": "13.559",
+                    "ruleVersion": "2.17.41",
+                    "code": "13559",
+                    "message": "Some warning message"
+                },
+                {
+                    "errorBy": "2018-03-30T00:00:00+02:00",
+                    "ruleId": "18.736",
+                    "ruleVersion": "1.16.54",
+                    "code": "18736",
+                    "message": "Some warning message"
+                },
+                {
+                    "errorBy": "2018-04-08T00:00:00+02:00",
+                    "ruleId": "19.623",
+                    "ruleVersion": "2.11.1",
+                    "code": "19623",
+                    "message": "Some warning message"
+                },
+                {
+                    "errorBy": "2018-03-26T00:00:00+02:00",
+                    "ruleId": "17.702",
+                    "ruleVersion": "2.4.13",
+                    "code": "17702",
+                    "message": "Some warning message"
+                }
+            ]
+        },
+        {
+            "observationOrganizers": [
+                {
+                    "identifier": {
+                        "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                        "extension": "4c018db8-13e6-5f2b-8024-6ae509eb376e"
+                    },
+                    "errors": [
+                        {
+                            "ruleId": "94.459",
+                            "ruleVersion": "1.4.84",
+                            "code": "9459",
+                            "message": "Some error message"
+                        },
+                        {
+                            "ruleId": "94.447",
+                            "ruleVersion": "2.12.29",
+                            "code": "9447",
+                            "message": "Some error message"
+                        },
+                        {
+                            "ruleId": "57.716",
+                            "ruleVersion": "3.4.95",
+                            "code": "5716",
+                            "message": "Some error message"
+                        }
+                    ],
+                    "warnings": [
+                        {
+                            "ruleId": "11.911",
+                            "ruleVersion": "1.4.42",
+                            "code": "11911",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "ruleId": "14.511",
+                            "ruleVersion": "1.7.81",
+                            "code": "14511",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-04-18T00:00:00+02:00",
+                            "ruleId": "16.815",
+                            "ruleVersion": "1.19.41",
+                            "code": "16815",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-05-03T00:00:00+02:00",
+                            "ruleId": "18.948",
+                            "ruleVersion": "2.1.83",
+                            "code": "18948",
+                            "message": "Some warning message"
+                        }
+                    ]
+                },
+                {
+                    "identifier": {
+                        "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                        "extension": "fc4f040f-8e70-576d-9c6d-b11d913c959b"
+                    },
+                    "errors": [
+                        {
+                            "ruleId": "55.539",
+                            "ruleVersion": "1.19.58",
+                            "code": "5539",
+                            "message": "Some error message"
+                        },
+                        {
+                            "ruleId": "97.763",
+                            "ruleVersion": "4.2.85",
+                            "code": "9763",
+                            "message": "Some error message"
+                        },
+                        {
+                            "ruleId": "58.865",
+                            "ruleVersion": "4.17.41",
+                            "code": "5865",
+                            "message": "Some error message"
+                        }
+                    ],
+                    "warnings": [
+                        {
+                            "ruleId": "13.404",
+                            "ruleVersion": "4.15.33",
+                            "code": "13404",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "ruleId": "11.760",
+                            "ruleVersion": "3.5.4",
+                            "code": "11760",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-05-08T00:00:00+02:00",
+                            "ruleId": "18.461",
+                            "ruleVersion": "1.13.39",
+                            "code": "18461",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-04-01T00:00:00+02:00",
+                            "ruleId": "16.458",
+                            "ruleVersion": "3.2.25",
+                            "code": "16458",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-04-20T00:00:00+02:00",
+                            "ruleId": "15.075",
+                            "ruleVersion": "2.0.9",
+                            "code": "15075",
+                            "message": "Some warning message"
+                        }
+                    ]
+                },
+                {
+                    "identifier": {
+                        "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                        "extension": "eb27ff88-9e39-5745-94e2-9f07d6d2e902"
+                    },
+                    "errors": [
+                        {
+                            "ruleId": "65.547",
+                            "ruleVersion": "2.0.76",
+                            "code": "6547",
+                            "message": "Some error message"
+                        },
+                        {
+                            "ruleId": "73.310",
+                            "ruleVersion": "4.17.76",
+                            "code": "7310",
+                            "message": "Some error message"
+                        }
+                    ],
+                    "warnings": [
+                        {
+                            "ruleId": "13.394",
+                            "ruleVersion": "3.4.67",
+                            "code": "13394",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "ruleId": "14.826",
+                            "ruleVersion": "5.6.47",
+                            "code": "14826",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-03-31T00:00:00+02:00",
+                            "ruleId": "16.632",
+                            "ruleVersion": "3.18.94",
+                            "code": "16632",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-04-28T00:00:00+02:00",
+                            "ruleId": "19.719",
+                            "ruleVersion": "4.17.99",
+                            "code": "19719",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-04-28T00:00:00+02:00",
+                            "ruleId": "15.422",
+                            "ruleVersion": "3.19.80",
+                            "code": "15422",
+                            "message": "Some warning message"
+                        }
+                    ]
+                }
+            ],
+            "identifier": {
+                "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                "extension": "3c747492-142c-5abc-acbb-ff4dab8902f0"
+            },
+            "errors": [
+                {
+                    "ruleId": "90.097",
+                    "ruleVersion": "2.19.97",
+                    "code": "9097",
+                    "message": "Some error message"
+                },
+                {
+                    "ruleId": "61.105",
+                    "ruleVersion": "2.19.14",
+                    "code": "6105",
+                    "message": "Some error message"
+                }
+            ],
+            "warnings": [
+                {
+                    "ruleId": "11.372",
+                    "ruleVersion": "3.11.63",
+                    "code": "11372",
+                    "message": "Some warning message"
+                },
+                {
+                    "ruleId": "12.019",
+                    "ruleVersion": "5.9.85",
+                    "code": "12019",
+                    "message": "Some warning message"
+                },
+                {
+                    "errorBy": "2018-04-07T00:00:00+02:00",
+                    "ruleId": "17.116",
+                    "ruleVersion": "5.17.28",
+                    "code": "17116",
+                    "message": "Some warning message"
+                },
+                {
+                    "errorBy": "2018-04-14T00:00:00+02:00",
+                    "ruleId": "17.498",
+                    "ruleVersion": "2.16.24",
+                    "code": "17498",
+                    "message": "Some warning message"
+                }
+            ]
+        }
+    ],
+    "markers": [
+        {
+            "observationOrganizers": [
+                {
+                    "identifier": {
+                        "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                        "extension": "8c0e8b36-0283-5e83-8a81-62a70e847da6"
+                    },
+                    "errors": [
+                        {
+                            "ruleId": "57.738",
+                            "ruleVersion": "3.16.1",
+                            "code": "5738",
+                            "message": "Some error message"
+                        },
+                        {
+                            "ruleId": "83.376",
+                            "ruleVersion": "2.2.70",
+                            "code": "8376",
+                            "message": "Some error message"
+                        },
+                        {
+                            "ruleId": "54.421",
+                            "ruleVersion": "5.4.83",
+                            "code": "5421",
+                            "message": "Some error message"
+                        }
+                    ],
+                    "warnings": [
+                        {
+                            "ruleId": "12.167",
+                            "ruleVersion": "3.17.62",
+                            "code": "12167",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "ruleId": "10.674",
+                            "ruleVersion": "2.7.28",
+                            "code": "10674",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-04-04T00:00:00+02:00",
+                            "ruleId": "19.494",
+                            "ruleVersion": "4.16.76",
+                            "code": "19494",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-04-27T00:00:00+02:00",
+                            "ruleId": "15.946",
+                            "ruleVersion": "3.14.19",
+                            "code": "15946",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-03-25T00:00:00+01:00",
+                            "ruleId": "19.536",
+                            "ruleVersion": "1.14.60",
+                            "code": "19536",
+                            "message": "Some warning message"
+                        }
+                    ]
+                },
+                {
+                    "identifier": {
+                        "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                        "extension": "6367f6f6-7c35-5c2f-8ed3-74e201ba6c9d"
+                    },
+                    "errors": [
+                        {
+                            "ruleId": "63.332",
+                            "ruleVersion": "4.4.4",
+                            "code": "6332",
+                            "message": "Some error message"
+                        },
+                        {
+                            "ruleId": "64.424",
+                            "ruleVersion": "2.18.84",
+                            "code": "6424",
+                            "message": "Some error message"
+                        }
+                    ],
+                    "warnings": [
+                        {
+                            "ruleId": "14.727",
+                            "ruleVersion": "3.19.15",
+                            "code": "14727",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "ruleId": "10.058",
+                            "ruleVersion": "2.3.19",
+                            "code": "10058",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "ruleId": "13.065",
+                            "ruleVersion": "5.1.64",
+                            "code": "13065",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-04-08T00:00:00+02:00",
+                            "ruleId": "19.079",
+                            "ruleVersion": "3.18.26",
+                            "code": "19079",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-05-05T00:00:00+02:00",
+                            "ruleId": "17.194",
+                            "ruleVersion": "5.7.98",
+                            "code": "17194",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-03-23T00:00:00+01:00",
+                            "ruleId": "15.190",
+                            "ruleVersion": "5.8.86",
+                            "code": "15190",
+                            "message": "Some warning message"
+                        }
+                    ]
+                },
+                {
+                    "identifier": {
+                        "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                        "extension": "38b1269d-96b5-5e1f-8a23-22210771f993"
+                    },
+                    "errors": [
+                        {
+                            "ruleId": "85.539",
+                            "ruleVersion": "3.15.48",
+                            "code": "8539",
+                            "message": "Some error message"
+                        },
+                        {
+                            "ruleId": "70.033",
+                            "ruleVersion": "2.18.31",
+                            "code": "7033",
+                            "message": "Some error message"
+                        },
+                        {
+                            "ruleId": "70.010",
+                            "ruleVersion": "1.1.7",
+                            "code": "7010",
+                            "message": "Some error message"
+                        }
+                    ],
+                    "warnings": [
+                        {
+                            "ruleId": "12.416",
+                            "ruleVersion": "2.0.76",
+                            "code": "12416",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "ruleId": "10.519",
+                            "ruleVersion": "3.16.39",
+                            "code": "10519",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-04-22T00:00:00+02:00",
+                            "ruleId": "18.863",
+                            "ruleVersion": "5.12.51",
+                            "code": "18863",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-04-19T00:00:00+02:00",
+                            "ruleId": "19.959",
+                            "ruleVersion": "3.17.7",
+                            "code": "19959",
+                            "message": "Some warning message"
+                        }
+                    ]
+                }
+            ],
+            "identifier": {
+                "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                "extension": "bf04eda0-dffb-5240-8a86-77c69baebd94"
+            },
+            "errors": [
+                {
+                    "ruleId": "55.582",
+                    "ruleVersion": "5.5.39",
+                    "code": "5582",
+                    "message": "Some error message"
+                },
+                {
+                    "ruleId": "76.643",
+                    "ruleVersion": "4.12.17",
+                    "code": "7643",
+                    "message": "Some error message"
+                },
+                {
+                    "ruleId": "70.099",
+                    "ruleVersion": "1.12.64",
+                    "code": "7099",
+                    "message": "Some error message"
+                }
+            ],
+            "warnings": [
+                {
+                    "ruleId": "14.823",
+                    "ruleVersion": "2.7.72",
+                    "code": "14823",
+                    "message": "Some warning message"
+                },
+                {
+                    "ruleId": "10.720",
+                    "ruleVersion": "2.11.41",
+                    "code": "10720",
+                    "message": "Some warning message"
+                },
+                {
+                    "ruleId": "11.843",
+                    "ruleVersion": "1.11.73",
+                    "code": "11843",
+                    "message": "Some warning message"
+                },
+                {
+                    "errorBy": "2018-05-03T00:00:00+02:00",
+                    "ruleId": "15.240",
+                    "ruleVersion": "3.11.53",
+                    "code": "15240",
+                    "message": "Some warning message"
+                },
+                {
+                    "errorBy": "2018-04-21T00:00:00+02:00",
+                    "ruleId": "16.637",
+                    "ruleVersion": "5.15.96",
+                    "code": "16637",
+                    "message": "Some warning message"
+                },
+                {
+                    "errorBy": "2018-03-24T00:00:00+01:00",
+                    "ruleId": "18.561",
+                    "ruleVersion": "4.3.83",
+                    "code": "18561",
+                    "message": "Some warning message"
+                }
+            ]
+        },
+        {
+            "observationOrganizers": [
+                {
+                    "identifier": {
+                        "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                        "extension": "d54bd506-ae94-5c6a-9493-2efcff2ba044"
+                    },
+                    "errors": [
+                        {
+                            "ruleId": "54.453",
+                            "ruleVersion": "2.6.81",
+                            "code": "5453",
+                            "message": "Some error message"
+                        },
+                        {
+                            "ruleId": "97.794",
+                            "ruleVersion": "1.19.56",
+                            "code": "9794",
+                            "message": "Some error message"
+                        }
+                    ],
+                    "warnings": [
+                        {
+                            "ruleId": "14.376",
+                            "ruleVersion": "5.17.4",
+                            "code": "14376",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "ruleId": "13.740",
+                            "ruleVersion": "2.5.21",
+                            "code": "13740",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-04-15T00:00:00+02:00",
+                            "ruleId": "16.790",
+                            "ruleVersion": "1.13.33",
+                            "code": "16790",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-05-10T00:00:00+02:00",
+                            "ruleId": "17.311",
+                            "ruleVersion": "5.17.32",
+                            "code": "17311",
+                            "message": "Some warning message"
+                        }
+                    ]
+                },
+                {
+                    "identifier": {
+                        "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                        "extension": "2d9dfebe-28d8-5afe-bd2e-40f5f066b5f0"
+                    },
+                    "errors": [
+                        {
+                            "ruleId": "97.756",
+                            "ruleVersion": "1.10.34",
+                            "code": "9756",
+                            "message": "Some error message"
+                        },
+                        {
+                            "ruleId": "73.396",
+                            "ruleVersion": "2.12.87",
+                            "code": "7396",
+                            "message": "Some error message"
+                        }
+                    ],
+                    "warnings": [
+                        {
+                            "ruleId": "10.913",
+                            "ruleVersion": "4.9.31",
+                            "code": "10913",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "ruleId": "12.936",
+                            "ruleVersion": "5.16.6",
+                            "code": "12936",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-04-21T00:00:00+02:00",
+                            "ruleId": "16.290",
+                            "ruleVersion": "1.12.43",
+                            "code": "16290",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-05-02T00:00:00+02:00",
+                            "ruleId": "18.491",
+                            "ruleVersion": "4.17.34",
+                            "code": "18491",
+                            "message": "Some warning message"
+                        }
+                    ]
+                },
+                {
+                    "identifier": {
+                        "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                        "extension": "c04038a0-8350-5374-a60b-9a21790b24d0"
+                    },
+                    "errors": [
+                        {
+                            "ruleId": "85.545",
+                            "ruleVersion": "2.0.17",
+                            "code": "8545",
+                            "message": "Some error message"
+                        },
+                        {
+                            "ruleId": "75.525",
+                            "ruleVersion": "3.9.73",
+                            "code": "7525",
+                            "message": "Some error message"
+                        },
+                        {
+                            "ruleId": "57.779",
+                            "ruleVersion": "2.12.62",
+                            "code": "5779",
+                            "message": "Some error message"
+                        }
+                    ],
+                    "warnings": [
+                        {
+                            "ruleId": "12.910",
+                            "ruleVersion": "4.14.73",
+                            "code": "12910",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "ruleId": "13.374",
+                            "ruleVersion": "4.11.12",
+                            "code": "13374",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-05-13T00:00:00+02:00",
+                            "ruleId": "18.505",
+                            "ruleVersion": "4.16.75",
+                            "code": "18505",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-05-06T00:00:00+02:00",
+                            "ruleId": "19.377",
+                            "ruleVersion": "3.16.40",
+                            "code": "19377",
+                            "message": "Some warning message"
+                        },
+                        {
+                            "errorBy": "2018-04-13T00:00:00+02:00",
+                            "ruleId": "18.937",
+                            "ruleVersion": "1.10.27",
+                            "code": "18937",
+                            "message": "Some warning message"
+                        }
+                    ]
+                }
+            ],
+            "identifier": {
+                "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                "extension": "af687adb-23d8-5cb6-a88f-b7120e28079f"
+            },
+            "errors": [
+                {
+                    "ruleId": "72.263",
+                    "ruleVersion": "1.8.65",
+                    "code": "7263",
+                    "message": "Some error message"
+                },
+                {
+                    "ruleId": "91.189",
+                    "ruleVersion": "4.6.14",
+                    "code": "9189",
+                    "message": "Some error message"
+                },
+                {
+                    "ruleId": "75.574",
+                    "ruleVersion": "2.13.76",
+                    "code": "7574",
+                    "message": "Some error message"
+                }
+            ],
+            "warnings": [
+                {
+                    "ruleId": "11.034",
+                    "ruleVersion": "4.13.36",
+                    "code": "11034",
+                    "message": "Some warning message"
+                },
+                {
+                    "ruleId": "10.182",
+                    "ruleVersion": "1.0.48",
+                    "code": "10182",
+                    "message": "Some warning message"
+                },
+                {
+                    "ruleId": "14.072",
+                    "ruleVersion": "4.15.69",
+                    "code": "14072",
+                    "message": "Some warning message"
+                },
+                {
+                    "errorBy": "2018-05-14T00:00:00+02:00",
+                    "ruleId": "17.872",
+                    "ruleVersion": "1.2.96",
+                    "code": "17872",
+                    "message": "Some warning message"
+                },
+                {
+                    "errorBy": "2018-05-08T00:00:00+02:00",
+                    "ruleId": "18.465",
+                    "ruleVersion": "1.0.34",
+                    "code": "18465",
+                    "message": "Some warning message"
+                }
+            ]
+        }
+    ],
+    "observationOrganizers": [
+        {
+            "identifier": {
+                "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                "extension": "de6b5009-645a-59c5-bee2-854115c0a003"
+            },
+            "errors": [
+                {
+                    "ruleId": "81.112",
+                    "ruleVersion": "3.10.9",
+                    "code": "8112",
+                    "message": "Some error message"
+                },
+                {
+                    "ruleId": "50.012",
+                    "ruleVersion": "1.1.42",
+                    "code": "5012",
+                    "message": "Some error message"
+                },
+                {
+                    "ruleId": "69.964",
+                    "ruleVersion": "1.17.15",
+                    "code": "6964",
+                    "message": "Some error message"
+                }
+            ],
+            "warnings": [
+                {
+                    "ruleId": "10.828",
+                    "ruleVersion": "3.15.45",
+                    "code": "10828",
+                    "message": "Some warning message"
+                },
+                {
+                    "ruleId": "11.823",
+                    "ruleVersion": "5.18.14",
+                    "code": "11823",
+                    "message": "Some warning message"
+                },
+                {
+                    "ruleId": "13.600",
+                    "ruleVersion": "3.3.20",
+                    "code": "13600",
+                    "message": "Some warning message"
+                },
+                {
+                    "errorBy": "2018-04-01T00:00:00+02:00",
+                    "ruleId": "19.705",
+                    "ruleVersion": "3.3.37",
+                    "code": "19705",
+                    "message": "Some warning message"
+                },
+                {
+                    "errorBy": "2018-04-20T00:00:00+02:00",
+                    "ruleId": "17.298",
+                    "ruleVersion": "3.4.70",
+                    "code": "17298",
+                    "message": "Some warning message"
+                }
+            ]
+        },
+        {
+            "identifier": {
+                "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+                "extension": "dafceca7-20bd-5dda-a0fa-c656bdb3bd5c"
+            },
+            "errors": [
+                {
+                    "ruleId": "52.252",
+                    "ruleVersion": "1.18.45",
+                    "code": "5252",
+                    "message": "Some error message"
+                },
+                {
+                    "ruleId": "62.216",
+                    "ruleVersion": "5.13.66",
+                    "code": "6216",
+                    "message": "Some error message"
+                }
+            ],
+            "warnings": [
+                {
+                    "ruleId": "14.422",
+                    "ruleVersion": "4.8.24",
+                    "code": "14422",
+                    "message": "Some warning message"
+                },
+                {
+                    "ruleId": "13.309",
+                    "ruleVersion": "3.16.12",
+                    "code": "13309",
+                    "message": "Some warning message"
+                },
+                {
+                    "errorBy": "2018-05-12T00:00:00+02:00",
+                    "ruleId": "18.246",
+                    "ruleVersion": "2.14.51",
+                    "code": "18246",
+                    "message": "Some warning message"
+                },
+                {
+                    "errorBy": "2018-05-11T00:00:00+02:00",
+                    "ruleId": "17.729",
+                    "ruleVersion": "5.10.16",
+                    "code": "17729",
+                    "message": "Some warning message"
+                }
+            ]
+        }
+    ],
+    "identifier": {
+        "root": "4a7c29ff-1baa-45ec-8ff7-25fb3e6e6a96",
+        "extension": "4a2ec337-c441-5083-9607-06749f83b10c"
+    },
+    "errors": [
+        {
+            "ruleId": "94.414",
+            "ruleVersion": "5.16.76",
+            "code": "9414",
+            "message": "Some error message"
+        },
+        {
+            "ruleId": "96.645",
+            "ruleVersion": "2.9.76",
+            "code": "9645",
+            "message": "Some error message"
+        }
+    ],
+    "warnings": [
+        {
+            "ruleId": "13.906",
+            "ruleVersion": "1.11.88",
+            "code": "13906",
+            "message": "Some warning message"
+        },
+        {
+            "ruleId": "11.420",
+            "ruleVersion": "5.16.93",
+            "code": "11420",
+            "message": "Some warning message"
+        },
+        {
+            "ruleId": "12.593",
+            "ruleVersion": "4.3.90",
+            "code": "12593",
+            "message": "Some warning message"
+        },
+        {
+            "errorBy": "2018-05-09T00:00:00+02:00",
+            "ruleId": "19.693",
+            "ruleVersion": "1.18.53",
+            "code": "19693",
+            "message": "Some warning message"
+        },
+        {
+            "errorBy": "2018-03-19T00:00:00+01:00",
+            "ruleId": "18.385",
+            "ruleVersion": "1.5.97",
+            "code": "18385",
+            "message": "Some warning message"
+        },
+        {
+            "errorBy": "2018-04-01T00:00:00+02:00",
+            "ruleId": "16.763",
+            "ruleVersion": "1.13.79",
+            "code": "16763",
+            "message": "Some warning message"
+        }
+    ]
 }
