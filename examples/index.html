@@ -170,7 +170,6 @@ Content-Type: multipart/related;start=&quot;&lt;rootpart*a80594a2-e5de-425d-9fdc
 User-Agent: JAX-WS RI 2.2.9-b130926.1035 svn-revision#5f6196f2b90e9460065a4c2f4e30e065b245e51e 
 Host: sc155887:8080 
 Connection: keep-alive 
-Content-Length: 52396 
 </code></pre>
 
 <pre><code class="http">--uuid:a80594a2-e5de-425d-9fdc-f6ba27d58f05 
@@ -179,48 +178,238 @@ Content-Type: application/xop+xml;charset=utf-8;type=&quot;application/soap+xml;
 Content-Transfer-Encoding: binary 
 </code></pre>
 
-<pre><code class="xml">&lt;soapenv:Envelope xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot; xmlns:medcom=&quot;http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd&quot; xmlns:saml=&quot;urn:oasis:names:tc:SAML:2.0:assertion&quot; xmlns:sosi=&quot;http://www.sosi.dk/sosi/2006/04/sosi-1.0.xsd&quot; xmlns:wsa=&quot;http://schemas.xmlsoap.org/ws/2004/08/addressing&quot; xmlns:wsse=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot; xmlns:wst=&quot;http://schemas.xmlsoap.org/ws/2005/02/trust&quot; xmlns:wsu=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; id=&quot;Envelope&quot;&gt;
-    &lt;soapenv:Header&gt;
-        &lt;wsse:Security&gt;&lt;wsu:Timestamp&gt;&lt;wsu:Created&gt;2018-02-21T13:50:39Z&lt;/wsu:Created&gt;&lt;/wsu:Timestamp&gt;&lt;saml:Assertion IssueInstant=&quot;2018-02-21T13:45:36Z&quot; Version=&quot;2.0&quot; id=&quot;IDCard&quot;&gt;&lt;saml:Issuer&gt;TEST2-NSP-STS&lt;/saml:Issuer&gt;&lt;saml:Subject&gt;&lt;saml:NameID Format=&quot;medcom:cvrnumber&quot;&gt;25469364&lt;/saml:NameID&gt;&lt;saml:SubjectConfirmation&gt;&lt;saml:ConfirmationMethod&gt;urn:oasis:names:tc:SAML:2.0:cm:holder-of-key&lt;/saml:ConfirmationMethod&gt;&lt;saml:SubjectConfirmationData&gt;&lt;ds:KeyInfo&gt;&lt;ds:KeyName&gt;OCESSignature&lt;/ds:KeyName&gt;&lt;/ds:KeyInfo&gt;&lt;/saml:SubjectConfirmationData&gt;&lt;/saml:SubjectConfirmation&gt;&lt;/saml:Subject&gt;&lt;saml:Conditions NotBefore=&quot;2018-02-21T13:45:36Z&quot; NotOnOrAfter=&quot;2018-02-22T13:45:36Z&quot;/&gt;&lt;saml:AttributeStatement id=&quot;IDCardData&quot;&gt;&lt;saml:Attribute Name=&quot;sosi:IDCardID&quot;&gt;&lt;saml:AttributeValue&gt;KM3Recx+DJb8GHWPax+q2A==&lt;/saml:AttributeValue&gt;&lt;/saml:Attribute&gt;&lt;saml:Attribute Name=&quot;sosi:IDCardVersion&quot;&gt;&lt;saml:AttributeValue&gt;1.0.1&lt;/saml:AttributeValue&gt;&lt;/saml:Attribute&gt;&lt;saml:Attribute Name=&quot;sosi:IDCardType&quot;&gt;&lt;saml:AttributeValue&gt;system&lt;/saml:AttributeValue&gt;&lt;/saml:Attribute&gt;&lt;saml:Attribute Name=&quot;sosi:AuthenticationLevel&quot;&gt;&lt;saml:AttributeValue&gt;3&lt;/saml:AttributeValue&gt;&lt;/saml:Attribute&gt;&lt;saml:Attribute Name=&quot;sosi:OCESCertHash&quot;&gt;&lt;saml:AttributeValue&gt;GXaVFH7J+YHFZ8hYp/7c7l9fvAo=&lt;/saml:AttributeValue&gt;&lt;/saml:Attribute&gt;&lt;/saml:AttributeStatement&gt;&lt;saml:AttributeStatement id=&quot;SystemLog&quot;&gt;&lt;saml:Attribute Name=&quot;medcom:ITSystemName&quot;&gt;&lt;saml:AttributeValue&gt;LPR3 Test Client&lt;/saml:AttributeValue&gt;&lt;/saml:Attribute&gt;&lt;saml:Attribute Name=&quot;medcom:CareProviderID&quot; NameFormat=&quot;medcom:cvrnumber&quot;&gt;&lt;saml:AttributeValue&gt;29190925&lt;/saml:AttributeValue&gt;&lt;/saml:Attribute&gt;&lt;saml:Attribute Name=&quot;medcom:CareProviderName&quot;&gt;&lt;saml:AttributeValue&gt;DXCTechnology&lt;/saml:AttributeValue&gt;&lt;/saml:Attribute&gt;&lt;/saml:AttributeStatement&gt;&lt;ds:Signature id=&quot;OCESSignature&quot;&gt;&lt;ds:SignedInfo&gt;&lt;ds:CanonicalizationMethod Algorithm=&quot;http://www.w3.org/2001/10/xml-exc-c14n#&quot;/&gt;&lt;ds:SignatureMethod Algorithm=&quot;http://www.w3.org/2000/09/xmldsig#rsa-sha1&quot;/&gt;&lt;ds:Reference URI=&quot;#IDCard&quot;&gt;&lt;ds:Transforms&gt;&lt;ds:Transform Algorithm=&quot;http://www.w3.org/2000/09/xmldsig#enveloped-signature&quot;/&gt;&lt;ds:Transform Algorithm=&quot;http://www.w3.org/2001/10/xml-exc-c14n#&quot;/&gt;&lt;/ds:Transforms&gt;&lt;ds:DigestMethod Algorithm=&quot;http://www.w3.org/2000/09/xmldsig#sha1&quot;/&gt;&lt;ds:DigestValue&gt;y4U4ZeYQ7NnP0p8pmZprxdXUdSI=&lt;/ds:DigestValue&gt;&lt;/ds:Reference&gt;&lt;/ds:SignedInfo&gt;&lt;ds:SignatureValue&gt;XqO3RwhjkWFlOo2EvOV4pRN2pwacn0oeWbMjklVkFg0OhHNdXsfKe2Q/nTBC+2uz8ln8hcju1Iz4Swh+Ph+ZUd6T5uKHx7Vw00OVxXM4ctWi97FQkixkdY0sHdHWeRNHqU8zVnU1SCK9k5Ah3YgVSBLXcA87GzcgeJOARFTqNGp0/1JAWdFgRBGGoDHNN5UkXpOyr5EM14uqOwiQLHf9fpl9RSd3BUICU9b0ATwugCEVAYO1r8gg7SqiXo4cCifnyLIJEykiUUty4KBR8OVyBf485wQ/iFAN0BwZhjX9QTllK4DhR2lu6Wwwb8R0YkA+GZRGh6mKzIinOCM4/GJUXA==&lt;/ds:SignatureValue&gt;&lt;ds:KeyInfo&gt;&lt;ds:X509Data&gt;&lt;ds:X509Certificate&gt;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&lt;/ds:X509Certificate&gt;&lt;/ds:X509Data&gt;&lt;/ds:KeyInfo&gt;&lt;/ds:Signature&gt;&lt;/saml:Assertion&gt;&lt;/wsse:Security&gt;
-        &lt;medcom:Header&gt;&lt;medcom:SecurityLevel&gt;3&lt;/medcom:SecurityLevel&gt;&lt;medcom:Linking&gt;&lt;medcom:MessageID&gt;AAABYbihX63aq8iLuo78a1NPU0k=&lt;/medcom:MessageID&gt;&lt;/medcom:Linking&gt;&lt;medcom:RequireNonRepudiationReceipt&gt;no&lt;/medcom:RequireNonRepudiationReceipt&gt;&lt;/medcom:Header&gt;&lt;ns2:HsuidHeader xmlns:ns2=&quot;http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd&quot;&gt;&lt;ns2:Assertion IssueInstant=&quot;2018-02-21T14:50:39.028+01:00&quot; id=&quot;HSUID&quot;&gt;&lt;ns2:Issuer&gt;HansemanIT&lt;/ns2:Issuer&gt;&lt;ns2:AttributeStatement id=&quot;HSUIDdata&quot;&gt;&lt;ns2:Attribute Name=&quot;nsi:UserType&quot;&gt;&lt;ns2:AttributeValue&gt;nsi:HealthcareProfessional&lt;/ns2:AttributeValue&gt;&lt;/ns2:Attribute&gt;&lt;ns2:Attribute Name=&quot;nsi:OrgResponsibleName&quot;&gt;&lt;ns2:AttributeValue&gt;Region Nordjylland&lt;/ns2:AttributeValue&gt;&lt;/ns2:Attribute&gt;&lt;ns2:Attribute Name=&quot;nsi:SystemOwnerName&quot;&gt;&lt;ns2:AttributeValue&gt;Region Nordjylland&lt;/ns2:AttributeValue&gt;&lt;/ns2:Attribute&gt;&lt;ns2:Attribute Name=&quot;nsi:SystemName&quot;&gt;&lt;ns2:AttributeValue&gt;Clinical Suite&lt;/ns2:AttributeValue&gt;&lt;/ns2:Attribute&gt;&lt;ns2:Attribute Name=&quot;nsi:SystemVersion&quot;&gt;&lt;ns2:AttributeValue&gt;14.4&lt;/ns2:AttributeValue&gt;&lt;/ns2:Attribute&gt;&lt;/ns2:AttributeStatement&gt;&lt;/ns2:Assertion&gt;&lt;/ns2:HsuidHeader&gt;
-    &lt;/soapenv:Header&gt;
-    &lt;soapenv:Body&gt;
-        &lt;urn:ProvideAndRegisterDocumentSetRequest xmlns:urn=&quot;urn:ihe:iti:xds-b:2007&quot;&gt;
-            &lt;ns3:SubmitObjectsRequest
-                xmlns:ns3=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0&quot;
-                xmlns=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0&quot;
-                xmlns:ns2=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0&quot;
-                xmlns:ns4=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0&quot;
-                id=&quot;fe1a5947-8dc8-455f-81f1-7152b6db84dc&quot;&gt;
-                &lt;RegistryObjectList&gt;
-                    &lt;RegistryPackage&gt;
-                        &lt;Classification
+<pre><code class="xml">&lt;soap:Envelope
+    xmlns:soap=&quot;http://www.w3.org/2003/05/soap-envelope&quot;&gt;
+    &lt;soap:Header&gt;
+        &lt;wsse:Security
+            xmlns:wsse=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot;&gt;
+            &lt;wsu:Timestamp
+                xmlns:wsu=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&quot;&gt;
+                &lt;wsu:Created&gt;2018-04-05T07:57:03Z&lt;/wsu:Created&gt;
+            &lt;/wsu:Timestamp&gt;
+            &lt;saml:Assertion
+                xmlns:saml=&quot;urn:oasis:names:tc:SAML:2.0:assertion&quot;
+                IssueInstant=&quot;2018-04-05T07:52:03Z&quot; Version=&quot;2.0&quot; id=&quot;IDCard&quot;&gt;
+                &lt;saml:Issuer&gt;TEST1-NSP-STS&lt;/saml:Issuer&gt;
+                &lt;saml:Subject&gt;
+                    &lt;saml:NameID Format=&quot;medcom:other&quot;&gt;SubjectDN={SERIALNUMBER=CVR:25469364-FID:96988661
+                        + CN=DXC Technology - LPR Indberettersystem (funktionscertifikat),
+                        O=CSC SCANDIHEALTH A/S // CVR:25469364,
+                        C=DK},IssuerDN={CN=TRUST2408 Systemtest XXII CA, O=TRUST2408,
+                        C=DK},CertSerial={1494965723}
+                    &lt;/saml:NameID&gt;
+                    &lt;saml:SubjectConfirmation&gt;
+                        &lt;saml:ConfirmationMethod&gt;urn:oasis:names:tc:SAML:2.0:cm:holder-of-key
+                        &lt;/saml:ConfirmationMethod&gt;
+                        &lt;saml:SubjectConfirmationData&gt;
+                            &lt;ds:KeyInfo
+                                xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;&gt;
+                                &lt;ds:KeyName&gt;OCESSignature&lt;/ds:KeyName&gt;
+                            &lt;/ds:KeyInfo&gt;
+                        &lt;/saml:SubjectConfirmationData&gt;
+                    &lt;/saml:SubjectConfirmation&gt;
+                &lt;/saml:Subject&gt;
+                &lt;saml:Conditions NotBefore=&quot;2018-04-05T07:52:03Z&quot;
+                    NotOnOrAfter=&quot;2018-04-06T07:52:03Z&quot; /&gt;
+                &lt;saml:AttributeStatement id=&quot;IDCardData&quot;&gt;
+                    &lt;saml:Attribute Name=&quot;sosi:IDCardID&quot;&gt;
+                        &lt;saml:AttributeValue&gt;D/JsXK+ToUO8ErmLd5pVzw==
+                        &lt;/saml:AttributeValue&gt;
+                    &lt;/saml:Attribute&gt;
+                    &lt;saml:Attribute Name=&quot;sosi:IDCardVersion&quot;&gt;
+                        &lt;saml:AttributeValue&gt;1.0.1&lt;/saml:AttributeValue&gt;
+                    &lt;/saml:Attribute&gt;
+                    &lt;saml:Attribute Name=&quot;sosi:IDCardType&quot;&gt;
+                        &lt;saml:AttributeValue&gt;system&lt;/saml:AttributeValue&gt;
+                    &lt;/saml:Attribute&gt;
+                    &lt;saml:Attribute Name=&quot;sosi:AuthenticationLevel&quot;&gt;
+                        &lt;saml:AttributeValue&gt;3&lt;/saml:AttributeValue&gt;
+                    &lt;/saml:Attribute&gt;
+                    &lt;saml:Attribute Name=&quot;sosi:OCESCertHash&quot;&gt;
+                        &lt;saml:AttributeValue&gt;GXaVFH7J+YHFZ8hYp/7c7l9fvAo=
+                        &lt;/saml:AttributeValue&gt;
+                    &lt;/saml:Attribute&gt;
+                &lt;/saml:AttributeStatement&gt;
+                &lt;saml:AttributeStatement id=&quot;SystemLog&quot;&gt;
+                    &lt;saml:Attribute Name=&quot;medcom:ITSystemName&quot;&gt;
+                        &lt;saml:AttributeValue&gt;TRUST2408 Systemtest XIX CA
+                        &lt;/saml:AttributeValue&gt;
+                    &lt;/saml:Attribute&gt;
+                    &lt;saml:Attribute Name=&quot;medcom:CareProviderID&quot;
+                        NameFormat=&quot;medcom:cvrnumber&quot;&gt;
+                        &lt;saml:AttributeValue&gt;25469364&lt;/saml:AttributeValue&gt;
+                    &lt;/saml:Attribute&gt;
+                    &lt;saml:Attribute Name=&quot;medcom:CareProviderName&quot;&gt;
+                        &lt;saml:AttributeValue&gt;DXCTechnology&lt;/saml:AttributeValue&gt;
+                    &lt;/saml:Attribute&gt;
+                &lt;/saml:AttributeStatement&gt;
+                &lt;ds:Signature
+                    xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot; id=&quot;OCESSignature&quot;&gt;
+                    &lt;ds:SignedInfo&gt;
+                        &lt;ds:CanonicalizationMethod
+                            Algorithm=&quot;http://www.w3.org/2001/10/xml-exc-c14n#&quot; /&gt;
+                        &lt;ds:SignatureMethod
+                            Algorithm=&quot;http://www.w3.org/2000/09/xmldsig#rsa-sha1&quot; /&gt;
+                        &lt;ds:Reference URI=&quot;#IDCard&quot;&gt;
+                            &lt;ds:Transforms&gt;
+                                &lt;ds:Transform
+                                    Algorithm=&quot;http://www.w3.org/2000/09/xmldsig#enveloped-signature&quot; /&gt;
+                                &lt;ds:Transform
+                                    Algorithm=&quot;http://www.w3.org/2001/10/xml-exc-c14n#&quot; /&gt;
+                            &lt;/ds:Transforms&gt;
+                            &lt;ds:DigestMethod
+                                Algorithm=&quot;http://www.w3.org/2000/09/xmldsig#sha1&quot; /&gt;
+                            &lt;ds:DigestValue&gt;Nror9L7H5JS2ywqUkuc+3Q9DbYY=&lt;/ds:DigestValue&gt;
+                        &lt;/ds:Reference&gt;
+                    &lt;/ds:SignedInfo&gt;
+                    &lt;ds:SignatureValue&gt;URCeKOJfp+IrrO1+m1NNLc31diP12aUNSHRXGdQyWdZOUGOzqCA8eX6RVy6rOjvX68nZIwklKzPAdyJ5RU/YYbKlehROeSMDHuus3BLG5eRieNPS5u64XcGrtGgCQRSDvU6vnV+A6dSCgE6s06OUKYEPHn9FmRChZqjVpVSNP2YDn/FOT9WkMy85N9pjwzrAvo4NjAgdxKGv5g0Evl+1M/CcX4IZ0ui1CTCNClMzOTncUpkrnD0HZZGHTt8HyKuV5KLNQY08CD9e7B2h9U4HoQII8ImMf4Qme3cj0fT4GOQmbs/UFeMI772xrWwS62y/FGH2SKZb+RGvc5BF13P3JA==
+                    &lt;/ds:SignatureValue&gt;
+                    &lt;ds:KeyInfo&gt;
+                        &lt;ds:X509Data&gt;
+                            &lt;ds:X509Certificate&gt;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
+                            &lt;/ds:X509Certificate&gt;
+                        &lt;/ds:X509Data&gt;
+                    &lt;/ds:KeyInfo&gt;
+                &lt;/ds:Signature&gt;
+            &lt;/saml:Assertion&gt;
+        &lt;/wsse:Security&gt;
+        &lt;medcom:Header
+            xmlns:medcom=&quot;http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd&quot;&gt;
+            &lt;medcom:SecurityLevel&gt;3&lt;/medcom:SecurityLevel&gt;
+            &lt;medcom:Linking&gt;
+                &lt;medcom:MessageID&gt;AAABYpTPGSRRusL+aHC5XVNPU0k=&lt;/medcom:MessageID&gt;
+            &lt;/medcom:Linking&gt;
+            &lt;medcom:RequireNonRepudiationReceipt&gt;no
+            &lt;/medcom:RequireNonRepudiationReceipt&gt;
+        &lt;/medcom:Header&gt;
+        &lt;HsuidHeader
+            xmlns=&quot;http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd&quot;&gt;
+            &lt;Assertion IssueInstant=&quot;2018-04-05T07:57:04.305Z&quot;
+                Version=&quot;2.0&quot; id=&quot;HSUID&quot;&gt;
+                &lt;Issuer&gt;Acme Issuer&lt;/Issuer&gt;
+                &lt;AttributeStatement id=&quot;HSUIDdata&quot;&gt;
+                    &lt;Attribute Name=&quot;nsi:UserType&quot;&gt;
+                        &lt;AttributeValue&gt;nsi:HealthcareProfessional&lt;/AttributeValue&gt;
+                    &lt;/Attribute&gt;
+                    &lt;Attribute Name=&quot;nsi:OrgUsingID&quot; NameFormat=&quot;nsi:sor&quot;&gt;
+                        &lt;AttributeValue&gt;242621000016001&lt;/AttributeValue&gt;
+                    &lt;/Attribute&gt;
+                    &lt;Attribute Name=&quot;nsi:SystemOwnerName&quot;&gt;
+                        &lt;AttributeValue&gt;Acme Owner&lt;/AttributeValue&gt;
+                    &lt;/Attribute&gt;
+                    &lt;Attribute Name=&quot;nsi:SystemName&quot;&gt;
+                        &lt;AttributeValue&gt;Acme System&lt;/AttributeValue&gt;
+                    &lt;/Attribute&gt;
+                    &lt;Attribute Name=&quot;nsi:SystemVersion&quot;&gt;
+                        &lt;AttributeValue&gt;1.5&lt;/AttributeValue&gt;
+                    &lt;/Attribute&gt;
+                    &lt;Attribute Name=&quot;nsi:OrgResponsibleName&quot;&gt;
+                        &lt;AttributeValue&gt;World Acme Organisation&lt;/AttributeValue&gt;
+                    &lt;/Attribute&gt;
+                    &lt;Attribute Name=&quot;nsi:ConsentOverride&quot;&gt;
+                        &lt;AttributeValue&gt;true&lt;/AttributeValue&gt;
+                    &lt;/Attribute&gt;
+                &lt;/AttributeStatement&gt;
+            &lt;/Assertion&gt;
+        &lt;/HsuidHeader&gt;
+    &lt;/soap:Header&gt;
+    &lt;soap:Body&gt;
+        &lt;ns4:ProvideAndRegisterDocumentSetRequest
+            xmlns:ns6=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0&quot;
+            xmlns:ns5=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0&quot;
+            xmlns:ns4=&quot;urn:ihe:iti:xds-b:2007&quot;
+            xmlns:ns3=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0&quot;
+            xmlns:ns2=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0&quot;&gt;
+            &lt;ns5:SubmitObjectsRequest&gt;
+                &lt;ns3:RequestSlotList /&gt;
+                &lt;ns2:RegistryObjectList&gt;
+                    &lt;ns2:ExtrinsicObject mimeType=&quot;text/xml&quot;
+                        objectType=&quot;urn:uuid:7edca82f-054d-47f2-a032-9b2a5b5186c1&quot;
+                        id=&quot;15ab4406-321e-47f7-8ded-bf1de0396943&quot;&gt;
+                        &lt;ns2:Classification
+                            classificationScheme=&quot;urn:uuid:ab9b591b-83ab-4d03-8f5d-f93b1fb92e85&quot;
+                            classifiedObject=&quot;15ab4406-321e-47f7-8ded-bf1de0396943&quot;
+                            id=&quot;urn:uuid:015dc335-ea07-40cf-8b43-fa8933c895ba&quot; /&gt;
+                        &lt;ns2:ExternalIdentifier
+                            registryObject=&quot;15ab4406-321e-47f7-8ded-bf1de0396943&quot;
+                            identificationScheme=&quot;urn:uuid:2e82c1f6-a085-4c72-9da3-8640a32e42ab&quot;
+                            value=&quot;15ab4406-321e-47f7-8ded-bf1de0396943&quot;
+                            id=&quot;urn:uuid:cd344ffd-96cf-4ace-8073-211ec351051f&quot;&gt;
+                            &lt;ns2:Name&gt;
+                                &lt;ns2:LocalizedString
+                                    value=&quot;XDSDocumentEntry.uniqueId&quot; /&gt;
+                            &lt;/ns2:Name&gt;
+                        &lt;/ns2:ExternalIdentifier&gt;
+                    &lt;/ns2:ExtrinsicObject&gt;
+                    &lt;ns2:RegistryPackage
+                        id=&quot;f82bf816-6628-4b62-9c7c-b9fe0a320a2f&quot;&gt;
+                        &lt;ns2:Slot name=&quot;submissionTime&quot;&gt;
+                            &lt;ns2:ValueList&gt;
+                                &lt;ns2:Value&gt;20180405075701&lt;/ns2:Value&gt;
+                            &lt;/ns2:ValueList&gt;
+                        &lt;/ns2:Slot&gt;
+                        &lt;ns2:Classification
                             classificationScheme=&quot;urn:uuid:a7058bb9-b4e4-4307-ba5b-e3f0ab85e12d&quot;
-                            classifiedObject=&quot;SubmissionSet01&quot;
-                            id=&quot;id_11&quot;
+                            classifiedObject=&quot;f82bf816-6628-4b62-9c7c-b9fe0a320a2f&quot;
                             nodeRepresentation=&quot;&quot;
-                            objectType=&quot;urn:oasis:names:tc:ebxml-regrep:ObjectType:RegistryObject:Classification&quot;&gt;
-                            &lt;Slot name=&quot;authorInstitution&quot;&gt;
-                                &lt;ValueList&gt;
-                                    &lt;Value&gt;Aarhus Universitetshospital^^^^^&amp;1.2.208.176.1.1&amp;ISO^^^^404261000016009&lt;/Value&gt;
-                                &lt;/ValueList&gt;
-                            &lt;/Slot&gt;
-                        &lt;/Classification&gt;
-                    &lt;/RegistryPackage&gt;
-                    &lt;Association/&gt;
-                    &lt;ExtrinsicObject
-                        id=&quot;urn:uuid:d761a1c4-2fe0-492f-823a-f8ceba48c76f&quot;
-                        mimeType=&quot;text/xml&quot;
-                        objectType=&quot;urn:uuid:7edca82f-054d-47f2-a032-9b2a5b5186c1&quot;/&gt;
-                    &lt;ClassificationNode code=&quot;urn:uuid:ab9b591b-83ab-4d03-8f5d-f93b1fb92e85&quot;/&gt;
-                &lt;/RegistryObjectList&gt;
-            &lt;/ns3:SubmitObjectsRequest&gt;
-            &lt;urn:Document id=&quot;Document01&quot;&gt;
-                &lt;xop:Include xmlns:xop=&quot;http://www.w3.org/2004/08/xop/include&quot; href=&quot;cid:8ae60adb-d8f5-4837-a779-3a64e25850a3@example.jaxws.sun.com&quot;/&gt;
-            &lt;/urn:Document&gt;
-        &lt;/urn:ProvideAndRegisterDocumentSetRequest&gt;
-    &lt;/soapenv:Body&gt;
-&lt;/soapenv:Envelope&gt;
+                            id=&quot;urn:uuid:a2feaecc-0527-447b-ba83-3e454afc0a6c&quot;&gt;
+                            &lt;ns2:Slot name=&quot;authorInstitution&quot;&gt;
+                                &lt;ns2:ValueList&gt; 
+                                &lt;ns2:Value&gt;DXCTechnology^^^^^&amp;amp;1.2.208.176.1.1&amp;amp;ISO^^^^25469364&lt;/ns2:Value&gt;
+                                &lt;/ns2:ValueList&gt;
+                            &lt;/ns2:Slot&gt;
+                        &lt;/ns2:Classification&gt;
+                        &lt;ns2:Classification
+                            classificationScheme=&quot;urn:uuid:5003a9db-8d8d-49e6-bf0c-990e34ac7707&quot;
+                            classifiedObject=&quot;f82bf816-6628-4b62-9c7c-b9fe0a320a2f&quot;
+                            id=&quot;urn:uuid:8ea167f4-7dd3-43dd-945a-3e4d9c1fef3d&quot; /&gt;
+                        &lt;ns2:ExternalIdentifier
+                            registryObject=&quot;f82bf816-6628-4b62-9c7c-b9fe0a320a2f&quot;
+                            identificationScheme=&quot;urn:uuid:96fdda7c-d067-4183-912e-bf5ee74998a8&quot;
+                            value=&quot;f82bf816-6628-4b62-9c7c-b9fe0a320a2f&quot;
+                            id=&quot;urn:uuid:9fb08146-91be-4a38-a00f-223abf7ff31d&quot;&gt;
+                            &lt;ns2:Name&gt;
+                                &lt;ns2:LocalizedString
+                                    value=&quot;XDSSubmissionSet.uniqueId&quot; /&gt;
+                            &lt;/ns2:Name&gt;
+                        &lt;/ns2:ExternalIdentifier&gt;
+                        &lt;ns2:ExternalIdentifier
+                            registryObject=&quot;f82bf816-6628-4b62-9c7c-b9fe0a320a2f&quot;
+                            identificationScheme=&quot;urn:uuid:554ac39e-e3fe-47fe-b233-965d2a147832&quot;
+                            value=&quot;f82bf816-6628-4b62-9c7c-b9fe0a320a2f&quot;
+                            id=&quot;urn:uuid:2ac30e25-389d-4f0c-b41b-514d5a557c9a&quot;&gt;
+                            &lt;ns2:Name&gt;
+                                &lt;ns2:LocalizedString
+                                    value=&quot;XDSSubmissionSet.sourceId&quot; /&gt;
+                            &lt;/ns2:Name&gt;
+                        &lt;/ns2:ExternalIdentifier&gt;
+                    &lt;/ns2:RegistryPackage&gt;
+                    &lt;ns2:Classification
+                        classifiedObject=&quot;f82bf816-6628-4b62-9c7c-b9fe0a320a2f&quot;
+                        classificationNode=&quot;urn:uuid:a54d6aa5-d40d-43f9-88c5-b4633d873bdd&quot;
+                        id=&quot;urn:uuid:220cb2db-e272-42ea-946f-be895f0627a5&quot; /&gt;
+                    &lt;ns2:Association
+                        associationType=&quot;urn:oasis:names:tc:ebxml-regrep:AssociationType:HasMember&quot;
+                        sourceObject=&quot;f82bf816-6628-4b62-9c7c-b9fe0a320a2f&quot;
+                        targetObject=&quot;15ab4406-321e-47f7-8ded-bf1de0396943&quot;
+                        status=&quot;urn:oasis:names:tc:ebxml-regrep:StatusType:Approved&quot;
+                        id=&quot;656eeecf-81c0-4ea8-a346-9f2d900aa4de&quot;&gt;
+                        &lt;ns2:Slot name=&quot;SubmissionSetStatus&quot;&gt;
+                            &lt;ns2:ValueList&gt;
+                                &lt;ns2:Value&gt;Original&lt;/ns2:Value&gt;
+                            &lt;/ns2:ValueList&gt;
+                        &lt;/ns2:Slot&gt;
+                    &lt;/ns2:Association&gt;
+                &lt;/ns2:RegistryObjectList&gt;
+            &lt;/ns5:SubmitObjectsRequest&gt;
+            &lt;ns4:Document id=&quot;15ab4406-321e-47f7-8ded-bf1de0396943&quot;&gt;
+                &lt;xop:Include
+                    xmlns:xop=&quot;http://www.w3.org/2004/08/xop/include&quot;
+                    href=&quot;cid:8ae60adb-d8f5-4837-a779-3a64e25850a3@example.jaxws.sun.com&quot; /&gt;
+            &lt;/ns4:Document&gt;
+        &lt;/ns4:ProvideAndRegisterDocumentSetRequest&gt;
+    &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;
 </code></pre>
 
 <pre><code class="http">--uuid:a80594a2-e5de-425d-9fdc-f6ba27d58f05 
