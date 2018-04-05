@@ -130,23 +130,17 @@ Content-Transfer-Encoding: binary
 					<Attribute Name="nsi:UserType">
 						<AttributeValue>nsi:HealthcareProfessional</AttributeValue>
 					</Attribute>
-					<Attribute Name="nsi:OrgUsingID" NameFormat="nsi:sor">
-						<AttributeValue>242621000016001</AttributeValue>
-					</Attribute>
 					<Attribute Name="nsi:SystemOwnerName">
-						<AttributeValue>Acme Owner</AttributeValue>
+						<AttributeValue>Region Nordjylland</AttributeValue>
 					</Attribute>
 					<Attribute Name="nsi:SystemName">
-						<AttributeValue>Acme System</AttributeValue>
+						<AttributeValue>Clinical Suite</AttributeValue>
 					</Attribute>
 					<Attribute Name="nsi:SystemVersion">
-						<AttributeValue>1.5</AttributeValue>
+						<AttributeValue>14.4</AttributeValue>
 					</Attribute>
 					<Attribute Name="nsi:OrgResponsibleName">
-						<AttributeValue>World Acme Organisation</AttributeValue>
-					</Attribute>
-					<Attribute Name="nsi:ConsentOverride">
-						<AttributeValue>true</AttributeValue>
+						<AttributeValue>Region Nordjylland</AttributeValue>
 					</Attribute>
 				</AttributeStatement>
 			</Assertion>
