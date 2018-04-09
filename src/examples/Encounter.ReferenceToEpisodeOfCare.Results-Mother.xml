@@ -1,11 +1,13 @@
-<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<ClinicalDocument
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns="urn:hl7-org:v3">
 	<realmCode code="DK" />
 	<typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3" />
 	<templateId root="1.2.208.176.7.1.10.71" />
 	<templateId root="2.16.840.1.113883.10.12.2" />
 	<templateId root="2.16.840.1.113883.10.12.1" />
-	<id root="4B7F555E-4AF5-527A-81A3-E67A322E5B8A" />
+	<id root="47DA393C-5113-46A5-9962-7011146ED9E7"
+		extension="9F947E37-2EE3-4164-BAFE-10E6B9760A58" />
 	<code code="34133-9" codeSystem="2.16.840.1.113883.6.1"
 		codeSystemName="LOINC" displayName="Summary of episode note" />
 	<title>Indberetning af kontakt med reference til forløbselement og hvor
@@ -13,8 +15,10 @@
 		”Fødselsanmeldelse - mor” på kontakten med flere resultater
 	</title>
 	<effectiveTime value="20120912000000-0000" />
-	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" />
-	<setId root="06C20C50-87F0-558B-A16F-B3F3B045AF3B" assigningAuthorityName="Region Nordjylland" />
+	<confidentialityCode code="N"
+		codeSystem="2.16.840.1.113883.5.25" />
+	<setId root="47DA393C-5113-46A5-9962-7011146ED9E7"
+		assigningAuthorityName="Region Nordjylland" />
 	<versionNumber value="2" />
 	<recordTarget>
 		<templateId root="1.2.208.176.7.1.10.101" />
@@ -45,7 +49,7 @@
 		</patientRole>
 	</recordTarget>
 	<author typeCode="AUT">
-		<templateId root="1.2.208.176.7.10.102" />
+		<templateId root="1.2.208.176.7.1.10.102" />
 		<templateId root="2.16.840.1.113883.10.12.102" />
 		<time value="20170228101500+0100" />
 		<assignedAuthor classCode="ASSIGNED">
@@ -70,14 +74,15 @@
 	</custodian>
 	<relatedDocument typeCode="APND">
 		<parentDocument classCode="DOCCLIN" moodCode="EVN">
-			<id root="5B7F555E-4AF5-527A-81A3-E67A322E5B8A" />
-			<setId root="06C20C50-87F0-558B-A16F-B3F3B045AF3B" />
+			<id root="47DA393C-5113-46A5-9962-7011146ED9E7"
+				extension="9D98DDFC-2AE2-4286-8C91-519E340E0276" />
+			<setId root="47DA393C-5113-46A5-9962-7011146ED9E7" />
 			<versionNumber value="1" />
 		</parentDocument>
 	</relatedDocument>
 	<component contextConductionInd="true">
 		<structuredBody>
-			<component>
+			<component contextConductionInd="true">
 				<section>
 					<templateId root="1.2.208.176.7.1.10.75" />
 					<templateId root="2.16.840.1.113883.10.12.201" />
@@ -88,13 +93,15 @@
 						<encounter classCode="ENC" moodCode="EVN">
 							<templateId root="1.2.208.176.7.1.10.74" />
 							<templateId root="2.16.840.1.113883.10.12.302" />
-							<id root="1.2.208.176.7.1.2.1" extension="7dfa91a1-e19e-57d0-bdbe-fea7f8582df6" />
+							<id root="47DA393C-5113-46A5-9962-7011146ED9E7"
+								extension="7dfa91a1-e19e-57d0-bdbe-fea7f8582df6" />
 							<code code="DZ400B" codeSystem="1.2.208.176.2.4"
 								codeSystemName="Sundhedsvæsenets Klassifikations System" />
-							<effectiveTime value="20160222110000+0200">
+							<effectiveTime>
 								<low value="20170222110000+0200" />
 							</effectiveTime>
-							<priorityCode code="planlagt" codeSystem="1.2.208.176.2.4"
+							<priorityCode code="planlagt"
+								codeSystem="1.2.208.176.2.4"
 								codeSystemName="Sundhedsvæsenets Klassifikations System" />
 							<!-- include template 1.2.208.176.7.1.10.49 'DK Responsible Unit Participant 
 								(Body)' (dynamic) .. O -->
@@ -118,9 +125,11 @@
 									<high value="20170222130000+0200" />
 								</time>
 								<participantRole classCode="SDLOC">
-									<code codeSystemName="Sundhedsvæsenets Klassifikations System"
-										codeSystem="1.2.208.176.2.4" displayName="længereværende fravær med aftale"
-										code="ALCF02" />
+									<templateId root="1.2.208.176.7.1.22.3" />
+									<code
+										codeSystemName="Sundhedsvæsenets Klassifikations System"
+										codeSystem="1.2.208.176.2.4"
+										displayName="længereværende fravær med aftale" code="ALCF02" />
 									<scopingEntity nullFlavor="NI" />
 								</participantRole>
 							</participant>
@@ -129,7 +138,9 @@
 									(dynamic) .. O -->
 								<act classCode="ACT" moodCode="EVN">
 									<templateId root="1.2.208.176.7.1.10.7" />
-									<id root="1.2.208.176.2.4" extension="--example only--" />
+									<templateId root="2.16.840.1.113883.10.12.301" />
+									<id root="47DA393C-5113-46A5-9962-7011146ED9E7"
+										extension="--example only--" />
 									<code code="ALFA3" codeSystem="1.2.208.176.2.4" />
 									<effectiveTime>
 										<low value="20170222120000+0200" />
@@ -153,9 +164,10 @@
 										<act classCode="ACT" moodCode="EVN">
 											<templateId root="1.2.208.176.7.1.10.10" />
 											<templateId root="2.16.840.1.113883.10.12.301" />
-											<code codeSystemName="Sundhedsvæsenets Klassifikations System"
-												codeSystem="1.2.208.176.2.4" displayName="højt specialiseret funktion"
-												code="ALFC4" />
+											<code
+												codeSystemName="Sundhedsvæsenets Klassifikations System"
+												codeSystem="1.2.208.176.2.4"
+												displayName="højt specialiseret funktion" code="ALFC4" />
 										</act>
 									</entryRelationship>
 								</act>
@@ -174,10 +186,11 @@
 							<reference typeCode="REFR">
 								<templateId root="1.2.208.176.7.1.10.69" />
 								<templateId root="2.16.840.1.113883.10.12.324" />
-								<externalAct classCode="ACT" moodCode="EVN">
+								<externalAct classCode="PCPR" moodCode="EVN">
 									<templateId root="1.2.208.176.7.1.10.65" />
 									<templateId root="2.16.840.1.113883.10.12.325" />
-									<id root="1.2.208.176.7.1.2.1" extension="bbbfa3ea-2ad7-571c-986c-d72f7443ba4b" />
+									<id root="47DA393C-5113-46A5-9962-7011146ED9E7"
+										extension="bbbfa3ea-2ad7-571c-986c-d72f7443ba4b" />
 								</externalAct>
 							</reference>
 						</encounter>
@@ -192,15 +205,19 @@
 						<act classCode="REG" moodCode="EVN">
 							<templateId root="1.2.208.176.7.1.10.90" />
 							<templateId root="2.16.840.1.113883.10.12.301" />
+							<id root="47DA393C-5113-46A5-9962-7011146ED9E7"
+								extension="5b4132dd-6dd8-4b4b-82d4-674ca739df56" />
 							<code nullFlavor="NA" />
 							<entryRelationship typeCode="REFR">
 								<organizer classCode="BATTERY" moodCode="EVN">
 									<templateId root="1.2.208.176.7.1.10.88" />
 									<templateId root="2.16.840.1.113883.10.12.305" />
-									<id root="1.2.208.176.7.1.2.1" extension="50790dc33-eb83-5100-858f-fdc5569f13a9" />
-									<code codeSystemName="Sundhedsvæsenets Klassifikations System"
-										codeSystem="1.2.208.176.2.4" displayName="Fødselsanmeldelse mor"
-										code="RAA02" />
+									<id root="47DA393C-5113-46A5-9962-7011146ED9E7"
+										extension="50790dc33-eb83-5100-858f-fdc5569f13a9" />
+									<code
+										codeSystemName="Sundhedsvæsenets Klassifikations System"
+										codeSystem="1.2.208.176.2.4"
+										displayName="Fødselsanmeldelse mor" code="RAA02" />
 									<statusCode code="RAS01" />
 									<participant typeCode="RESP">
 										<templateId root="1.2.208.176.7.1.10.49" />
@@ -216,8 +233,10 @@
 										<observation classCode="OBS" moodCode="EVN">
 											<templateId root="1.2.208.176.7.1.10.89" />
 											<templateId root="2.16.840.1.113883.10.12.303" />
-											<code codeSystemName="Sundhedsvæsenets Klassifikations System"
-												codeSystem="1.2.208.176.2.4" displayName="Res.type: gestationsalder [res.gestald]"
+											<code
+												codeSystemName="Sundhedsvæsenets Klassifikations System"
+												codeSystem="1.2.208.176.2.4"
+												displayName="Res.type: gestationsalder [res.gestald]"
 												code="RDA20" />
 											<effectiveTime value="20170222120000+0200" />
 											<value xsi:type="ST">RGAA0006</value>
@@ -227,9 +246,10 @@
 										<observation classCode="OBS" moodCode="EVN">
 											<templateId root="1.2.208.176.7.1.10.89" />
 											<templateId root="2.16.840.1.113883.10.12.303" />
-											<code codeSystemName="Sundhedsvæsenets Klassifikations System"
-												codeSystem="1.2.208.176.2.4" displayName="Res.type: paritet (heltal)"
-												code="RDA22" />
+											<code
+												codeSystemName="Sundhedsvæsenets Klassifikations System"
+												codeSystem="1.2.208.176.2.4"
+												displayName="Res.type: paritet (heltal)" code="RDA22" />
 											<effectiveTime value="20170222120000+0200" />
 											<value xsi:type="ST">1</value>
 										</observation>
@@ -238,8 +258,10 @@
 										<observation classCode="OBS" moodCode="EVN">
 											<templateId root="1.2.208.176.7.1.10.89" />
 											<templateId root="2.16.840.1.113883.10.12.303" />
-											<code codeSystemName="Sundhedsvæsenets Klassifikations System"
-												codeSystem="1.2.208.176.2.4" displayName="Res.type: antal levendefødte (heltal)"
+											<code
+												codeSystemName="Sundhedsvæsenets Klassifikations System"
+												codeSystem="1.2.208.176.2.4"
+												displayName="Res.type: antal levendefødte (heltal)"
 												code="RDA23" />
 											<effectiveTime value="20170222120000+0200" />
 											<value xsi:type="ST">1</value>
@@ -249,9 +271,10 @@
 										<observation classCode="OBS" moodCode="EVN">
 											<templateId root="1.2.208.176.7.1.10.89" />
 											<templateId root="2.16.840.1.113883.10.12.303" />
-											<code codeSystemName="Sundhedsvæsenets Klassifikations System"
-												codeSystem="1.2.208.176.2.4" displayName="Res.type: antal dødfødte (heltal)"
-												code="RDA24" />
+											<code
+												codeSystemName="Sundhedsvæsenets Klassifikations System"
+												codeSystem="1.2.208.176.2.4"
+												displayName="Res.type: antal dødfødte (heltal)" code="RDA24" />
 											<effectiveTime value="20170222120000+0200" />
 											<value xsi:type="ST">0</value>
 										</observation>
@@ -260,7 +283,8 @@
 										<observation classCode="OBS" moodCode="EVN">
 											<templateId root="1.2.208.176.7.1.10.89" />
 											<templateId root="2.16.840.1.113883.10.12.303" />
-											<code codeSystemName="Sundhedsvæsenets Klassifikations System"
+											<code
+												codeSystemName="Sundhedsvæsenets Klassifikations System"
 												codeSystem="1.2.208.176.2.4"
 												displayName="Res.type: tobaksforbrug under graviditet [res.tobakgrav]"
 												code="RDA25" />
@@ -272,8 +296,10 @@
 										<observation classCode="OBS" moodCode="EVN">
 											<templateId root="1.2.208.176.7.1.10.89" />
 											<templateId root="2.16.840.1.113883.10.12.303" />
-											<code codeSystemName="Sundhedsvæsenets Klassifikations System"
-												codeSystem="1.2.208.176.2.4" displayName="Res.type: højde før graviditet (heltal: cm)"
+											<code
+												codeSystemName="Sundhedsvæsenets Klassifikations System"
+												codeSystem="1.2.208.176.2.4"
+												displayName="Res.type: højde før graviditet (heltal: cm)"
 												code="RDA26" />
 											<effectiveTime value="20170222120000+0200" />
 											<value xsi:type="ST">180</value>
@@ -283,8 +309,10 @@
 										<observation classCode="OBS" moodCode="EVN">
 											<templateId root="1.2.208.176.7.1.10.89" />
 											<templateId root="2.16.840.1.113883.10.12.303" />
-											<code codeSystemName="Sundhedsvæsenets Klassifikations System"
-												codeSystem="1.2.208.176.2.4" displayName="Res.type: vægt før graviditet (heltal: kg)"
+											<code
+												codeSystemName="Sundhedsvæsenets Klassifikations System"
+												codeSystem="1.2.208.176.2.4"
+												displayName="Res.type: vægt før graviditet (heltal: kg)"
 												code="RDA27" />
 											<effectiveTime value="20170222120000+0200" />
 											<value xsi:type="ST">65</value>
@@ -296,7 +324,8 @@
 								<encounter classCode="ENC" moodCode="EVN">
 									<templateId root="1.2.208.176.7.1.10.77" />
 									<templateId root="2.16.840.1.113883.10.12.301" />
-									<id root="1.2.208.176.7.1.2.1" extension="7dfa91a1-e19e-57d0-bdbe-fea7f8582df6" />
+									<id root="47DA393C-5113-46A5-9962-7011146ED9E7"
+										extension="7dfa91a1-e19e-57d0-bdbe-fea7f8582df6" />
 									<code nullFlavor="NA" />
 								</encounter>
 							</entryRelationship>
