@@ -5,13 +5,13 @@
 	<templateId root="1.2.208.176.7.1.10.71" />
 	<templateId root="2.16.840.1.113883.10.12.2" />
 	<templateId root="2.16.840.1.113883.10.12.1" />
-	<id root="4B7F555E-4AF5-527A-81A3-E67A322E5B8A" />
+	<id root="5B7F555E-4AF5-527A-81A3-E67A322E5B8A" extension="B4389AEF-9D5B-480F-88B5-D64362CA5F30"/>
 	<code code="34133-9" codeSystem="2.16.840.1.113883.6.1"
 		codeSystemName="LOINC" displayName="Summary of episode note" />
 	<title>Indberetning af sletning af procedure uden kontakt</title>
 	<effectiveTime value="20120912000000-0000" />
 	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" />
-	<setId root="06C20C50-87F0-558B-A16F-B3F3B045AF3B"
+	<setId root="5B7F555E-4AF5-527A-81A3-E67A322E5B8A"
 		assigningAuthorityName="Region Nordjylland" />
 	<versionNumber value="2" />
 	<recordTarget>
@@ -43,7 +43,7 @@
 		</patientRole>
 	</recordTarget>
 	<author typeCode="AUT">
-		<templateId root="1.2.208.176.7.10.102" />
+		<templateId root="1.2.208.176.7.1.10.102" />
 		<templateId root="2.16.840.1.113883.10.12.102" />
 		<time value="20170228101500+0100" />
 		<assignedAuthor classCode="ASSIGNED">
@@ -68,14 +68,14 @@
 	</custodian>
 	<relatedDocument typeCode="APND">
 		<parentDocument classCode="DOCCLIN" moodCode="EVN">
-			<id root="5B7F555E-4AF5-527A-81A3-E67A322E5B8A" />
-			<setId root="06C20C50-87F0-558B-A16F-B3F3B045AF3B" />
+			<id root="5B7F555E-4AF5-527A-81A3-E67A322E5B8A" extension="FC563D06-6C14-4CBE-94FC-3F4E85CA38AB"/>
+			<setId root="5B7F555E-4AF5-527A-81A3-E67A322E5B8A" />
 			<versionNumber value="1" />
 		</parentDocument>
 	</relatedDocument>
 	<component contextConductionInd="true">
 		<structuredBody>
-			<component>
+			<component contextConductionInd="true">
 				<section>
 					<templateId root="1.2.208.176.7.1.10.116" />
 					<templateId root="2.16.840.1.113883.10.12.201" />
@@ -92,7 +92,7 @@
 								<externalAct classCode="ACT" moodCode="EVN">
 									<templateId root="1.2.208.176.7.1.10.99" />
 									<templateId root="2.16.840.1.113883.10.12.325" />
-									<id root="1.2.208.176.1.2.1" extension="bbbfa3ea-2ad7-571c-986c-d72f7443ba4b" />
+									<id root="5B7F555E-4AF5-527A-81A3-E67A322E5B8A" extension="bbbfa3ea-2ad7-571c-986c-d72f7443ba4b" />
 								</externalAct>
 							</reference>
 						</act>

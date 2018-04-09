@@ -1,5 +1,4 @@
-<ClinicalDocument
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns="urn:hl7-org:v3">
 	<realmCode code="DK" />
 	<typeId extension="POCD_HD000040" root="2.16.840.1.113883.1.3" />
