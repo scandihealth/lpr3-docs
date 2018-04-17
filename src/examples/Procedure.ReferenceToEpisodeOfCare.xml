@@ -5,13 +5,13 @@
 	<templateId root="1.2.208.176.7.1.10.71" />
 	<templateId root="2.16.840.1.113883.10.12.2" />
 	<templateId root="2.16.840.1.113883.10.12.1" />
-	<id root="4B7F555E-4AF5-527A-81A3-E67A322E5B8A" />
+	<id root="F99C8B8B-E944-4474-9867-EB3E478A6FAE" extension="EE7C935F-B596-422F-A522-B8C5E993C7DD" />
 	<code code="34133-9" codeSystem="2.16.840.1.113883.6.1"
 		codeSystemName="LOINC" displayName="Summary of episode note" />
 	<title>Indberetning af procedure uden kontakt med reference til	forløbselement</title>
 	<effectiveTime value="20120912000000-0000" />
 	<confidentialityCode code="N" codeSystem="2.16.840.1.113883.5.25" />
-	<setId root="06C20C50-87F0-558B-A16F-B3F3B045AF3B" assigningAuthorityName="Region Nordjylland"/>
+	<setId root="F99C8B8B-E944-4474-9867-EB3E478A6FAE" assigningAuthorityName="Region Nordjylland"/>
 	<versionNumber value="2" />
 	<recordTarget>
 		<templateId root="1.2.208.176.7.1.10.101" />
@@ -42,7 +42,7 @@
 		</patientRole>
 	</recordTarget>
 	<author typeCode="AUT">
-		<templateId root="1.2.208.176.7.10.102" />
+		<templateId root="1.2.208.176.7.1.10.102" />
 		<templateId root="2.16.840.1.113883.10.12.102" />
 		<time value="20170228101500+0100" />
 		<assignedAuthor classCode="ASSIGNED">
@@ -67,14 +67,14 @@
 	</custodian>
 	<relatedDocument typeCode="APND">
 		<parentDocument classCode="DOCCLIN" moodCode="EVN">
-			<id root="5B7F555E-4AF5-527A-81A3-E67A322E5B8A" />
-			<setId root="06C20C50-87F0-558B-A16F-B3F3B045AF3B" />
+			<id root="F99C8B8B-E944-4474-9867-EB3E478A6FAE" extension="832656C2-01B5-49E8-9C0C-CE1DEAEF654C"/>
+			<setId root="F99C8B8B-E944-4474-9867-EB3E478A6FAE" />
 			<versionNumber value="1" />
 		</parentDocument>
 	</relatedDocument>
 	<component contextConductionInd="true">
 		<structuredBody>
-			<component>
+			<component contextConductionInd="true">
 				<section>
 					<templateId root="1.2.208.176.7.1.10.76" />
 					<templateId root="2.16.840.1.113883.10.12.201" />
@@ -82,8 +82,7 @@
 						<act classCode="ACT" moodCode="EVN">
 							<templateId root="1.2.208.176.7.1.10.25" />
 							<templateId root="2.16.840.1.113883.10.12.301" />
-							<id root="1.2.208.176.7.1.2.1" extension="50009866-1b81-53fd-bd67-b132a68415fa" />
-							<id root="1.2.208.176.7.1.2.2" extension="94ff6bdb-2075-43de-ba33-7dafd7dc66cc" />
+							<id root="F99C8B8B-E944-4474-9867-EB3E478A6FAE" extension="50009866-1b81-53fd-bd67-b132a68415fa" />
 							<code codeSystemName="Sundhedsvæsenets Klassifikations System"
 								codeSystem="1.2.208.176.2.4" displayName="Stråleplanlægning - individuel 3D konform (CT)"
 								code="BWGA2A" />
@@ -109,7 +108,7 @@
 								<externalAct classCode="PCPR" moodCode="EVN">
 									<templateId root="1.2.208.176.7.1.10.65" />
 									<templateId root="2.16.840.1.113883.10.12.325" />
-									<id root="1.2.208.176.7.1.2.1" extension="bbbfa3ea-2ad7-571c-986c-d72f7443ba4b" />
+									<id root="F99C8B8B-E944-4474-9867-EB3E478A6FAE" extension="bbbfa3ea-2ad7-571c-986c-d72f7443ba4b" />
 								</externalAct>
 							</reference>
 						</act>
