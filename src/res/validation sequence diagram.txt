@@ -1,0 +1,32 @@
+Go to https://www.websequencediagrams.com/ and insert the following:
+
+title Validation sequence
+
+Regional EHR->LPR3 WS: IHE XDR PnR CDA-DK
+note left of LPR3 WS: ebXML and DGWS validation
+opt Protocol failure
+    LPR3 WS-->Regional EHR: Incorrect use of IHE DGWS PnR transaction
+end
+note over LPR3 WS:Validation step 1
+LPR3 WS->Validation Engine: Schema assertions
+Validation Engine-->LPR3 WS:Reported errors
+opt Lacking schema conformance
+    LPR3 WS-->Regional EHR: Document does not comply with the standard schemas
+end
+note over LPR3 WS:Validation step 2
+LPR3 WS->Validation Engine: Schematron assertions
+Validation Engine-->LPR3 WS:Reported errors
+opt Lacking schematron conformance
+    LPR3 WS-->Regional EHR: Document does not comply with the schematrons
+end
+note over LPR3 WS:Validation step 3
+LPR3 WS->Validation Engine: Data integrity checks
+Validation Engine-->LPR3 WS:Reported errors
+opt Lacking data integrity conformance
+    LPR3 WS-->Regional EHR: Document breaks registry integrity
+end
+note over LPR3 WS:Validation step 4
+LPR3 WS->Validation Engine: Business rules assertions
+Validation Engine-->LPR3 WS:Reported errors
+LPR3 WS-->Regional EHR: Acknowledgement and validation report
+
