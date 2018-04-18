@@ -82,7 +82,6 @@
 						<act classCode="ACT" moodCode="EVN">
 							<templateId root="1.2.208.176.7.1.10.118" />
 							<templateId root="2.16.840.1.113883.10.12.301" />
-							<id root="1.2.208.176.7.1.2.3" extension="bbbfa3ea-2ad7-571c-986c-d72f7443ba4b" />
 							<code nullFlavor="NA" />
 							<statusCode code="nullified" />
 							<reference typeCode="RPLC">
