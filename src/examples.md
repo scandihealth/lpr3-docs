@@ -188,7 +188,7 @@ Content-Transfer-Encoding: binary
 							id="urn:uuid:a2feaecc-0527-447b-ba83-3e454afc0a6c">
 							<ns2:Slot name="authorInstitution">
 								<ns2:ValueList>	
-								<ns2:Value>DXCTechnology^^^^^&amp;1.2.208.176.1.1&amp;ISO^^^^25469364</ns2:Value>
+								<ns2:Value>DXCTechnology^^^^^&amp;2.16.840.1.113883.2.24.1.1&amp;ISO^^^^25469364</ns2:Value>
 								</ns2:ValueList>
 							</ns2:Slot>
 						</ns2:Classification>
