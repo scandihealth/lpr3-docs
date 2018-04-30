@@ -263,7 +263,8 @@
 </ul>
 <p>The <code>location</code> attribute is used in the following way:</p>
 <ul>
-<li>The value of <code>location</code> is split into one mandatory segment and three conditional segments having the following values <code>&lt;document id&gt;|||(&lt;line:column&gt;)|||(&lt;xpath expression&gt;)|||(&lt;business rule unique identifier&gt;)</code>.<ul>
+<li>The value of <code>location</code> is split into one mandatory segment and three conditional segments (placed in parentheses) and have the following values, where <code>|||</code> act as segment delimiter: 
+<code>&lt;document id&gt;(|||&lt;line:column&gt;)(|||&lt;xpath expression&gt;)(|||&lt;business rule unique identifier&gt;)</code><ul>
 <li><code>&lt;document id&gt;</code> is the DocumentEntry.uniqueId - see <a href="http://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol3.pdf">"IHE IT Infrastructure (ITI TF-3) "</a> <em>(section 4.2.3.2.26)</em></li>
 <li><code>&lt;line:column&gt;</code> is the line and column in the CDA document where the error is detected - this is present only when <code>&lt;validation type&gt;</code> is XSD.</li>
 <li><code>&lt;xpath expression&gt;</code> is the conditional segment containing an XPath expression pointing into the document where the error is detected - this is present only when <code>&lt;validation type&gt;</code> is SCHEMATRON or BUSINESS_RULE.</li>
