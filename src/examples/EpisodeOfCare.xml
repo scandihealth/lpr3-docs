@@ -186,15 +186,15 @@
 										codeSystemName="Sundhedsvæsenets Klassifikations System"
 										codeSystem="1.2.208.176.2.4"
 										displayName="henvist i samme sygdomsforløb" code="ALAA01" />
-									<entryRelationship typeCode="REFR">
-										<act classCode="PCPR" moodCode="EVN">
-											<templateId root="1.2.208.176.7.1.10.72" />
-											<templateId root="2.16.840.1.113883.10.12.301" />
-											<id root="06C20C50-87F0-558B-A16F-B3F3B045AF3B"
-												extension="84CFE1CD-AB3E-4A13-BE62-458D88D04B11" />
-											<code nullFlavor="NA" />
-										</act>
-									</entryRelationship>
+									<reference typeCode="REFR">
+										<templateId root="1.2.208.176.7.1.10.129"/>
+										<templateId root="2.16.840.1.113883.10.12.324"/>
+										<externalAct classCode="PCPR" moodCode="EVN">
+											<templateId root="1.2.208.176.7.1.10.128"/>
+											<templateId root="2.16.840.1.113883.10.12.325"/>
+											<id root="ecd3567b-a6d5-4f1a-a5e4-7b9d6bb10177"/>
+										</externalAct>
+									</reference>
 								</act>
 							</entryRelationship>
 							<entryRelationship typeCode="COMP">
