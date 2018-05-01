@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>XDR - Landspatientregisteret 3 - Technical documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  <link href="../../css/highlight.js/idea.css" rel="stylesheet">
+  <link href="../../css/theme-overrides.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "XDR";
+    var mkdocs_page_input_path = "interface/xdr.md";
+    var mkdocs_page_url = "/interface/xdr/index.html";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../index.html" class="icon icon-home"> Landspatientregisteret 3 - Technical documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../index.html">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../definitions/index.html">Definitions</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../governance/index.html">Governace</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Documentation</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../aspects/index.html">Interface aspects and usage</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../submission-scheme/index.html">Submission scheme</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Interfaces</span>
+    <ul class="subnav">
+                <li class=" current">
+                    
+    <a class="current" href="index.html">XDR</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#clinical-document-architecture-lpr3-definition">Clinical Document Architecture LPR3 definition</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#ihe-xdr-wsdl-with-national-ssi-additions">IHE XDR WSDL with national SSI additions</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../accumulated-error-list/index.html">Accumulated error list</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../testenvironment/index.html">Test environment</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../developmentresources/index.html">Development resources</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../examples/index.html">Examples</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../links/index.html">Related material and links</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">Landspatientregisteret 3 - Technical documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Interfaces &raquo;</li>
+        
+      
+    
+    <li>XDR</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/scandihealth/lpr3-docs/edit/master/src/interface/xdr.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="clinical-document-architecture-lpr3-definition">Clinical Document Architecture LPR3 definition</h1>
+<p>The specific design details of LPR3 based on Clinical Document Architecture (CDA) is documented at <a href="http://lpr-art-decor.westeurope.cloudapp.azure.com:8080/art-decor/decor-project--lpr-">ART-DECOR</a></p>
+<h2 id="ihe-xdr-wsdl-with-national-ssi-additions">IHE XDR WSDL with national SSI additions</h2>
+<p>The following section shows the IHE XDR WSDL with the danish national SSI additions ( - complete set can be found <a href="https://github.com/scandihealth/lpr3-docs/raw/master/schema.definitions.zip">here</a>):</p>
+<pre><code class="xml">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
+&lt;definitions xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:wsu=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&quot; xmlns:wsse=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot; xmlns:wsaw=&quot;http://www.w3.org/2006/05/addressing/wsdl&quot; xmlns:soap=&quot;http://schemas.xmlsoap.org/wsdl/soap/&quot; xmlns:saml=&quot;urn:oasis:names:tc:SAML:2.0:assertion&quot; xmlns:rs=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0&quot; xmlns:medcom=&quot;http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd&quot; xmlns:ihe=&quot;urn:ihe:iti:xds-b:2007&quot; xmlns:hsuid=&quot;http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd&quot; xmlns=&quot;http://schemas.xmlsoap.org/wsdl/&quot; name=&quot;DocumentRepository&quot; targetNamespace=&quot;urn:ihe:iti:xds-b:2007&quot;&gt;
+
+    &lt;documentation&gt;IHE XDR Service with national SSI additions
+    &lt;/documentation&gt;
+    &lt;types&gt;
+
+        &lt;xsd:schema xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;
+            xmlns:wsu=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&quot;
+            xmlns:wsse=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot;
+            xmlns:wsaw=&quot;http://www.w3.org/2006/05/addressing/wsdl&quot; xmlns:soap=&quot;http://schemas.xmlsoap.org/wsdl/soap/&quot;
+            xmlns:saml=&quot;urn:oasis:names:tc:SAML:2.0:assertion&quot; xmlns:rs=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0&quot;
+            xmlns:medcom=&quot;http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd&quot;
+            xmlns:ihe=&quot;urn:ihe:iti:xds-b:2007&quot; xmlns:hsuid=&quot;http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd&quot;
+            xmlns=&quot;http://schemas.xmlsoap.org/wsdl/&quot;
+            targetNamespace=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot;&gt;
+
+            &lt;xsd:include
+                schemaLocation=&quot;http://localhost:8080/xdr.endpoint?xsd=xsd/dgws/wsse.xsd&quot; /&gt;
+
+        &lt;/xsd:schema&gt;
+        &lt;xsd:schema xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;
+            xmlns:wsu=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&quot;
+            xmlns:wsse=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot;
+            xmlns:wsaw=&quot;http://www.w3.org/2006/05/addressing/wsdl&quot; xmlns:soap=&quot;http://schemas.xmlsoap.org/wsdl/soap/&quot;
+            xmlns:saml=&quot;urn:oasis:names:tc:SAML:2.0:assertion&quot; xmlns:rs=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0&quot;
+            xmlns:medcom=&quot;http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd&quot;
+            xmlns:ihe=&quot;urn:ihe:iti:xds-b:2007&quot; xmlns:hsuid=&quot;http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd&quot;
+            xmlns=&quot;http://schemas.xmlsoap.org/wsdl/&quot; targetNamespace=&quot;urn:oasis:names:tc:SAML:2.0:assertion&quot;&gt;
+
+            &lt;xsd:include
+                schemaLocation=&quot;http://localhost:8080/xdr.endpoint?xsd=xsd/dgws/saml.xsd&quot; /&gt;
+
+        &lt;/xsd:schema&gt;
+        &lt;xsd:schema xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;
+            xmlns:wsu=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&quot;
+            xmlns:wsse=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot;
+            xmlns:wsaw=&quot;http://www.w3.org/2006/05/addressing/wsdl&quot; xmlns:soap=&quot;http://schemas.xmlsoap.org/wsdl/soap/&quot;
+            xmlns:saml=&quot;urn:oasis:names:tc:SAML:2.0:assertion&quot; xmlns:rs=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0&quot;
+            xmlns:medcom=&quot;http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd&quot;
+            xmlns:ihe=&quot;urn:ihe:iti:xds-b:2007&quot; xmlns:hsuid=&quot;http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd&quot;
+            xmlns=&quot;http://schemas.xmlsoap.org/wsdl/&quot; targetNamespace=&quot;http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd&quot;&gt;
+
+            &lt;xsd:include
+                schemaLocation=&quot;http://localhost:8080/xdr.endpoint?xsd=xsd/dgws/medcom.xsd&quot; /&gt;
+
+        &lt;/xsd:schema&gt;
+        &lt;xsd:schema xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;
+            xmlns:wsu=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&quot;
+            xmlns:wsse=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot;
+            xmlns:wsaw=&quot;http://www.w3.org/2006/05/addressing/wsdl&quot; xmlns:soap=&quot;http://schemas.xmlsoap.org/wsdl/soap/&quot;
+            xmlns:saml=&quot;urn:oasis:names:tc:SAML:2.0:assertion&quot; xmlns:rs=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0&quot;
+            xmlns:medcom=&quot;http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd&quot;
+            xmlns:ihe=&quot;urn:ihe:iti:xds-b:2007&quot; xmlns:hsuid=&quot;http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd&quot;
+            xmlns=&quot;http://schemas.xmlsoap.org/wsdl/&quot; targetNamespace=&quot;http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd&quot;&gt;
+
+            &lt;xsd:include
+                schemaLocation=&quot;http://localhost:8080/xdr.endpoint?xsd=xsd/hsuid/hsuid-1_1.xsd&quot; /&gt;
+
+        &lt;/xsd:schema&gt;
+        &lt;xsd:schema xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;
+            xmlns:wsu=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&quot;
+            xmlns:wsse=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot;
+            xmlns:wsaw=&quot;http://www.w3.org/2006/05/addressing/wsdl&quot; xmlns:soap=&quot;http://schemas.xmlsoap.org/wsdl/soap/&quot;
+            xmlns:saml=&quot;urn:oasis:names:tc:SAML:2.0:assertion&quot; xmlns:rs=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0&quot;
+            xmlns:medcom=&quot;http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd&quot;
+            xmlns:ihe=&quot;urn:ihe:iti:xds-b:2007&quot; xmlns:hsuid=&quot;http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd&quot;
+            xmlns=&quot;http://schemas.xmlsoap.org/wsdl/&quot; elementFormDefault=&quot;qualified&quot;
+            targetNamespace=&quot;urn:ihe:iti:xds-b:2007&quot;&gt;
+            &lt;!-- Include the message schema --&gt;
+
+            &lt;xsd:include
+                schemaLocation=&quot;http://localhost:8080/xdr.endpointy?xsd=../schema/IHE/XDS.b_DocumentRepository.xsd&quot; /&gt;
+
+        &lt;/xsd:schema&gt;
+        &lt;xsd:schema xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;
+            xmlns:wsu=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&quot;
+            xmlns:wsse=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot;
+            xmlns:wsaw=&quot;http://www.w3.org/2006/05/addressing/wsdl&quot; xmlns:soap=&quot;http://schemas.xmlsoap.org/wsdl/soap/&quot;
+            xmlns:saml=&quot;urn:oasis:names:tc:SAML:2.0:assertion&quot; xmlns:rs=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0&quot;
+            xmlns:medcom=&quot;http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd&quot;
+            xmlns:ihe=&quot;urn:ihe:iti:xds-b:2007&quot; xmlns:hsuid=&quot;http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd&quot;
+            xmlns=&quot;http://schemas.xmlsoap.org/wsdl/&quot; elementFormDefault=&quot;qualified&quot;
+            targetNamespace=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0&quot;&gt;
+            &lt;!-- Include the message schema --&gt;
+
+            &lt;xsd:include
+                schemaLocation=&quot;http://localhost:8080/xdr.endpoint?xsd=../schema/ebRS/rs.xsd&quot; /&gt;
+
+        &lt;/xsd:schema&gt;
+        &lt;xsd:schema xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;
+            xmlns:wsu=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&quot;
+            xmlns:wsse=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot;
+            xmlns:wsaw=&quot;http://www.w3.org/2006/05/addressing/wsdl&quot; xmlns:soap=&quot;http://schemas.xmlsoap.org/wsdl/soap/&quot;
+            xmlns:saml=&quot;urn:oasis:names:tc:SAML:2.0:assertion&quot; xmlns:rs=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0&quot;
+            xmlns:query=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0&quot;
+            xmlns:medcom=&quot;http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd&quot;
+            xmlns:ihe=&quot;urn:ihe:iti:xds-b:2007&quot; xmlns:hsuid=&quot;http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd&quot;
+            xmlns=&quot;http://schemas.xmlsoap.org/wsdl/&quot; elementFormDefault=&quot;qualified&quot;
+            targetNamespace=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0&quot;&gt;
+            &lt;!-- Include the message schema --&gt;
+
+            &lt;xsd:include
+                schemaLocation=&quot;http://localhost:8080/xdr.endpoint?xsd=../schema/ebRS/query.xsd&quot; /&gt;
+
+        &lt;/xsd:schema&gt;
+        &lt;xsd:schema xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;
+            xmlns:wsu=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&quot;
+            xmlns:wsse=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot;
+            xmlns:wsaw=&quot;http://www.w3.org/2006/05/addressing/wsdl&quot; xmlns:soap=&quot;http://schemas.xmlsoap.org/wsdl/soap/&quot;
+            xmlns:saml=&quot;urn:oasis:names:tc:SAML:2.0:assertion&quot; xmlns:rs=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0&quot;
+            xmlns:medcom=&quot;http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd&quot;
+            xmlns:lcm=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0&quot; xmlns:ihe=&quot;urn:ihe:iti:xds-b:2007&quot;
+            xmlns:hsuid=&quot;http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd&quot; xmlns=&quot;http://schemas.xmlsoap.org/wsdl/&quot;
+            elementFormDefault=&quot;qualified&quot; targetNamespace=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0&quot;&gt;
+            &lt;!-- Include the message schema --&gt;
+
+            &lt;xsd:include
+                schemaLocation=&quot;http://localhost:8080/xdr.endpoint?xsd=../schema/ebRS/lcm.xsd&quot; /&gt;
+
+        &lt;/xsd:schema&gt;
+        &lt;xsd:schema xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;
+            xmlns:wsu=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&quot;
+            xmlns:wsse=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot;
+            xmlns:wsaw=&quot;http://www.w3.org/2006/05/addressing/wsdl&quot; xmlns:soap=&quot;http://schemas.xmlsoap.org/wsdl/soap/&quot;
+            xmlns:saml=&quot;urn:oasis:names:tc:SAML:2.0:assertion&quot; xmlns:rs=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0&quot;
+            xmlns:medcom=&quot;http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd&quot;
+            xmlns:lcm=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0&quot; xmlns:ihe=&quot;urn:ihe:iti:xds-b:2007&quot;
+            xmlns:hsuid=&quot;http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd&quot; xmlns=&quot;http://schemas.xmlsoap.org/wsdl/&quot;
+            elementFormDefault=&quot;qualified&quot; targetNamespace=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0&quot;&gt;
+            &lt;!-- Include the message schema --&gt;
+
+            &lt;xsd:include
+                schemaLocation=&quot;http://localhost:8080/xdr.endpoint?xsd=../schema/ebRS/rim.xsd&quot; /&gt;
+
+        &lt;/xsd:schema&gt;
+    &lt;/types&gt;
+    &lt;message name=&quot;SecurityHeader&quot;&gt;
+        &lt;part element=&quot;wsse:Security&quot; name=&quot;security_header&quot;&gt;
+        &lt;/part&gt;
+    &lt;/message&gt;
+    &lt;message name=&quot;MedcomHeader&quot;&gt;
+        &lt;part element=&quot;medcom:Header&quot; name=&quot;medcom_header&quot;&gt;
+        &lt;/part&gt;
+    &lt;/message&gt;
+    &lt;message name=&quot;ProvideAndRegisterDocumentSet-b_Message&quot;&gt;
+        &lt;documentation&gt;Provide and Register Document Set&lt;/documentation&gt;
+        &lt;part element=&quot;ihe:ProvideAndRegisterDocumentSetRequest&quot; name=&quot;body&quot;&gt;&lt;/part&gt;
+    &lt;/message&gt;
+    &lt;message name=&quot;ProvideAndRegisterDocumentSet-bResponse_Message&quot;&gt;
+        &lt;documentation&gt;Provide And Register Document Set Response
+        &lt;/documentation&gt;
+        &lt;part element=&quot;rs:RegistryResponse&quot; name=&quot;body&quot;&gt;&lt;/part&gt;
+    &lt;/message&gt;
+    &lt;message name=&quot;HsuidHeader&quot;&gt;
+        &lt;part element=&quot;hsuid:HsuidHeader&quot; name=&quot;hsuid_header&quot;&gt;
+        &lt;/part&gt;
+    &lt;/message&gt;
+    &lt;portType name=&quot;DocumentRepository_PortType&quot;&gt;
+        &lt;operation name=&quot;DocumentRepository_ProvideAndRegisterDocumentSet-b&quot;&gt;
+            &lt;input message=&quot;ihe:ProvideAndRegisterDocumentSet-b_Message&quot;
+                wsaw:Action=&quot;urn:ihe:iti:2007:ProvideAndRegisterDocumentSet-b&quot;&gt;&lt;/input&gt;
+            &lt;output message=&quot;ihe:ProvideAndRegisterDocumentSet-bResponse_Message&quot;
+                wsaw:Action=&quot;urn:ihe:iti:2007:ProvideAndRegisterDocumentSet-bResponse&quot;&gt;&lt;/output&gt;
+        &lt;/operation&gt;
+    &lt;/portType&gt;
+    &lt;binding name=&quot;DocumentRepository_Binding&quot; type=&quot;ihe:DocumentRepository_PortType&quot;&gt;
+        &lt;soap:binding style=&quot;document&quot;
+            transport=&quot;http://schemas.xmlsoap.org/soap/http&quot; /&gt;
+        &lt;operation name=&quot;DocumentRepository_ProvideAndRegisterDocumentSet-b&quot;&gt;
+            &lt;soap:operation soapAction=&quot;urn:ihe:iti:2007:ProvideAndRegisterDocumentSet-b&quot;&gt;&lt;/soap:operation&gt;
+            &lt;input&gt;
+                &lt;soap:header message=&quot;ihe:SecurityHeader&quot; part=&quot;security_header&quot;
+                    use=&quot;literal&quot;&gt;&lt;/soap:header&gt;
+                &lt;soap:header message=&quot;ihe:MedcomHeader&quot; part=&quot;medcom_header&quot;
+                    use=&quot;literal&quot;&gt;&lt;/soap:header&gt;
+                &lt;soap:header message=&quot;ihe:HsuidHeader&quot; part=&quot;hsuid_header&quot;
+                    use=&quot;literal&quot;&gt;&lt;/soap:header&gt;
+                &lt;soap:body use=&quot;literal&quot;&gt;&lt;/soap:body&gt;
+            &lt;/input&gt;
+            &lt;output&gt;
+                &lt;soap:header message=&quot;ihe:MedcomHeader&quot; part=&quot;medcom_header&quot;
+                    use=&quot;literal&quot;&gt;&lt;/soap:header&gt;
+                &lt;soap:body use=&quot;literal&quot;&gt;&lt;/soap:body&gt;
+            &lt;/output&gt;
+        &lt;/operation&gt;
+    &lt;/binding&gt;
+    &lt;service name=&quot;DocumentRepository_Service&quot;&gt;
+        &lt;port binding=&quot;ihe:DocumentRepository_Binding&quot; name=&quot;DocumentRepository_Port_Soap12&quot;&gt;
+            &lt;soap:address location=&quot;http://localhost:8080/xdr.endpoint&quot; /&gt;
+        &lt;/port&gt;
+    &lt;/service&gt;
+&lt;/definitions&gt;
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../accumulated-error-list/index.html" class="btn btn-neutral float-right" title="Accumulated error list">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../submission-scheme/index.html" class="btn btn-neutral" title="Submission scheme"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/scandihealth/lpr3-docs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../../submission-scheme/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../accumulated-error-list/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../../js/theme.js"></script>
+
+</body>
+</html>

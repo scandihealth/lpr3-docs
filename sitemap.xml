@@ -11,6 +11,14 @@
 
     
     <url>
+     <loc>/definitions/index.html</loc>
+     <lastmod>2018-05-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
      <loc>/governance/index.html</loc>
      <lastmod>2018-05-01</lastmod>
      <changefreq>daily</changefreq>
@@ -34,11 +42,19 @@
     
 
     
+        
     <url>
-     <loc>/interfacedefinitions/index.html</loc>
+     <loc>/interface/xdr/index.html</loc>
      <lastmod>2018-05-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
+    <url>
+     <loc>/interface/accumulated-error-list/index.html</loc>
+     <lastmod>2018-05-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
     

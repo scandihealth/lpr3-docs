@@ -1,0 +1,42 @@
+{
+    "procedures": [
+        {
+            "identifier": {
+                "root": "E602E07C-7F05-431D-B187-1199974F4C5B",
+                "extension": "58B1ACBC-A2C0-55C4-9803-462933618208"
+            },
+            "errors": [
+                {
+                    "ruleId": "11.31",
+                    "ruleVersion": "sds:lpr:3.0.5",
+                    "code": "1131",
+                    "message": "Hvis en procedure er tilknyttet direkte til et forløbselement, skal der være tilknyttet en betalingsoplysning til proceduren, og starttidspunkt for betalingsoplysningen skal være lig med starttidspunkt for proceduren"
+                },
+                {
+                    "ruleId": "11.101",
+                    "ruleVersion": "sds:lpr:3.0.5",
+                    "code": "11101",
+                    "message": "Procedurekoden skal være i en af kodelisterne proc.act, proc.opr og proc.und"
+                }
+            ]
+        }
+    ],
+    "identifier": {
+        "root": "E602E07C-7F05-431D-B187-1199974F4C5B",
+        "extension": "1E1CC9CC-A675-5B0E-A458-90D778272ACC"
+    },
+    "errors": [
+        {
+            "ruleId": "06.a",
+            "ruleVersion": "sds:lpr:3.0.5",
+            "code": "6001",
+            "message": "Henvisningsårsagen skal findes i en af kodelisterne diag, proc.act, proc.opr, proc.und"
+        },
+        {
+            "ruleId": "02.02",
+            "ruleVersion": "sds:lpr:3.0.5",
+            "code": "202",
+            "message": "Et afsluttet forløbselement skal have en afslutningsmåde"
+        }
+    ]
+}
