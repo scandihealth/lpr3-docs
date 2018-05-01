@@ -18,4 +18,4 @@ Any consumer of the accumulated error list is considered a [JSON parser](https:/
 The LPR system is considered a [JSON generator](https://tools.ietf.org/html/rfc8259#section-10).
 
 ## File structure
-The structure of an issue file is definied by an JSON Schema
+The structure of an issue file is definied by a JSON Schema
