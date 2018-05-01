@@ -78,7 +78,8 @@ The `codeContext` attribute is used in the following way:
 
 The `location` attribute is used in the following way:
 
-* The value of `location` is split into one mandatory segment and three conditional segments having the following values `<document id>|||(<line:column>)|||(<xpath expression>)|||(<business rule unique identifier>)`.
+* The value of `location` is split into one mandatory segment and three conditional segments (placed in parentheses) and have the following values, where `|||` act as segment delimiter: 
+`<document id>(|||<line:column>)(|||<xpath expression>)(|||<business rule unique identifier>)`
  	* `<document id>` is the DocumentEntry.uniqueId - see ["IHE IT Infrastructure (ITI TF-3) "](http://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol3.pdf) *(section 4.2.3.2.26)*
 	* `<line:column>` is the line and column in the CDA document where the error is detected - this is present only when `<validation type>` is XSD.
 	* `<xpath expression>` is the conditional segment containing an XPath expression pointing into the document where the error is detected - this is present only when `<validation type>` is SCHEMATRON or BUSINESS_RULE.
