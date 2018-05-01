@@ -131,6 +131,8 @@ The `codeContext` attribute is used in the following way:
             * |||External Episode of Care `<param1>` found in the registry, but it is not part of set `<param2>`|||`<param1>`|||`<param2>`
         * EOC_ALREADY_EXISTS
             * |||Episode of Care `<param1>` already exists in the registry|||`<param1>`
+        * EOC_SELF_REFERENCE
+            * |||Episode of Care `<param1>` has an Episode Of Care Reference that points to itself|||`<param1>`
         * INTERNAL_ENCOUNTER_NOT_FOUND
             * |||Internal Encounter `<param1>` not found|||`<param1>`
         * EXTERNAL_ENCOUNTER_NOT_FOUND
