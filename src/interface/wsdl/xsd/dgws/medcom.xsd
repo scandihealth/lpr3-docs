@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8'?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd" elementFormDefault="qualified" targetNamespace="http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd" version="1.0">
+
+  <xs:element name="FaultCode" type="xs:string"/>
+
+  <xs:element name="FlowID" type="xs:string"/>
+
+  <xs:element name="FlowStatus" type="xs:string"/>
+
+  <xs:element name="Header" type="tns:header"/>
+
+  <xs:element name="InResponseToMessageID" type="xs:string"/>
+
+  <xs:element name="Linking">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FlowID" type="xs:string"/>
+        <xs:element name="MessageID" type="xs:string"/>
+        <xs:element minOccurs="0" name="InResponseToMessageID" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="MessageID" type="xs:string"/>
+
+  <xs:element name="Priority" type="xs:string"/>
+
+  <xs:element name="RequireNonRepudiationReceipt" type="xs:string"/>
+
+  <xs:element name="SecurityLevel" type="xs:int"/>
+
+  <xs:element name="TimeOut" type="xs:string"/>
+
+  <xs:complexType name="header">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SecurityLevel" type="tns:securityLevel"/>
+      <xs:element minOccurs="0" name="TimeOut" type="tns:timeout"/>
+      <xs:element ref="tns:Linking"/>
+      <xs:element minOccurs="0" name="FlowStatus" type="tns:flowStatus"/>
+      <xs:element minOccurs="0" name="Priority" type="tns:priority"/>
+      <xs:element minOccurs="0" name="RequireNonRepudiationReceipt" type="tns:yesNo"/>
+    </xs:sequence>
+    <xs:anyAttribute namespace="##other" processContents="skip"/>
+  </xs:complexType>
+
+  <xs:simpleType name="flowStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="flow_running"/>
+      <xs:enumeration value="flow_finalized_succesfully"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="securityLevel">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+      <xs:enumeration value="3"/>
+      <xs:enumeration value="4"/>
+      <xs:enumeration value="5"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="timeout">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="5"/>
+      <xs:enumeration value="30"/>
+      <xs:enumeration value="480"/>
+      <xs:enumeration value="1440"/>
+      <xs:enumeration value="unbound"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="priority">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AKUT"/>
+      <xs:enumeration value="HASTER"/>
+      <xs:enumeration value="RUTINE"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="yesNo">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="yes"/>
+      <xs:enumeration value="no"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
