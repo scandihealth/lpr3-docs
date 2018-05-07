@@ -24,3 +24,7 @@ Edges in the reachability relation of the issue transitive closure are
  * encounter -> observation organizer
  * procedure -> observation organizer
  * observation organizer -> observation
+ 
+## Procedure
+>  Activity intended directly or indirectly to improve or maintain a health state
+See [Begrebsbasen](http://sundhedsdata.iterm.dk/?TermId=1853&SrcLang=da&TrgLang=en).
