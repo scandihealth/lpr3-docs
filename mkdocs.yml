@@ -2,11 +2,14 @@ docs_dir: src
 site_name: Landspatientregisteret 3 - Technical documentation
 pages:
 - Home: index.md
+- Definitions: definitions.md
 - Governace: governance.md
 - Documentation:
   - Interface aspects and usage: aspects.md
   - Submission scheme: submission-scheme.md
-- Interface definition: interfacedefinitions.md
+- Interfaces:
+  - XDR: interface/xdr.md
+  - Accumulated error list: interface/accumulated-error-list.md
 - Test environment: testenvironment.md
 - Development resources: developmentresources.md
 - Examples: examples.md  
