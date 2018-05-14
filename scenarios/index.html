@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Test environment - Landspatientregisteret 3 - Technical documentation</title>
+  <title>Scenarios - Landspatientregisteret 3 - Technical documentation</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -19,9 +19,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Test environment";
-    var mkdocs_page_input_path = "testenvironment.md";
-    var mkdocs_page_url = "/testenvironment/index.html";
+    var mkdocs_page_name = "Scenarios";
+    var mkdocs_page_input_path = "scenarios.md";
+    var mkdocs_page_url = "/scenarios/index.html";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -94,27 +94,9 @@
     </ul>
 	    </li>
           
-            <li class="toctree-l1 current">
+            <li class="toctree-l1">
 		
-    <a class="current" href="index.html">Test environment</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l2"><a href="#test-environment">Test environment</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l3" href="#address">Address</a></li>
-        
-            <li><a class="toctree-l3" href="#nightly-build-deployments">Nightly build deployments</a></li>
-        
-            <li><a class="toctree-l3" href="#weekly-data-purge">Weekly data purge</a></li>
-        
-            <li><a class="toctree-l3" href="#rules-implemented-on-test-system">Rules implemented on Test System</a></li>
-        
-        </ul>
-    
-
-    </ul>
+    <a class="" href="../testenvironment/index.html">Test environment</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -122,9 +104,21 @@
     <a class="" href="../developmentresources/index.html">Development resources</a>
 	    </li>
           
-            <li class="toctree-l1">
+            <li class="toctree-l1 current">
 		
-    <a class="" href="../scenarios/index.html">Scenarios</a>
+    <a class="current" href="index.html">Scenarios</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#scenarios">Scenarios</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#scenarie-1-udredning-af-patient-henvist-fra-frrne">Scenarie 1 - Udredning af patient henvist fra Færørne</a></li>
+        
+        </ul>
+    
+
+    </ul>
 	    </li>
           
             <li class="toctree-l1">
@@ -164,10 +158,10 @@
     
       
     
-    <li>Test environment</li>
+    <li>Scenarios</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/scandihealth/lpr3-docs/edit/master/src/testenvironment.md"
+        <a href="https://github.com/scandihealth/lpr3-docs/edit/master/src/scenarios.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -177,26 +171,31 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="test-environment">Test environment</h1>
-<p>DXC hosts a test environment that integrators can use do finalize their solution.</p>
-<h2 id="address">Address</h2>
-<p>Accessing the test environment requires access to the <a href="https://www.medcom.dk/opslag/support">Sundhedsdatanettet (SDN)</a>.<br />
-The following three endpoint are available.</p>
-<ul>
-<li><a href="https://lprws-test.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareSaveIfNoErrorsReportingService">Save if no errors</a></li>
-<li><a href="https://lprws-test.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareReportingService">Save with errors</a></li>
-<li><a href="https://lprws-test.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareValidateReportingService">Validate</a></li>
-</ul>
-<h2 id="nightly-build-deployments">Nightly build deployments</h2>
-<p>To increase velocity and success DXC will continuously deliver new versions of the LPR3 solution.<br />
-As such DXC may deploy new builds on a nightly basis.<br />
-New deployments will be notified through GitHub no later than end of business day before nightly deploy.</p>
-<h2 id="weekly-data-purge">Weekly data purge</h2>
-<p>As the test progresses and issues are resolved, it may be necessary to delete data in the test enviroment.<br />
-Therefore, DXC may purge data during weekends.<br />
-Data purges will be notified through GitHub no later than friday end of business day.</p>
-<h2 id="rules-implemented-on-test-system">Rules implemented on Test System</h2>
-<p>The document <a href="../res/Regel-liste incl fejltekst.xlsx">Rules implemented on test system</a> contains a full list of rules from the Indberetningsvejledning implemented on the environment at any given time.</p>
+                <h1 id="scenarios">Scenarios</h1>
+<p>The following scenarios can assist reporting authorities to test end-to-end conformance with "lægers anmeldelse til Landspatientregisteret af behandling udført på private sygehuse og klinikker og af mandlige omskæringer udført uden for sygehuse og klinikker."</p>
+<h2 id="scenarie-1-udredning-af-patient-henvist-fra-frrne">Scenarie 1 - Udredning af patient henvist fra Færørne</h2>
+<p>Det følgende scenarie er en kladde.</p>
+<h3 id="henvisning-dag-1">Henvisning - dag 1</h3>
+<p>Færøingen Brandur Jákupsson med personnummer 080272313 bor sammen med sin kone og to døtre i deres hus på Steigabrekka 201 i Sandavágur, FO 360.
+Brandurs lider af hukommelsestab, stærkt ændret personadfærd og svære hovedpiner.<br />
+Neurologisk amb. på Landssjúkráhúsið henviser Brandur til Danmark med formodning om personligheds- og adfærdsforstyrrelser som følge af sygdom, skade eller dysfunktion af hjerne. I henvisningen oplyses forløbsid <code>bfd13011-90ac-58ed-abe0-42219f7269fe</code>.</p>
+<h3 id="neurologisk-udredning-dag-6">Neurologisk udredning - dag 6</h3>
+<p>En neurolog tilser Brandur og Brandur og indleder et kræftpakkeforløb med "begrundet mistanke om kræft i hjernen"
+Brandur indlægges akut på neurologisk afdeling.
+Brandur henvises til radiologi for MR scanning.
+MR scanningen finder sted samme dag og bestyrker mistanken om primær kræft i hjernen.
+Brandur viderehenvises til neurokirurgisk afdeling.</p>
+<h3 id="neurokirurgisk-udredning-dag-7">Neurokirurgisk udredning - dag 7</h3>
+<p>Neurokirurgen gennemgår Brandurs sygehistorie, foretager en klinisk undersøgelse, gennemgår og informerer Brandur om de billeddiagnostiske
+fund, den formodede kræft i hjernens tindingelap og behandling.
+Neurokirurgen henviser til radiologi mhp. at foretage en ekstra MR-scanning til anvendelse af Computer-Assisted Navigation under operationen.</p>
+<h3 id="operation">Operation</h3>
+<h3 id="onkologisk-behandling">Onkologisk behandling</h3>
+<p>Brandurs 3-grads tumor behandles ved stråleterapi dagligt de næste 6 uger. Efter afsluttet strålebehandling holdes pause
+i fire uger, hvorefter kemoterapi med temozolamid optages og gives over fem dage i tabletform.
+Kemoterapien gentages hver fjerde uge med i alt seks behandlingsserier.</p>
+<h3 id="dd">Død</h3>
+<p>På vej hjem til Færøerne omkommer Brandur i en flyulykke.</p>
               
             </div>
           </div>
@@ -204,10 +203,10 @@ Data purges will be notified through GitHub no later than friday end of business
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../developmentresources/index.html" class="btn btn-neutral float-right" title="Development resources">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../examples/index.html" class="btn btn-neutral float-right" title="Examples">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../interface/accumulated-error-list/index.html" class="btn btn-neutral" title="Accumulated error list"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../developmentresources/index.html" class="btn btn-neutral" title="Development resources"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -235,10 +234,10 @@ Data purges will be notified through GitHub no later than friday end of business
           <a href="https://github.com/scandihealth/lpr3-docs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../interface/accumulated-error-list/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../developmentresources/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../developmentresources/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../examples/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
