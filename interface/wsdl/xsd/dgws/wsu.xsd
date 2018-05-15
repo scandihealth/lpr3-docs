@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" elementFormDefault="qualified" targetNamespace="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+	<xs:element name="Timestamp">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="wsu:Created"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Created" type="xs:dateTime"/>
+</xs:schema>

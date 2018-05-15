@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8'?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd" elementFormDefault="qualified" targetNamespace="http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd" version="1.0">
+
+  <xs:element name="Assertion" type="tns:AssertionType"/>
+
+  <xs:element name="Attribute">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="AttributeValue" type="xs:string"/>
+      </xs:sequence>
+      <xs:attribute name="Name" type="tns:nameConstraint" use="required"/>
+      <xs:attribute name="NameFormat" type="tns:subjectIdentifierType" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="AttributeValue" type="xs:string"/>
+
+  <xs:element name="HsuidHeader" type="tns:hsuidHeader"/>
+
+  <xs:element name="Issuer" type="xs:string"/>
+
+  <xs:complexType name="AssertionType">
+    <xs:sequence>
+      <xs:element name="Issuer" type="xs:NCName"/>
+      <xs:element name="AttributeStatement">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element maxOccurs="unbounded" ref="tns:Attribute"/>
+          </xs:sequence>
+          <xs:attribute name="id" type="tns:attributeStatementId" use="required"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="IssueInstant" type="xs:dateTime" use="required"/>
+    <xs:attribute name="Version" type="xs:decimal" use="required"/>
+    <xs:attribute name="id" type="tns:assertionTypeId" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="hsuidHeader">
+    <xs:sequence>
+      <xs:element name="Assertion" type="tns:AssertionType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:simpleType name="nameConstraint">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="nsi:UserType"/>
+      <xs:enumeration value="nsi:ActingUserCivilRegistrationNumber"/>
+      <xs:enumeration value="nsi:ResponsibleUserCivilRegistrationNumber"/>
+      <xs:enumeration value="nsi:ResponsibleUserAuthorizationCode"/>
+      <xs:enumeration value="nsi:OrgUsingID"/>
+      <xs:enumeration value="nsi:ConsentOverride"/>
+      <xs:enumeration value="nsi:SystemOwnerName"/>
+      <xs:enumeration value="nsi:SystemName"/>
+      <xs:enumeration value="nsi:SystemVersion"/>
+      <xs:enumeration value="nsi:OrgResponsibleName"/>
+      <xs:enumeration value="nsi:CitizenCivilRegistrationNumber"/>
+      <xs:enumeration value="nsi:CitizenUserRelation"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="subjectIdentifierType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="nsi:ynumber"/>
+      <xs:enumeration value="nsi:skskode"/>
+      <xs:enumeration value="nsi:sor"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="attributeStatementId">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="HSUIDdata"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="assertionTypeId">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="HSUID"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

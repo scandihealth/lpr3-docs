@@ -1,0 +1,194 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+             xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:rs="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0"
+             xmlns:medcom="http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd"
+             xmlns:ihe="urn:ihe:iti:xds-b:2007"
+             xmlns:hsuid="http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd"
+             xmlns:lpr="urn:lpr"
+             xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+             name="DocumentRepository"
+             targetNamespace="urn:ihe:iti:xds-b:2007">
+
+    <documentation>IHE XDR Service with national SSI additions
+    </documentation>
+    <types>
+
+        <!-- Danish national extensions start -->
+
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                    xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+                    xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                    xmlns:rs="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0"
+                    xmlns:medcom="http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd"
+                    xmlns:ihe="urn:ihe:iti:xds-b:2007" xmlns:hsuid="http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd"
+                    xmlns="http://schemas.xmlsoap.org/wsdl/"
+                    targetNamespace="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+            <xsd:include
+                schemaLocation="xsd/dgws/wsse.xsd"/>
+
+        </xsd:schema>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                    xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+                    xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                    xmlns:rs="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0"
+                    xmlns:medcom="http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd"
+                    xmlns:ihe="urn:ihe:iti:xds-b:2007" xmlns:hsuid="http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd"
+                    xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:oasis:names:tc:SAML:2.0:assertion">
+            <xsd:include
+                schemaLocation="xsd/dgws/saml.xsd"/>
+
+        </xsd:schema>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                    xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+                    xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                    xmlns:rs="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0"
+                    xmlns:medcom="http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd"
+                    xmlns:ihe="urn:ihe:iti:xds-b:2007" xmlns:hsuid="http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd"
+                    xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd">
+            <xsd:include
+                schemaLocation="xsd/dgws/medcom.xsd"/>
+
+        </xsd:schema>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                    xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+                    xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                    xmlns:rs="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0"
+                    xmlns:medcom="http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd"
+                    xmlns:ihe="urn:ihe:iti:xds-b:2007" xmlns:hsuid="http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd"
+                    xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd">
+            <xsd:include
+                schemaLocation="xsd/hsuid/hsuid-1_1.xsd"/>
+
+            <!-- Danish national extensions stop -->
+
+        </xsd:schema>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                    xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+                    xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                    xmlns:rs="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0"
+                    xmlns:medcom="http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd"
+                    xmlns:ihe="urn:ihe:iti:xds-b:2007" xmlns:hsuid="http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd"
+                    xmlns="http://schemas.xmlsoap.org/wsdl/" elementFormDefault="qualified"
+                    targetNamespace="urn:ihe:iti:xds-b:2007">
+            <xsd:include
+                schemaLocation="../schema/IHE/XDS.b_DocumentRepository.xsd"/>
+
+        </xsd:schema>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                    xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+                    xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                    xmlns:rs="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0"
+                    xmlns:medcom="http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd"
+                    xmlns:ihe="urn:ihe:iti:xds-b:2007" xmlns:hsuid="http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd"
+                    xmlns="http://schemas.xmlsoap.org/wsdl/" elementFormDefault="qualified"
+                    targetNamespace="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0">
+            <xsd:include
+                schemaLocation="../schema/ebRS/rs.xsd"/>
+
+        </xsd:schema>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                    xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+                    xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                    xmlns:rs="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0"
+                    xmlns:medcom="http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd"
+                    xmlns:ihe="urn:ihe:iti:xds-b:2007" xmlns:hsuid="http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd"
+                    xmlns="http://schemas.xmlsoap.org/wsdl/" elementFormDefault="qualified"
+                    targetNamespace="urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0">
+            <xsd:include
+                schemaLocation="../schema/ebRS/query.xsd"/>
+
+        </xsd:schema>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                    xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+                    xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                    xmlns:rs="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0"
+                    xmlns:medcom="http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd"
+                    xmlns:ihe="urn:ihe:iti:xds-b:2007"
+                    xmlns:hsuid="http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd" xmlns="http://schemas.xmlsoap.org/wsdl/"
+                    elementFormDefault="qualified" targetNamespace="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0">
+            <xsd:include
+                schemaLocation="../schema/ebRS/lcm.xsd"/>
+
+        </xsd:schema>
+        <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                    xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+                    xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                    xmlns:rs="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0"
+                    xmlns:medcom="http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd"
+                    xmlns:ihe="urn:ihe:iti:xds-b:2007"
+                    xmlns:hsuid="http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd" xmlns="http://schemas.xmlsoap.org/wsdl/"
+                    elementFormDefault="qualified" targetNamespace="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0">
+            <xsd:include
+                schemaLocation="../schema/ebRS/rim.xsd"/>
+
+        </xsd:schema>
+
+        <xsd:schema targetNamespace="urn:lpr">
+            <xsd:include schemaLocation="xsd/lpr/lpr.xsd"/>
+        </xsd:schema>
+    </types>
+    <message name="SecurityHeader">
+        <part element="wsse:Security" name="security_header">
+        </part>
+    </message>
+    <message name="MedcomHeader">
+        <part element="medcom:Header" name="medcom_header">
+        </part>
+    </message>
+    <message name="ProvideAndRegisterDocumentSet-b_Message">
+        <documentation>Provide and Register Document Set</documentation>
+        <part element="ihe:ProvideAndRegisterDocumentSetRequest" name="body"></part>
+    </message>
+    <message name="ProvideAndRegisterDocumentSet-bResponse_Message">
+        <documentation>Provide And Register Document Set Response
+        </documentation>
+        <part element="rs:RegistryResponse" name="body"></part>
+    </message>
+    <message name="HsuidHeader">
+        <part element="hsuid:HsuidHeader" name="hsuid_header">
+        </part>
+    </message>
+    <message  name="LprHeader">
+        <part element="lpr:LprHeader" name="lpr_header"></part>
+    </message>
+    <portType name="DocumentRepository_PortType">
+        <operation name="DocumentRepository_ProvideAndRegisterDocumentSet-b">
+            <input message="ihe:ProvideAndRegisterDocumentSet-b_Message"
+                   wsaw:Action="urn:ihe:iti:2007:ProvideAndRegisterDocumentSet-b"></input>
+            <output message="ihe:ProvideAndRegisterDocumentSet-bResponse_Message"
+                    wsaw:Action="urn:ihe:iti:2007:ProvideAndRegisterDocumentSet-bResponse"></output>
+        </operation>
+    </portType>
+    <binding name="DocumentRepository_Binding" type="ihe:DocumentRepository_PortType">
+        <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="DocumentRepository_ProvideAndRegisterDocumentSet-b">
+            <soap12:operation soapAction="urn:ihe:iti:2007:ProvideAndRegisterDocumentSet-b"></soap12:operation>
+            <input>
+                <soap12:header message="ihe:SecurityHeader" part="security_header"
+                               use="literal"></soap12:header>
+                <soap12:header message="ihe:MedcomHeader" part="medcom_header"
+                               use="literal"></soap12:header>
+                <soap12:header message="ihe:HsuidHeader" part="hsuid_header"
+                               use="literal"></soap12:header>
+                <soap12:header message="ihe:LprHeader" part="lpr_header"
+                               use="literal"></soap12:header>
+                <soap12:body use="literal"></soap12:body>
+            </input>
+            <output>
+                <soap12:header message="ihe:MedcomHeader" part="medcom_header"
+                               use="literal"></soap12:header>
+                <soap12:body use="literal"></soap12:body>
+            </output>
+        </operation>
+    </binding>
+    <service name="DocumentRepository_Service">
+        <port name="DocumentRepository_Port_Soap12" binding="ihe:DocumentRepository_Binding">
+            <soap:address location="https://localhost:8080/cda-ws/DocumentRepository_Service/PatientHealthcareReportingService"/>
+        </port>
+    </service>
+</definitions>
