@@ -138,8 +138,8 @@
 											<code
 												codeSystemName="Sundhedsvæsenets Klassifikations System"
 												codeSystem="1.2.208.176.2.4"
-												displayName="Tumorer i hjerne- og rygmarvshinder af usikker og ukendt karakter"
-												code="DD42" />
+												displayName="Ikke specificeret tumor med ikke nærmere specificeret lokalisation i hjerne- eller rygmarvshinde"
+												code="DD429" />
 											<entryRelationship typeCode="COMP">
 												<act classCode="REG" moodCode="EVN">
 													<templateId root="1.2.208.176.7.1.10.5" />
