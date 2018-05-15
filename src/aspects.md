@@ -143,67 +143,97 @@ The value of `location` is split into 1 mandatory segment and 3 conditional segm
     * Example: `sds:lpr:3.0.0|||01.01` has the maven coordinate sds:lpr:3.0.0 and the rule name 01.01
 
 ###Data integrity rules
-* The following is a complete list of all `INTEGRITY_CHECK` errors (line breaks and sub bullets are inserted for readability only in this documentation):
+* The following is a complete list of all `INTEGRITY_CHECK` errors:
     * AUTHOR_INSTITUTION_NOT_FOUND
-        * |||The submission set must have an authorInstitution
+        * The submission set must have an ihe-xdr Classification/Slot element with an authorInstitution attribute
     * CUSTODIAN_NOT_FOUND
-        * |||Author/custodian is not matching registered relation
+        * Author/custodian is not matching registered relation
     * CLINICAL_DOCUMENT_NOT_FOUND
-        * |||The submission must have at least 1 ClinicalDocument
+        * The submission must have at least 1 ClinicalDocument
     * CLINICAL_DOCUMENT_ID_NOT_FOUND
-        * |||ClinicalDocument must have an id
+        * ClinicalDocument must have an id
     * PARENT_DOCUMENT_ID_MISMATCH
-        * |||parentDocument extension `<param1>` must be same as extension of latest document in the set, which is `<param2>`|||`<param1>`|||`<param2>`
+        * parentDocument extension `<parentDocumentId>` must be same as extension of latest document in the set, which is `<latestDocumentId>`
+        * Example `<parentDocumentId>`: 4897340c-187d-4314-b38d-1b7110d64cae
+        * Example `<latestDocumentId>`: 3515058a-74a9-484f-adb6-d07378349012
     * PARENT_DOCUMENT_VERSION_MISMATCH
-        * |||parentDocument version `<param1>` must be same as version of latest document in the set, which is `<param2>`|||`<param1>`|||`<param2>`
+        * parentDocument version `<parentDocumentVersion>` must be same as version of latest document in the set, which is `<latestDocumentVersion>`
+        * Example `<parentDocumentVersion>`: 1
+        * Example `<latestDocumentVersion>`: 2
     * SET_ID_NOT_FOUND
-        * |||ClinicalDocument must have a setId
+        * ClinicalDocument must have a setId
     * SET_NOT_FOUND
-        * |||Set with id `<param1>` not found in registry. Set must already exist when ClinicalDocument contains a relatedDocument|||`<param1>`
+        * Set with id `<setId>` not found in registry. Set must already exist when ClinicalDocument contains a relatedDocument
+        * Example `<setId>`: ef0893de-88fe-4ecd-acf0-69498b5e8f35
     * SET_ALREADY_EXISTS_AND_NO_RELATED_DOCUMENT
-        * |||Set with id `<param1>` already exists in the registry, and ClinicalDocument does not contain a relatedDocument|||`<param1>`
+        * Set with id `<setId>` already exists in the registry, and ClinicalDocument does not contain a relatedDocument
+        * Example `<setId>`: ef0893de-88fe-4ecd-acf0-69498b5e8f35
     * NO_PATIENT_ID_IN_COMMON
-        * |||patientRole must have either a CPR number (templateId `<param1>`), alternative identification (templateId `<param2>`), or both (templateId `<param3>`)|||`<param1>`|||`<param2>`|||`<param3>`
+        * All CDA documents must have at least 1 patientRole id in common
     * SKS_CODE_NOT_FOUND
-        * |||SKS kode `<param1>` not found from `<param2>` to `<param3>`|||`<param1>`|||`<param2>`|||`<param3>`
+        * SKS kode `<kode>` not found from `<fromDate>` to `<toDate>`
+        * Example `<kode>`: DD42
+        * Example `<fromDate>`: 2017-02-23T14:00+02:00
+        * Example `<toDate>`: 2017-02-23T14:00+02:00
     * SOR_IDENTIFIER_EXPECTED
-        * |||SOR identifier expected: participant with templateIds `<param1>` does not have a participantRole with a scopingEntity that contains an id with root `<param2>`|||`<param1>`|||`<param2>`
+        * SOR identifier expected: participant with templateIds `<templateIds>` does not have a participantRole with a scopingEntity that contains an id with root `<SOR_OID>`
+        * Example `<templateIds>`: 1.1.1,2.2.2,3.3.3
+        * Example `<SOR_OID>`: 1.2.208.176.1.1
     * SOR_IDENTIFIER_INVALID
-        * |||SOR identifier `<param1>` could not be parsed to a long|||`<param1>`
+        * SOR identifier `<invalidIdentifier>` could not be parsed to a long
+        * Example `<invalidIdentifier>`: 276231000016004x 
     * SOR_ORG_UNIT_NOT_FOUND
-        * |||SOR Organizational Unit with SorIdentifier `<param1>` not found in the registry|||`<param1>`
+        * SOR Organizational Unit with SorIdentifier `<sorIdentifier>` not found in the registry
+        * Example `<sorIdentifier>`: 276231000016004
     * MYNDIGHED_CODE_NOT_FOUND
-        * |||Myndighedskode `<param1>` not found in the registry|||`<param1>`
+        * Myndighedskode `<kode>` not found in the registry
+        * Example `<kode>`: 0750
     * INTERNAL_EOC_NOT_FOUND
-        * |||Internal Episode of Care `<param1>` not found|||`<param1>`
+        * Internal Episode of Care `<extension>` not found
+        * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245 
     * EXTERNAL_EOC_NOT_FOUND
-        * |||External Episode of Care `<param1>` not found|||`<param1>`
+        * External Episode of Care `<extension>` not found
+        * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245
     * EXTERNAL_EOC_NOT_PART_OF_SET
-        * |||External Episode of Care `<param1>` found in the registry, but it is not part of set `<param2>`|||`<param1>`|||`<param2>`
+        * External Episode of Care `<extension>` found in the registry, but it is not part of set `<setId>`
+        * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245
+        * Example `<setId>`: b70c5c70-11bd-42bc-a343-9730be53d385
     * EOC_ALREADY_EXISTS
-        * |||Episode of Care `<param1>` already exists in the registry|||`<param1>`
+        * Episode of Care `<extension>` already exists in the registry
+        * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245
     * EOC_SELF_REFERENCE
-        * |||Episode of Care `<param1>` has an Episode Of Care Reference that points to itself|||`<param1>`
+        * Episode of Care `<extension>` has an Episode Of Care Reference that points to itself
+        * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245
     * INTERNAL_ENCOUNTER_NOT_FOUND
-        * |||Internal Encounter `<param1>` not found|||`<param1>`
+        * Internal Encounter `<extension>` not found
+        * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245
     * EXTERNAL_ENCOUNTER_NOT_FOUND
-        * |||External Encounter `<param1>` not found|||`<param1>`
+        * External Encounter `<extension>` not found
+        * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245
     * ENCOUNTER_ALREADY_EXISTS
-        * |||Encounter `<param1>` already exists in the registry|||`<param1>`
+        * Encounter `<extension>` already exists in the registry
+        * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245
     * EXTERNAL_OBSERVATION_ORGANIZER_NOT_FOUND
-        * |||External Observation Organizer `<param1>` not found|||`<param1>`
+        * External Observation Organizer `<extension>` not found
+        * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245
     * EXTERNAL_CONDITION_OBSERVATION_NOT_FOUND
-        * |||External Condition Observation `<param1>` not found|||`<param1>`
+        * External Condition Observation `<extension>` not found
+        * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245
     * EXTERNAL_PROCEDURE_NOT_FOUND
-        * |||External Procedure `<param1>` not found|||`<param1>`
+        * External Procedure `<extension>` not found
+        * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245
     * PROCEDURE_ALREADY_EXISTS
-        * |||Procedure `<param1>` already exists in the registry|||`<param1>`
+        * Procedure `<extension>` already exists in the registry
+        * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245
     * CONDITION_OBSERVATION_ALREADY_EXISTS
-        * |||Condition Observation `<param1>` already exists in the registry|||`<param1>`
+        * Condition Observation `<extension>` already exists in the registry
+        * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245
     * OBSERVATION_ORGANIZER_ALREADY_EXISTS
-        * |||Observation Organizer `<param1>` already exists in the registry|||`<param1>`
+        * Observation Organizer `<extension>` already exists in the registry
+        * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245
     * OBSERVATION_ORGANIZER_HAS_NO_REFERENCE
-        * |||Observation Organizer `<param1>` has no Episode of Care, Encounter, Episode Of Care Marker, Condition Observation, Procedure Act, Procedure Observation or Procedure Procedure reference or entryRelationship|||`<param1>`
+        * Observation Organizer `<extension>` has no Episode of Care, Encounter, Episode Of Care Marker, Condition Observation, Procedure Act, Procedure Observation or Procedure Procedure reference or entryRelationship
+        * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245
 
 ## Supported reporting strategies
 Submission of reports from a client perspective can be carried out as either synchronous reporting or asynchronous reporting. In a synchronous reporting scenario, the client submitting the reports is immediately made aware of any errors that are present and either all reports are accepted or none at all, aka. transactions. Because of this nature, reported bundles should be kept as small and atomic as possible. This is also alligned with the strict nature of IHE XDR [Batch oriented reporting](#batch-oriented-reporting). In an asynchronous reporting scenario, the client submitting the reports will immediatly receive errors from level 1 and level 2 (see [What rules apply and what errors can be reported and how](#what-rules-apply-and-what-errors-can-be-reported-and-how)). If no errors are present on level 1 and level 2 the submission is preapproved for further processing and the client will receive a positive receipt. If errors are found at level 3 in the given asynchronous submission the error(s) will available in the [accumulated error list](interface/accumulated-error-list.md).
