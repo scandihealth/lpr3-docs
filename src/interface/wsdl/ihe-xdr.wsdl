@@ -1,12 +1,3 @@
-# Clinical Document Architecture LPR3 definition
-The specific design details of LPR3 based on Clinical Document Architecture (CDA) is documented at [ART-DECOR](http://lpr-art-decor.westeurope.cloudapp.azure.com:8080/art-decor/decor-project--lpr-)
-
-## IHE XDR WSDL with national SSI additions
-The following section shows the IHE XDR WSDL with the danish national SSI additions.
-
-The raw WSDL file can be found [here](/interface/wsdl/ihe-xdr.wsdl) and the schema for the `urn:lpr` name space can be found [here](/interface/wsdl/xsd/lpr/lpr.xsd).
-
-```xml
 <?xml version='1.0' encoding='UTF-8'?>
 
 <definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -197,8 +188,7 @@ The raw WSDL file can be found [here](/interface/wsdl/ihe-xdr.wsdl) and the sche
     </binding>
     <service name="DocumentRepository_Service">
         <port name="DocumentRepository_Port_Soap12" binding="ihe:DocumentRepository_Binding">
-            <soap:address location="http://localhost:8080/cda-ws/DocumentRepository_Service/PatientHealthcareReportingService"/>
+            <soap:address location="https://localhost:8080/cda-ws/DocumentRepository_Service/PatientHealthcareReportingService"/>
         </port>
     </service>
 </definitions>
-```

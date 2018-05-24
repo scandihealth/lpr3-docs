@@ -16,7 +16,7 @@ All reported documents (initial state and corrections) must be versioned using C
 
 Note: *Replace* will replace all previous documents and addendums.
 
-This stated use of id, setId and versionNumber ensures that no updates to documents are appended in the wrong order - a refinement of what is stated in sections 4.2.1.7, 4.2.1.8 and 4.2.3.1 - *"Note that version number must be incremented by one when a report is replaced, but can also be incremented more often to meet local requirements."* - [CDA R2](http://www.hl7.org/implement/standards/product_brief.cfm?product_id=7)).
+This stated use of id, setId and versionNumber ensures that no updates to documents are appended in the wrong order - a refinement of what is stated in sections 4.2.1.7, 4.2.1.8 and 4.2.3.1 - *"Note that version number must be incremented by one when a report is replaced, but can also be incremented more often to meet local requirements."* - [CDA R2](http://www.hl7.org/implement/standards/product_brief.cfm?product_id=7).
 
 .![](/img/L-cda_figure1-changed.png)
 
@@ -31,18 +31,23 @@ This stated use of id, setId and versionNumber ensures that no updates to docume
 ## What rules apply and what errors can be reported and how
 All documents submitted to LPR3 are validated at the following levels:
 
- 1. Execute schema validation (XSD) according to CDA R2 standard.
- 2. Execute schematron validation (SHCEMATRON) according to the profile specificed at the ART-DECOR site
- 3. Execute drools validation rules aka. business rules (BUSINESS_RULE).
+ 1. Execute schema validation (`XSD`) according to CDA R2 standard
+ 2. Execute schematron validation (`SHCEMATRON`) according to the profile specificed at the ART-DECOR site
+ 3. Execute data coherency/conformity validation (`INTEGRITY_CHECK`)
+ 4. Execute drools validation rules AKA business rules (`BUSINESS_RULE`)
 
-![](https://www.websequencediagrams.com/cgi-bin/cdraw?lz=dGl0bGUgVmFsaWRhdGlvbiBzZXF1ZW5jZQoKUmVnaW9uYWwgRUhSLT5MUFIzIFdTOiBJSEUgWERSIFBuUiBDREEtREsKbm90ZSBsZWZ0IG9mIAAgCWViWE1MIGFuZCBER1dTIHYAWwkKb3B0IFByb3RvY29sIGZhaWx1cmUKICAgADQILS0-AHEMOiBJbmNvcnJlY3QgdXNlIG9mAIEABQBRBVBuUiB0cmFuc2FjAFYFZW5kAIEJBm92ZXIAgQMJAIFUDHRlcCAxCgBiCD4AgXALRW5naW5lOiBTY2hlbWEgYXNzZXJ0aW9ucwoAFBEtAIIHClJlcG9ydGVkIGVycm9ycwCBWAVMYWNraW5nIHMARAZjb25mb3JtYW5jAIFJHkRvY3VtZW50IGRvZXMgbm90IGNvbXBseSB3aXRoIHRoZSBzdGFuZGFyZABTB3MAgUknMgCBTSN0cm9uAIEqSgBJBQCBLUsAgRoJAIFLKDMAg0YdQnVzaW5lc3MgcnVsZXMAgzM4AIUXGEFja25vd2xlZGdlAINKBWFuZACFdAsgcgCELQUKCgo&s=qsd)
+![](https://www.websequencediagrams.com/cgi-bin/cdraw?lz=dGl0bGUgVmFsaWRhdGlvbiBzZXF1ZW5jZQoKUmVnaW9uYWwgRUhSLT5MUFIzIFdTOiBJSEUgWERSIFBuUiBDREEtREsKbm90ZSBsZWZ0IG9mIAAgCWViWE1MIGFuZCBER1dTIHYAWwkKb3B0IFByb3RvY29sIGZhaWx1cmUKICAgADQILS0-AHEMOiBJbmNvcnJlY3QgdXNlIG9mAIEABQBRBVBuUiB0cmFuc2FjAFYFZW5kAIEJBm92ZXIAgQMJAIFUDHRlcCAxCgBiCD4AgXALRW5naW5lOiBTY2hlbWEgYXNzZXJ0aW9ucwoAFBEtAIIHClJlcG9ydGVkIGVycm9ycwCBWAVMYWNraW5nIHMARAZjb25mb3JtYW5jAIFJHkRvY3VtZW50IGRvZXMgbm90IGNvbXBseSB3aXRoIHRoZSBzdGFuZGFyZABTB3MAgUknMgCBTSN0cm9uAIEqSgBJBQCBLUsAgRoJAIFLKDMAg0YdRGF0YSBpbnRlZ3JpdHkgY2hlY2sAgy06ZAA_DwCDPzBicmVha3MgcmVnaXN0cnkAgQ8KAIUoJzQAhTIdQnVzaW5lc3MgcnVsZXMAhR84AIcDGEFja25vd2xlZGdlAIU2BWFuZACHYAsgcgCGGQUKCgo&s=qsd)
 
-Errors in submitted documents can be found at any of the levels stated above. If a document fails to meet level 1, no further processing will be conducted and a report will be returned stating the errors on level 1 in <b>ebXML</b>-format as used in IHE XDR. The same is true for level 2: If a document fails to meet level 2, no further processing will be conducted. If errors are found at level 3, the continued processing is dependent on the endpoint called (see [Service endpoint setup](https://scandihealth.github.io/lpr3-docs/aspects/index.html#service-endpoint-setup). 
+Errors in submitted documents can be found at any of the levels stated above. If a document fails to meet level 1, 2, or 3, no further processing will be conducted and a report will be returned stating the errors in <b>ebXML</b>-format as used in IHE XDR. 
+If errors are found at level 4, the continued processing is dependent on the endpoint called (see [service endpoint setup](https://scandihealth.github.io/lpr3-docs/aspects/index.html#service-endpoint-setup)) 
 
-While level 1 is static and level 2 should be considered static (variance can occour in valuesets dependening on the business needs), level 3 is considered dynamic in that sense that business rules are subject to change or be deprecated over time. Level 3 is referred to as <b>"Dyb validering"</b> in the reporting guidelines supplied by <b>Sundhedsdatastyrelsen</b>.
+While level 1 is static and level 2 & level 3 should be considered static (variance can occur in valuesets depending on the business needs), 
+level 4 is considered dynamic in that sense that business rules are subject to change or be deprecated over time. Level 4 is referred to as <b>"Dyb validering"</b> in the reporting guidelines supplied by <b>Sundhedsdatastyrelsen</b>.
 
-All rules are exportable in the formats XSD, Schematron and KIE jar (kjar) files, respectively. The XSD and Schematron files does not include LPR3 assigned error codes - instead, when executed on a document, the XSD and Schematron reported errors will point out exactly where in the document the errors are and what has been violated. That said, XSD reported errors and Schematron reported errors will each be reported within their own category. Below illustrates an example of error codes wrapped in a RegistryResponse according to IHE XDR/XDS ebXml:
+Level 1, 2, and 4 rules are exportable in the formats XSD, Schematron, and KIE jar (kjar) files, respectively. 
+The XSD and Schematron files does not include LPR3 assigned error codes - instead, when executed on a document, the XSD and Schematron reported errors will point out exactly where in the document the errors are and what has been violated. 
 
+Below XML illustrates how the errors at different leves are wrapped in a `RegistryResponse` according to IHE XDR/XDS ebXml:
 ~~~xml
 <rs:RegistryResponse
 	status="urn:oasis:names:tc:ebxml-regrep:ResponseStatusType:Failure">
@@ -56,52 +61,187 @@ All rules are exportable in the formats XSD, Schematron and KIE jar (kjar) files
 		<rs:RegistryError
 			codeContext="SCHEMATRON|||(DKSpecializationLevelAct): The value for code SHALL be selected from value set '1.2.208.176.2.4.18' DK Specialization Level Act Codes (DYNAMIC)."
 			errorCode="InvalidDocumentContent"
-			location="2189b2c3-fa2d-4d8e-9af4-995893b12b39^54abd790-8a4c-4a1d-b41c-8d8749f6913c|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][4]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:entry[namespace-uri()='urn:hl7-org:v3'][1]/*:encounter[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][3]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][1]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]
-			severity="urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error" />
+			location="2189b2c3-fa2d-4d8e-9af4-995893b12b39^54abd790-8a4c-4a1d-b41c-8d8749f6913c|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][4]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:entry[namespace-uri()='urn:hl7-org:v3'][1]/*:encounter[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][3]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][1]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]"
+			severity="urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error"/>
+        <rs:RegistryError
+            codeContext="INTEGRITY_CHECK|||Set with id 2252b2c3-fa2d-4d8e-9af4-995893b12b39 already exists in the registry, and ClinicalDocument does not contain a relatedDocument|||SET_ALREADY_EXISTS_AND_NO_RELATED_DOCUMENT|||2252b2c3-fa2d-4d8e-9af4-995893b12b39"
+            errorCode="InvalidDocumentContent"
+            location="2189b2c3-fa2d-4d8e-9af4-995893b12b39^54abd790-8a4c-4a1d-b41c-8d8749f6913c|||//*[local-name()='ClinicalDocument' and child::*[local-name()='setId' and @root='2252b2c3-fa2d-4d8e-9af4-995893b12b39'] and not(child::*[local-name()='relatedDocument'])]"
+            severity="urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error"/>
 		<rs:RegistryError
-			codeContext="BUSINESS_RULE|||Ved fødsler efter 31.12.1996 skal bidiagnose DUH* findes."
+			codeContext="BUSINESS_RULE|||Hvis der til en diagnose er knyttet en kode for lokalrecidiv, skal diagnosen være en anmeldelsespligtig cancerdiagnose for primær kræft"
 			errorCode="InvalidDocumentContent"
-			location="2189b2c3-fa2d-4d8e-9af4-995893b12b39^54abd790-8a4c-4a1d-b41c-8d8749f6913c|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][4]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:entry[namespace-uri()='urn:hl7-org:v3'][1]/*:encounter[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][3]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][1]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]|||sds:lpr:3.0.0|||00.141"
+			location="2189b2c3-fa2d-4d8e-9af4-995893b12b39^54abd790-8a4c-4a1d-b41c-8d8749f6913c|||//*[child::*[local-name()='id' and @root='9827ad00-ef98-4439-bca5-9503a5b817c8' and @extension='f90b4644-8b5a-4824-972d-a6594cd05959']]|||sds:lpr:3.0.4|||14.102a"
 			severity="urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error" />
 		<rs:RegistryError
 			codeContext="BUSINESS_RULE|||Bidiagnoser skal senest være indrapporteret senest 2 uger efter kontaktens slutningstidspunkt"
 			errorCode="InvalidDocumentContent"
-			location="2189b2c3-fa2d-4d8e-9af4-995893b12b39^54abd790-8a4c-4a1d-b41c-8d8749f6913c|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][4]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:entry[namespace-uri()='urn:hl7-org:v3'][1]/*:encounter[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][3]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][1]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]|||sds:lpr:3.0.0|||00.142"
+			location="2189b2c3-fa2d-4d8e-9af4-995893b12b39^54abd790-8a4c-4a1d-b41c-8d8749f6913c|||//*[child::*[local-name()='id' and @root='9827ad00-ef98-4439-bca5-9503a5b817c8' and @extension='f90b4644-8b5a-4824-972d-a6594cd05959']]|||sds:lpr:3.0.4|||00.142"
 			severity="urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Warning" />
 	</rs:RegistryErrorList>
 </rs:RegistryResponse>
 ~~~
 
-The `codeContext` attribute is used in the following way:
+### Using optional SOAP header to specify integrity error format
+Errors found at level 3 are by default reported on the BUSINESS_RULE format, but with special rules for `codeContext` and `location` values, described in the below sections.  
+It is possible to receive level 3 errors on a dedicated INTEGRITY_CHECK format, which simplifies processing of BUSINESS_RULE by eliminating special cases for `codeContext` and `location` values.  
+  
+The [Clinical Document Architecture LPR3 definition](/interface/xdr)) contains an optional SOAP header `LprHeader` which has an element `UsingIntegrityCheckErrorReporting` of type `boolean`.  
+If this boolean is set to `true`, then level 3 INTEGRITY_CHECK errors are reported using the dedicated INTEGRITY_CHECK format described in the below sections.  
+**We recommend using the dedicated INTEGRITY_CHECK format** for easier machine processing of the various errors returned by the service.
 
- * The value of `codeContext` is split into two mandatory segments separated by `|||` having the values `<validation type>|||<validation text>`. `<validation type>` can be any of the following `XSD`, `SCHEMATRON`, `BUSINESS_RULE`. `<validation text>` contains an explanation of what has been violated in technical terms.
+Here is an example of a request that has set the optional SOAP header element to true.
+~~~xml
+<soapenv:Header>
+    <lpr:LprHeader xmlns:lpr="urn:lpr">
+      <UsingIntegrityCheckErrorReporting>true</UsingIntegrityCheckErrorReporting>
+    </lpr:LprHeader>
+</soapenv:Header>
+~~~
 
-The `location` attribute is used in the following way:
+The INTEGRITY_CHECK error in the above example is using the dedicated INTEGRITY_CHECK format. The same error presented in the BUSINESS_RULE format would have looked like this:
+~~~xml
+<rs:RegistryError
+    codeContext="BUSINESS_RULE|||Set with id 2252b2c3-fa2d-4d8e-9af4-995893b12b39 already exists in the registry, and ClinicalDocument does not contain a relatedDocument|||SET_ALREADY_EXISTS_AND_NO_RELATED_DOCUMENT|||2252b2c3-fa2d-4d8e-9af4-995893b12b39"
+    errorCode="InvalidDocumentContent"
+    location="2189b2c3-fa2d-4d8e-9af4-995893b12b39^54abd790-8a4c-4a1d-b41c-8d8749f6913c|||//*[local-name()='ClinicalDocument' and child::*[local-name()='setId' and @root='2252b2c3-fa2d-4d8e-9af4-995893b12b39'] and not(child::*[local-name()='relatedDocument'])]"
+    severity="urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error"/>
+~~~
 
-* The value of `location` is split into one mandatory segment and three conditional segments (placed in parentheses) and have the following values, where `|||` act as segment delimiter: 
+See [issue #33](https://github.com/scandihealth/lpr3-docs/issues/33) for more information.
+
+### codeContext
+The `codeContext` attribute contains information about _what_ the error is.
+
+The attribute value is split into 2 mandatory segments and 1 conditional segment (placed in parentheses), with `|||` as segment delimiter:  
+`<validation type>|||<validation text>(|||<integrity error identifier>)`. 
+
+* `<validation type>` can be any of the following: `XSD`, `SCHEMATRON`, `INTEGRITY_CHECK`, `BUSINESS_RULE` 
+* `<validation text>` contains a human readable explanation of what has been violated, in technical terms
+* `<integrity error identifier>` is the conditional segment containing the unique ID of the violated integrity check and the values causing the violation on the format:  
+`<integrity code>|||<param1>|||<param2|||...|||<paramN>`
+    * Present when `<validation type>` is INTEGRITY_CHECK **or** when level 3 errors are reported on the BUSINESS_RULE format (see [issue #33](https://github.com/scandihealth/lpr3-docs/issues/33))
+    * `<integrity code>` is a unique code for the data integrity rule that has been violated. See below for a complete list of implemented integrity rules 
+    * `<param>` elements contain the variable parts of an error (e.g. which encounter that already exists). The params are included in the `<validation text>`, but are also provided as separate segments to make it easier to machine process the error
+    * Example: `SET_ALREADY_EXISTS_AND_NO_RELATED_DOCUMENT|||2252b2c3-fa2d-4d8e-9af4-995893b12b39`  
+
+### location
+The `location` attribute contains information about _where_ the error is.
+
+The value of `location` is split into 1 mandatory segment and 3 conditional segments (placed in parentheses), with `|||` as segment delimiter:  
 `<document id>(|||<line:column>)(|||<xpath expression>)(|||<business rule unique identifier>)`
- 	* `<document id>` is the DocumentEntry.uniqueId - see ["IHE IT Infrastructure (ITI TF-3) "](http://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol3.pdf) *(section 4.2.3.2.26)*
-	* `<line:column>` is the line and column in the CDA document where the error is detected - this is present only when `<validation type>` is XSD.
-	* `<xpath expression>` is the conditional segment containing an XPath expression pointing into the document where the error is detected - this is present only when `<validation type>` is SCHEMATRON or BUSINESS_RULE.
-	* `<business rule unique identifier>` is the conditional segment containing the unique ID of the violated business rule - this is present only when `<validation type>` is BUSINESS_RULE. 
+
+* `<document id>` is the DocumentEntry.uniqueId - see ["IHE IT Infrastructure (ITI TF-3) "](http://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol3.pdf) *(section 4.2.3.2.26)*
+* `<line:column>` is the line and column in the CDA document where the error is detected 
+    * Present only when `<validation type>` is **XSD**
+* `<xpath expression>` is the conditional segment containing an XPath expression pointing into the document where the error is detected 
+    * Present only when `<validation type>` is **SCHEMATRON, INTEGRITY_CHECK, or BUSINESS_RULE**
+* `<business rule unique identifier>` is the conditional segment containing the unique ID of the violated business rule on the format `<maven coordinate>|||<rule name>`. 
+    * Present only when `<validation type>` is **BUSINESS_RULE** and the error is on level 4
+    * `<maven coordinate>` is the [maven coordinate](https://maven.apache.org/pom.html#Maven_Coordinates) of the Drools bundle jar (the exportable kjar) 
+    * `<rule name>` is the name of the Drools rule in the kjar that raised the error. `rule name` uniquely identifies the rule inside the exportable kjar file.
+    * Example: `sds:lpr:3.0.0|||01.01` has the maven coordinate sds:lpr:3.0.0 and the rule name 01.01
+
+###Data integrity rules
+* The following is a complete list of all `INTEGRITY_CHECK` errors:
+    * AUTHOR_INSTITUTION_NOT_FOUND
+        * The submission set must have an ihe-xdr Classification/Slot element with an authorInstitution attribute
+    * CUSTODIAN_NOT_FOUND
+        * Author/custodian is not matching registered relation
+    * CLINICAL_DOCUMENT_NOT_FOUND
+        * The submission must have at least 1 ClinicalDocument
+    * CLINICAL_DOCUMENT_ID_NOT_FOUND
+        * ClinicalDocument must have an id
+    * PARENT_DOCUMENT_ID_MISMATCH
+        * parentDocument extension `<parentDocumentId>` must be same as extension of latest document in the set, which is `<latestDocumentId>`
+        * Example `<parentDocumentId>`: 4897340c-187d-4314-b38d-1b7110d64cae
+        * Example `<latestDocumentId>`: 3515058a-74a9-484f-adb6-d07378349012
+    * PARENT_DOCUMENT_VERSION_MISMATCH
+        * parentDocument version `<parentDocumentVersion>` must be same as version of latest document in the set, which is `<latestDocumentVersion>`
+        * Example `<parentDocumentVersion>`: 1
+        * Example `<latestDocumentVersion>`: 2
+    * SET_ID_NOT_FOUND
+        * ClinicalDocument must have a setId
+    * SET_NOT_FOUND
+        * Set with id `<setId>` not found in registry. Set must already exist when ClinicalDocument contains a relatedDocument
+        * Example `<setId>`: ef0893de-88fe-4ecd-acf0-69498b5e8f35
+    * SET_ALREADY_EXISTS_AND_NO_RELATED_DOCUMENT
+        * Set with id `<setId>` already exists in the registry, and ClinicalDocument does not contain a relatedDocument
+        * Example `<setId>`: ef0893de-88fe-4ecd-acf0-69498b5e8f35
+    * NO_PATIENT_ID_IN_COMMON
+        * All CDA documents must have at least 1 patientRole id in common
+    * SKS_CODE_NOT_FOUND
+        * SKS kode `<kode>` not found from `<fromDate>` to `<toDate>`
+        * Example `<kode>`: DD42
+        * Example `<fromDate>`: 2017-02-23T14:00+02:00
+        * Example `<toDate>`: 2017-02-23T14:00+02:00
+    * SOR_IDENTIFIER_EXPECTED
+        * SOR identifier expected: participant with templateIds `<templateIds>` does not have a participantRole with a scopingEntity that contains an id with root `<SOR_OID>`
+        * Example `<templateIds>`: 1.1.1,2.2.2,3.3.3
+        * Example `<SOR_OID>`: 1.2.208.176.1.1
+    * SOR_IDENTIFIER_INVALID
+        * SOR identifier `<invalidIdentifier>` could not be parsed to a long
+        * Example `<invalidIdentifier>`: 276231000016004x 
+    * SOR_ORG_UNIT_NOT_FOUND
+        * SOR Organizational Unit with SorIdentifier `<sorIdentifier>` not found in the registry
+        * Example `<sorIdentifier>`: 276231000016004
+    * MYNDIGHED_CODE_NOT_FOUND
+        * Myndighedskode `<kode>` not found in the registry
+        * Example `<kode>`: 0750
+    * INTERNAL_EOC_NOT_FOUND
+        * Internal Episode of Care `<extension>` not found
+        * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245 
+    * EXTERNAL_EOC_NOT_FOUND
+        * External Episode of Care `<extension>` not found
+        * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245
+    * EXTERNAL_EOC_NOT_PART_OF_SET
+        * External Episode of Care `<extension>` found in the registry, but it is not part of set `<setId>`
+        * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245
+        * Example `<setId>`: b70c5c70-11bd-42bc-a343-9730be53d385
+    * EOC_ALREADY_EXISTS
+        * Episode of Care `<extension>` already exists in the registry
+        * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245
+    * EOC_SELF_REFERENCE
+        * Episode of Care `<extension>` has an Episode Of Care Reference that points to itself
+        * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245
+    * INTERNAL_ENCOUNTER_NOT_FOUND
+        * Internal Encounter `<extension>` not found
+        * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245
+    * EXTERNAL_ENCOUNTER_NOT_FOUND
+        * External Encounter `<extension>` not found
+        * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245
+    * ENCOUNTER_ALREADY_EXISTS
+        * Encounter `<extension>` already exists in the registry
+        * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245
+    * EXTERNAL_OBSERVATION_ORGANIZER_NOT_FOUND
+        * External Observation Organizer `<extension>` not found
+        * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245
+    * EXTERNAL_CONDITION_OBSERVATION_NOT_FOUND
+        * External Condition Observation `<extension>` not found
+        * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245
+    * EXTERNAL_PROCEDURE_NOT_FOUND
+        * External Procedure `<extension>` not found
+        * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245
+    * PROCEDURE_ALREADY_EXISTS
+        * Procedure `<extension>` already exists in the registry
+        * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245
+    * CONDITION_OBSERVATION_ALREADY_EXISTS
+        * Condition Observation `<extension>` already exists in the registry
+        * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245
+    * OBSERVATION_ORGANIZER_ALREADY_EXISTS
+        * Observation Organizer `<extension>` already exists in the registry
+        * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245
+    * OBSERVATION_ORGANIZER_HAS_NO_REFERENCE
+        * Observation Organizer `<extension>` has no Episode of Care, Encounter, Episode Of Care Marker, Condition Observation, Procedure Act, Procedure Observation or Procedure Procedure reference or entryRelationship
+        * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245
 
 
-`<business rule unique identifier>` is an identifier that is a combination of a [maven coordinate](https://maven.apache.org/pom.html#Maven_Coordinates) of the drools bundle jar (the exportable kjar) and the Drools `rule name` (`rule name` is unique within a package in the kjar, and the kjar only contains 1 package), separated by **|||**.
-
-The sample above shows 3 errors and 1 warning found in a document submission. One error found at XSD level, one error found at SCHEMATRON level and two findings at the business rule level - error and warning. For instance, the error found at the business level holds the following values:
-
- * `<business rule unique identifier>`: `sds:lpr:3.0.0|||01.01` (The maven coordinate is **sds:lpr:3.0.0** and `rule name` is **01.01**)
- * `codeContext`: `BUSINESS_RULE`
- * `severity`: `urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error`
-
-## Supported reporting strategies
-Submission of reports from a client perspective can be carried out as either synchronous reporting or asynchronous reporting. In a synchronous reporting scenario, the client submitting the reports is immediatly made aware of any errors that are present and either all reports are accepted or none at all, aka. transactions. Because of this nature, reported bundles should be kept as small and atomic as possible. This is also alligned with the strict nature of IHE XDR [Batch oriented reporting](#batch-oriented-reporting). In an asynchronous reporting scenario, the client submitting the reports will immediatly receive errors from level 1 and level 2 (see [What rules apply and what errors can be reported and how](#what-rules-apply-and-what-errors-can-be-reported-and-how)). If no errors are present on level 1 and level 2 the submission is preapproved for further processing and the client will receive a positive receipt. If errors are found at level 3 in the given asynchronous submission the error(s) will available in the [accumulated error list](interface/accumulated-error-list.md).
 ## Service endpoint setup
 In order to support both synchronous and asynchronous reporting three services endpoints are available:
 
- * One service endpoint supporting the synchronous scenario that does validation on level 1, 2 and 3 and reports back accordingly. If the submission contains no errors on all levels the reporting is stored. Test service is found at [https://lprws-test.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareSaveIfNoErrorsReportingService](https://lprws-test.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareSaveIfNoErrorsReportingService)
- * One service endpoint supporting the asynchronous scenario that does validation on level 1, and level 2. If the submission contains no errors on level 1 and level 2 the reporting is stored for further processing. If errors are found at level 3, the error report is available at the prior-to-submission designated folder. Test service is found at [https://lprws-test.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareReportingService](https://lprws-test.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareReportingService)
- * One service endpoint supporting validation on all three levels but no storing - aka. dry-run validation. Service is found at [https://lprws-test.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareValidateReportingService](https://lprws-test.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareValidateReportingService)
+ * One service endpoint supporting the synchronous scenario that does validation on level 1, 2, 3 og 4 and reports back accordingly. If the submission contains no errors on all levels the reporting is stored. Test service is found at [https://lprws-test.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareSaveIfNoErrorsReportingService](https://lprws-test.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareSaveIfNoErrorsReportingService)
+ * One service endpoint supporting the asynchronous scenario that does validation on level 1, level 2 and level 3. If the submission contains no errors on level 1, level 2 and level 3 the reporting is stored for further processing. If errors are found at level 4, the error report is available at the prior-to-submission designated folder. Test service is found at [https://lprws-test.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareReportingService](https://lprws-test.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareReportingService)
+ * One service endpoint supporting validation on all four levels but no storing - aka. dry-run validation. Service is found at [https://lprws-test.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareValidateReportingService](https://lprws-test.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareValidateReportingService)
 
 
 All three services adhere to the same system interface, making it up to the client to decide which service constallation is the best fit.

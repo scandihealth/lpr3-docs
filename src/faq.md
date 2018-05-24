@@ -28,3 +28,5 @@ If the primary procedure code is present in the value set
  1. `urn:oid:1.2.208.176.2.4.20` you can use [DK Procedure Procedure](http://lpr-art-decor.westeurope.cloudapp.azure.com:8080/art-decor/decor-templates--lpr-?section=templates&id=1.2.208.176.7.1.10.30).
 
 If your code is present in more than one value set, you can choose which corresponding template to use.
+
+***_UPDATE_*** To ease integration **Sundhedsdatastyrelsen** has decided that `proc.oper` `urn:oid:1.2.208.176.2.4.20` will contain values for `Act`, `Procedure`, and `Observation` while the two other valuesets `proc.act` `urn:oid:1.2.208.176.2.4.19` and `proc.und` `urn:oid:1.2.208.176.2.4.21` will be empty allowing organizations to use the template [`DK Procedure Procedure`](http://lpr-art-decor.westeurope.cloudapp.azure.com:8080/art-decor/decor-templates--lpr-?section=templates&id=1.2.208.176.7.1.10.30&language=en-US) for all mandatory procedure reporting to LPR3.

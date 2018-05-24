@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8'?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" elementFormDefault="qualified" targetNamespace="urn:oasis:names:tc:SAML:2.0:assertion">
+	<xs:import namespace="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" schemaLocation="wsse.xsd"/>
+	<xs:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="ds.xsd"/>
+    <xs:element name="Assertion" type="saml:AssertionType"/>
+    <xs:complexType name="AssertionType">
+        <xs:sequence>
+            <xs:element ref="saml:Issuer"/>
+            <xs:element ref="saml:Subject"/>
+            <xs:element ref="saml:Conditions"/>
+            <xs:element maxOccurs="3" ref="saml:AttributeStatement"/>
+            <xs:element minOccurs="0" ref="ds:Signature"/>
+        </xs:sequence>
+        <xs:attribute name="IssueInstant" type="xs:dateTime" use="required"/>
+        <xs:attribute name="Version" type="xs:decimal" use="required"/>
+        <xs:attribute name="id" type="xs:NCName" use="required"/>
+    </xs:complexType>
+
+	<xs:element name="Issuer" type="xs:NCName"/>
+	<xs:element name="Subject">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="saml:NameID"/>
+				<xs:element minOccurs="0" ref="saml:SubjectConfirmation"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="NameID" type="saml:NameIDType"/>
+	<xs:complexType name="NameIDType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="Format" type="saml:SubjectIdentifierType" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:element name="SubjectConfirmation">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="saml:ConfirmationMethod"/>
+				<xs:element ref="saml:SubjectConfirmationData"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConfirmationMethod">
+		<xs:simpleType>
+			<xs:restriction base="xs:anyURI">
+				<xs:enumeration value="urn:oasis:names:tc:SAML:2.0:cm:holder-of-key"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="SubjectConfirmationData">
+		<xs:complexType>
+			<xs:choice>
+				<xs:element ref="ds:KeyInfo"/>
+				<xs:element ref="wsse:UsernameToken"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Conditions">
+		<xs:complexType>
+			<xs:attribute name="NotBefore" type="xs:dateTime" use="required"/>
+			<xs:attribute name="NotOnOrAfter" type="xs:dateTime" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AttributeStatement">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" ref="saml:Attribute"/>
+			</xs:sequence>
+			<xs:attribute name="id" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:NCName">
+						<xs:enumeration value="IDCardData"/>
+						<xs:enumeration value="UserLog"/>
+						<xs:enumeration value="SystemLog"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Attribute">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="saml:AttributeValue"/>
+			</xs:sequence>
+			<xs:attribute name="Name" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:NMTOKEN">
+						<xs:enumeration value="sosi:IDCardID"/>
+						<xs:enumeration value="sosi:IDCardVersion"/>
+						<xs:enumeration value="sosi:IDCardType"/>
+						<xs:enumeration value="sosi:AuthenticationLevel"/>
+						<xs:enumeration value="sosi:OCESCertHash"/>
+						<xs:enumeration value="medcom:UserCivilRegistrationNumber"/>
+						<xs:enumeration value="medcom:UserGivenName"/>
+						<xs:enumeration value="medcom:UserSurName"/>
+						<xs:enumeration value="medcom:UserEmailAddress"/>
+						<xs:enumeration value="medcom:UserRole"/>
+						<xs:enumeration value="medcom:UserOccupation"/>
+						<xs:enumeration value="medcom:UserAuthorizationCode"/>
+						<xs:enumeration value="medcom:CareProviderID"/>
+						<xs:enumeration value="medcom:CareProviderName"/>
+						<xs:enumeration value="medcom:ITSystemName"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="NameFormat" type="saml:SubjectIdentifierType"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AttributeValue" type="xs:string"/>
+	<xs:simpleType name="SubjectIdentifierType">
+		<xs:restriction base="xs:anyURI">
+			<xs:enumeration value="medcom:cprnumber"/>
+			<xs:enumeration value="medcom:ynumber"/>
+			<xs:enumeration value="medcom:pnumber"/>
+			<xs:enumeration value="medcom:skscode"/>
+			<xs:enumeration value="medcom:cvrnumber"/>
+			<xs:enumeration value="medcom:communalnumber"/>
+			<xs:enumeration value="medcom:locationnumber"/>
+			<xs:enumeration value="medcom:itsystemname"/>
+			<xs:enumeration value="medcom:other"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
