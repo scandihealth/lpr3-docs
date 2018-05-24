@@ -235,8 +235,7 @@ The value of `location` is split into 1 mandatory segment and 3 conditional segm
         * Observation Organizer `<extension>` has no Episode of Care, Encounter, Episode Of Care Marker, Condition Observation, Procedure Act, Procedure Observation or Procedure Procedure reference or entryRelationship
         * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245
 
-## Supported reporting strategies
-Submission of reports from a client perspective can be carried out as either synchronous reporting or asynchronous reporting. In a synchronous reporting scenario, the client submitting the reports is immediately made aware of any errors that are present and either all reports are accepted or none at all, aka. transactions. Because of this nature, reported bundles should be kept as small and atomic as possible. This is also alligned with the strict nature of IHE XDR [Batch oriented reporting](#batch-oriented-reporting). In an asynchronous reporting scenario, the client submitting the reports will immediatly receive errors from level 1 and level 2 (see [What rules apply and what errors can be reported and how](#what-rules-apply-and-what-errors-can-be-reported-and-how)). If no errors are present on level 1 and level 2 the submission is preapproved for further processing and the client will receive a positive receipt. If errors are found at level 3 in the given asynchronous submission the error(s) will available in the [accumulated error list](interface/accumulated-error-list.md).
+
 ## Service endpoint setup
 In order to support both synchronous and asynchronous reporting three services endpoints are available:
 
