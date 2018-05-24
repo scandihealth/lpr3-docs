@@ -1,0 +1,75 @@
+graph {
+    graph[style=dashed]
+    p -> fd
+    subgraph cluster_f {
+        f -- k
+        f -- fp
+        f -- fri
+        f -- fm
+        f -- fh
+        fm -- fmri
+        subgraph cluster_fmri {
+            fmri -- fmr
+        }
+        subgraph cluster_fp {
+            fp -- fpri
+            fp -- fpbo
+            subgraph cluster_fpri {
+                fpri -- fpr
+            }
+        }
+        subgraph cluster_k {
+            k -- d
+            k -- kri
+            k -- kp
+            d -- dri
+            k -- kh
+            k -- oa
+            k -- kbo
+            subgraph cluster_dri {
+                dri -- dr
+            }
+            subgraph cluster_kp {
+                kp -- kpri
+                subgraph cluster_kpri {
+                    kpri -- kpr
+                }
+            }
+            subgraph cluster_kri {
+                kri -- kr
+            }
+            
+        }
+        subgraph cluster_fri {
+            fri -- fr
+        }
+    
+    }
+    
+    kbo[label=Betalingsoplysning]
+    fpbo[label=Betalingsoplysning]
+    oa[label=Opholdsadresse]
+    kh[label=Henvisning]
+    fh[label=Henvisning]
+    p[label=Patient]
+    fm[label=Forløbsmarkør]
+    f[label=Forløbselement]
+    fp[label=Procedure]
+    kp[label=Procedure]
+    fmri[label=Resultatindberetning]
+    fri[label=Resultatindberetning]
+    kri[label=Resultatindberetning]
+    fpri[label=Resultatindberetning]
+    kpri[label=Resultatindberetning]
+    dri[label=Resultatindberetning]
+
+    fmr[label=Resultat]
+    fr[label=Resultat]
+    kr[label=Resultat]
+    fpr[label=Resultat]
+    kpr[label=Resultat]
+    dr[label=Resultat]
+
+    d[label=Diagnose]
+    k[label=Kontakt]
+}
