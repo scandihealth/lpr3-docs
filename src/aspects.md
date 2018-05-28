@@ -252,6 +252,11 @@ The IHE XDR service implemented as part of LPR3 will implement and act as **Docu
 ### Security
 The XDR web service is accessible over HTTPS only. Use of this service mandates proper use of [DGWS v1.0.1](http://svn.medcom.dk/svn/drafts/DGWS/Den%20Gode%20Webservice_1.0.pdf) using [VOCES/FOCES](https://www.nets.eu/dk-da/kundeservice/nemid-tjenesteudbyder/NemID-tjenesteudbyderpakken/Pages/OCES-II-certifikat-eksempler.aspx) rules Level 3.
 
+***_UPDATE_***
+
+The ```medcom:CareProviderID``` SAML attribute must have the NameFormat of ```medcom:cvrnumber```.
+
+
 ### Batch oriented reporting
 IHE XDR defines that submissions of mulitple documents pr. request are allowed as long as all documents are concerning the same patient. Hence, batch-oriented reporting is supported for a single patient having multiple documents to be reported (see ["IHE ITI TF-3"](http://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol3.pdf) *(section 4.2.1.2)*. Patient ID's MUST be alligned within the patientRole.id across documents within a submission.
 
