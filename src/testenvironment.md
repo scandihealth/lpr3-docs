@@ -9,10 +9,8 @@ The following three endpoint are available.
  * [Save with errors](https://lprws-test.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareReportingService)
  * [Validate](https://lprws-test.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareValidateReportingService)
 
-## Nightly build deployments
-To increase velocity and success DXC will continuously deliver new versions of the LPR3 solution.  
-As such DXC may deploy new builds on a nightly basis.  
-New deployments will be notified through GitHub no later than end of business day before nightly deploy.
+## Deployments
+To increase velocity and success DXC will continuously deliver new versions of the LPR3 solution. Time of deployment will be communicated by SDS project management and communication through milestones.
 
 ## Weekly data purge
 As the test progresses and issues are resolved, it may be necessary to delete data in the test enviroment.  
