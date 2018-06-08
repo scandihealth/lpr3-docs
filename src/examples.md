@@ -121,30 +121,6 @@ Content-Transfer-Encoding: binary
 			<medcom:RequireNonRepudiationReceipt>no
 			</medcom:RequireNonRepudiationReceipt>
 		</medcom:Header>
-		<HsuidHeader
-			xmlns="http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd">
-			<Assertion IssueInstant="2018-04-05T07:57:04.305Z"
-				Version="2.0" id="HSUID">
-				<Issuer>Acme Issuer</Issuer>
-				<AttributeStatement id="HSUIDdata">
-					<Attribute Name="nsi:UserType">
-						<AttributeValue>nsi:HealthcareProfessional</AttributeValue>
-					</Attribute>
-					<Attribute Name="nsi:SystemOwnerName">
-						<AttributeValue>Region Nordjylland</AttributeValue>
-					</Attribute>
-					<Attribute Name="nsi:SystemName">
-						<AttributeValue>Clinical Suite</AttributeValue>
-					</Attribute>
-					<Attribute Name="nsi:SystemVersion">
-						<AttributeValue>14.4</AttributeValue>
-					</Attribute>
-					<Attribute Name="nsi:OrgResponsibleName">
-						<AttributeValue>Region Nordjylland</AttributeValue>
-					</Attribute>
-				</AttributeStatement>
-			</Assertion>
-		</HsuidHeader>
 	</soap:Header>
 	<soap:Body>
 		<ns4:ProvideAndRegisterDocumentSetRequest
