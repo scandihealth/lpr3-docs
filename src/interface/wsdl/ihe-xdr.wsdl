@@ -17,7 +17,7 @@
     <documentation>IHE XDR Service with national SSI additions
     </documentation>
     <types>
-
+	
         <!-- Danish national extensions start -->
 
         <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -76,7 +76,7 @@
                     xmlns="http://schemas.xmlsoap.org/wsdl/" elementFormDefault="qualified"
                     targetNamespace="urn:ihe:iti:xds-b:2007">
             <xsd:include
-                schemaLocation="../schema/IHE/XDS.b_DocumentRepository.xsd"/>
+                schemaLocation="xsd/IHE/XDS.b_DocumentRepository.xsd"/>
 
         </xsd:schema>
         <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -88,7 +88,7 @@
                     xmlns="http://schemas.xmlsoap.org/wsdl/" elementFormDefault="qualified"
                     targetNamespace="urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0">
             <xsd:include
-                schemaLocation="../schema/ebRS/rs.xsd"/>
+                schemaLocation="xsd/ebRS/rs.xsd"/>
 
         </xsd:schema>
         <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -100,7 +100,7 @@
                     xmlns="http://schemas.xmlsoap.org/wsdl/" elementFormDefault="qualified"
                     targetNamespace="urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0">
             <xsd:include
-                schemaLocation="../schema/ebRS/query.xsd"/>
+                schemaLocation="xsd/ebRS/query.xsd"/>
 
         </xsd:schema>
         <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -112,7 +112,7 @@
                     xmlns:hsuid="http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd" xmlns="http://schemas.xmlsoap.org/wsdl/"
                     elementFormDefault="qualified" targetNamespace="urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0">
             <xsd:include
-                schemaLocation="../schema/ebRS/lcm.xsd"/>
+                schemaLocation="xsd/ebRS/lcm.xsd"/>
 
         </xsd:schema>
         <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -124,13 +124,18 @@
                     xmlns:hsuid="http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd" xmlns="http://schemas.xmlsoap.org/wsdl/"
                     elementFormDefault="qualified" targetNamespace="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0">
             <xsd:include
-                schemaLocation="../schema/ebRS/rim.xsd"/>
-
+                schemaLocation="xsd/ebRS/rim.xsd"/>
         </xsd:schema>
 
-        <xsd:schema targetNamespace="urn:lpr">
+			<!-- LPR specific extensions start -->
+	
+	<xsd:schema targetNamespace="urn:lpr">
             <xsd:include schemaLocation="xsd/lpr/lpr.xsd"/>
         </xsd:schema>
+	
+	<!-- LPR specific extensions stop -->
+
+        
     </types>
     <message name="SecurityHeader">
         <part element="wsse:Security" name="security_header">
