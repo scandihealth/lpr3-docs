@@ -302,6 +302,8 @@ The XSD and Schematron files does not include LPR3 assigned error codes - instea
 </code></pre>
 
 <h3 id="using-optional-soap-header-to-specify-integrity-error-format">Using optional SOAP header to specify integrity error format</h3>
+<p><strong><em><em>UPDATE</em></em></strong></p>
+<p>Errors that previously could be reported as either INTEGRITY_CHECK or BUSINESS_RULE are from now on (from 26th of June, 2018) only  reported as INTEGRITY_CHECKs. As such, the use of the header <code>LprHeader</code> is considered deprecated and will be ignored.</p>
 <p>Errors found at level 3 are by default reported on the BUSINESS_RULE format, but with special rules for <code>codeContext</code> and <code>location</code> values, described in the below sections.<br />
 It is possible to receive level 3 errors on a dedicated INTEGRITY_CHECK format, which simplifies processing of BUSINESS_RULE by eliminating special cases for <code>codeContext</code> and <code>location</code> values.  </p>
 <p>The <a href="../interface/xdr">Clinical Document Architecture LPR3 definition</a>) contains an optional SOAP header <code>LprHeader</code> which has an element <code>UsingIntegrityCheckErrorReporting</code> of type <code>boolean</code>.<br />
