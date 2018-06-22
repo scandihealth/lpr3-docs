@@ -83,6 +83,11 @@ Below XML illustrates how the errors at different leves are wrapped in a `Regist
 ~~~
 
 ### Using optional SOAP header to specify integrity error format
+
+***_UPDATE_***
+
+Errors that previously could be reported as either INTEGRITY_CHECK or BUSINESS_RULE are from now on (from 26th of June, 2018) only  reported as INTEGRITY_CHECKs. As such, the use of the header `LprHeader` is considered deprecated and will be ignored.
+
 Errors found at level 3 are by default reported on the BUSINESS_RULE format, but with special rules for `codeContext` and `location` values, described in the below sections.  
 It is possible to receive level 3 errors on a dedicated INTEGRITY_CHECK format, which simplifies processing of BUSINESS_RULE by eliminating special cases for `codeContext` and `location` values.  
   
