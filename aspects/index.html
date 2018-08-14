@@ -371,6 +371,10 @@ If this boolean is set to <code>true</code>, then level 3 INTEGRITY_CHECK errors
 <li>The submission set must have an ihe-xdr Classification/Slot element with an authorInstitution attribute</li>
 </ul>
 </li>
+<li>CANNOT_REPLACE_MINOR_WITH_MAIN_CONDITION<ul>
+<li>Replacing an minor condition with a main condition fails as the encounter already has an main condition that is not nullified by the encompassing ClinicalDocument</li>
+</ul>
+</li>
 <li>CUSTODIAN_NOT_FOUND<ul>
 <li>Author/custodian is not matching registered relation</li>
 </ul>
