@@ -151,6 +151,8 @@ The value of `location` is split into 1 mandatory segment and 3 conditional segm
 * The following is a complete list of all `INTEGRITY_CHECK` errors:
     * AUTHOR_INSTITUTION_NOT_FOUND
         * The submission set must have an ihe-xdr Classification/Slot element with an authorInstitution attribute
+    * CANNOT_REPLACE_MINOR_WITH_MAIN_CONDITION
+        * Replacing an minor condition with a main condition fails as the encounter already has an main condition that is not nullified by the encompassing ClinicalDocument
     * CUSTODIAN_NOT_FOUND
         * Author/custodian is not matching registered relation
     * CLINICAL_DOCUMENT_NOT_FOUND
