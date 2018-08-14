@@ -316,9 +316,6 @@ Replace it with the new data.
                                 </hl7:observation>
                             </hl7:entryRelationship>
                             <hl7:reference typeCode="RPLC">
-                                <hl7:templateId root="2.16.840.1.113883.10.12.324"/>
-                                <hl7:templateId root="1.2.208.176.7.1.10.125"/>
-                                <hl7:templateId root="1.2.208.176.7.1.10.117"/>
                                 <hl7:externalObservation classCode="OBS" moodCode="EVN">
                                     <hl7:templateId root="2.16.840.1.113883.10.12.326"/>
                                     <hl7:templateId root="1.2.208.176.7.1.10.100"/>
@@ -651,9 +648,6 @@ Replace it with the new data
                                 </hl7:observation>
                             </hl7:entryRelationship>
                             <hl7:reference typeCode="RPLC">
-                                <hl7:templateId root="2.16.840.1.113883.10.12.324"/>
-                                <hl7:templateId root="1.2.208.176.7.1.10.125"/>
-                                <hl7:templateId root="1.2.208.176.7.1.10.117"/>
                                 <hl7:externalObservation classCode="OBS" moodCode="EVN">
                                     <hl7:templateId root="2.16.840.1.113883.10.12.326"/>
                                     <hl7:templateId root="1.2.208.176.7.1.10.100"/>
@@ -994,9 +988,6 @@ Replace it with the new data using the minor condition template
                                 </hl7:externalAct>
                             </hl7:reference>
                             <hl7:reference typeCode="RPLC">
-                                <hl7:templateId root="2.16.840.1.113883.10.12.324"/>
-                                <hl7:templateId root="1.2.208.176.7.1.10.125"/>
-                                <hl7:templateId root="1.2.208.176.7.1.10.117"/>
                                 <hl7:externalObservation classCode="OBS" moodCode="EVN">
                                     <hl7:templateId root="2.16.840.1.113883.10.12.326"/>
                                     <hl7:templateId root="1.2.208.176.7.1.10.100"/>
@@ -1325,9 +1316,6 @@ Replace it with the new data using the main condition template
                                 </hl7:observation>
                             </hl7:entryRelationship>
                             <hl7:reference typeCode="RPLC">
-                                <hl7:templateId root="2.16.840.1.113883.10.12.324"/>
-                                <hl7:templateId root="1.2.208.176.7.1.10.125"/>
-                                <hl7:templateId root="1.2.208.176.7.1.10.117"/>
                                 <hl7:externalObservation classCode="OBS" moodCode="EVN">
                                     <hl7:templateId root="2.16.840.1.113883.10.12.326"/>
                                     <hl7:templateId root="1.2.208.176.7.1.10.100"/>
@@ -1696,8 +1684,6 @@ Nullify the main condition and replace the minor condition with the new data usi
                                 <hl7:templateId root="1.2.208.176.7.1.10.125"/>
                                 <hl7:templateId root="1.2.208.176.7.1.10.117"/>
                                 <hl7:externalObservation classCode="OBS" moodCode="EVN">
-                                    <hl7:templateId root="2.16.840.1.113883.10.12.326"/>
-                                    <hl7:templateId root="1.2.208.176.7.1.10.100"/>
                                     <hl7:id root="6A3B9FE3-DCA2-4E88-9973-AAA084DBD1EB" extension="6463C77D-FA42-5730-B443-F9343875302E"/>
                                 </hl7:externalObservation>
                             </hl7:reference>
@@ -1716,8 +1702,6 @@ Nullify the main condition and replace the minor condition with the new data usi
                             <hl7:code nullFlavor="NA"/>
                             <hl7:statusCode code="nullified"/>
                             <hl7:reference typeCode="RPLC">
-                                <hl7:templateId root="2.16.840.1.113883.10.12.324"/>
-                                <hl7:templateId root="1.2.208.176.7.1.10.117"/>
                                 <hl7:externalObservation classCode="OBS" moodCode="EVN">
                                     <hl7:templateId root="2.16.840.1.113883.10.12.326"/>
                                     <hl7:templateId root="1.2.208.176.7.1.10.100"/>
