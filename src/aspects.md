@@ -211,6 +211,9 @@ The value of `location` is split into 1 mandatory segment and 3 conditional segm
     * EOC_SELF_REFERENCE
         * Episode of Care `<extension>` has an Episode Of Care Reference that points to itself
         * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245
+    * EOC_MARKER_ALREADY_EXISTS
+        * Episode of Care Marker `<extension>` already exists in the registry
+        * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245
     * INTERNAL_ENCOUNTER_NOT_FOUND
         * Internal Encounter `<extension>` not found
         * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245
