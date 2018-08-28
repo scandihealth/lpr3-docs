@@ -244,6 +244,18 @@ The value of `location` is split into 1 mandatory segment and 3 conditional segm
     * OBSERVATION_ORGANIZER_HAS_NO_REFERENCE
         * Observation Organizer `<extension>` has no Episode of Care, Encounter, Episode Of Care Marker, Condition Observation, Procedure Act, Procedure Observation or Procedure Procedure reference or entryRelationship
         * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245
+    * GENDERS_MISMATCH
+        * The gender encoded in the Danish Civil Registration Number is not the same as the gender specified in `//*[local-name()='administrativeGenderCode']/@code`
+    * BIRTH_DATES_MISMATCH
+        * The Danish Civil Registration Number encoded birth date is not on the same day as the birth date specified in `//*[local-name()='patient]/*[local-name()='birthTime]/@value`
+    * CPR_NUMBER_MISSING
+        * A `patientRole` requiring a Danish Civil Registration Number was submitted but no such number was specified.
+    * INVALID_CPR_NUMBER
+        * The specified Danish Civil Registration Number is not comforming to the [standard](https://www.cpr.dk/media/17534/personnummeret-i-cpr.pdf).
+    * INVALID_REPLACEMENT_CPR_NUMBER
+        * The specified Replacement Danish Civil Registration Number is not comforming to the [standard](https://www.cpr.dk/media/17535/erstatningspersonnummerets-opbygning.pdf).
+    * INVALID_CVR_NUMBER
+        * The specified Danish Central Business Number is not valid.
 
 
 ## Service endpoint setup
