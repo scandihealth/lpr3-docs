@@ -471,6 +471,11 @@ If this boolean is set to <code>true</code>, then level 3 INTEGRITY_CHECK errors
 <li>Example <code>&lt;extension&gt;</code>: b7023d7e-11ab-4270-9c20-3de02e908245</li>
 </ul>
 </li>
+<li>EOC_MARKER_ALREADY_EXISTS<ul>
+<li>Episode of Care Marker <code>&lt;extension&gt;</code> already exists in the registry</li>
+<li>Example <code>&lt;extension&gt;</code>: b7023d7e-11ab-4270-9c20-3de02e908245</li>
+</ul>
+</li>
 <li>INTERNAL_ENCOUNTER_NOT_FOUND<ul>
 <li>Internal Encounter <code>&lt;extension&gt;</code> not found</li>
 <li>Example <code>&lt;extension&gt;</code>: b7023d7e-11ab-4270-9c20-3de02e908245</li>
@@ -519,6 +524,30 @@ If this boolean is set to <code>true</code>, then level 3 INTEGRITY_CHECK errors
 <li>OBSERVATION_ORGANIZER_HAS_NO_REFERENCE<ul>
 <li>Observation Organizer <code>&lt;extension&gt;</code> has no Episode of Care, Encounter, Episode Of Care Marker, Condition Observation, Procedure Act, Procedure Observation or Procedure Procedure reference or entryRelationship</li>
 <li>Example <code>&lt;extension&gt;</code>: b7023d7e-11ab-4270-9c20-3de02e908245</li>
+</ul>
+</li>
+<li>GENDERS_MISMATCH<ul>
+<li>The gender encoded in the Danish Civil Registration Number is not the same as the gender specified in <code>//*[local-name()='administrativeGenderCode']/@code</code></li>
+</ul>
+</li>
+<li>BIRTH_DATES_MISMATCH<ul>
+<li>The Danish Civil Registration Number encoded birth date is not on the same day as the birth date specified in <code>//*[local-name()='patient]/*[local-name()='birthTime]/@value</code></li>
+</ul>
+</li>
+<li>CPR_NUMBER_MISSING<ul>
+<li>A <code>patientRole</code> requiring a Danish Civil Registration Number was submitted but no such number was specified.</li>
+</ul>
+</li>
+<li>INVALID_CPR_NUMBER<ul>
+<li>The specified Danish Civil Registration Number is not comforming to the <a href="https://www.cpr.dk/media/17534/personnummeret-i-cpr.pdf">standard</a>.</li>
+</ul>
+</li>
+<li>INVALID_REPLACEMENT_CPR_NUMBER<ul>
+<li>The specified Replacement Danish Civil Registration Number is not comforming to the <a href="https://www.cpr.dk/media/17535/erstatningspersonnummerets-opbygning.pdf">standard</a>.</li>
+</ul>
+</li>
+<li>INVALID_CVR_NUMBER<ul>
+<li>The specified Danish Central Business Number is not valid.</li>
 </ul>
 </li>
 </ul>
