@@ -90,7 +90,12 @@
             
     <li class="toctree-l3"><a href="#clinical-document-architecture-lpr3-definition">Clinical Document Architecture LPR3 definition</a></li>
     
+
+    <li class="toctree-l3"><a href="#xdr-interface">XDR interface</a></li>
+    
         <ul>
+        
+            <li><a class="toctree-l4" href="#http-status-codes">HTTP status codes</a></li>
         
             <li><a class="toctree-l4" href="#ihe-xdr-wsdl-with-national-ssi-additions">IHE XDR WSDL with national SSI additions</a></li>
         
@@ -177,6 +182,12 @@
               
                 <h1 id="clinical-document-architecture-lpr3-definition">Clinical Document Architecture LPR3 definition</h1>
 <p>The specific design details of LPR3 based on Clinical Document Architecture (CDA) is documented at <a href="http://lpr-art-decor.westeurope.cloudapp.azure.com:8080/art-decor/decor-project--lpr-">ART-DECOR</a></p>
+<h1 id="xdr-interface">XDR interface</h1>
+<h2 id="http-status-codes">HTTP status codes</h2>
+<p>The XDR endpoints are build on SOAP 1.2 and as such any client should interpret HTTP status code as defined <a href="https://www.w3.org/TR/soap12-part2/">SOAP Version 1.2 Part 2: Adjuncts (Second Edition)</a> section 7.5.1.2</p>
+<blockquote>
+<p>The SOAP HTTP binding follows the rules of any HTTP application which means that an implementation of the SOAP HTTP binding must understand the class of any status code, as indicated by the first digit, and treat any unrecognized response as being equivalent to the x00 status code of that class, with the exception that an unrecognized response must not be cached.</p>
+</blockquote>
 <h2 id="ihe-xdr-wsdl-with-national-ssi-additions">IHE XDR WSDL with national SSI additions</h2>
 <p>The following section shows the IHE XDR WSDL with the danish national SSI additions.</p>
 <p>The raw WSDL file can be found <a href="../../interface/wsdl/ihe-xdr.wsdl">here</a> and the schema for the <code>urn:lpr</code> name space can be found <a href="../../interface/wsdl/xsd/lpr/lpr.xsd">here</a>.</p>
