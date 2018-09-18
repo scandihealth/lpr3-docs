@@ -1,6 +1,13 @@
 # Clinical Document Architecture LPR3 definition
 The specific design details of LPR3 based on Clinical Document Architecture (CDA) is documented at [ART-DECOR](http://lpr-art-decor.westeurope.cloudapp.azure.com:8080/art-decor/decor-project--lpr-)
 
+# XDR interface
+
+## HTTP status codes
+The XDR endpoints are build on SOAP 1.2 and as such any client should interpret HTTP status code as defined [SOAP Version 1.2 Part 2: Adjuncts (Second Edition)](https://www.w3.org/TR/soap12-part2/) section 7.5.1.2
+
+> The SOAP HTTP binding follows the rules of any HTTP application which means that an implementation of the SOAP HTTP binding must understand the class of any status code, as indicated by the first digit, and treat any unrecognized response as being equivalent to the x00 status code of that class, with the exception that an unrecognized response must not be cached.
+
 ## IHE XDR WSDL with national SSI additions
 The following section shows the IHE XDR WSDL with the danish national SSI additions.
 
