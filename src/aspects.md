@@ -150,7 +150,7 @@ The value of `location` is split into 1 mandatory segment and 3 conditional segm
 ###Data integrity rules
 * The following is a complete list of all `INTEGRITY_CHECK` errors:
     * AUTHOR_INSTITUTION_NOT_FOUND
-        * The submission set must have an ihe-xdr Classification/Slot element with an authorInstitution attribute
+        * The submission set must have an ihe-xdr Classification/Slot element with an authorInstitution attribute that conforms to the 'XDS Metadata for Document Sharing. Danish Profile'
     * CANNOT_REPLACE_MINOR_WITH_MAIN_CONDITION
         * Replacing an minor condition with a main condition fails as the encounter already has an main condition that is not nullified by the encompassing ClinicalDocument
     * CUSTODIAN_NOT_FOUND
@@ -214,6 +214,9 @@ The value of `location` is split into 1 mandatory segment and 3 conditional segm
     * EOC_MARKER_ALREADY_EXISTS
         * Episode of Care Marker `<extension>` already exists in the registry
         * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245
+    * INTERNAL_EOC_MARKER_NOT_FOUND
+        * Internal Episode of Care Marker `<extension>` not found
+        * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245
     * INTERNAL_ENCOUNTER_NOT_FOUND
         * Internal Encounter `<extension>` not found
         * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245
@@ -229,8 +232,14 @@ The value of `location` is split into 1 mandatory segment and 3 conditional segm
     * EXTERNAL_CONDITION_OBSERVATION_NOT_FOUND
         * External Condition Observation `<extension>` not found
         * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245
+    * INTERNAL_CONDITION_OBSERVATION_NOT_FOUND
+        * Internal Condition Observation `<extension>` not found
+        * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245
     * EXTERNAL_PROCEDURE_NOT_FOUND
         * External Procedure `<extension>` not found
+        * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245
+    * INTERNAL_PROCEDURE_NOT_FOUND
+        * Internal Procedure `<extension>` not found
         * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245
     * PROCEDURE_ALREADY_EXISTS
         * Procedure `<extension>` already exists in the registry
