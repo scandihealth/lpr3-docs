@@ -368,7 +368,7 @@ If this boolean is set to <code>true</code>, then level 3 INTEGRITY_CHECK errors
 <ul>
 <li>The following is a complete list of all <code>INTEGRITY_CHECK</code> errors:<ul>
 <li>AUTHOR_INSTITUTION_NOT_FOUND<ul>
-<li>The submission set must have an ihe-xdr Classification/Slot element with an authorInstitution attribute</li>
+<li>The submission set must have an ihe-xdr Classification/Slot element with an authorInstitution attribute that conforms to the 'XDS Metadata for Document Sharing. Danish Profile'</li>
 </ul>
 </li>
 <li>CANNOT_REPLACE_MINOR_WITH_MAIN_CONDITION<ul>
@@ -476,6 +476,11 @@ If this boolean is set to <code>true</code>, then level 3 INTEGRITY_CHECK errors
 <li>Example <code>&lt;extension&gt;</code>: b7023d7e-11ab-4270-9c20-3de02e908245</li>
 </ul>
 </li>
+<li>INTERNAL_EOC_MARKER_NOT_FOUND<ul>
+<li>Internal Episode of Care Marker <code>&lt;extension&gt;</code> not found</li>
+<li>Example <code>&lt;extension&gt;</code>: b7023d7e-11ab-4270-9c20-3de02e908245</li>
+</ul>
+</li>
 <li>INTERNAL_ENCOUNTER_NOT_FOUND<ul>
 <li>Internal Encounter <code>&lt;extension&gt;</code> not found</li>
 <li>Example <code>&lt;extension&gt;</code>: b7023d7e-11ab-4270-9c20-3de02e908245</li>
@@ -501,8 +506,18 @@ If this boolean is set to <code>true</code>, then level 3 INTEGRITY_CHECK errors
 <li>Example <code>&lt;extension&gt;</code>: b7023d7e-11ab-4270-9c20-3de02e908245</li>
 </ul>
 </li>
+<li>INTERNAL_CONDITION_OBSERVATION_NOT_FOUND<ul>
+<li>Internal Condition Observation <code>&lt;extension&gt;</code> not found</li>
+<li>Example <code>&lt;extension&gt;</code>: b7023d7e-11ab-4270-9c20-3de02e908245</li>
+</ul>
+</li>
 <li>EXTERNAL_PROCEDURE_NOT_FOUND<ul>
 <li>External Procedure <code>&lt;extension&gt;</code> not found</li>
+<li>Example <code>&lt;extension&gt;</code>: b7023d7e-11ab-4270-9c20-3de02e908245</li>
+</ul>
+</li>
+<li>INTERNAL_PROCEDURE_NOT_FOUND<ul>
+<li>Internal Procedure <code>&lt;extension&gt;</code> not found</li>
 <li>Example <code>&lt;extension&gt;</code>: b7023d7e-11ab-4270-9c20-3de02e908245</li>
 </ul>
 </li>
