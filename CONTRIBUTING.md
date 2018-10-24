@@ -4,6 +4,9 @@ We want to keep it as easy as possible to contribute to get things working in yo
 There are a few guidelines that we need contributors to follow so that we can have a chance of keeping on
 top of things.
 
+## Language
+Use English language with the exception of LPR3 specific terminology, e.g. you can choose to use forløb instead of episode of care.
+
 ## Identify your reporting authority
 Most likely you're ultimately working on behalf of a reporting authority. Please identify the reporting authority when contributing. A workable identification can be your github account name, if you have a dedicated account that you use when submitting issues to the register, e.g. JohnDoeRegionMidt or JaneSmithVendorX.
 
