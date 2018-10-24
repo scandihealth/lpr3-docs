@@ -15,7 +15,8 @@ Feel free to submit issues and keep in mind that that we have limited resource l
 Separate you issues. If you have multiple questions, bugs reports, enchancement request create sepearate issues for them.
 If an issue is assigned to you react on it in the same time and way you would like us to react.
 Finally, you're responsible for closing issues when you have no more relevant information to add.
-**During the summer our effort spend on your contributions will be reduced.**
+
+**During the Danish holidays and vacation periods our effort spend on your contributions will be reduced.**
 
 ### Questions
 If you can find an answer in hte documentation or elsewhere try to refrain from posting question. We will only answer questions directly concerning the technical parts of the interface the register, e.g. how to register data. If you're question is about what data to register contact the project group at Danish national health data agency.
