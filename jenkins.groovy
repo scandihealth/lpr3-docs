@@ -23,6 +23,8 @@ node {
         }
         stage('Publish') {
           sh 'git add *'
+          sh 'git config user.email "scandihealth-git@dxc.com"'
+          sh 'git config user.name "Jenkins CI"'
           sh 'git commit -m "new build"'
           sh 'git push'
         }
