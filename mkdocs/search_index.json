@@ -272,7 +272,7 @@
         },
         {
             "location": "/productionenvironment/index.html",
-            "text": "Production environment\n\n\nAddress\n\n\nAccessing the production environment requires access to the \nSundhedsdatanettet (SDN)\n.\n\nThe following three endpoint are available.\n\n\n\n\nSave if no errors\n\n\nhttps://lprws.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareSaveIfNoErrorsReportingService\n\n\nSave with errors\n\n\nhttps://lprws.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareReportingService\n\n\nValidate\n\n\nhttps://lprws.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareValidateReportingService",
+            "text": "Production environment\n\n\nAddress\n\n\nAccessing the production environment requires access to the \nSundhedsdatanettet (SDN)\n.\n\nThe following three endpoint are available.\n\n\n\n\nSave if no errors\n\n** https://lprws.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareSaveIfNoErrorsReportingService\n\n\nSave with errors\n\n** https://lprws.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareReportingService\n\n\nValidate\n\n** https://lprws.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareValidateReportingService",
             "title": "Production environment"
         },
         {
@@ -282,7 +282,7 @@
         },
         {
             "location": "/productionenvironment/index.html#address",
-            "text": "Accessing the production environment requires access to the  Sundhedsdatanettet (SDN) . \nThe following three endpoint are available.   Save if no errors  https://lprws.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareSaveIfNoErrorsReportingService  Save with errors  https://lprws.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareReportingService  Validate  https://lprws.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareValidateReportingService",
+            "text": "Accessing the production environment requires access to the  Sundhedsdatanettet (SDN) . \nThe following three endpoint are available.   Save if no errors \n** https://lprws.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareSaveIfNoErrorsReportingService  Save with errors \n** https://lprws.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareReportingService  Validate \n** https://lprws.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareValidateReportingService",
             "title": "Address"
         },
         {
