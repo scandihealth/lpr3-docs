@@ -10,6 +10,7 @@ pages:
 - Interfaces:
   - XDR: interface/xdr.md
   - Accumulated error list: interface/accumulated-error-list.md
+- Production environment: productionenvironment.md
 - Test environment: testenvironment.md
 - Development resources: developmentresources.md
 - Scenarios: scenarios.md
