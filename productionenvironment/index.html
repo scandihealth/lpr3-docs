@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Governace - Landspatientregisteret 3 - Technical documentation</title>
+  <title>Production environment - Landspatientregisteret 3 - Technical documentation</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -19,9 +19,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Governace";
-    var mkdocs_page_input_path = "governance.md";
-    var mkdocs_page_url = "/governance/index.html";
+    var mkdocs_page_name = "Production environment";
+    var mkdocs_page_input_path = "productionenvironment.md";
+    var mkdocs_page_url = "/productionenvironment/index.html";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -59,21 +59,9 @@
     <a class="" href="../definitions/index.html">Definitions</a>
 	    </li>
           
-            <li class="toctree-l1 current">
+            <li class="toctree-l1">
 		
-    <a class="current" href="index.html">Governace</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l2"><a href="#governance">Governance</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l3" href="#change-management">Change Management</a></li>
-        
-        </ul>
-    
-
-    </ul>
+    <a class="" href="../governance/index.html">Governace</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -106,9 +94,21 @@
     </ul>
 	    </li>
           
-            <li class="toctree-l1">
+            <li class="toctree-l1 current">
 		
-    <a class="" href="../productionenvironment/index.html">Production environment</a>
+    <a class="current" href="index.html">Production environment</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#production-environment">Production environment</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#address">Address</a></li>
+        
+        </ul>
+    
+
+    </ul>
 	    </li>
           
             <li class="toctree-l1">
@@ -163,10 +163,10 @@
     
       
     
-    <li>Governace</li>
+    <li>Production environment</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/scandihealth/lpr3-docs/edit/master/src/governance.md"
+        <a href="https://github.com/scandihealth/lpr3-docs/edit/master/src/productionenvironment.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -176,13 +176,18 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="governance">Governance</h1>
-<p>All communication regarding technical aspect, such as integration, of the Landspatientregisteret version 3 (LPR3) will be made public through this site.<br />
-Questions, bugs, enchancement request can be raised and will be answered through GitHub built-in <a href="https://github.com/scandihealth/lpr3-docs/issues">issues</a>.<br />
-It is possible to use GitHub's watch function to be notified of any changes, Q&amp;A as well as operational status updates on the test environment.</p>
-<h2 id="change-management">Change Management</h2>
-<p>All enhancements request are subject to approval by the LPR3 Steering Group Committee under Sundhedsdatastyrelsen.<br />
-Notification of approved and rejected enhancements will happen through this GitHub page.</p>
+                <h1 id="production-environment">Production environment</h1>
+<h2 id="address">Address</h2>
+<p>Accessing the production environment requires access to the <a href="https://www.medcom.dk/opslag/support">Sundhedsdatanettet (SDN)</a>.<br />
+The following three endpoint are available.</p>
+<ul>
+<li><a href="https://lprws.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareSaveIfNoErrorsReportingService">Save if no errors</a></li>
+<li>https://lprws.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareSaveIfNoErrorsReportingService</li>
+<li><a href="https://lprws.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareReportingService">Save with errors</a></li>
+<li>https://lprws.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareReportingService</li>
+<li><a href="https://lprws.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareValidateReportingService">Validate</a></li>
+<li>https://lprws.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareValidateReportingService</li>
+</ul>
               
             </div>
           </div>
@@ -190,10 +195,10 @@ Notification of approved and rejected enhancements will happen through this GitH
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../aspects/index.html" class="btn btn-neutral float-right" title="Interface aspects and usage">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../testenvironment/index.html" class="btn btn-neutral float-right" title="Test environment">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../definitions/index.html" class="btn btn-neutral" title="Definitions"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../interface/accumulated-error-list/index.html" class="btn btn-neutral" title="Accumulated error list"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -221,10 +226,10 @@ Notification of approved and rejected enhancements will happen through this GitH
           <a href="https://github.com/scandihealth/lpr3-docs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../definitions/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../interface/accumulated-error-list/index.html" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../aspects/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../testenvironment/index.html" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
