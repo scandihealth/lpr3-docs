@@ -238,6 +238,9 @@ The value of `location` is split into 1 mandatory segment and 3 conditional segm
     * EXTERNAL_PROCEDURE_NOT_FOUND
         * External Procedure `<extension>` not found
         * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245
+    * EXTERNAL_EPISODE_OF_CARE_MARKER_NOT_FOUND
+    	* External Episode Of Care Marker `<extension>` not found
+        * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245
     * INTERNAL_PROCEDURE_NOT_FOUND
         * Internal Procedure `<extension>` not found
         * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245
