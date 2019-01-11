@@ -189,10 +189,25 @@
 <p>The specific design details of LPR3 based on Clinical Document Architecture (CDA) is documented at <a href="http://lpr-art-decor.westeurope.cloudapp.azure.com:8080/art-decor/decor-project--lpr-">ART-DECOR</a></p>
 <h1 id="xdr-interface">XDR interface</h1>
 <h2 id="http-status-codes">HTTP status codes</h2>
-<p>The XDR endpoints are build on SOAP 1.2 and as such any client should interpret HTTP status code as defined <a href="https://www.w3.org/TR/soap12-part2/">SOAP Version 1.2 Part 2: Adjuncts (Second Edition)</a> section 7.5.1.2</p>
+<p>The XDR endpoints are build on SOAP 1.2 and as such any LPR XDR client should interpret HTTP status code as defined <a href="https://www.w3.org/TR/soap12-part2/">SOAP Version 1.2 Part 2: Adjuncts (Second Edition)</a> section 7.5.1.2</p>
 <blockquote>
 <p>The SOAP HTTP binding follows the rules of any HTTP application which means that an implementation of the SOAP HTTP binding must understand the class of any status code, as indicated by the first digit, and treat any unrecognized response as being equivalent to the x00 status code of that class, with the exception that an unrecognized response must not be cached.</p>
 </blockquote>
+<p>The following HTTP status codes in addition to table 17 of <a href="https://www.w3.org/TR/soap12-part2/">SOAP Version 1.2 Part 2: Adjuncts (Second Edition)</a> SHOULD be recognized by a LPR XDR client.</p>
+<h3 id="100-continue">100 Continue</h3>
+<p>The 100 (Continue) status code indicates that the initial part of a request has been received and has not yet been rejected by the server.  The server intends to send a final response after the request has been fully received and acted upon.</p>
+<h3 id="403-forbidden">403 Forbidden</h3>
+<p>The 403 (Forbidden) status code indicates that the server understood the request but refuses to authorize it.</p>
+<h3 id="404-not-found">404 Not Found</h3>
+<p>The 404 (Not Found) status code indicates that the origin server did not find a current representation for the target resource or is not willing to disclose that one exists.</p>
+<h3 id="406-not-acceptable">406 Not Acceptable</h3>
+<p>The 406 (Not Acceptable) status code indicates that the target resource does not have a current representation that would be acceptable to the user agent.</p>
+<h3 id="413-payload-too-large">413 Payload Too Large</h3>
+<p>The 413 (Payload Too Large) status code indicates that the server is refusing to process a request because the request payload is larger than the server is willing or able to process.</p>
+<h3 id="501-not-implemented">501 Not Implemented</h3>
+<p>The 501 (Not Implemented) status code indicates that the server does not support the functionality required to fulfill the request.</p>
+<h3 id="503-service-unavailable">503 Service Unavailable</h3>
+<p>The 503 (Service Unavailable) status code indicates that the server is currently unable to handle the request due to a temporary overload or scheduled maintenance, which will likely be alleviated after some delay.</p>
 <h2 id="ihe-xdr-wsdl-with-national-ssi-additions">IHE XDR WSDL with national SSI additions</h2>
 <p>The following section shows the IHE XDR WSDL with the danish national SSI additions.</p>
 <p>The raw WSDL file can be found <a href="../../interface/wsdl/ihe-xdr.wsdl">here</a> and the schema for the <code>urn:lpr</code> name space can be found <a href="../../interface/wsdl/xsd/lpr/lpr.xsd">here</a>.</p>
