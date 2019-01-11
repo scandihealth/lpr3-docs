@@ -4,9 +4,32 @@ The specific design details of LPR3 based on Clinical Document Architecture (CDA
 # XDR interface
 
 ## HTTP status codes
-The XDR endpoints are build on SOAP 1.2 and as such any client should interpret HTTP status code as defined [SOAP Version 1.2 Part 2: Adjuncts (Second Edition)](https://www.w3.org/TR/soap12-part2/) section 7.5.1.2
+The XDR endpoints are build on SOAP 1.2 and as such any LPR XDR client should interpret HTTP status code as defined [SOAP Version 1.2 Part 2: Adjuncts (Second Edition)](https://www.w3.org/TR/soap12-part2/) section 7.5.1.2
 
 > The SOAP HTTP binding follows the rules of any HTTP application which means that an implementation of the SOAP HTTP binding must understand the class of any status code, as indicated by the first digit, and treat any unrecognized response as being equivalent to the x00 status code of that class, with the exception that an unrecognized response must not be cached.
+
+The following HTTP status codes in addition to table 17 of [SOAP Version 1.2 Part 2: Adjuncts (Second Edition)](https://www.w3.org/TR/soap12-part2/) SHOULD be recognized by a LPR XDR client.
+
+### 100 Continue
+The 100 (Continue) status code indicates that the initial part of a request has been received and has not yet been rejected by the server.  The server intends to send a final response after the request has been fully received and acted upon.
+
+### 403 Forbidden 
+The 403 (Forbidden) status code indicates that the server understood the request but refuses to authorize it.
+
+### 404 Not Found
+The 404 (Not Found) status code indicates that the origin server did not find a current representation for the target resource or is not willing to disclose that one exists.
+
+### 406 Not Acceptable
+The 406 (Not Acceptable) status code indicates that the target resource does not have a current representation that would be acceptable to the user agent.
+
+### 413 Payload Too Large
+The 413 (Payload Too Large) status code indicates that the server is refusing to process a request because the request payload is larger than the server is willing or able to process.
+
+### 501 Not Implemented
+The 501 (Not Implemented) status code indicates that the server does not support the functionality required to fulfill the request.
+ 
+### 503 Service Unavailable
+The 503 (Service Unavailable) status code indicates that the server is currently unable to handle the request due to a temporary overload or scheduled maintenance, which will likely be alleviated after some delay.
 
 ## IHE XDR WSDL with national SSI additions
 The following section shows the IHE XDR WSDL with the danish national SSI additions.
