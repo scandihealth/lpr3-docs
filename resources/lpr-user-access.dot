@@ -1,6 +1,6 @@
 graph {
     graph[style=dashed]
-    p -> fd
+    p -- f
     subgraph cluster_f {
         f -- k
         f -- fp
