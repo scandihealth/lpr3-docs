@@ -82,39 +82,6 @@ Below XML illustrates how the errors at different leves are wrapped in a `Regist
 </rs:RegistryResponse>
 ~~~
 
-### Using optional SOAP header to specify integrity error format
-
-***_UPDATE_***
-
-Errors that previously could be reported as either INTEGRITY_CHECK or BUSINESS_RULE are from now on (from 26th of June, 2018) only  reported as INTEGRITY_CHECKs. As such, the use of the header `LprHeader` is considered deprecated and will be ignored.
-
-Errors found at level 3 are by default reported on the BUSINESS_RULE format, but with special rules for `codeContext` and `location` values, described in the below sections.  
-It is possible to receive level 3 errors on a dedicated INTEGRITY_CHECK format, which simplifies processing of BUSINESS_RULE by eliminating special cases for `codeContext` and `location` values.  
-  
-The [Clinical Document Architecture LPR3 definition](/interface/xdr)) contains an optional SOAP header `LprHeader` which has an element `UsingIntegrityCheckErrorReporting` of type `boolean`.  
-If this boolean is set to `true`, then level 3 INTEGRITY_CHECK errors are reported using the dedicated INTEGRITY_CHECK format described in the below sections.  
-**We recommend using the dedicated INTEGRITY_CHECK format** for easier machine processing of the various errors returned by the service.
-
-Here is an example of a request that has set the optional SOAP header element to true.
-~~~xml
-<soapenv:Header>
-    <lpr:LprHeader xmlns:lpr="urn:lpr">
-      <UsingIntegrityCheckErrorReporting>true</UsingIntegrityCheckErrorReporting>
-    </lpr:LprHeader>
-</soapenv:Header>
-~~~
-
-The INTEGRITY_CHECK error in the above example is using the dedicated INTEGRITY_CHECK format. The same error presented in the BUSINESS_RULE format would have looked like this:
-~~~xml
-<rs:RegistryError
-    codeContext="BUSINESS_RULE|||Set with id 2252b2c3-fa2d-4d8e-9af4-995893b12b39 already exists in the registry, and ClinicalDocument does not contain a relatedDocument|||SET_ALREADY_EXISTS_AND_NO_RELATED_DOCUMENT|||2252b2c3-fa2d-4d8e-9af4-995893b12b39"
-    errorCode="InvalidDocumentContent"
-    location="2189b2c3-fa2d-4d8e-9af4-995893b12b39^54abd790-8a4c-4a1d-b41c-8d8749f6913c|||//*[local-name()='ClinicalDocument' and child::*[local-name()='setId' and @root='2252b2c3-fa2d-4d8e-9af4-995893b12b39'] and not(child::*[local-name()='relatedDocument'])]"
-    severity="urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error"/>
-~~~
-
-See [issue #33](https://github.com/scandihealth/lpr3-docs/issues/33) for more information.
-
 ### codeContext
 The `codeContext` attribute contains information about _what_ the error is.
 
@@ -125,7 +92,7 @@ The attribute value is split into 2 mandatory segments and 1 conditional segment
 * `<validation text>` contains a human readable explanation of what has been violated, in technical terms
 * `<integrity error identifier>` is the conditional segment containing the unique ID of the violated integrity check and the values causing the violation on the format:  
 `<integrity code>|||<param1>|||<param2|||...|||<paramN>`
-    * Present when `<validation type>` is INTEGRITY_CHECK **or** when level 3 errors are reported on the BUSINESS_RULE format (see [issue #33](https://github.com/scandihealth/lpr3-docs/issues/33))
+    * Present only when `<validation type>` is **INTEGRITY_CHECK**
     * `<integrity code>` is a unique code for the data integrity rule that has been violated. See below for a complete list of implemented integrity rules 
     * `<param>` elements contain the variable parts of an error (e.g. which encounter that already exists). The params are included in the `<validation text>`, but are also provided as separate segments to make it easier to machine process the error
     * Example: `SET_ALREADY_EXISTS_AND_NO_RELATED_DOCUMENT|||2252b2c3-fa2d-4d8e-9af4-995893b12b39`  
