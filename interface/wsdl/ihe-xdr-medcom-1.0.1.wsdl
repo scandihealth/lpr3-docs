@@ -49,7 +49,7 @@
                     xmlns:ihe="urn:ihe:iti:xds-b:2007" xmlns:hsuid="http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd"
                     xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://svn.medcom.dk/svn/releases/Standarder/DGWS/Schemas/medcom-1.0.1.xsd">
             <xsd:include
-                schemaLocation="http://svn.medcom.dk/svn/releases/Standarder/DGWS/Schemas/medcom-1.0.1.xsd"/>
+                schemaLocation="xsd/dgws/medcom-1.0.1.xsd"/>
 
         </xsd:schema>
         <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -175,7 +175,7 @@
             </output>
         </operation>
     </binding>
-    <service name="medcom-1.0.1/DocumentRepository_Service">
+    <service name="DocumentRepository_Service">
         <port name="DocumentRepository_Port_Soap12" binding="ihe:DocumentRepository_Binding">
             <soap:address location="https://lprws.sds.dsdn.dk/cda-ws/medcom-1.0.1/DocumentRepository_Service/PatientHealthcareReportingService"/>
         </port>

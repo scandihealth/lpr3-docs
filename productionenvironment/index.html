@@ -181,20 +181,34 @@
 <p>Accessing the production environment requires access to the <a href="https://www.medcom.dk/opslag/support">Sundhedsdatanettet (SDN)</a>.<br />
 The following three endpoint are available.</p>
 <ul>
-<li><a href="https://lprws.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareSaveIfNoErrorsReportingService?wsdl">Save if no errors</a></li>
+<li><a href="https://lprws.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareSaveIfNoErrorsReportingService?wsdl">Save if no errors</a><ul>
 <li>https://lprws.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareSaveIfNoErrorsReportingService</li>
-<li><a href="https://lprws.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareReportingService?wsdl">Save with errors</a></li>
+</ul>
+</li>
+<li><a href="https://lprws.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareReportingService?wsdl">Save with errors</a><ul>
 <li>https://lprws.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareReportingService</li>
-<li><a href="https://lprws.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareValidateReportingService?wsdl">Validate</a></li>
+</ul>
+</li>
+<li><a href="https://lprws.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareValidateReportingService?wsdl">Validate</a><ul>
 <li>https://lprws.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareValidateReportingService</li>
 </ul>
-<p>The same three endpoints are also available where the <code>medcom</code> header is defined by the medcom namespace <code>http://svn.medcom.dk/svn/releases/Standarder/DGWS/Schemas/medcom-1.0.1.xsd</code> (see #240 and <a href="../interface/ihe-xdr-medcom-1.0.1.wsdl">ihe-xdr-medcom-1.0.1.wsdl</a>
- * <a href="https://lprws.sds.dsdn.dk/cda-ws/medcom-1.0.1/DocumentRepository_Service/PatientHealthcareSaveIfNoErrorsReportingService?wsdl">Save if no errors</a>
-   * https://lprws.sds.dsdn.dk/cda-ws/medcom-1.0.1/DocumentRepository_Service/PatientHealthcareSaveIfNoErrorsReportingService 
- * <a href="https://lprws.sds.dsdn.dk/cda-ws/medcom-1.0.1/DocumentRepository_Service/PatientHealthcareReportingService?wsdl">Save with errors</a>
-   * https://lprws.sds.dsdn.dk/cda-ws/medcom-1.0.1/DocumentRepository_Service/PatientHealthcareReportingService
- * <a href="https://lprws.sds.dsdn.dk/cda-ws/medcom-1.0.1/DocumentRepository_Service/PatientHealthcareValidateReportingService?wsdl">Validate</a>
-   * https://lprws.sds.dsdn.dk/cda-ws/medcom-1.0.1/DocumentRepository_Service/PatientHealthcareValidateReportingService</p>
+</li>
+</ul>
+<p>The same three endpoints are also available where the <code>medcom</code> header is defined by the medcom namespace <code>http://svn.medcom.dk/svn/releases/Standarder/DGWS/Schemas/medcom-1.0.1.xsd</code> (see <a href="https://github.com/scandihealth/lpr3-docs/issues/240">#240</a> and <a href="https://github.com/scandihealth/lpr3-docs/blob/master/src/interface/wsdl/ihe-xdr-medcom-1.0.1.wsdl">ihe-xdr-medcom-1.0.1.wsdl</a>)</p>
+<ul>
+<li><a href="https://lprws.sds.dsdn.dk/cda-ws/medcom-1.0.1/DocumentRepository_Service/PatientHealthcareSaveIfNoErrorsReportingService?wsdl">Save if no errors</a><ul>
+<li>https://lprws.sds.dsdn.dk/cda-ws/medcom-1.0.1/DocumentRepository_Service/PatientHealthcareSaveIfNoErrorsReportingService </li>
+</ul>
+</li>
+<li><a href="https://lprws.sds.dsdn.dk/cda-ws/medcom-1.0.1/DocumentRepository_Service/PatientHealthcareReportingService?wsdl">Save with errors</a><ul>
+<li>https://lprws.sds.dsdn.dk/cda-ws/medcom-1.0.1/DocumentRepository_Service/PatientHealthcareReportingService</li>
+</ul>
+</li>
+<li><a href="https://lprws.sds.dsdn.dk/cda-ws/medcom-1.0.1/DocumentRepository_Service/PatientHealthcareValidateReportingService?wsdl">Validate</a><ul>
+<li>https://lprws.sds.dsdn.dk/cda-ws/medcom-1.0.1/DocumentRepository_Service/PatientHealthcareValidateReportingService</li>
+</ul>
+</li>
+</ul>
               
             </div>
           </div>
