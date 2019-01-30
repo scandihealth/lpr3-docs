@@ -1,7 +1,7 @@
 - LPR3 CDA Templates can be found at [Art-Decor](http://lpr-art-decor.westeurope.cloudapp.azure.com:8080/art-decor/decor-project--lpr-)
 - MedCom CDA Templates can be found at [Art-Decor](http://lpr-art-decor.westeurope.cloudapp.azure.com:8080/art-decor/decor-project--medcom-)
 - Latest *unstable* LPR3 Schematron files are provided _as is_ and can be found [here](https://github.com/scandihealth/lpr3-cda/raw/unstable/schematron.unstable.zip)
-- The IHE XDR service WSDL with national extensions and LPR extensions can be found [here](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/scandihealth/lpr3-docs/tree/master/src/interface/wsdl)
+- The IHE XDR service WSDLs with national extensions can be found [here](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/scandihealth/lpr3-docs/tree/master/src/interface/wsdl)
 - Overall details of IHE XDR can be found at [IHE IT Infrastructure (ITI) Technical Framework Volume 1 (ITI TF-1) Rev. 13 Integration Profiles](http://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol1.pdf) *(section 15)*
 - Details on the IHE XDR transaction **ITI-41** can be found at [IHE IT Infrastructure (ITI) Technical Framework Volume 2b (ITI TF-2b) Rev. 13 Transactions Part B – Sections 3.29 – 3.64](http://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol2b.pdf) *(section 3.41)* 
 - Details on the IHE XDR/XDS protocol content can be found at [IHE IT Infrastructure (ITI) Technical Framework Volume 3 (ITI TF-3) Rev. 13 Cross-Transaction Specifications and Content Specifications](http://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_TF_Vol3.pdf) *(section 4)*

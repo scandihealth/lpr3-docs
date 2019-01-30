@@ -8,7 +8,6 @@
              xmlns:medcom="http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd"
              xmlns:ihe="urn:ihe:iti:xds-b:2007"
              xmlns:hsuid="http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd"
-             xmlns:lpr="urn:lpr"
              xmlns="http://schemas.xmlsoap.org/wsdl/"
              xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
              name="DocumentRepository"
@@ -17,7 +16,7 @@
     <documentation>IHE XDR Service with national SSI additions
     </documentation>
     <types>
-	
+
         <!-- Danish national extensions start -->
 
         <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
@@ -125,17 +124,9 @@
                     elementFormDefault="qualified" targetNamespace="urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0">
             <xsd:include
                 schemaLocation="xsd/ebRS/rim.xsd"/>
+
         </xsd:schema>
 
-			<!-- LPR specific extensions start -->
-	
-	<xsd:schema targetNamespace="urn:lpr">
-            <xsd:include schemaLocation="xsd/lpr/lpr.xsd"/>
-        </xsd:schema>
-	
-	<!-- LPR specific extensions stop -->
-
-        
     </types>
     <message name="SecurityHeader">
         <part element="wsse:Security" name="security_header">
@@ -158,9 +149,6 @@
         <part element="hsuid:HsuidHeader" name="hsuid_header">
         </part>
     </message>
-    <message  name="LprHeader">
-        <part element="lpr:LprHeader" name="lpr_header"></part>
-    </message>
     <portType name="DocumentRepository_PortType">
         <operation name="DocumentRepository_ProvideAndRegisterDocumentSet-b">
             <input message="ihe:ProvideAndRegisterDocumentSet-b_Message"
@@ -180,8 +168,6 @@
                                use="literal"></soap12:header>
                 <soap12:header message="ihe:HsuidHeader" part="hsuid_header"
                                use="literal"></soap12:header>
-                <soap12:header message="ihe:LprHeader" part="lpr_header"
-                               use="literal"></soap12:header>
                 <soap12:body use="literal"></soap12:body>
             </input>
             <output>
@@ -193,7 +179,7 @@
     </binding>
     <service name="DocumentRepository_Service">
         <port name="DocumentRepository_Port_Soap12" binding="ihe:DocumentRepository_Binding">
-            <soap:address location="https://localhost:8080/cda-ws/DocumentRepository_Service/PatientHealthcareReportingService"/>
+            <soap:address location="https://lprws.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareReportingService"/>
         </port>
     </service>
 </definitions>
