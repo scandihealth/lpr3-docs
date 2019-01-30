@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ The MIT License
+  ~
+  ~ Original work sponsored and donated by National Board of e-Health (NSI), Denmark (http://www.nsi.dk)
+  ~
+  ~ Copyright (C) 2011 National Board of e-Health (NSI), Denmark (http://www.nsi.dk)
+  ~
+  ~ Permission is hereby granted, free of charge, to any person obtaining a copy of
+  ~ this software and associated documentation files (the "Software"), to deal in
+  ~ the Software without restriction, including without limitation the rights to
+  ~ use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+  ~ of the Software, and to permit persons to whom the Software is furnished to do
+  ~ so, subject to the following conditions:
+  ~
+  ~ The above copyright notice and this permission notice shall be included in all
+  ~ copies or substantial portions of the Software.
+  ~
+  ~ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  ~ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  ~ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  ~ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  ~ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  ~ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  ~ SOFTWARE.
+  ~
+  ~ $HeadURL$
+  ~ $Id$
+  -->
+
+<xs:schema
+  xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+  elementFormDefault="qualified" 
+  targetNamespace="http://svn.medcom.dk/svn/releases/Standarder/DGWS/Schemas/medcom-1.0.1.xsd" 
+  xmlns:medcom="http://svn.medcom.dk/svn/releases/Standarder/DGWS/Schemas/medcom-1.0.1.xsd">
+  <xs:element name="Linking">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="medcom:FlowID" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="medcom:MessageID" minOccurs="1" maxOccurs="1"/>
+        <xs:element ref="medcom:InResponseToMessageID" minOccurs="0" maxOccurs="1" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FlowID" type="xs:string"/>
+  <xs:element name="MessageID" type="xs:string"/>
+  <xs:element name="InResponseToMessageID" type="xs:string"/>
+  <xs:element name="Priority">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="AKUT"/>
+        <xs:enumeration value="HASTER"/>
+        <xs:enumeration value="RUTINE"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="RequireNonRepudiationReceipt">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="yes"/>
+        <xs:enumeration value="no"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="FlowStatus">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="flow_running"/>
+        <xs:enumeration value="flow_finalized_succesfully"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="SecurityLevel">
+    <xs:simpleType>
+      <xs:restriction base="xs:int">
+        <xs:enumeration value="1"/>
+        <xs:enumeration value="2"/>
+        <xs:enumeration value="3"/>
+        <xs:enumeration value="4"/>
+        <xs:enumeration value="5"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="TimeOut">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="5"/>
+        <xs:enumeration value="30"/>
+        <xs:enumeration value="480"/>
+        <xs:enumeration value="1440"/>
+        <xs:enumeration value="unbound"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="Header">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="medcom:SecurityLevel" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="medcom:TimeOut" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="medcom:Linking" minOccurs="1" maxOccurs="1"/>
+        <xs:element ref="medcom:FlowStatus" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="medcom:Priority" minOccurs="0" maxOccurs="1"/>
+        <xs:element ref="medcom:RequireNonRepudiationReceipt" minOccurs="0" maxOccurs="1"/>
+      </xs:sequence>
+      <!-- Added by SEAL -->
+	  <xs:anyAttribute namespace="##other" processContents="lax"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FaultCode" type="xs:string"/>
+</xs:schema>
