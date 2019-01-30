@@ -210,7 +210,7 @@
 <p>The 503 (Service Unavailable) status code indicates that the server is currently unable to handle the request due to a temporary overload or scheduled maintenance, which will likely be alleviated after some delay.</p>
 <h2 id="ihe-xdr-wsdl-with-national-ssi-additions">IHE XDR WSDL with national SSI additions</h2>
 <p>The following section shows the IHE XDR WSDL with the danish national SSI additions.</p>
-<p>The raw WSDL file can be found <a href="../../interface/wsdl/ihe-xdr.wsdl">here</a> and the schema for the <code>urn:lpr</code> name space can be found <a href="../../interface/wsdl/xsd/lpr/lpr.xsd">here</a>.</p>
+<p>The raw WSDL file can be found <a href="../../interface/wsdl/ihe-xdr.wsdl">here</a>.</p>
 <pre><code class="xml">&lt;?xml version='1.0' encoding='UTF-8'?&gt;
 
 &lt;definitions xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;
@@ -221,7 +221,6 @@
              xmlns:medcom=&quot;http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd&quot;
              xmlns:ihe=&quot;urn:ihe:iti:xds-b:2007&quot;
              xmlns:hsuid=&quot;http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd&quot;
-             xmlns:lpr=&quot;urn:lpr&quot;
              xmlns=&quot;http://schemas.xmlsoap.org/wsdl/&quot;
              xmlns:soap12=&quot;http://schemas.xmlsoap.org/wsdl/soap12/&quot;
              name=&quot;DocumentRepository&quot;
@@ -289,7 +288,7 @@
                     xmlns=&quot;http://schemas.xmlsoap.org/wsdl/&quot; elementFormDefault=&quot;qualified&quot;
                     targetNamespace=&quot;urn:ihe:iti:xds-b:2007&quot;&gt;
             &lt;xsd:include
-                schemaLocation=&quot;../schema/IHE/XDS.b_DocumentRepository.xsd&quot;/&gt;
+                schemaLocation=&quot;xsd/IHE/XDS.b_DocumentRepository.xsd&quot;/&gt;
 
         &lt;/xsd:schema&gt;
         &lt;xsd:schema xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;
@@ -301,7 +300,7 @@
                     xmlns=&quot;http://schemas.xmlsoap.org/wsdl/&quot; elementFormDefault=&quot;qualified&quot;
                     targetNamespace=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0&quot;&gt;
             &lt;xsd:include
-                schemaLocation=&quot;../schema/ebRS/rs.xsd&quot;/&gt;
+                schemaLocation=&quot;xsd/ebRS/rs.xsd&quot;/&gt;
 
         &lt;/xsd:schema&gt;
         &lt;xsd:schema xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;
@@ -313,7 +312,7 @@
                     xmlns=&quot;http://schemas.xmlsoap.org/wsdl/&quot; elementFormDefault=&quot;qualified&quot;
                     targetNamespace=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0&quot;&gt;
             &lt;xsd:include
-                schemaLocation=&quot;../schema/ebRS/query.xsd&quot;/&gt;
+                schemaLocation=&quot;xsd/ebRS/query.xsd&quot;/&gt;
 
         &lt;/xsd:schema&gt;
         &lt;xsd:schema xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;
@@ -325,7 +324,7 @@
                     xmlns:hsuid=&quot;http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd&quot; xmlns=&quot;http://schemas.xmlsoap.org/wsdl/&quot;
                     elementFormDefault=&quot;qualified&quot; targetNamespace=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0&quot;&gt;
             &lt;xsd:include
-                schemaLocation=&quot;../schema/ebRS/lcm.xsd&quot;/&gt;
+                schemaLocation=&quot;xsd/ebRS/lcm.xsd&quot;/&gt;
 
         &lt;/xsd:schema&gt;
         &lt;xsd:schema xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot;
@@ -337,13 +336,10 @@
                     xmlns:hsuid=&quot;http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd&quot; xmlns=&quot;http://schemas.xmlsoap.org/wsdl/&quot;
                     elementFormDefault=&quot;qualified&quot; targetNamespace=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0&quot;&gt;
             &lt;xsd:include
-                schemaLocation=&quot;../schema/ebRS/rim.xsd&quot;/&gt;
+                schemaLocation=&quot;xsd/ebRS/rim.xsd&quot;/&gt;
 
         &lt;/xsd:schema&gt;
 
-        &lt;xsd:schema targetNamespace=&quot;urn:lpr&quot;&gt;
-            &lt;xsd:include schemaLocation=&quot;xsd/lpr/lpr.xsd&quot;/&gt;
-        &lt;/xsd:schema&gt;
     &lt;/types&gt;
     &lt;message name=&quot;SecurityHeader&quot;&gt;
         &lt;part element=&quot;wsse:Security&quot; name=&quot;security_header&quot;&gt;
@@ -366,9 +362,6 @@
         &lt;part element=&quot;hsuid:HsuidHeader&quot; name=&quot;hsuid_header&quot;&gt;
         &lt;/part&gt;
     &lt;/message&gt;
-    &lt;message  name=&quot;LprHeader&quot;&gt;
-        &lt;part element=&quot;lpr:LprHeader&quot; name=&quot;lpr_header&quot;&gt;&lt;/part&gt;
-    &lt;/message&gt;
     &lt;portType name=&quot;DocumentRepository_PortType&quot;&gt;
         &lt;operation name=&quot;DocumentRepository_ProvideAndRegisterDocumentSet-b&quot;&gt;
             &lt;input message=&quot;ihe:ProvideAndRegisterDocumentSet-b_Message&quot;
@@ -388,8 +381,6 @@
                                use=&quot;literal&quot;&gt;&lt;/soap12:header&gt;
                 &lt;soap12:header message=&quot;ihe:HsuidHeader&quot; part=&quot;hsuid_header&quot;
                                use=&quot;literal&quot;&gt;&lt;/soap12:header&gt;
-                &lt;soap12:header message=&quot;ihe:LprHeader&quot; part=&quot;lpr_header&quot;
-                               use=&quot;literal&quot;&gt;&lt;/soap12:header&gt;
                 &lt;soap12:body use=&quot;literal&quot;&gt;&lt;/soap12:body&gt;
             &lt;/input&gt;
             &lt;output&gt;
@@ -401,7 +392,7 @@
     &lt;/binding&gt;
     &lt;service name=&quot;DocumentRepository_Service&quot;&gt;
         &lt;port name=&quot;DocumentRepository_Port_Soap12&quot; binding=&quot;ihe:DocumentRepository_Binding&quot;&gt;
-            &lt;soap:address location=&quot;http://localhost:8080/cda-ws/DocumentRepository_Service/PatientHealthcareReportingService&quot;/&gt;
+            &lt;soap:address location=&quot;https://lprws.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareReportingService&quot;/&gt;
         &lt;/port&gt;
     &lt;/service&gt;
 &lt;/definitions&gt;

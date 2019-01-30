@@ -89,8 +89,6 @@
     
         <ul>
         
-            <li><a class="toctree-l4" href="#using-optional-soap-header-to-specify-integrity-error-format">Using optional SOAP header to specify integrity error format</a></li>
-        
             <li><a class="toctree-l4" href="#codecontext">codeContext</a></li>
         
             <li><a class="toctree-l4" href="#location">location</a></li>
@@ -306,31 +304,6 @@ The XSD and Schematron files does not include LPR3 assigned error codes - instea
 &lt;/rs:RegistryResponse&gt;
 </code></pre>
 
-<h3 id="using-optional-soap-header-to-specify-integrity-error-format">Using optional SOAP header to specify integrity error format</h3>
-<p><strong><em><em>UPDATE</em></em></strong></p>
-<p>Errors that previously could be reported as either INTEGRITY_CHECK or BUSINESS_RULE are from now on (from 26th of June, 2018) only  reported as INTEGRITY_CHECKs. As such, the use of the header <code>LprHeader</code> is considered deprecated and will be ignored.</p>
-<p>Errors found at level 3 are by default reported on the BUSINESS_RULE format, but with special rules for <code>codeContext</code> and <code>location</code> values, described in the below sections.<br />
-It is possible to receive level 3 errors on a dedicated INTEGRITY_CHECK format, which simplifies processing of BUSINESS_RULE by eliminating special cases for <code>codeContext</code> and <code>location</code> values.  </p>
-<p>The <a href="../interface/xdr">Clinical Document Architecture LPR3 definition</a>) contains an optional SOAP header <code>LprHeader</code> which has an element <code>UsingIntegrityCheckErrorReporting</code> of type <code>boolean</code>.<br />
-If this boolean is set to <code>true</code>, then level 3 INTEGRITY_CHECK errors are reported using the dedicated INTEGRITY_CHECK format described in the below sections.<br />
-<strong>We recommend using the dedicated INTEGRITY_CHECK format</strong> for easier machine processing of the various errors returned by the service.</p>
-<p>Here is an example of a request that has set the optional SOAP header element to true.</p>
-<pre><code class="xml">&lt;soapenv:Header&gt;
-    &lt;lpr:LprHeader xmlns:lpr=&quot;urn:lpr&quot;&gt;
-      &lt;UsingIntegrityCheckErrorReporting&gt;true&lt;/UsingIntegrityCheckErrorReporting&gt;
-    &lt;/lpr:LprHeader&gt;
-&lt;/soapenv:Header&gt;
-</code></pre>
-
-<p>The INTEGRITY_CHECK error in the above example is using the dedicated INTEGRITY_CHECK format. The same error presented in the BUSINESS_RULE format would have looked like this:</p>
-<pre><code class="xml">&lt;rs:RegistryError
-    codeContext=&quot;BUSINESS_RULE|||Set with id 2252b2c3-fa2d-4d8e-9af4-995893b12b39 already exists in the registry, and ClinicalDocument does not contain a relatedDocument|||SET_ALREADY_EXISTS_AND_NO_RELATED_DOCUMENT|||2252b2c3-fa2d-4d8e-9af4-995893b12b39&quot;
-    errorCode=&quot;InvalidDocumentContent&quot;
-    location=&quot;2189b2c3-fa2d-4d8e-9af4-995893b12b39^54abd790-8a4c-4a1d-b41c-8d8749f6913c|||//*[local-name()='ClinicalDocument' and child::*[local-name()='setId' and @root='2252b2c3-fa2d-4d8e-9af4-995893b12b39'] and not(child::*[local-name()='relatedDocument'])]&quot;
-    severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot;/&gt;
-</code></pre>
-
-<p>See <a href="https://github.com/scandihealth/lpr3-docs/issues/33">issue #33</a> for more information.</p>
 <h3 id="codecontext">codeContext</h3>
 <p>The <code>codeContext</code> attribute contains information about <em>what</em> the error is.</p>
 <p>The attribute value is split into 2 mandatory segments and 1 conditional segment (placed in parentheses), with <code>|||</code> as segment delimiter:<br />
@@ -340,7 +313,7 @@ If this boolean is set to <code>true</code>, then level 3 INTEGRITY_CHECK errors
 <li><code>&lt;validation text&gt;</code> contains a human readable explanation of what has been violated, in technical terms</li>
 <li><code>&lt;integrity error identifier&gt;</code> is the conditional segment containing the unique ID of the violated integrity check and the values causing the violation on the format:<br />
 <code>&lt;integrity code&gt;|||&lt;param1&gt;|||&lt;param2|||...|||&lt;paramN&gt;</code><ul>
-<li>Present when <code>&lt;validation type&gt;</code> is INTEGRITY_CHECK <strong>or</strong> when level 3 errors are reported on the BUSINESS_RULE format (see <a href="https://github.com/scandihealth/lpr3-docs/issues/33">issue #33</a>)</li>
+<li>Present only when <code>&lt;validation type&gt;</code> is <strong>INTEGRITY_CHECK</strong></li>
 <li><code>&lt;integrity code&gt;</code> is a unique code for the data integrity rule that has been violated. See below for a complete list of implemented integrity rules </li>
 <li><code>&lt;param&gt;</code> elements contain the variable parts of an error (e.g. which encounter that already exists). The params are included in the <code>&lt;validation text&gt;</code>, but are also provided as separate segments to make it easier to machine process the error</li>
 <li>Example: <code>SET_ALREADY_EXISTS_AND_NO_RELATED_DOCUMENT|||2252b2c3-fa2d-4d8e-9af4-995893b12b39</code>  </li>
@@ -573,6 +546,11 @@ If this boolean is set to <code>true</code>, then level 3 INTEGRITY_CHECK errors
 </li>
 <li>INVALID_CVR_NUMBER<ul>
 <li>The specified Danish Central Business Number is not valid.</li>
+</ul>
+</li>
+<li>ENCOUNTER_ALREADY_HAVE_MAJOR_CONDITION_OBSERVATION<ul>
+<li>MainConditionObservation <code>&lt;extension&gt;</code> cannot be added as the Encounter already has a MainConditonObservation</li>
+<li>Example <code>&lt;extension&gt;</code>: b7023d7e-11ab-4270-9c20-3de02e908245</li>
 </ul>
 </li>
 </ul>
