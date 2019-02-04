@@ -19,7 +19,7 @@ Finally, you're responsible for closing issues when you have no more relevant in
 **During the Danish holidays and vacation periods our effort spend on your contributions will be reduced.**
 
 ### Questions
-If you can find an answer in the documentation or elsewhere try to refrain from posting a question. We will only answer questions directly concerning the technical parts of the interface the register, e.g. how to register data. If you're question is about what data to register contact the project group at Danish National Health Data Agency.
+If you can find an answer in the documentation or elsewhere try to refrain from posting a question. We will only answer questions directly concerning the technical parts of the interface the register, e.g. how to register data. If you're question is about what data to register or the dynamic rules contact the project group at Danish National Health Data Agency.
 
 ### Bugs
 If you're expiriencing a bug please provide as much information as possible. These are often the entire XDR ITI-41 request and a precise time when the issue arose. We prefer times converted to Europe/Copenhagen time zone.
