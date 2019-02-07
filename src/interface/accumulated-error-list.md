@@ -29,45 +29,67 @@ The structure of an issue file is definied by [this JSON Schema](../resources/ac
 Below is an example of an issue file
 ```json
 {
-    "procedures": [
+  "encounters": [
+    {
+      "conditions": [
         {
-            "identifier": {
-                "root": "E602E07C-7F05-431D-B187-1199974F4C5B",
-                "extension": "58B1ACBC-A2C0-55C4-9803-462933618208"
-            },
-            "errors": [
+          "observationOrganizers": [
+            {
+              "identifier": {
+                "root": "9ac099d7-dcb3-4bf4-916a-1967ff03147b",
+                "extension": "44ceb94b-0832-5590-b9d4-3b91f9cb1d99"
+              },
+              "errors": [
                 {
-                    "ruleId": "11.31",
-                    "ruleVersion": "sds:lpr:3.0.5",
-                    "code": "1131",
-                    "message": "Hvis en procedure er tilknyttet direkte til et forløbselement, skal der være tilknyttet en betalingsoplysning til proceduren, og starttidspunkt for betalingsoplysningen skal være lig med starttidspunkt for proceduren"
+                  "ruleId": "RAA01.RDA01-3",
+                  "ruleVersion": "sds:lpr:3.0.5",
+                  "code": "90013",
+                  "message": "Anmeldelsesstatus (resultat RDA01) skal være i en af kodelisterne res.statuscar.subb og res.statuscar.subc ved komplet indberetning"
                 },
                 {
-                    "ruleId": "11.101",
-                    "ruleVersion": "sds:lpr:3.0.5",
-                    "code": "11101",
-                    "message": "Procedurekoden skal være i en af kodelisterne proc.act, proc.opr og proc.und"
+                  "ruleId": "RAA01.6",
+                  "ruleVersion": "sds:lpr:3.0.5",
+                  "code": "9100",
+                  "message": "Resultatindberetning RAA01 (canceranmeldelse) må kun trigges af en diagnose i kodelisten diag.car"
+                },
+                {
+                  "ruleId": "RAA01.RDA03-1",
+                  "ruleVersion": "sds:lpr:3.0.5",
+                  "code": "90031",
+                  "message": "Mikroskopisk diagnosegrundlag (resultat RDA03) skal være i kodelisten res.mikrogr"
+                },
+                {
+                  "ruleId": "RAA01.RDA02",
+                  "ruleVersion": "sds:lpr:3.0.5",
+                  "code": "9002",
+                  "message": "For resultatindberetning RAA01 (canceranmeldelse) skal der være et resultat af type RDA02 (makroskopisk diagnosegrundlag), når anmeldelsesstatus (resultat RDA01) er i kodelisten res.statuscar.suba"
                 }
-            ]
+              ]
+            }
+          ],
+          "identifier": {
+            "root": "9ac099d7-dcb3-4bf4-916a-1967ff03147b",
+            "extension": "19d79492-28ed-5b04-b27d-c11d4228187d"
+          }
         }
-    ],
-    "identifier": {
-        "root": "E602E07C-7F05-431D-B187-1199974F4C5B",
-        "extension": "1E1CC9CC-A675-5B0E-A458-90D778272ACC"
-    },
-    "errors": [
-        {
-            "ruleId": "06.a",
-            "ruleVersion": "sds:lpr:3.0.5",
-            "code": "6001",
-            "message": "Henvisningsårsagen skal findes i en af kodelisterne diag, proc.act, proc.opr, proc.und"
-        },
-        {
-            "ruleId": "02.02",
-            "ruleVersion": "sds:lpr:3.0.5",
-            "code": "202",
-            "message": "Et afsluttet forløbselement skal have en afslutningsmåde"
-        }
-    ]
+      ],
+      "identifier": {
+        "root": "9ac099d7-dcb3-4bf4-916a-1967ff03147b",
+        "extension": "ac39b667-f04a-5cab-a29e-01200b1edc15"
+      }
+    }
+  ],
+  "identifier": {
+    "root": "9ac099d7-dcb3-4bf4-916a-1967ff03147b",
+    "extension": "0000328d-5517-5e33-b5d8-931f39a83d7f"
+  },
+  "errors": [
+    {
+      "ruleId": "00.01",
+      "ruleVersion": "sds:lpr:3.0.5",
+      "code": "1",
+      "message": "Ethvert tidspunkt indeholdt i et givet objekt, der indberettes, skal ligge før eller samtidig med indberetningens tidsstempel, som igen skal ligge før aktuelle tidspunkt"
+    }
+  ]
 }
 ```
