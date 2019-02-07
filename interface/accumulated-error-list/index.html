@@ -214,46 +214,68 @@ An implementation <strong>SHOULD NOT</strong> set limits on the character conten
 <h2 id="example">Example</h2>
 <p>Below is an example of an issue file</p>
 <pre><code class="json">{
-    &quot;procedures&quot;: [
+  &quot;encounters&quot;: [
+    {
+      &quot;conditions&quot;: [
         {
-            &quot;identifier&quot;: {
-                &quot;root&quot;: &quot;E602E07C-7F05-431D-B187-1199974F4C5B&quot;,
-                &quot;extension&quot;: &quot;58B1ACBC-A2C0-55C4-9803-462933618208&quot;
-            },
-            &quot;errors&quot;: [
+          &quot;observationOrganizers&quot;: [
+            {
+              &quot;identifier&quot;: {
+                &quot;root&quot;: &quot;9ac099d7-dcb3-4bf4-916a-1967ff03147b&quot;,
+                &quot;extension&quot;: &quot;44ceb94b-0832-5590-b9d4-3b91f9cb1d99&quot;
+              },
+              &quot;errors&quot;: [
                 {
-                    &quot;ruleId&quot;: &quot;11.31&quot;,
-                    &quot;ruleVersion&quot;: &quot;sds:lpr:3.0.5&quot;,
-                    &quot;code&quot;: &quot;1131&quot;,
-                    &quot;message&quot;: &quot;Hvis en procedure er tilknyttet direkte til et forløbselement, skal der være tilknyttet en betalingsoplysning til proceduren, og starttidspunkt for betalingsoplysningen skal være lig med starttidspunkt for proceduren&quot;
+                  &quot;ruleId&quot;: &quot;RAA01.RDA01-3&quot;,
+                  &quot;ruleVersion&quot;: &quot;sds:lpr:3.0.5&quot;,
+                  &quot;code&quot;: &quot;90013&quot;,
+                  &quot;message&quot;: &quot;Anmeldelsesstatus (resultat RDA01) skal være i en af kodelisterne res.statuscar.subb og res.statuscar.subc ved komplet indberetning&quot;
                 },
                 {
-                    &quot;ruleId&quot;: &quot;11.101&quot;,
-                    &quot;ruleVersion&quot;: &quot;sds:lpr:3.0.5&quot;,
-                    &quot;code&quot;: &quot;11101&quot;,
-                    &quot;message&quot;: &quot;Procedurekoden skal være i en af kodelisterne proc.act, proc.opr og proc.und&quot;
+                  &quot;ruleId&quot;: &quot;RAA01.6&quot;,
+                  &quot;ruleVersion&quot;: &quot;sds:lpr:3.0.5&quot;,
+                  &quot;code&quot;: &quot;9100&quot;,
+                  &quot;message&quot;: &quot;Resultatindberetning RAA01 (canceranmeldelse) må kun trigges af en diagnose i kodelisten diag.car&quot;
+                },
+                {
+                  &quot;ruleId&quot;: &quot;RAA01.RDA03-1&quot;,
+                  &quot;ruleVersion&quot;: &quot;sds:lpr:3.0.5&quot;,
+                  &quot;code&quot;: &quot;90031&quot;,
+                  &quot;message&quot;: &quot;Mikroskopisk diagnosegrundlag (resultat RDA03) skal være i kodelisten res.mikrogr&quot;
+                },
+                {
+                  &quot;ruleId&quot;: &quot;RAA01.RDA02&quot;,
+                  &quot;ruleVersion&quot;: &quot;sds:lpr:3.0.5&quot;,
+                  &quot;code&quot;: &quot;9002&quot;,
+                  &quot;message&quot;: &quot;For resultatindberetning RAA01 (canceranmeldelse) skal der være et resultat af type RDA02 (makroskopisk diagnosegrundlag), når anmeldelsesstatus (resultat RDA01) er i kodelisten res.statuscar.suba&quot;
                 }
-            ]
+              ]
+            }
+          ],
+          &quot;identifier&quot;: {
+            &quot;root&quot;: &quot;9ac099d7-dcb3-4bf4-916a-1967ff03147b&quot;,
+            &quot;extension&quot;: &quot;19d79492-28ed-5b04-b27d-c11d4228187d&quot;
+          }
         }
-    ],
-    &quot;identifier&quot;: {
-        &quot;root&quot;: &quot;E602E07C-7F05-431D-B187-1199974F4C5B&quot;,
-        &quot;extension&quot;: &quot;1E1CC9CC-A675-5B0E-A458-90D778272ACC&quot;
-    },
-    &quot;errors&quot;: [
-        {
-            &quot;ruleId&quot;: &quot;06.a&quot;,
-            &quot;ruleVersion&quot;: &quot;sds:lpr:3.0.5&quot;,
-            &quot;code&quot;: &quot;6001&quot;,
-            &quot;message&quot;: &quot;Henvisningsårsagen skal findes i en af kodelisterne diag, proc.act, proc.opr, proc.und&quot;
-        },
-        {
-            &quot;ruleId&quot;: &quot;02.02&quot;,
-            &quot;ruleVersion&quot;: &quot;sds:lpr:3.0.5&quot;,
-            &quot;code&quot;: &quot;202&quot;,
-            &quot;message&quot;: &quot;Et afsluttet forløbselement skal have en afslutningsmåde&quot;
-        }
-    ]
+      ],
+      &quot;identifier&quot;: {
+        &quot;root&quot;: &quot;9ac099d7-dcb3-4bf4-916a-1967ff03147b&quot;,
+        &quot;extension&quot;: &quot;ac39b667-f04a-5cab-a29e-01200b1edc15&quot;
+      }
+    }
+  ],
+  &quot;identifier&quot;: {
+    &quot;root&quot;: &quot;9ac099d7-dcb3-4bf4-916a-1967ff03147b&quot;,
+    &quot;extension&quot;: &quot;0000328d-5517-5e33-b5d8-931f39a83d7f&quot;
+  },
+  &quot;errors&quot;: [
+    {
+      &quot;ruleId&quot;: &quot;00.01&quot;,
+      &quot;ruleVersion&quot;: &quot;sds:lpr:3.0.5&quot;,
+      &quot;code&quot;: &quot;1&quot;,
+      &quot;message&quot;: &quot;Ethvert tidspunkt indeholdt i et givet objekt, der indberettes, skal ligge før eller samtidig med indberetningens tidsstempel, som igen skal ligge før aktuelle tidspunkt&quot;
+    }
+  ]
 }
 </code></pre>
               

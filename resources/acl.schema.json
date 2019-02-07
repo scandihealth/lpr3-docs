@@ -3,17 +3,16 @@
     "$schema": "http://json-schema.org/draft-07/schema#",
     "type" : "object",
     "definitions": {
-        "uuid-4" : {
+        "uuid" : {
             "type" : "string",
-            "pattern": "^[0-9A-F]{8}-[0-9A-F]{4}-4[0-9A-F]{3}-[0-9A-F]{4}-[0-9A-F]{12}$"
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$"
         },
         "uuid-5" : {
             "type" : "string",
-            "pattern": "^[0-9A-F]{8}-[0-9A-F]{4}-5[0-9A-F]{3}-[0-9A-F]{4}-[0-9A-F]{12}$"
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-5[0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$"
         },
         "ruleId" : {
-            "type": "string",
-            "pattern": "^[0-9a-zA-Z]+(\\.[0-9a-zA-Z]+)*$"
+            "type": "string"
         },
         "ruleVersion" : {
             "type": "string",
@@ -62,15 +61,28 @@
         "identifier" : {
             "type" : "object",
             "properties": {
-                "root" : { "$ref": "#/definitions/uuid-4" },
+                "root" : { "$ref": "#/definitions/uuid" },
                 "extension" : { "$ref": "#/definitions/uuid-5" }
+            },
+            "required": [ "root", "extension" ]
+        },
+        "patientIdentifiers" : {
+            "type" : "array",
+            "items": { "$ref": "#/definitions/patientIdentifier" },
+            "minItems" : 1
+        },
+        "patientIdentifier" : {
+            "type" : "object",
+            "properties": {
+                "root" : { "type" : "string" },
+                "extension" : { "type" : "string" }
             },
             "required": [ "root", "extension" ]
         },
         "patient" : {
             "type" : "object",
             "properties": {
-                "identifiers" : { "$ref": "#/definitions/identifiers" },
+                "identifiers" : { "$ref": "#/definitions/patientIdentifiers" },
                 "errors" : { "$ref": "#/definitions/errors" },
                 "warnings" : { "$ref": "#/definitions/warnings" }
             },
