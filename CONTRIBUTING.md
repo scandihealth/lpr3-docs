@@ -22,7 +22,11 @@ Finally, you're responsible for closing issues when you have no more relevant in
 If you can find an answer in the documentation or elsewhere try to refrain from posting a question. We will only answer questions directly concerning the technical parts of the interface the register, e.g. how to register data. If you're question is about what data to register or the dynamic rules contact the project group at Danish National Health Data Agency.
 
 ### Bugs
-If you're expiriencing a bug please provide as much information as possible. These are often the entire XDR ITI-41 request and a precise time when the issue arose. We prefer times converted to Europe/Copenhagen time zone.
+If you're expiriencing a bug please provide as much information as possible. 
+- The entire XDR ITI-41 request if possible, or at least the ClinicalDocument. 
+  - Please provide a self-contained example of how to reproduce the issue. This means that if your ClinicalDocument contains either a relatedDocument or uses DK Set External Episode of Care References then also provide the parent documents and the referenced set external episodes of care.
+- The precise time and place (production or test) when the issue arose. We prefer times converted to Europe/Copenhagen time zone. 
+
 
 ### Enhancement requests
 
