@@ -144,6 +144,11 @@ The value of `location` is split into 1 mandatory segment and 3 conditional segm
         * Example `<setId>`: ef0893de-88fe-4ecd-acf0-69498b5e8f35
     * NO_PATIENT_ID_IN_COMMON
         * All CDA documents must have at least 1 patientRole id in common
+    * DUPLICATE_DOCUMENT
+        * The submission has duplicated documents
+    * EXTENSION_ALREADY_USED
+        * The extension `<extension>` is already in use
+        * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245
     * SKS_CODE_NOT_FOUND
         * SKS kode `<kode>` not found from `<fromDate>` to `<toDate>`
         * Example `<kode>`: DD42
@@ -235,7 +240,7 @@ The value of `location` is split into 1 mandatory segment and 3 conditional segm
         * The specified Replacement Danish Civil Registration Number is not comforming to the [standard](https://www.cpr.dk/media/17535/erstatningspersonnummerets-opbygning.pdf).
     * INVALID_CVR_NUMBER
         * The specified Danish Central Business Number is not valid.
-    * ENCOUNTER_ALREADY_HAVE_MAJOR_CONDITION_OBSERVATION
+    * ENCOUNTER_ALREADY_HAS_MAIN_CONDITION_OBSERVATION
         * MainConditionObservation `<extension>` cannot be added as the Encounter already has a MainConditonObservation
         * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245
 
