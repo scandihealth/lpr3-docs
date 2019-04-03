@@ -395,6 +395,15 @@ The XSD and Schematron files does not include LPR3 assigned error codes - instea
 <li>All CDA documents must have at least 1 patientRole id in common</li>
 </ul>
 </li>
+<li>DUPLICATE_DOCUMENT<ul>
+<li>The submission has duplicated documents</li>
+</ul>
+</li>
+<li>EXTENSION_ALREADY_USED<ul>
+<li>The extension <code>&lt;extension&gt;</code> is already in use</li>
+<li>Example <code>&lt;extension&gt;</code>: b7023d7e-11ab-4270-9c20-3de02e908245</li>
+</ul>
+</li>
 <li>SKS_CODE_NOT_FOUND<ul>
 <li>SKS kode <code>&lt;kode&gt;</code> not found from <code>&lt;fromDate&gt;</code> to <code>&lt;toDate&gt;</code></li>
 <li>Example <code>&lt;kode&gt;</code>: DD42</li>
@@ -548,7 +557,7 @@ The XSD and Schematron files does not include LPR3 assigned error codes - instea
 <li>The specified Danish Central Business Number is not valid.</li>
 </ul>
 </li>
-<li>ENCOUNTER_ALREADY_HAVE_MAJOR_CONDITION_OBSERVATION<ul>
+<li>ENCOUNTER_ALREADY_HAS_MAIN_CONDITION_OBSERVATION<ul>
 <li>MainConditionObservation <code>&lt;extension&gt;</code> cannot be added as the Encounter already has a MainConditonObservation</li>
 <li>Example <code>&lt;extension&gt;</code>: b7023d7e-11ab-4270-9c20-3de02e908245</li>
 </ul>
