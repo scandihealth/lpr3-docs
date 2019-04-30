@@ -196,7 +196,8 @@ The list is represented as a set of files, one for every episode of care element
 <p>The issue files are accessible through FTP.
 The files are grouped by reporting authority, i.e. every reporting authority has their own private folder on the FTP server.</p>
 <h2 id="schedule">Schedule</h2>
-<p>The list is updated at midnight. </p>
+<p>The set of files are generated at 02:00 and transfer of files to FTP site begins at 02:30 in the Europe/Copenhagen timezone. 
+The transfer may take a long time depending of the size of the list. Current estimate is that the full transfer takes 1 hour 30 minutes. </p>
 <h2 id="file-format">File format</h2>
 <p>The files are represented in JSON as definited by <a href="https://tools.ietf.org/html/rfc8259">RFC 8259</a>.<br />
 Any consumer of the accumulated error list is considered a <a href="https://tools.ietf.org/html/rfc8259#section-9">JSON parser</a> with the following additional requirements.</p>
