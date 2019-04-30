@@ -7,7 +7,8 @@ The issue files are accessible through FTP.
 The files are grouped by reporting authority, i.e. every reporting authority has their own private folder on the FTP server.
 
 ## Schedule
-The list is updated at midnight. 
+The set of files are generated at 02:00 and transfer of files to FTP site begins at 02:30 in the Europe/Copenhagen timezone. 
+The transfer may take a long time depending of the size of the list. Current estimate is that the full transfer takes 1 hour 30 minutes. 
 
 ## File format
 The files are represented in JSON as definited by [RFC 8259](https://tools.ietf.org/html/rfc8259).  
