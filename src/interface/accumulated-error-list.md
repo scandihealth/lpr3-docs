@@ -1,10 +1,12 @@
+# Accumulated error list
+
 ## About
 The accumulated error list is a list of all episode of care elements with outstanding dynamic rule issues as definited by the [issue transitive closure](/definitions.md#Issue transitive closure).  
 The list is represented as a set of files, one for every episode of care element.
 
 ## Access
 The issue files are accessible through FTP.
-The files are grouped by reporting authority, i.e. every reporting authority has their own private folder on the FTP server.
+The files are grouped by reporting authority, i.e. every reporting authority has their own private folder on the FTP server. In each folder the files are packaged in zip files with a default count of 10.000 individual json files per zip file. 
 
 ## Schedule
 The set of files are generated at 02:00 and transfer of files to FTP site begins at 02:30 in the Europe/Copenhagen timezone. 
