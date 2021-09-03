@@ -1,6 +1,6 @@
 docs_dir: src
 site_name: Landspatientregisteret 3 - Technical documentation
-pages:
+nav:
 - Home: index.md
 - Definitions: definitions.md
 - Governace: governance.md
