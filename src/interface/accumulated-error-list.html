@@ -365,15 +365,22 @@ code {
           : 'default'
     });
   </script>
+<h1 id="accumulated-error-list">Accumulated error list</h1>
 <h2 id="about">About</h2>
 <p>The accumulated error list is a list of all episode of care elements with outstanding dynamic rule issues as definited by the [issue transitive closure](/definitions.md#Issue transitive closure).<br>
 The list is represented as a set of files, one for every episode of care element.</p>
 <h2 id="access">Access</h2>
-<p>The issue files are accessible through FTP.
-The files are grouped by reporting authority, i.e. every reporting authority has their own private folder on the FTP server.</p>
+<p>The issue files are accessible through sFTP.
+The files are grouped by reporting authority, i.e. every reporting authority has their own private folder on the FTP server. In each folder the files are packaged in zip files with a default count of 10.000 individual json files per zip file.</p>
+<h3 id="url-for-ftp-servers">URL for ftp servers</h3>
+<p>Find the URL for accessing accumulated error list here:</p>
+<ul>
+<li><a href="../testenvironment.md">Test environment</a></li>
+<li><a href="../productionenvironment.md">Produktion environment</a></li>
+</ul>
 <h2 id="schedule">Schedule</h2>
-<p>The set of files are generated at 02:00 and transfer of files to FTP site begins at 02:30 in the Europe/Copenhagen timezone.
-The transfer may take a long time depending of the size of the list. Current estimate is that the full transfer takes 1 hour 30 minutes.</p>
+<p>The set of files are generated at 1:55 and transfer of files to FTP site begins at 04:00 in the Europe/Copenhagen timezone. The transfer may take a long time depending of the size of the list. Current estimate is that the full transfer takes 1 hour 30 minutes.</p>
+<p>The files are loaded for one reporting authority at a time and to indicate that the load is finnished an empty file named &quot;lpr3_acl_upload_afsluttet_[YYYYMMDD]-[HHmm].succes&quot; is placed in the folder.</p>
 <h2 id="file-format">File format</h2>
 <p>The files are represented in JSON as definited by <a href="https://tools.ietf.org/html/rfc8259">RFC 8259</a>.<br>
 Any consumer of the accumulated error list is considered a <a href="https://tools.ietf.org/html/rfc8259#section-9">JSON parser</a> with the following additional requirements.</p>

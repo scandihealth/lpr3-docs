@@ -9,7 +9,7 @@ The issue files are accessible through sFTP.
 The files are grouped by reporting authority, i.e. every reporting authority has their own private folder on the FTP server. In each folder the files are packaged in zip files with a default count of 10.000 individual json files per zip file. 
 
 ### URL for ftp servers
-Find the URL for accesing accumulated error list here:
+Find the URL for accessing accumulated error list here:
 
 - [Test environment](../testenvironment.md)
 - [Produktion environment](../productionenvironment.md)
