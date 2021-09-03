@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>accumulated-error-list.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h2 id="about">About</h2>
+<p>The accumulated error list is a list of all episode of care elements with outstanding dynamic rule issues as definited by the [issue transitive closure](/definitions.md#Issue transitive closure).<br>
+The list is represented as a set of files, one for every episode of care element.</p>
+<h2 id="access">Access</h2>
+<p>The issue files are accessible through FTP.
+The files are grouped by reporting authority, i.e. every reporting authority has their own private folder on the FTP server.</p>
+<h2 id="schedule">Schedule</h2>
+<p>The set of files are generated at 02:00 and transfer of files to FTP site begins at 02:30 in the Europe/Copenhagen timezone.
+The transfer may take a long time depending of the size of the list. Current estimate is that the full transfer takes 1 hour 30 minutes.</p>
+<h2 id="file-format">File format</h2>
+<p>The files are represented in JSON as definited by <a href="https://tools.ietf.org/html/rfc8259">RFC 8259</a>.<br>
+Any consumer of the accumulated error list is considered a <a href="https://tools.ietf.org/html/rfc8259#section-9">JSON parser</a> with the following additional requirements.</p>
+<blockquote>
+<p>An implementation <strong>MUST NOT</strong> set limits lower than 20,000,000 on the size of texts that it accepts.<br>
+An implementation <strong>MUST NOT</strong> set limits lower than 20 on the maximum depth of nesting.<br>
+An implementation <strong>MUST NOT</strong> set limits lower than decimal64 as definied by <a href="https://ieeexplore.ieee.org/document/4610935/">IEEE Std 754-2008</a> on the range and precision of numbers.<br>
+An implementation <strong>MUST NOT</strong> set limits lower than 32,767 on the length of strings.<br>
+An implementation <strong>MUST NOT</strong> set limits on the character contents of strings that are subsets of <a href="https://www.iso.org/standard/28254.html">ISO/IEC 8859-10:1998</a>.<br>
+An implementation <strong>SHOULD NOT</strong> set limits on the character contents of strings.</p>
+</blockquote>
+<p>The LPR system is considered a <a href="https://tools.ietf.org/html/rfc8259#section-10">JSON generator</a>.</p>
+<h2 id="file-structure">File structure</h2>
+<p>The structure of an issue file is definied by <a href="../resources/acl.schema.json">this JSON Schema</a></p>
+<h2 id="example">Example</h2>
+<p>Below is an example of an issue file</p>
+<pre class="hljs"><code><div>{
+  <span class="hljs-attr">"encounters"</span>: [
+    {
+      <span class="hljs-attr">"conditions"</span>: [
+        {
+          <span class="hljs-attr">"observationOrganizers"</span>: [
+            {
+              <span class="hljs-attr">"identifier"</span>: {
+                <span class="hljs-attr">"root"</span>: <span class="hljs-string">"9ac099d7-dcb3-4bf4-916a-1967ff03147b"</span>,
+                <span class="hljs-attr">"extension"</span>: <span class="hljs-string">"44ceb94b-0832-5590-b9d4-3b91f9cb1d99"</span>
+              },
+              <span class="hljs-attr">"errors"</span>: [
+                {
+                  <span class="hljs-attr">"ruleId"</span>: <span class="hljs-string">"RAA01.RDA01-3"</span>,
+                  <span class="hljs-attr">"ruleVersion"</span>: <span class="hljs-string">"sds:lpr:3.0.5"</span>,
+                  <span class="hljs-attr">"code"</span>: <span class="hljs-string">"90013"</span>,
+                  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Anmeldelsesstatus (resultat RDA01) skal være i en af kodelisterne res.statuscar.subb og res.statuscar.subc ved komplet indberetning"</span>
+                },
+                {
+                  <span class="hljs-attr">"ruleId"</span>: <span class="hljs-string">"RAA01.6"</span>,
+                  <span class="hljs-attr">"ruleVersion"</span>: <span class="hljs-string">"sds:lpr:3.0.5"</span>,
+                  <span class="hljs-attr">"code"</span>: <span class="hljs-string">"9100"</span>,
+                  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Resultatindberetning RAA01 (canceranmeldelse) må kun trigges af en diagnose i kodelisten diag.car"</span>
+                },
+                {
+                  <span class="hljs-attr">"ruleId"</span>: <span class="hljs-string">"RAA01.RDA03-1"</span>,
+                  <span class="hljs-attr">"ruleVersion"</span>: <span class="hljs-string">"sds:lpr:3.0.5"</span>,
+                  <span class="hljs-attr">"code"</span>: <span class="hljs-string">"90031"</span>,
+                  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Mikroskopisk diagnosegrundlag (resultat RDA03) skal være i kodelisten res.mikrogr"</span>
+                },
+                {
+                  <span class="hljs-attr">"ruleId"</span>: <span class="hljs-string">"RAA01.RDA02"</span>,
+                  <span class="hljs-attr">"ruleVersion"</span>: <span class="hljs-string">"sds:lpr:3.0.5"</span>,
+                  <span class="hljs-attr">"code"</span>: <span class="hljs-string">"9002"</span>,
+                  <span class="hljs-attr">"message"</span>: <span class="hljs-string">"For resultatindberetning RAA01 (canceranmeldelse) skal der være et resultat af type RDA02 (makroskopisk diagnosegrundlag), når anmeldelsesstatus (resultat RDA01) er i kodelisten res.statuscar.suba"</span>
+                }
+              ]
+            }
+          ],
+          <span class="hljs-attr">"identifier"</span>: {
+            <span class="hljs-attr">"root"</span>: <span class="hljs-string">"9ac099d7-dcb3-4bf4-916a-1967ff03147b"</span>,
+            <span class="hljs-attr">"extension"</span>: <span class="hljs-string">"19d79492-28ed-5b04-b27d-c11d4228187d"</span>
+          }
+        }
+      ],
+      <span class="hljs-attr">"identifier"</span>: {
+        <span class="hljs-attr">"root"</span>: <span class="hljs-string">"9ac099d7-dcb3-4bf4-916a-1967ff03147b"</span>,
+        <span class="hljs-attr">"extension"</span>: <span class="hljs-string">"ac39b667-f04a-5cab-a29e-01200b1edc15"</span>
+      }
+    }
+  ],
+  <span class="hljs-attr">"identifier"</span>: {
+    <span class="hljs-attr">"root"</span>: <span class="hljs-string">"9ac099d7-dcb3-4bf4-916a-1967ff03147b"</span>,
+    <span class="hljs-attr">"extension"</span>: <span class="hljs-string">"0000328d-5517-5e33-b5d8-931f39a83d7f"</span>
+  },
+  <span class="hljs-attr">"errors"</span>: [
+    {
+      <span class="hljs-attr">"ruleId"</span>: <span class="hljs-string">"00.01"</span>,
+      <span class="hljs-attr">"ruleVersion"</span>: <span class="hljs-string">"sds:lpr:3.0.5"</span>,
+      <span class="hljs-attr">"code"</span>: <span class="hljs-string">"1"</span>,
+      <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Ethvert tidspunkt indeholdt i et givet objekt, der indberettes, skal ligge før eller samtidig med indberetningens tidsstempel, som igen skal ligge før aktuelle tidspunkt"</span>
+    }
+  ]
+}
+</div></code></pre>
+
+</body>
+</html>
