@@ -1,5 +1,7 @@
+# Definitions
+
 ## About
-This page contains definitios use throughout the technical documentation.
+This page contains definitions used throughout the technical documentation.
 
 ## Episode of care element
 The ForloebElement.
