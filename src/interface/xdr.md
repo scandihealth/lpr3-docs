@@ -1,7 +1,7 @@
-# Clinical Document Architecture LPR3 definition
-The specific design details of LPR3 based on Clinical Document Architecture (CDA) is documented at [ART-DECOR](http://lpr-art-decor.westeurope.cloudapp.azure.com:8080/art-decor/decor-project--lpr-)
-
 # XDR interface
+
+## Clinical Document Architecture LPR3 definition
+The specific design details of LPR3 based on Clinical Document Architecture (CDA) is documented at [ART-DECOR](http://lpr-art-decor.westeurope.cloudapp.azure.com:8080/art-decor/decor-project--lpr-)
 
 ## HTTP status codes
 The XDR endpoints are build on SOAP 1.2 and as such any LPR XDR client should interpret HTTP status code as defined [SOAP Version 1.2 Part 2: Adjuncts (Second Edition)](https://www.w3.org/TR/soap12-part2/) section 7.5.1.2
