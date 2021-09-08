@@ -34,11 +34,11 @@ Access the [Accumulated Error List](/interface/accumulated-error-list.html) file
 Access to FTP servers are done thorugh sFTP and requires a dedicated user setup by Dedalus.
 
 ## Deployments
-To increase velocity and success DXC will continuously deliver new versions of the LPR3 solution. Time of deployment will be communicated by SDS project management and communication through milestones.
+To increase velocity and success Dedalus will continuously deliver new versions of the LPR3 solution. Time of deployment will be communicated by SDS project management and communication through milestones.
 
 ## Weekly data purge
 As the test progresses and issues are resolved, it may be necessary to delete data in the test enviroment.  
-Therefore, DXC may purge data during weekends.  
+Therefore, Dedalus may purge data during weekends.  
 Data purges will be notified through GitHub no later than friday end of business day.
 
 ## Rules implemented on Test System
