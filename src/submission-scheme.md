@@ -1,12 +1,14 @@
-# Creating object
+# Submission scheme
 
-# Updating objects
+## Creating object
 
-# Deleting objects
+## Updating objects
 
-# Special cases
+## Deleting objects
 
-## Update main condition
+## Special cases
+
+### Update main condition
 Create an episode of care with an encounter and a main condition observation.
 ```xml
 <hl7:ClinicalDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 

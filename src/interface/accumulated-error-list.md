@@ -17,7 +17,7 @@ Find the URL for accessing accumulated error list here:
 ## Schedule
 The set of files are generated at 1:55 and transfer of files to FTP site begins at 04:00 in the Europe/Copenhagen timezone. The transfer may take a long time depending of the size of the list. Current estimate is that the full transfer takes 1 hour 30 minutes.
 
-The files are loaded for one reporting authority at a time and to indicate that the load is finnished an empty file named "lpr3_acl_upload_afsluttet_[YYYYMMDD]-[HHmm].succes" is placed in the folder.
+The files are loaded for one reporting authority at a time and to indicate that the load is finnished an empty file named "lpr3_acl_uploadafsluttet_[YYYYMMDD]-[HHmm].succes" is placed in the folder.
 
 ## File format
 The files are represented in JSON as definited by [RFC 8259](https://tools.ietf.org/html/rfc8259).  
