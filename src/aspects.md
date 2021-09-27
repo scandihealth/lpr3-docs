@@ -283,12 +283,12 @@ IHE XDR defines that submissions of mulitple documents pr. request are allowed a
 The following diagram illustrates the logical data model of LPR3:  
 [![LPR3 logical model](img/LPR3.png)](img/LPR3.png)
 
-A physical ERM for the logical model can be seen [here](/res/LPR3_ACTIVE.pdf)
+A physical ERM for the logical model can be seen [here](res/LPR3_ACTIVE.pdf)
 
 This model is mapped to CDA and divided into the following sections:
 
 - CDA Header
-This section contains the elements `Patient` and `Bopael` from LPR3. The use of elements in the header follows the national ["MedCom guidelines"](http://svn.medcom.dk/svn/releases/Standarder/HL7/CDA%20Header/Dokumentation/DK-CDA-Header-v1.1.pdf) for CDA header usage.
+This section contains the elements `Patient` and `Bopael` from LPR3. The use of elements in the header follows the national ["MedCom guidelines"]:http://svn.medcom.dk/svn/releases/Standarder/HL7/CDA%20Header/Dokumentation/DK-CDA-Header.pdf) for CDA header usage.
 - Episode of Care
 This section contains the main elements `ForloebElement`, `ForloebReference` and `ForloebMarkoer` from LPR3 that maps to `DK Episode Of Care Act`, `DK Episode of Care Link Act` and `DK Episode of Care Marker Act` 
 - Encounters

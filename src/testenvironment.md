@@ -27,7 +27,7 @@ The same three endpoints are also available where the `medcom` header is defined
 
 ### Accumulated Error List
 
-Access the [Accumulated Error List](/interface/accumulated-error-list.html) files:
+Access the [Accumulated Error List](interface/accumulated-error-list.html) files:
 
 > sftp://lpr2indberet-test.sds.dsdn.dk:2222
 
@@ -42,4 +42,4 @@ Therefore, Dedalus may purge data during weekends.
 Data purges will be notified through GitHub no later than friday end of business day.
 
 ## Rules implemented on Test System
-The document [Regel-liste incl fejltekst.xlsx](/res/Regel-liste incl fejltekst.xlsx) contains a list of rules from the Indberetningsvejledning implemented on the environment.
+The document [Regel-liste incl fejltekst.xlsx](res/Regel-liste incl fejltekst.xlsx) contains a list of rules from the Indberetningsvejledning implemented on the environment.

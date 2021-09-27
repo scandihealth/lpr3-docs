@@ -1360,28 +1360,28 @@ echo 'EpisodeOfCareUUID: '$EPISODE_OF_CARE_UUID
 ```
 
 ### Examples from selected scenarios
-[Indberetning af sletning af procedure uden kontakt](/examples/Removal.Procedure.xml)
+[Indberetning af sletning af procedure uden kontakt](examples/Removal.Procedure.xml)
 
-[Indberetning af sletning af forløbselement](/examples/Removal.EpisodeOfCare.xml)
+[Indberetning af sletning af forløbselement](examples/Removal.EpisodeOfCare.xml)
 
-[Indberetning af sletning af kontaktelement](/examples/Removal.Encounter.xml)
+[Indberetning af sletning af kontaktelement](examples/Removal.Encounter.xml)
 
-[Indberetning af procedure uden kontakt med reference til forløbselement](/examples/Procedure.ReferenceToEpisodeOfCare.xml)
+[Indberetning af procedure uden kontakt med reference til forløbselement](examples/Procedure.ReferenceToEpisodeOfCare.xml)
 
-[Indberetning kun med forløbselement](/examples/EpisodeOfCare.xml)
+[Indberetning kun med forløbselement](examples/EpisodeOfCare.xml)
 
-[Indberetning af kontakt med reference til forløbselement og hvor der i samme besked er en resultatindberetning af typen ”Fødselsanmeldelse - mor” på kontakten med flere](/examples/Encounter.ReferenceToEpisodeOfCare.Results-Mother.xml)
+[Indberetning af kontakt med reference til forløbselement og hvor der i samme besked er en resultatindberetning af typen ”Fødselsanmeldelse - mor” på kontakten med flere](examples/Encounter.ReferenceToEpisodeOfCare.Results-Mother.xml)
 
-[Indberetning af kontakt med reference til forløbselement og hvor der i samme besked er en resultatindberetning af typen ”Neonatal hørescreening” på kontakten med flere resultater](/examples/Encounter.ReferenceToEpisodeOfCare.Results-Hearingtests.xml)
+[Indberetning af kontakt med reference til forløbselement og hvor der i samme besked er en resultatindberetning af typen ”Neonatal hørescreening” på kontakten med flere resultater](examples/Encounter.ReferenceToEpisodeOfCare.Results-Hearingtests.xml)
 
-[Indberetning af kontakt med reference til forløbselement og hvor der i samme besked er en resultatindberetning af typen ”Beslutning vedrørende personligt alarm- og pejlesystem” på kontakten med flere resultater](/examples/Encounter.ReferenceToEpisodeOfCare.Results-Decision.Alarm.xml)
+[Indberetning af kontakt med reference til forløbselement og hvor der i samme besked er en resultatindberetning af typen ”Beslutning vedrørende personligt alarm- og pejlesystem” på kontakten med flere resultater](examples/Encounter.ReferenceToEpisodeOfCare.Results-Decision.Alarm.xml)
 
-[Indberetning af kontakt med reference til forløbselement og hvor der i samme besked er en resultatindberetning af typen ”Fødselsanmeldelse - barn” på kontakten med flere resultater](/examples/Encounter.ReferenceToEpisodeOfCare.Results-Child.xml)
+[Indberetning af kontakt med reference til forløbselement og hvor der i samme besked er en resultatindberetning af typen ”Fødselsanmeldelse - barn” på kontakten med flere resultater](examples/Encounter.ReferenceToEpisodeOfCare.Results-Child.xml)
 
-[Indberetning af kontakt med reference til forløbselement og hvor der i samme besked er en resultatindberetning af typen ”Canceranmeldelse” på kontakten med flere resultater](/examples/Encounter.ReferenceToEpisodeOfCare.Results-Cancer.xml)
+[Indberetning af kontakt med reference til forløbselement og hvor der i samme besked er en resultatindberetning af typen ”Canceranmeldelse” på kontakten med flere resultater](examples/Encounter.ReferenceToEpisodeOfCare.Results-Cancer.xml)
 
-[Indberetning af kontakt med reference til forløbselement og hvor der i samme besked er en resultatindberetning af typen ”Canceranmeldelse” på kontakten med flere resultater](/examples/Encounter.ReferenceToEpisodeOfCare.Results-Accident.xml)
+[Indberetning af kontakt med reference til forløbselement og hvor der i samme besked er en resultatindberetning af typen ”Canceranmeldelse” på kontakten med flere resultater](examples/Encounter.ReferenceToEpisodeOfCare.Results-Accident.xml)
 
-[Indberetning af kontakt med reference til forløbselement og hvor der i samme besked er en resultatindberetning af typen ”Abortoplysninger” på kontakten med flere resultater](/examples/Encounter.ReferenceToEpisodeOfCare.Results-Abortion.xml)
+[Indberetning af kontakt med reference til forløbselement og hvor der i samme besked er en resultatindberetning af typen ”Abortoplysninger” på kontakten med flere resultater](examples/Encounter.ReferenceToEpisodeOfCare.Results-Abortion.xml)
 
-[Indberetning af komplet kontakt med reference til forløbselement og med tilhørende procedurer og diagnoser og til diagnoserne (cancer)	hørende metastaser og lokalrecidiv](/examples/Encounter.ReferenceToEpisodeOfCare.Proceduce.Diagnose-Cancer.xml)
+[Indberetning af komplet kontakt med reference til forløbselement og med tilhørende procedurer og diagnoser og til diagnoserne (cancer)	hørende metastaser og lokalrecidiv](examples/Encounter.ReferenceToEpisodeOfCare.Proceduce.Diagnose-Cancer.xml)
