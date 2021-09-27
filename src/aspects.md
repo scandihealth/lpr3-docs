@@ -20,7 +20,8 @@ Note: *Replace* will replace all previous documents and addendums.
 
 This stated use of id, setId and versionNumber ensures that no updates to documents are appended in the wrong order - a refinement of what is stated in sections 4.2.1.7, 4.2.1.8 and 4.2.3.1 - *"Note that version number must be incremented by one when a report is replaced, but can also be incremented more often to meet local requirements."* - [CDA R2](http://www.hl7.org/implement/standards/product_brief.cfm?product_id=7).
 
-.![](/img/L-cda_figure1-changed.png)
+![](img/L-cda_figure1-changed.png)
+![](img/)
 
 ## Rules for updating documents
   * First submitted document constitutes the ‘base document set’.
@@ -281,7 +282,7 @@ IHE XDR defines that submissions of mulitple documents pr. request are allowed a
 
 ## Mapping to the logical model
 The following diagram illustrates the logical data model of LPR3:  
-[![LPR3 logical model](/img/LPR3.png)](/img/LPR3.png)
+[![LPR3 logical model](img/LPR3.png)](img/LPR3.png)
 
 A physical ERM for the logical model can be seen [here](/res/LPR3_ACTIVE.pdf)
 
@@ -302,7 +303,7 @@ All attributes on the elements are mapped to CDA elements and can be found in at
 
 For instance the `code` attribute of element `code` under the element `act` in template `DK Clinical Theme Act[1.2.208.176.7.10.81]` maps to the forloebLabel property of ForloebElement.
 
-[![CDA to LPR mapping example](/img/cda-2-lpr-mapping.png)](/img/cda-2-lpr-mapping.png)
+[![CDA to LPR mapping example](img/cda-2-lpr-mapping.png)](img/cda-2-lpr-mapping.png)
 
 ## Granularity and constraints to submitted documents
 The minimum viable document that will be accepted as a valid submission is a document that adheres to the constraints mentioned in [What rules apply and what errors can be reported and how](#what-rules-apply-and-what-errors-can-be-reported-and-how) - meaning that cardinalities to other elemets must be respected (as outlined in ART-DECOR), values from valuesets must be part of the valuesets (as outlined in ART-DECOR) and the use of correct template ID's as well as the volatile business rules. Any submitted document that adheres to these rules can be submitted for further processing. This means that documents can contain whatever granularity (that adhere to the rules) the submitter would like it to have regarding submission of addendums, corrections and deletions thereby providing a flexible solution that can fit all submitters. 
