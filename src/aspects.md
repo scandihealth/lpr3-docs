@@ -21,7 +21,6 @@ Note: *Replace* will replace all previous documents and addendums.
 This stated use of id, setId and versionNumber ensures that no updates to documents are appended in the wrong order - a refinement of what is stated in sections 4.2.1.7, 4.2.1.8 and 4.2.3.1 - *"Note that version number must be incremented by one when a report is replaced, but can also be incremented more often to meet local requirements."* - [CDA R2](http://www.hl7.org/implement/standards/product_brief.cfm?product_id=7).
 
 ![](img/L-cda_figure1-changed.png)
-![](img/)
 
 ## Rules for updating documents
   * First submitted document constitutes the ‘base document set’.
