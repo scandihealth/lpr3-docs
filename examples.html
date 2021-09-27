@@ -1,0 +1,1527 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>Samples - Landspatientregisteret 3 - Technical documentation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  <link href="css/highlight.js/idea.css" rel="stylesheet" />
+  <link href="css/theme-overrides.css" rel="stylesheet" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Samples";
+    var mkdocs_page_input_path = "examples.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> Landspatientregisteret 3 - Technical documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <p class="caption"><span class="caption-text">Documentation</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="index.html">Introduction to the material</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="definitions.html">Definitions</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="aspects.html">Interface aspects and usage</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="submission-scheme.html">Submission scheme</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Interfaces</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="interface/xdr.html">XDR</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="interface/accumulated-error-list.html">Accumulated error list</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Environments</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="productionenvironment.html">Production</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="testenvironment.html">Test</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Examples</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="scenarios.html">Scenarios</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="examples.html">Samples</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#sample-request-using-mtomxop">Sample request using MTOM/XOP</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#sample-response-with-an-invalid-document">Sample response with an invalid document</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#sample-response-with-a-valid-document">Sample response with a valid document</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#example-usage-of-ids-and-uuidv4">Example usage of ID's and UUIDv4</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#updating-values-in-documents">Updating values in documents</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#adding-new-procedures-to-a-previous-submitted-document">Adding new procedures to a previous submitted document</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#sample-of-how-to-create-a-uuidv5">Sample of how to create a UUIDv5</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#examples-from-selected-scenarios">Examples from selected scenarios</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Miscellaneous</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="developmentresources.html">Development resources</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="links.html">Related material and links</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="governance.html">Governance</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">Landspatientregisteret 3 - Technical documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Examples &raquo;</li>
+        
+      
+    
+    <li>Samples</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="sambles">Sambles</h1>
+<h2 id="sample-request-using-mtomxop">Sample request using MTOM/XOP</h2>
+<pre><code class="language-http">POST /cda-ws/PatientHealthcareReportingService HTTP/1.1 
+Accept: application/soap+xml, multipart/related 
+Content-Type: multipart/related;start=&quot;&lt;rootpart*a80594a2-e5de-425d-9fdc-f6ba27d58f05@example.jaxws.sun.com&gt;&quot;;type=&quot;application/xop+xml&quot;;boundary=&quot;uuid:a80594a2-e5de-425d-9fdc-f6ba27d58f05&quot;;start-info=&quot;application/soap+xml;action=\&quot;urn:ihe:iti:2007:ProvideAndRegisterDocumentSet-b\&quot;&quot; 
+User-Agent: JAX-WS RI 2.2.9-b130926.1035 svn-revision#5f6196f2b90e9460065a4c2f4e30e065b245e51e 
+Host: sc155887:8080 
+Connection: keep-alive 
+</code></pre>
+<pre><code class="language-http">--uuid:a80594a2-e5de-425d-9fdc-f6ba27d58f05 
+Content-Id: &lt;rootpart*a80594a2-e5de-425d-9fdc-f6ba27d58f05@example.jaxws.sun.com&gt; 
+Content-Type: application/xop+xml;charset=utf-8;type=&quot;application/soap+xml;action=\&quot;urn:ihe:iti:2007:ProvideAndRegisterDocumentSet-b\&quot;&quot; 
+Content-Transfer-Encoding: binary 
+</code></pre>
+<pre><code class="language-xml">&lt;soap:Envelope
+    xmlns:soap=&quot;http://www.w3.org/2003/05/soap-envelope&quot;&gt;
+    &lt;soap:Header&gt;
+        &lt;wsse:Security
+            xmlns:wsse=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot;&gt;
+            &lt;wsu:Timestamp
+                xmlns:wsu=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&quot;&gt;
+                &lt;wsu:Created&gt;2018-04-05T07:57:03Z&lt;/wsu:Created&gt;
+            &lt;/wsu:Timestamp&gt;
+            &lt;saml:Assertion
+                xmlns:saml=&quot;urn:oasis:names:tc:SAML:2.0:assertion&quot;
+                IssueInstant=&quot;2018-04-05T07:52:03Z&quot; Version=&quot;2.0&quot; id=&quot;IDCard&quot;&gt;
+                &lt;saml:Issuer&gt;TEST1-NSP-STS&lt;/saml:Issuer&gt;
+                &lt;saml:Subject&gt;
+                    &lt;saml:NameID Format=&quot;medcom:other&quot;&gt;SubjectDN={SERIALNUMBER=CVR:25469364-FID:96988661
+                        + CN=DXC Technology - LPR Indberettersystem (funktionscertifikat),
+                        O=CSC SCANDIHEALTH A/S // CVR:25469364,
+                        C=DK},IssuerDN={CN=TRUST2408 Systemtest XXII CA, O=TRUST2408,
+                        C=DK},CertSerial={1494965723}
+                    &lt;/saml:NameID&gt;
+                    &lt;saml:SubjectConfirmation&gt;
+                        &lt;saml:ConfirmationMethod&gt;urn:oasis:names:tc:SAML:2.0:cm:holder-of-key
+                        &lt;/saml:ConfirmationMethod&gt;
+                        &lt;saml:SubjectConfirmationData&gt;
+                            &lt;ds:KeyInfo
+                                xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot;&gt;
+                                &lt;ds:KeyName&gt;OCESSignature&lt;/ds:KeyName&gt;
+                            &lt;/ds:KeyInfo&gt;
+                        &lt;/saml:SubjectConfirmationData&gt;
+                    &lt;/saml:SubjectConfirmation&gt;
+                &lt;/saml:Subject&gt;
+                &lt;saml:Conditions NotBefore=&quot;2018-04-05T07:52:03Z&quot;
+                    NotOnOrAfter=&quot;2018-04-06T07:52:03Z&quot; /&gt;
+                &lt;saml:AttributeStatement id=&quot;IDCardData&quot;&gt;
+                    &lt;saml:Attribute Name=&quot;sosi:IDCardID&quot;&gt;
+                        &lt;saml:AttributeValue&gt;D/JsXK+ToUO8ErmLd5pVzw==
+                        &lt;/saml:AttributeValue&gt;
+                    &lt;/saml:Attribute&gt;
+                    &lt;saml:Attribute Name=&quot;sosi:IDCardVersion&quot;&gt;
+                        &lt;saml:AttributeValue&gt;1.0.1&lt;/saml:AttributeValue&gt;
+                    &lt;/saml:Attribute&gt;
+                    &lt;saml:Attribute Name=&quot;sosi:IDCardType&quot;&gt;
+                        &lt;saml:AttributeValue&gt;system&lt;/saml:AttributeValue&gt;
+                    &lt;/saml:Attribute&gt;
+                    &lt;saml:Attribute Name=&quot;sosi:AuthenticationLevel&quot;&gt;
+                        &lt;saml:AttributeValue&gt;3&lt;/saml:AttributeValue&gt;
+                    &lt;/saml:Attribute&gt;
+                    &lt;saml:Attribute Name=&quot;sosi:OCESCertHash&quot;&gt;
+                        &lt;saml:AttributeValue&gt;GXaVFH7J+YHFZ8hYp/7c7l9fvAo=
+                        &lt;/saml:AttributeValue&gt;
+                    &lt;/saml:Attribute&gt;
+                &lt;/saml:AttributeStatement&gt;
+                &lt;saml:AttributeStatement id=&quot;SystemLog&quot;&gt;
+                    &lt;saml:Attribute Name=&quot;medcom:ITSystemName&quot;&gt;
+                        &lt;saml:AttributeValue&gt;TRUST2408 Systemtest XIX CA
+                        &lt;/saml:AttributeValue&gt;
+                    &lt;/saml:Attribute&gt;
+                    &lt;saml:Attribute Name=&quot;medcom:CareProviderID&quot;
+                        NameFormat=&quot;medcom:cvrnumber&quot;&gt;
+                        &lt;saml:AttributeValue&gt;25469364&lt;/saml:AttributeValue&gt;
+                    &lt;/saml:Attribute&gt;
+                    &lt;saml:Attribute Name=&quot;medcom:CareProviderName&quot;&gt;
+                        &lt;saml:AttributeValue&gt;DXCTechnology&lt;/saml:AttributeValue&gt;
+                    &lt;/saml:Attribute&gt;
+                &lt;/saml:AttributeStatement&gt;
+                &lt;ds:Signature
+                    xmlns:ds=&quot;http://www.w3.org/2000/09/xmldsig#&quot; id=&quot;OCESSignature&quot;&gt;
+                    &lt;ds:SignedInfo&gt;
+                        &lt;ds:CanonicalizationMethod
+                            Algorithm=&quot;http://www.w3.org/2001/10/xml-exc-c14n#&quot; /&gt;
+                        &lt;ds:SignatureMethod
+                            Algorithm=&quot;http://www.w3.org/2000/09/xmldsig#rsa-sha1&quot; /&gt;
+                        &lt;ds:Reference URI=&quot;#IDCard&quot;&gt;
+                            &lt;ds:Transforms&gt;
+                                &lt;ds:Transform
+                                    Algorithm=&quot;http://www.w3.org/2000/09/xmldsig#enveloped-signature&quot; /&gt;
+                                &lt;ds:Transform
+                                    Algorithm=&quot;http://www.w3.org/2001/10/xml-exc-c14n#&quot; /&gt;
+                            &lt;/ds:Transforms&gt;
+                            &lt;ds:DigestMethod
+                                Algorithm=&quot;http://www.w3.org/2000/09/xmldsig#sha1&quot; /&gt;
+                            &lt;ds:DigestValue&gt;Nror9L7H5JS2ywqUkuc+3Q9DbYY=&lt;/ds:DigestValue&gt;
+                        &lt;/ds:Reference&gt;
+                    &lt;/ds:SignedInfo&gt;
+                    &lt;ds:SignatureValue&gt;URCeKOJfp+IrrO1+m1NNLc31diP12aUNSHRXGdQyWdZOUGOzqCA8eX6RVy6rOjvX68nZIwklKzPAdyJ5RU/YYbKlehROeSMDHuus3BLG5eRieNPS5u64XcGrtGgCQRSDvU6vnV+A6dSCgE6s06OUKYEPHn9FmRChZqjVpVSNP2YDn/FOT9WkMy85N9pjwzrAvo4NjAgdxKGv5g0Evl+1M/CcX4IZ0ui1CTCNClMzOTncUpkrnD0HZZGHTt8HyKuV5KLNQY08CD9e7B2h9U4HoQII8ImMf4Qme3cj0fT4GOQmbs/UFeMI772xrWwS62y/FGH2SKZb+RGvc5BF13P3JA==
+                    &lt;/ds:SignatureValue&gt;
+                    &lt;ds:KeyInfo&gt;
+                        &lt;ds:X509Data&gt;
+                            &lt;ds:X509Certificate&gt;MIIGJjCCBQ6gAwIBAgIEVp5mfDANBgkqhkiG9w0BAQsFADBHMQswCQYDVQQGEwJESzESMBAGA1UECgwJVFJVU1QyNDA4MSQwIgYDVQQDDBtUUlVTVDI0MDggU3lzdGVtdGVzdCBYSVggQ0EwHhcNMTYwNTA0MDg1NTAwWhcNMTkwNTA0MDg1NDAxWjCBlDELMAkGA1UEBhMCREsxLjAsBgNVBAoMJVN1bmRoZWRzZGF0YXN0eXJlbHNlbiAvLyBDVlI6MzMyNTc4NzIxVTAgBgNVBAUTGUNWUjozMzI1Nzg3Mi1GSUQ6NzY3OTQ4ODQwMQYDVQQDDCpTT1NJIFRlc3QgRmVkZXJhdGlvbiAoZnVua3Rpb25zY2VydGlmaWthdCkwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCQipkwYq5Ncc68/6/ACLJK1k/I7wTMNq0lho7NvnGWGNAJkblmRksq6meGEGYgw5ZdvDqwsudKE+mU7YjZZ+EqW9HgceYYeoEObwR81r0/tAIbDTN2kLA8L2ZautRXI4+kq/+8tvqTwfCZjfx6AmbeL1Ky7npMlGZoluc5YjTR7bsJACr/caSzE6rf8bEFiJappjTCtIBQlQDuwGVUWjRU37SAr3mGlzgH7DnaVOJoBrjHW0OuPSm8mVImdym3sKlNleX8jiBhsvfaXl720aISg+dkVU4iEsXphlckV8GxQKfqNMuqGg2itLEEhJitBCrHYMlRtMx/kVtXJk/saMQjAgMBAAGjggLKMIICxjAOBgNVHQ8BAf8EBAMCA7gwgZcGCCsGAQUFBwEBBIGKMIGHMDwGCCsGAQUFBzABhjBodHRwOi8vb2NzcC5zeXN0ZW10ZXN0MTkudHJ1c3QyNDA4LmNvbS9yZXNwb25kZXIwRwYIKwYBBQUHMAKGO2h0dHA6Ly9mLmFpYS5zeXN0ZW10ZXN0MTkudHJ1c3QyNDA4LmNvbS9zeXN0ZW10ZXN0MTktY2EuY2VyMIIBIAYDVR0gBIIBFzCCARMwggEPBg0rBgEEAYH0UQIEBgQCMIH9MC8GCCsGAQUFBwIBFiNodHRwOi8vd3d3LnRydXN0MjQwOC5jb20vcmVwb3NpdG9yeTCByQYIKwYBBQUHAgIwgbwwDBYFRGFuSUQwAwIBARqBq0RhbklEIHRlc3QgY2VydGlmaWthdGVyIGZyYSBkZW5uZSBDQSB1ZHN0ZWRlcyB1bmRlciBPSUQgMS4zLjYuMS40LjEuMzEzMTMuMi40LjYuNC4yLiBEYW5JRCB0ZXN0IGNlcnRpZmljYXRlcyBmcm9tIHRoaXMgQ0EgYXJlIGlzc3VlZCB1bmRlciBPSUQgMS4zLjYuMS40LjEuMzEzMTMuMi40LjYuNC4yLjCBqgYDVR0fBIGiMIGfMDygOqA4hjZodHRwOi8vY3JsLnN5c3RlbXRlc3QxOS50cnVzdDI0MDguY29tL3N5c3RlbXRlc3QxOS5jcmwwX6BdoFukWTBXMQswCQYDVQQGEwJESzESMBAGA1UECgwJVFJVU1QyNDA4MSQwIgYDVQQDDBtUUlVTVDI0MDggU3lzdGVtdGVzdCBYSVggQ0ExDjAMBgNVBAMMBUNSTDYyMB8GA1UdIwQYMBaAFMwCVQzkgXSvIFTVERRXnJFSOH+gMB0GA1UdDgQWBBReXoe6mR11zHQv0ijlArnWLWd+2zAJBgNVHRMEAjAAMA0GCSqGSIb3DQEBCwUAA4IBAQB282klteVINHqXZstuEV10hfn/4C2q/XcjFFlgayapYXcL6p+5Znw49fldmRKGvQ0nvjAIQD3soQNK3VBgnV7pL+KdmpyCQVv59WDjSNFeMbxwE1V5O3MDHw4S4DKivz1EDPgdZNPkgGOZQAA96ZmHsO4tq8n+TrNEDMkpHzcEQz9Ngu/H8/YYjRm8Dk+ffN7U2btu/XOXr5xhX3RCXhgoGuNY74Q7BsETO5ErIRKgtpX01iwwjs/HGKA50GZJnWeum1ssNXx2aT83hTGu96m1YvX3LnLPkOXsA1ocwv0USwadblrWlxDbULluC8THO7MpX+/uhLptwFXWgZv/Pr5k
+                            &lt;/ds:X509Certificate&gt;
+                        &lt;/ds:X509Data&gt;
+                    &lt;/ds:KeyInfo&gt;
+                &lt;/ds:Signature&gt;
+            &lt;/saml:Assertion&gt;
+        &lt;/wsse:Security&gt;
+        &lt;medcom:Header
+            xmlns:medcom=&quot;http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd&quot;&gt;
+            &lt;medcom:SecurityLevel&gt;3&lt;/medcom:SecurityLevel&gt;
+            &lt;medcom:Linking&gt;
+                &lt;medcom:MessageID&gt;AAABYpTPGSRRusL+aHC5XVNPU0k=&lt;/medcom:MessageID&gt;
+            &lt;/medcom:Linking&gt;
+            &lt;medcom:RequireNonRepudiationReceipt&gt;no
+            &lt;/medcom:RequireNonRepudiationReceipt&gt;
+        &lt;/medcom:Header&gt;
+    &lt;/soap:Header&gt;
+    &lt;soap:Body&gt;
+        &lt;ns4:ProvideAndRegisterDocumentSetRequest
+            xmlns:ns6=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0&quot;
+            xmlns:ns5=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0&quot;
+            xmlns:ns4=&quot;urn:ihe:iti:xds-b:2007&quot;
+            xmlns:ns3=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0&quot;
+            xmlns:ns2=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0&quot;&gt;
+            &lt;ns5:SubmitObjectsRequest&gt;
+                &lt;ns3:RequestSlotList /&gt;
+                &lt;ns2:RegistryObjectList&gt;
+                    &lt;ns2:ExtrinsicObject mimeType=&quot;text/xml&quot;
+                        objectType=&quot;urn:uuid:7edca82f-054d-47f2-a032-9b2a5b5186c1&quot;
+                        id=&quot;15ab4406-321e-47f7-8ded-bf1de0396943&quot;&gt;
+                        &lt;ns2:Classification
+                            classificationScheme=&quot;urn:uuid:ab9b591b-83ab-4d03-8f5d-f93b1fb92e85&quot;
+                            classifiedObject=&quot;15ab4406-321e-47f7-8ded-bf1de0396943&quot;
+                            id=&quot;urn:uuid:015dc335-ea07-40cf-8b43-fa8933c895ba&quot; /&gt;
+                        &lt;ns2:ExternalIdentifier
+                            registryObject=&quot;15ab4406-321e-47f7-8ded-bf1de0396943&quot;
+                            identificationScheme=&quot;urn:uuid:2e82c1f6-a085-4c72-9da3-8640a32e42ab&quot;
+                            value=&quot;15ab4406-321e-47f7-8ded-bf1de0396943&quot;
+                            id=&quot;urn:uuid:cd344ffd-96cf-4ace-8073-211ec351051f&quot;&gt;
+                            &lt;ns2:Name&gt;
+                                &lt;ns2:LocalizedString
+                                    value=&quot;XDSDocumentEntry.uniqueId&quot; /&gt;
+                            &lt;/ns2:Name&gt;
+                        &lt;/ns2:ExternalIdentifier&gt;
+                    &lt;/ns2:ExtrinsicObject&gt;
+                    &lt;ns2:RegistryPackage
+                        id=&quot;f82bf816-6628-4b62-9c7c-b9fe0a320a2f&quot;&gt;
+                        &lt;ns2:Slot name=&quot;submissionTime&quot;&gt;
+                            &lt;ns2:ValueList&gt;
+                                &lt;ns2:Value&gt;20180405075701&lt;/ns2:Value&gt;
+                            &lt;/ns2:ValueList&gt;
+                        &lt;/ns2:Slot&gt;
+                        &lt;ns2:Classification
+                            classificationScheme=&quot;urn:uuid:a7058bb9-b4e4-4307-ba5b-e3f0ab85e12d&quot;
+                            classifiedObject=&quot;f82bf816-6628-4b62-9c7c-b9fe0a320a2f&quot;
+                            nodeRepresentation=&quot;&quot;
+                            id=&quot;urn:uuid:a2feaecc-0527-447b-ba83-3e454afc0a6c&quot;&gt;
+                            &lt;ns2:Slot name=&quot;authorInstitution&quot;&gt;
+                                &lt;ns2:ValueList&gt; 
+                                &lt;ns2:Value&gt;Region Nordjylland^^^^^&amp;amp;1.2.208.176.1.1&amp;amp;ISO^^^^6071000016008&lt;/ns2:Value&gt;
+                                &lt;/ns2:ValueList&gt;
+                            &lt;/ns2:Slot&gt;
+                        &lt;/ns2:Classification&gt;
+                        &lt;ns2:Classification
+                            classificationScheme=&quot;urn:uuid:5003a9db-8d8d-49e6-bf0c-990e34ac7707&quot;
+                            classifiedObject=&quot;f82bf816-6628-4b62-9c7c-b9fe0a320a2f&quot;
+                            id=&quot;urn:uuid:8ea167f4-7dd3-43dd-945a-3e4d9c1fef3d&quot; /&gt;
+                        &lt;ns2:ExternalIdentifier
+                            registryObject=&quot;f82bf816-6628-4b62-9c7c-b9fe0a320a2f&quot;
+                            identificationScheme=&quot;urn:uuid:96fdda7c-d067-4183-912e-bf5ee74998a8&quot;
+                            value=&quot;f82bf816-6628-4b62-9c7c-b9fe0a320a2f&quot;
+                            id=&quot;urn:uuid:9fb08146-91be-4a38-a00f-223abf7ff31d&quot;&gt;
+                            &lt;ns2:Name&gt;
+                                &lt;ns2:LocalizedString
+                                    value=&quot;XDSSubmissionSet.uniqueId&quot; /&gt;
+                            &lt;/ns2:Name&gt;
+                        &lt;/ns2:ExternalIdentifier&gt;
+                        &lt;ns2:ExternalIdentifier
+                            registryObject=&quot;f82bf816-6628-4b62-9c7c-b9fe0a320a2f&quot;
+                            identificationScheme=&quot;urn:uuid:554ac39e-e3fe-47fe-b233-965d2a147832&quot;
+                            value=&quot;f82bf816-6628-4b62-9c7c-b9fe0a320a2f&quot;
+                            id=&quot;urn:uuid:2ac30e25-389d-4f0c-b41b-514d5a557c9a&quot;&gt;
+                            &lt;ns2:Name&gt;
+                                &lt;ns2:LocalizedString
+                                    value=&quot;XDSSubmissionSet.sourceId&quot; /&gt;
+                            &lt;/ns2:Name&gt;
+                        &lt;/ns2:ExternalIdentifier&gt;
+                    &lt;/ns2:RegistryPackage&gt;
+                    &lt;ns2:Classification
+                        classifiedObject=&quot;f82bf816-6628-4b62-9c7c-b9fe0a320a2f&quot;
+                        classificationNode=&quot;urn:uuid:a54d6aa5-d40d-43f9-88c5-b4633d873bdd&quot;
+                        id=&quot;urn:uuid:220cb2db-e272-42ea-946f-be895f0627a5&quot; /&gt;
+                    &lt;ns2:Association
+                        associationType=&quot;urn:oasis:names:tc:ebxml-regrep:AssociationType:HasMember&quot;
+                        sourceObject=&quot;f82bf816-6628-4b62-9c7c-b9fe0a320a2f&quot;
+                        targetObject=&quot;15ab4406-321e-47f7-8ded-bf1de0396943&quot;
+                        status=&quot;urn:oasis:names:tc:ebxml-regrep:StatusType:Approved&quot;
+                        id=&quot;656eeecf-81c0-4ea8-a346-9f2d900aa4de&quot;&gt;
+                        &lt;ns2:Slot name=&quot;SubmissionSetStatus&quot;&gt;
+                            &lt;ns2:ValueList&gt;
+                                &lt;ns2:Value&gt;Original&lt;/ns2:Value&gt;
+                            &lt;/ns2:ValueList&gt;
+                        &lt;/ns2:Slot&gt;
+                    &lt;/ns2:Association&gt;
+                &lt;/ns2:RegistryObjectList&gt;
+            &lt;/ns5:SubmitObjectsRequest&gt;
+            &lt;ns4:Document id=&quot;15ab4406-321e-47f7-8ded-bf1de0396943&quot;&gt;
+                &lt;xop:Include
+                    xmlns:xop=&quot;http://www.w3.org/2004/08/xop/include&quot;
+                    href=&quot;cid:8ae60adb-d8f5-4837-a779-3a64e25850a3@example.jaxws.sun.com&quot; /&gt;
+            &lt;/ns4:Document&gt;
+        &lt;/ns4:ProvideAndRegisterDocumentSetRequest&gt;
+    &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;
+</code></pre>
+<pre><code class="language-http">--uuid:a80594a2-e5de-425d-9fdc-f6ba27d58f05 
+Content-Id: &lt;8ae60adb-d8f5-4837-a779-3a64e25850a3@example.jaxws.sun.com&gt; 
+Content-Type: application/octet-stream 
+Content-Transfer-Encoding: binary 
+</code></pre>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;https://raw.githubusercontent.com/chb/sample_ccdas/master/CDA.xsl&quot;?&gt;
+&lt;ClinicalDocument 
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;https://raw.githubusercontent.com/cdaapi/cdaapi_core/master/reference/CDA.xsd&quot; 
+    xmlns=&quot;urn:hl7-org:v3&quot; 
+    xmlns:cda=&quot;urn:hl7-org:v3&quot; 
+    xmlns:sdtc=&quot;urn:hl7-org:sdtc&quot;&gt;
+    &lt;realmCode code=&quot;DK&quot; /&gt;
+    &lt;typeId extension=&quot;POCD_HD000040&quot; root=&quot;2.16.840.1.113883.1.3&quot;/&gt;
+    &lt;templateId root=&quot;1.2.208.176.7.1.10.71&quot;/&gt;
+    &lt;templateId root=&quot;2.16.840.1.113883.10.12.2&quot;/&gt;
+    &lt;templateId root=&quot;2.16.840.1.113883.10.12.1&quot;/&gt;
+    &lt;id root=&quot;1.2.3.999&quot; extension=&quot;example4&quot; /&gt;
+    &lt;code code=&quot;34133-9&quot; codeSystem=&quot;2.16.840.1.113883.6.1&quot; codeSystemName=&quot;LOINC&quot; displayName=&quot;Summary of episode note&quot;/&gt;
+    &lt;title&gt;Totalindberetning&lt;/title&gt;
+    &lt;effectiveTime value=&quot;20160608155010+0200&quot; /&gt;
+    &lt;confidentialityCode code=&quot;N&quot; codeSystem=&quot;2.16.840.1.113883.5.25&quot;/&gt;
+    &lt;setId assigningAuthorityName=&quot;--TODO--&quot; root=&quot;1.2.3.999&quot; /&gt;
+    &lt;versionNumber value=&quot;1&quot;/&gt;
+    &lt;recordTarget&gt;
+        &lt;templateId root=&quot;1.2.208.176.7.1.10.101&quot;/&gt;
+        &lt;templateId root=&quot;2.16.840.1.113883.10.12.101&quot;/&gt;
+        &lt;patientRole classCode=&quot;PAT&quot;&gt;
+            &lt;templateId root=&quot;1.2.208.176.7.1.10.106&quot;/&gt;
+            &lt;id root=&quot;1.2.208.176.1.2&quot; extension=&quot;0811967001&quot; assigningAuthorityName=&quot;CPR&quot;/&gt;
+        &lt;/patientRole&gt;
+    &lt;/recordTarget&gt;
+    &lt;author typeCode=&quot;AUT&quot;&gt;
+        &lt;templateId root=&quot;1.2.208.176.7.10.102&quot;/&gt;
+        &lt;templateId root=&quot;2.16.840.1.113883.10.12.102&quot;/&gt;
+        &lt;time value=&quot;20170228101500+0100&quot;/&gt;
+        &lt;assignedAuthor classCode=&quot;ASSIGNED&quot;&gt;
+            &lt;id nullFlavor=&quot;NI&quot;/&gt;
+            &lt;representedOrganization classCode=&quot;ORG&quot; determinerCode=&quot;INSTANCE&quot;&gt;
+                &lt;id root=&quot;1.2.208.176.1.1&quot; extension=&quot;6071000016008&quot; assigningAuthorityName=&quot;SOR&quot;/&gt;
+            &lt;/representedOrganization&gt;
+        &lt;/assignedAuthor&gt;
+    &lt;/author&gt;
+    &lt;custodian typeCode=&quot;CST&quot;&gt;
+        &lt;templateId root=&quot;1.2.208.176.7.1.10.103&quot;/&gt;
+        &lt;templateId root=&quot;2.16.840.1.113883.10.12.104&quot;/&gt;
+        &lt;assignedCustodian classCode=&quot;ASSIGNED&quot;&gt;
+            &lt;representedCustodianOrganization classCode=&quot;ORG&quot; determinerCode=&quot;INSTANCE&quot;&gt;
+                &lt;id root=&quot;2.16.840.1.113883.2.24.1.1&quot; extension=&quot;25469364&quot; assigningAuthorityName=&quot;DXC&quot;/&gt;
+            &lt;/representedCustodianOrganization&gt;
+        &lt;/assignedCustodian&gt;
+    &lt;/custodian&gt;
+    &lt;component contextConductionInd=&quot;true&quot;&gt;
+        &lt;structuredBody&gt;
+            &lt;component&gt;
+                &lt;section&gt;
+                    &lt;templateId root=&quot;1.2.208.176.7.1.10.95&quot;/&gt;
+                    &lt;templateId root=&quot;2.16.840.1.113883.10.12.201&quot;/&gt;
+                    &lt;entry typeCode=&quot;COMP&quot;&gt;
+                        &lt;act classCode=&quot;PCPR&quot; moodCode=&quot;EVN&quot;&gt;
+                            &lt;templateId root=&quot;1.2.208.176.7.1.10.80&quot;/&gt;
+                            &lt;templateId root=&quot;2.16.840.1.113883.10.12.301&quot;/&gt;
+                            &lt;id root=&quot;1.2.208.176.7.1.2.1&quot; extension=&quot;bbbfa3ea-2ad7-571c-986c-d72f7443ba4b&quot;/&gt;
+                            &lt;id root=&quot;1.2.208.176.7.1.2.2&quot; extension=&quot;2217c913-c721-498a-a8d5-04a80fe2e0de&quot;/&gt;
+                            &lt;code nullFlavor=&quot;NA&quot;/&gt;
+                            &lt;effectiveTime&gt;
+                                &lt;low value=&quot;20170218140000+0200&quot;/&gt;
+                                &lt;high value=&quot;20170218150000+0200&quot;/&gt;
+                            &lt;/effectiveTime&gt;
+                            &lt;entryRelationship typeCode=&quot;RSON&quot;&gt;
+                                &lt;act classCode=&quot;PCPR&quot; moodCode=&quot;EVN&quot;&gt;
+                                    &lt;templateId root=&quot;1.2.208.176.7.1.10.51&quot;/&gt;
+                                    &lt;templateId root=&quot;2.16.840.1.113883.10.12.301&quot;/&gt;
+                                    &lt;code nullFlavor=&quot;NA&quot;/&gt;
+                                    &lt;effectiveTime value=&quot;20170218140000+0200&quot;/&gt;
+                                    &lt;participant typeCode=&quot;REF&quot;&gt;
+                                        &lt;templateId root=&quot;1.2.208.176.7.1.10.52&quot;/&gt;
+                                        &lt;templateId root=&quot;2.16.840.1.113883.10.12.321&quot;/&gt;
+                                        &lt;participantRole classCode=&quot;ROL&quot;&gt;
+                                            &lt;scopingEntity classCode=&quot;ORG&quot;&gt;
+                                                &lt;id root=&quot;1.2.208.176.1.1&quot; extension=&quot;486811000016002&quot; assigningAuthorityName=&quot;SOR&quot;/&gt;
+                                            &lt;/scopingEntity&gt;
+                                        &lt;/participantRole&gt;
+                                    &lt;/participant&gt;
+                                    &lt;entryRelationship typeCode=&quot;RSON&quot;&gt;
+                                        &lt;act classCode=&quot;REG&quot; moodCode=&quot;EVN&quot;&gt;
+                                            &lt;templateId root=&quot;1.2.208.176.7.1.10.55&quot;/&gt;
+                                            &lt;templateId root=&quot;2.16.840.1.113883.10.12.301&quot;/&gt;
+                                            &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;Tumorer i hjerne- og rygmarvshinder af usikker og ukendt karakter&quot; code=&quot;DD42&quot;/&gt;
+                                            &lt;entryRelationship typeCode=&quot;COMP&quot;&gt;
+                                                &lt;act classCode=&quot;REG&quot; moodCode=&quot;EVN&quot;&gt;
+                                                    &lt;templateId root=&quot;1.2.208.176.7.1.10.5&quot;/&gt;
+                                                    &lt;templateId root=&quot;2.16.840.1.113883.10.12.301&quot;/&gt;
+                                                    &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;diagnosen stillet første gang&quot; code=&quot;ZDW10&quot;/&gt;
+                                                &lt;/act&gt;
+                                            &lt;/entryRelationship&gt;
+                                        &lt;/act&gt;
+                                    &lt;/entryRelationship&gt;
+                                    &lt;entryRelationship typeCode=&quot;COMP&quot;&gt;
+                                        &lt;act classCode=&quot;REG&quot; moodCode=&quot;EVN&quot;&gt;
+                                            &lt;templateId root=&quot;1.2.208.176.7.1.10.53&quot;/&gt;
+                                            &lt;templateId root=&quot;2.16.840.1.113883.10.12.301&quot;/&gt;
+                                            &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;fritvalg ikke relevant&quot; code=&quot;ALDB00&quot;/&gt;
+                                        &lt;/act&gt;
+                                    &lt;/entryRelationship&gt;
+                                    &lt;entryRelationship typeCode=&quot;COMP&quot;&gt;
+                                        &lt;act classCode=&quot;REG&quot; moodCode=&quot;EVN&quot;&gt;
+                                            &lt;templateId root=&quot;1.2.208.176.7.1.10.54&quot;/&gt;
+                                            &lt;templateId root=&quot;2.16.840.1.113883.10.12.301&quot;/&gt;
+                                            &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;akutordning&quot; code=&quot;ALDA11&quot;/&gt;
+                                        &lt;/act&gt;
+                                    &lt;/entryRelationship&gt;
+                                &lt;/act&gt;
+                            &lt;/entryRelationship&gt;
+                            &lt;entryRelationship typeCode=&quot;COMP&quot;&gt;
+                                &lt;act classCode=&quot;REG&quot; moodCode=&quot;EVN&quot;&gt;
+                                    &lt;templateId root=&quot;1.2.208.176.7.1.10.81&quot;/&gt;
+                                    &lt;templateId root=&quot;2.16.840.1.113883.10.12.301&quot;/&gt;
+                                    &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;Kræftsygdomme&quot; code=&quot;ALAL01&quot;/&gt;
+                                &lt;/act&gt;
+                            &lt;/entryRelationship&gt;
+                            &lt;entryRelationship typeCode=&quot;COMP&quot;&gt;
+                                &lt;act classCode=&quot;REG&quot; moodCode=&quot;EVN&quot;&gt;
+                                    &lt;templateId root=&quot;1.2.208.176.7.1.10.82&quot;/&gt;
+                                    &lt;templateId root=&quot;2.16.840.1.113883.10.12.301&quot;/&gt;
+                                    &lt;id root=&quot;1.2.208.176.7.1.2.1&quot; extension=&quot;c770b34c-9854-519b-8239-2d7794a94bef&quot;/&gt;
+                                    &lt;id root=&quot;1.2.208.176.7.1.2.2&quot; extension=&quot;2217c913-c721-498a-a8d5-04a80fe2e0de&quot;/&gt;
+                                    &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;Kræft i hjernen: beslutning: initial behandling ikke relevant, radikal operation i udredningsforløbet&quot; code=&quot;AFB23C2B&quot;/&gt;
+                                    &lt;effectiveTime value=&quot;20170222130000+0200&quot;/&gt;
+                                &lt;/act&gt;
+                            &lt;/entryRelationship&gt;
+                            &lt;entryRelationship typeCode=&quot;COMP&quot;&gt;
+                                &lt;act classCode=&quot;REG&quot; moodCode=&quot;EVN&quot;&gt;
+                                    &lt;templateId root=&quot;1.2.208.176.7.1.10.83&quot;/&gt;
+                                    &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;henvist i samme sygdomsforløb&quot; code=&quot;ALAA01&quot;/&gt;
+                                    &lt;entryRelationship typeCode=&quot;REFR&quot;&gt;
+                                        &lt;act classCode=&quot;PCPR&quot; moodCode=&quot;EVN&quot;&gt;
+                                            &lt;templateId root=&quot;1.2.208.176.7.1.10.72&quot;/&gt;
+                                            &lt;templateId root=&quot;2.16.840.1.113883.10.12.301&quot;/&gt;
+                                            &lt;id root=&quot;1.2.208.176.7.1.2.2&quot; extension=&quot;21157122-1d29-4111-b233-51585dddf9b2&quot;/&gt;
+                                            &lt;code nullFlavor=&quot;NA&quot;/&gt;
+                                        &lt;/act&gt;
+                                    &lt;/entryRelationship&gt;
+                                &lt;/act&gt;
+                            &lt;/entryRelationship&gt;
+                            &lt;entryRelationship typeCode=&quot;COMP&quot;&gt;
+                                &lt;observation classCode=&quot;OBS&quot; moodCode=&quot;EVN&quot;&gt;
+                                    &lt;templateId root=&quot;1.2.208.176.7.1.10.105&quot;/&gt;
+                                    &lt;templateId root=&quot;2.16.840.1.113883.10.12.303&quot;/&gt;
+                                    &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;afsluttet ved patientens død&quot; code=&quot;ALAC70&quot;/&gt;
+                                &lt;/observation&gt;
+                            &lt;/entryRelationship&gt;
+                        &lt;/act&gt;
+                    &lt;/entry&gt;
+                &lt;/section&gt;
+            &lt;/component&gt;
+            &lt;component&gt;
+                &lt;section&gt;
+                    &lt;templateId root=&quot;1.2.208.176.7.1.10.75&quot;/&gt;
+                    &lt;templateId root=&quot;2.16.840.1.113883.10.12.201&quot;/&gt;
+                    &lt;entry typeCode=&quot;COMP&quot;&gt;
+                        &lt;encounter classCode=&quot;ENC&quot; moodCode=&quot;EVN&quot;&gt;
+                            &lt;templateId root=&quot;1.2.208.176.7.1.10.74&quot;/&gt;
+                            &lt;templateId root=&quot;2.16.840.1.113883.10.12.302&quot;/&gt;
+                            &lt;id root=&quot;1.2.208.176.7.1.2.1&quot; extension=&quot;47041012-132f-5de1-b16a-df273f8f000f&quot;/&gt;
+                            &lt;id root=&quot;1.2.208.176.7.1.2.2&quot; extension=&quot;3c56bc4d-c2ce-41f3-b921-87f5845302fb&quot;/&gt;
+                            &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;fysisk fremmøde&quot; code=&quot;ALCA00&quot;/&gt;
+                            &lt;effectiveTime&gt;
+                                &lt;low value=&quot;20170216060000+0200&quot;/&gt;
+                                &lt;high value=&quot;20170224120000+0200&quot;/&gt;
+                            &lt;/effectiveTime&gt;
+                            &lt;priorityCode codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;Akut&quot; code=&quot;ATA1&quot;/&gt;
+                            &lt;participtant typeCode=&quot;RESP&quot;&gt;
+                                &lt;templateId root=&quot;1.2.208.176.7.1.10.49&quot;/&gt;
+                                &lt;templateId root=&quot;2.16.840.1.113883.10.12.321&quot;/&gt;
+                                &lt;participantRole classCode=&quot;ROL&quot;&gt;
+                                    &lt;scopingEntity classCode=&quot;ORG&quot;&gt;
+                                        &lt;id root=&quot;1.2.208.176.1.1&quot; extension=&quot;276231000016004&quot; assigningAuthorityName=&quot;SOR&quot;/&gt;
+                                    &lt;/scopingEntity&gt;
+                                &lt;/participantRole&gt;
+                            &lt;/participtant&gt;
+                            &lt;participant typeCode=&quot;LOC&quot;&gt;
+                                &lt;templateId root=&quot;1.2.208.176.7.1.10.50&quot;/&gt;
+                                &lt;templateId root=&quot;2.16.840.1.113883.10.12.321&quot;/&gt;
+                                &lt;time&gt;
+                                    &lt;low value=&quot;20170222120000+0200&quot;/&gt;
+                                    &lt;high value=&quot;20170222130000+0200&quot;/&gt;
+                                &lt;/time&gt;
+                                &lt;participantRole classCode=&quot;SDLOC&quot;&gt;
+                                    &lt;scopingEntity classCode=&quot;ORG&quot;&gt;
+                                        &lt;id root=&quot;1.2.208.176.1.1&quot; extension=&quot;276231000016004&quot; assigningAuthorityName=&quot;SOR&quot;/&gt;
+                                    &lt;/scopingEntity&gt;
+                                &lt;/participantRole&gt;
+                            &lt;/participant&gt;
+                            &lt;entryRelationship typeCode=&quot;REFR&quot;&gt;
+                                &lt;observation negationInd=&quot;false&quot; classCode=&quot;OBS&quot; moodCode=&quot;EVN&quot;&gt;
+                                    &lt;templateId root=&quot;1.2.208.176.7.1.10.45&quot;/&gt;
+                                    &lt;templateId root=&quot;1.2.208.176.7.1.10.36&quot;/&gt;
+                                    &lt;templateId root=&quot;2.16.840.1.113883.10.12.303&quot;/&gt;
+                                    &lt;id root=&quot;1.2.208.176.7.1.2.1&quot; extension=&quot;d0438ac2-bf27-532f-88e8-c029aca9492b&quot;/&gt;
+                                    &lt;id root=&quot;1.2.208.176.7.1.2.2&quot; extension=&quot;e309346f-8d5e-4f5a-82e9-f1841fb89be8&quot;/&gt;
+                                    &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;Kræft i hjernens tindingelap med metastaser&quot; code=&quot;DC712M&quot;/&gt;
+                                    &lt;targetSiteCode codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;venstresidig&quot; code=&quot;TUL2&quot;/&gt;
+                                    &lt;entryRelationship typeCode=&quot;COMP&quot;&gt;
+                                        &lt;observation classCode=&quot;OBS&quot; moodCode=&quot;EVN&quot;&gt;
+                                            &lt;templateId root=&quot;1.2.208.176.7.1.10.40&quot;/&gt;
+                                            &lt;templateId root=&quot;2.16.840.1.113883.10.12.303&quot;/&gt;
+                                            &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;Lokalrecidiv fra kræft i hjernen&quot; code=&quot;DT636C&quot;/&gt;
+                                        &lt;/observation&gt;
+                                    &lt;/entryRelationship&gt;
+                                    &lt;entryRelationship typeCode=&quot;COMP&quot;&gt;
+                                        &lt;observation classCode=&quot;OBS&quot; moodCode=&quot;EVN&quot;&gt;
+                                            &lt;templateId root=&quot;1.2.208.176.7.1.10.37&quot;/&gt;
+                                            &lt;templateId root=&quot;2.16.840.1.113883.10.12.303&quot;/&gt;
+                                            &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;Metastase i rygmarvshinde&quot; code=&quot;DC793C&quot;/&gt;
+                                        &lt;/observation&gt;
+                                    &lt;/entryRelationship&gt;
+                                    &lt;entryRelationship typeCode=&quot;COMP&quot;&gt;
+                                        &lt;observation classCode=&quot;OBS&quot; moodCode=&quot;EVN&quot;&gt;
+                                            &lt;templateId root=&quot;1.2.208.176.7.1.10.43&quot;/&gt;
+                                            &lt;templateId root=&quot;2.16.840.1.113883.10.12.303&quot;/&gt;
+                                            &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;aktionsdiagnose&quot; code=&quot;ALGA01&quot;/&gt;
+                                        &lt;/observation&gt;
+                                    &lt;/entryRelationship&gt;
+                                    &lt;entryRelationship typeCode=&quot;COMP&quot;&gt;
+                                        &lt;act classCode=&quot;REG&quot; moodCode=&quot;EVN&quot;&gt;
+                                            &lt;templateId root=&quot;1.2.208.176.7.1.10.5&quot;/&gt;
+                                            &lt;templateId root=&quot;2.16.840.1.113883.10.12.301&quot;/&gt;
+                                            &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;behandles ikke&quot; code=&quot;ZDW29&quot;/&gt;
+                                        &lt;/act&gt;
+                                    &lt;/entryRelationship&gt;
+                                &lt;/observation&gt;
+                            &lt;/entryRelationship&gt;
+                            &lt;entryRelationship typeCode=&quot;REFR&quot;&gt;
+                                &lt;!-- include template 1.2.208.176.7.1.10.46 'DK Minor Condition Observation'
+                                                                    (dynamic) .. O --&gt;
+                            &lt;/entryRelationship&gt;
+                            &lt;entryRelationship typeCode=&quot;REFR&quot;&gt;
+                                &lt;act classCode=&quot;ACT&quot; moodCode=&quot;EVN&quot;&gt;
+                                    &lt;templateId root=&quot;1.2.208.176.7.1.10.7&quot;/&gt;
+                                    &lt;templateId root=&quot;2.16.840.1.113883.10.12.301&quot;/&gt;
+                                    &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;højt specialiseret&quot; code=&quot;ALFA2&quot;/&gt;
+                                    &lt;effectiveTime&gt;
+                                        &lt;low value=&quot;20170117123000+0200&quot;/&gt;
+                                        &lt;high value=&quot;20170117151500+0200&quot;/&gt;
+                                    &lt;/effectiveTime&gt;
+                                    &lt;participant typeCode=&quot;IND&quot;&gt;
+                                        &lt;templateId root=&quot;1.2.208.176.7.1.10.8&quot;/&gt;
+                                        &lt;templateId root=&quot;2.16.840.1.113883.10.12.321&quot;/&gt;
+                                        &lt;participantRole classCode=&quot;PAYOR&quot;&gt;
+                                            &lt;scopingEntity&gt;
+                                                &lt;id root=&quot;1.2.208.176.2.4&quot; extension=&quot;ALFB01&quot; assigningAuthorityName=&quot;Sundhedsdatastyrelsen&quot;/&gt;
+                                            &lt;/scopingEntity&gt;
+                                        &lt;/participantRole&gt;
+                                    &lt;/participant&gt;
+                                    &lt;entryRelationship typeCode=&quot;COMP&quot;&gt;
+                                        &lt;act classCode=&quot;ACT&quot; moodCode=&quot;EVN&quot;&gt;
+                                            &lt;templateId root=&quot;1.2.208.176.7.1.10.10&quot;/&gt;
+                                            &lt;templateId root=&quot;2.16.840.1.113883.10.12.301&quot;/&gt;
+                                            &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;højt specialiseret funktion&quot; code=&quot;ALFC4&quot;/&gt;
+                                        &lt;/act&gt;
+                                    &lt;/entryRelationship&gt;
+                                &lt;/act&gt;
+                            &lt;/entryRelationship&gt;
+                            &lt;entryRelationship typeCode=&quot;RSON&quot;&gt;
+                                &lt;act classCode=&quot;REG&quot; moodCode=&quot;EVN&quot;&gt;
+                                    &lt;templateId root=&quot;1.2.208.176.7.1.10.48&quot;/&gt;
+                                    &lt;templateId root=&quot;2.16.840.1.113883.10.12.301&quot;/&gt;
+                                    &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;Sygdom&quot; code=&quot;ALCC01&quot;/&gt;
+                                &lt;/act&gt;
+                            &lt;/entryRelationship&gt;
+                            &lt;entryRelationship typeCode=&quot;RSON&quot;&gt;
+                                &lt;act classCode=&quot;PCPR&quot; moodCode=&quot;EVN&quot;&gt;
+                                    &lt;templateId root=&quot;1.2.208.176.7.1.10.51&quot;/&gt;
+                                    &lt;templateId root=&quot;2.16.840.1.113883.10.12.301&quot;/&gt;
+                                    &lt;code nullFlavor=&quot;NA&quot;/&gt;
+                                    &lt;effectiveTime value=&quot;20170218140000+0200&quot;/&gt;
+                                    &lt;participant typeCode=&quot;REF&quot;&gt;
+                                        &lt;templateId root=&quot;1.2.208.176.7.1.10.52&quot;/&gt;
+                                        &lt;templateId root=&quot;2.16.840.1.113883.10.12.321&quot;/&gt;
+                                        &lt;participantRole classCode=&quot;ROL&quot;&gt;
+                                            &lt;scopingEntity classCode=&quot;ORG&quot;&gt;
+                                                &lt;id root=&quot;1.2.208.176.1.1&quot; extension=&quot;486811000016002&quot; assigningAuthorityName=&quot;SOR&quot;/&gt;
+                                            &lt;/scopingEntity&gt;
+                                        &lt;/participantRole&gt;
+                                    &lt;/participant&gt;
+                                    &lt;entryRelationship typeCode=&quot;RSON&quot;&gt;
+                                        &lt;act classCode=&quot;REG&quot; moodCode=&quot;EVN&quot;&gt;
+                                            &lt;templateId root=&quot;1.2.208.176.7.1.10.55&quot;/&gt;
+                                            &lt;templateId root=&quot;2.16.840.1.113883.10.12.301&quot;/&gt;
+                                            &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;Tumorer i hjerne- og rygmarvshinder af usikker og ukendt karakter&quot; code=&quot;DD42&quot;/&gt;
+                                            &lt;entryRelationship typeCode=&quot;COMP&quot;&gt;
+                                                &lt;act classCode=&quot;REG&quot; moodCode=&quot;EVN&quot;&gt;
+                                                    &lt;templateId root=&quot;1.2.208.176.7.1.10.5&quot;/&gt;
+                                                    &lt;templateId root=&quot;2.16.840.1.113883.10.12.301&quot;/&gt;
+                                                    &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;diagnosen stillet første gang&quot; code=&quot;ZDW10&quot;/&gt;
+                                                &lt;/act&gt;
+                                            &lt;/entryRelationship&gt;
+                                        &lt;/act&gt;
+                                    &lt;/entryRelationship&gt;
+                                    &lt;entryRelationship typeCode=&quot;COMP&quot;&gt;
+                                        &lt;act classCode=&quot;REG&quot; moodCode=&quot;EVN&quot;&gt;
+                                            &lt;templateId root=&quot;1.2.208.176.7.1.10.53&quot;/&gt;
+                                            &lt;templateId root=&quot;2.16.840.1.113883.10.12.301&quot;/&gt;
+                                            &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;fritvalg ikke relevant&quot; code=&quot;ALDB00&quot;/&gt;
+                                        &lt;/act&gt;
+                                    &lt;/entryRelationship&gt;
+                                    &lt;entryRelationship typeCode=&quot;COMP&quot;&gt;
+                                        &lt;act classCode=&quot;REG&quot; moodCode=&quot;EVN&quot;&gt;
+                                            &lt;templateId root=&quot;1.2.208.176.7.1.10.54&quot;/&gt;
+                                            &lt;templateId root=&quot;2.16.840.1.113883.10.12.301&quot;/&gt;
+                                            &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;akutordning&quot; code=&quot;ALDA11&quot;/&gt;
+                                        &lt;/act&gt;
+                                    &lt;/entryRelationship&gt;
+                                &lt;/act&gt;
+                            &lt;/entryRelationship&gt;
+                            &lt;entryRelationship typeCode=&quot;COMP&quot;&gt;
+                                &lt;act classCode=&quot;REG&quot; moodCode=&quot;EVN&quot;&gt;
+                                    &lt;templateId root=&quot;1.2.208.176.7.1.10.112&quot;/&gt;
+                                    &lt;templateId root=&quot;2.16.840.1.113883.10.12.301&quot;/&gt;
+                                    &lt;code nullFlavor=&quot;NA&quot;/&gt;
+                                    &lt;effectiveTime value=&quot;20170228043900+0100&quot;/&gt;
+                                &lt;/act&gt;
+                            &lt;/entryRelationship&gt;
+                            &lt;entryRelationship typeCode=&quot;REFR&quot;&gt;
+                                &lt;act classCode=&quot;PCPR&quot; moodCode=&quot;EVN&quot;&gt;
+                                    &lt;templateId root=&quot;1.2.208.176.7.1.10.72&quot;/&gt;
+                                    &lt;templateId root=&quot;2.16.840.1.113883.10.12.301&quot;/&gt;
+                                    &lt;id root=&quot;1.2.208.176.7.1.2.2&quot; extension=&quot;1859041a-8dbb-488b-ae2f-66f368ef5d17&quot;/&gt;
+                                    &lt;code nullFlavor=&quot;NA&quot;/&gt;
+                                &lt;/act&gt;
+                            &lt;/entryRelationship&gt;
+                        &lt;/encounter&gt;
+                    &lt;/entry&gt;
+                &lt;/section&gt;
+            &lt;/component&gt;
+            &lt;component&gt;
+                &lt;section&gt;
+                    &lt;templateId root=&quot;1.2.208.176.7.1.10.76&quot;/&gt;
+                    &lt;templateId root=&quot;2.16.840.1.113883.10.12.201&quot;/&gt;
+                    &lt;component&gt;
+                        &lt;act classCode=&quot;ACT&quot; moodCode=&quot;EVN&quot;&gt;
+                            &lt;templateId root=&quot;1.2.208.176.7.1.10.25&quot;/&gt;
+                            &lt;templateId root=&quot;2.16.840.1.113883.10.12.301&quot;/&gt;
+                            &lt;id root=&quot;1.2.208.176.7.1.2.1&quot; extension=&quot;50009866-1b81-53fd-bd67-b132a68415fa&quot;/&gt;
+                            &lt;id root=&quot;1.2.208.176.7.1.2.2&quot; extension=&quot;94ff6bdb-2075-43de-ba33-7dafd7dc66cc&quot;/&gt;
+                            &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;Behandling med proteasehæmmer&quot; code=&quot;BPHM91&quot;/&gt;
+                            &lt;effectiveTime&gt;
+                                &lt;low value=&quot;20170115080000+0200&quot;/&gt;
+                                &lt;high value=&quot;20170115083000+0200&quot;/&gt;
+                            &lt;/effectiveTime&gt;
+                            &lt;participant typeCode=&quot;PRF&quot;&gt;
+                                &lt;templateId root=&quot;1.2.208.176.7.1.10.16&quot;/&gt;
+                                &lt;templateId root=&quot;2.16.840.1.113883.10.12.321&quot;/&gt;
+                                &lt;participantRole classCode=&quot;ROL&quot;&gt;
+                                    &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;Sygeplejerske på klinisk sygehusafdeling&quot; code=&quot;APBA1&quot;/&gt;
+                                    &lt;scopingEntity classCode=&quot;ORG&quot;&gt;
+                                        &lt;id root=&quot;1.2.208.176.1.1&quot; extension=&quot;369041000016006&quot; assigningAuthorityName=&quot;SOR&quot;/&gt;
+                                    &lt;/scopingEntity&gt;
+                                &lt;/participantRole&gt;
+                            &lt;/participant&gt;
+                            &lt;entryRelationship typeCode=&quot;COMP&quot;&gt;
+                                &lt;act classCode=&quot;ACT&quot; moodCode=&quot;EVN&quot;&gt;
+                                    &lt;templateId root=&quot;1.2.208.176.7.1.10.22&quot;/&gt;
+                                    &lt;templateId root=&quot;2.16.840.1.113883.10.12.301&quot;/&gt;
+                                    &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;igangsat&quot; code=&quot;???&quot;/&gt;
+                                &lt;/act&gt;
+                            &lt;/entryRelationship&gt;
+                            &lt;entryRelationship typeCode=&quot;REFR&quot;&gt;
+                                &lt;encounter classCode=&quot;ENC&quot; moodCode=&quot;EVN&quot;&gt;
+                                    &lt;templateId root=&quot;1.2.208.176.7.1.10.77&quot;/&gt;
+                                    &lt;templateId root=&quot;2.16.840.1.113883.10.12.301&quot;/&gt;
+                                    &lt;id root=&quot;1.2.208.176.7.1.2.2&quot; extension=&quot;3c56bc4d-c2ce-41f3-b921-87f5845302fb&quot;/&gt;
+                                    &lt;code nullFlavor=&quot;NA&quot;/&gt;
+                                &lt;/encounter&gt;
+                            &lt;/entryRelationship&gt;
+                        &lt;/act&gt;
+                    &lt;/component&gt;
+                    &lt;component&gt;
+                        &lt;observation classCode=&quot;OBS&quot; moodCode=&quot;EVN&quot;&gt;
+                            &lt;templateId root=&quot;1.2.208.176.7.1.10.29&quot;/&gt;
+                            &lt;templateId root=&quot;2.16.840.1.113883.10.12.303&quot;/&gt;
+                            &lt;id root=&quot;1.2.208.176.7.1.2.1&quot; extension=&quot;ffa7bcb2-0ca4-57d9-a7f9-f37fbb1c5482&quot;/&gt;
+                            &lt;id root=&quot;1.2.208.176.7.1.2.2&quot; extension=&quot;a659b5f7-e5d7-4d48-97f2-591a4a07da09&quot;/&gt;
+                            &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;CT-skanning af cerebrum&quot; code=&quot;UXCA00&quot;/&gt;
+                            &lt;effectiveTime&gt;
+                                &lt;low value=&quot;20170116080000+0200&quot;/&gt;
+                                &lt;high value=&quot;20170116083000+0200&quot;/&gt;
+                            &lt;/effectiveTime&gt;
+                            &lt;participant typeCode=&quot;PRF&quot;&gt;
+                                &lt;templateId root=&quot;1.2.208.176.7.1.10.16&quot;/&gt;
+                                &lt;templateId root=&quot;2.16.840.1.113883.10.12.321&quot;/&gt;
+                                &lt;participantRole classCode=&quot;ROL&quot;&gt;
+                                    &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;Radiograf&quot; code=&quot;APFE2&quot;/&gt;
+                                    &lt;scopingEntity classCode=&quot;ORG&quot;&gt;
+                                        &lt;id root=&quot;1.2.208.176.1.1&quot; extension=&quot;275861000016001&quot; assigningAuthorityName=&quot;SOR&quot;/&gt;
+                                    &lt;/scopingEntity&gt;
+                                &lt;/participantRole&gt;
+                            &lt;/participant&gt;
+                            &lt;entryRelationship typeCode=&quot;COMP&quot;&gt;
+                                &lt;act classCode=&quot;REG&quot; moodCode=&quot;EVN&quot;&gt;
+                                    &lt;templateId root=&quot;1.2.208.176.7.1.10.5&quot;/&gt;
+                                    &lt;templateId root=&quot;2.16.840.1.113883.10.12.301&quot;/&gt;
+                                    &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;med CT-angiografi&quot; code=&quot;UXZ41&quot;/&gt;
+                                &lt;/act&gt;
+                            &lt;/entryRelationship&gt;
+                            &lt;entryRelationship typeCode=&quot;COMP&quot;&gt;
+                                &lt;act classCode=&quot;REG&quot; moodCode=&quot;EVN&quot;&gt;
+                                    &lt;templateId root=&quot;1.2.208.176.7.1.10.5&quot;/&gt;
+                                    &lt;templateId root=&quot;2.16.840.1.113883.10.12.301&quot;/&gt;
+                                    &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;med 3D rekonstruktion&quot; code=&quot;UXZ45&quot;/&gt;
+                                &lt;/act&gt;
+                            &lt;/entryRelationship&gt;
+                            &lt;entryRelationship typeCode=&quot;COMP&quot;&gt;
+                                &lt;substanceAdministration classCode=&quot;SBADM&quot; moodCode=&quot;EVN&quot;&gt;
+                                    &lt;templateId root=&quot;1.2.208.176.7.1.10.2&quot;/&gt;
+                                    &lt;templateId root=&quot;2.16.840.1.113883.10.12.308&quot;/&gt;
+                                    &lt;consumable typeCode=&quot;CSM&quot;&gt;
+                                        &lt;manufacturedProduct classCode=&quot;MANU&quot;&gt;
+                                            &lt;templateId root=&quot;1.2.208.176.7.1.10.4&quot;/&gt;
+                                            &lt;templateId root=&quot;2.16.840.1.113883.10.12.312&quot;/&gt;
+                                            &lt;manufacturedMaterial classCode=&quot;MMAT&quot;&gt;
+                                                &lt;templateId root=&quot;1.2.208.176.7.1.10.3&quot;/&gt;
+                                                &lt;templateId root=&quot;2.16.840.1.113883.10.12.311&quot;/&gt;
+                                                &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;diatrizoinsyre&quot; code=&quot;MV08AA01&quot;/&gt;
+                                            &lt;/manufacturedMaterial&gt;
+                                        &lt;/manufacturedProduct&gt;
+                                    &lt;/consumable&gt;
+                                &lt;/substanceAdministration&gt;
+                            &lt;/entryRelationship&gt;
+                            &lt;entryRelationship typeCode=&quot;COMP&quot;&gt;
+                                &lt;act classCode=&quot;ACT&quot; moodCode=&quot;EVN&quot;&gt;
+                                    &lt;templateId root=&quot;1.2.208.176.7.1.10.7&quot;/&gt;
+                                    &lt;templateId root=&quot;2.16.840.1.113883.10.12.301&quot;/&gt;
+                                    &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;højt specialiseret&quot; code=&quot;ALFA2&quot;/&gt;
+                                    &lt;effectiveTime&gt;
+                                        &lt;low value=&quot;20170117123000+0200&quot;/&gt;
+                                        &lt;high value=&quot;20170117151500+0200&quot;/&gt;
+                                    &lt;/effectiveTime&gt;
+                                    &lt;participant typeCode=&quot;IND&quot;&gt;
+                                        &lt;templateId root=&quot;1.2.208.176.7.1.10.8&quot;/&gt;
+                                        &lt;templateId root=&quot;2.16.840.1.113883.10.12.321&quot;/&gt;
+                                        &lt;participantRole classCode=&quot;PAYOR&quot;&gt;
+                                            &lt;scopingEntity&gt;
+                                                &lt;id root=&quot;1.2.208.176.2.4&quot; extension=&quot;ALFB01&quot; assigningAuthorityName=&quot;Sundhedsdatastyrelsen&quot;/&gt;
+                                            &lt;/scopingEntity&gt;
+                                        &lt;/participantRole&gt;
+                                    &lt;/participant&gt;
+                                    &lt;entryRelationship typeCode=&quot;COMP&quot;&gt;
+                                        &lt;act classCode=&quot;ACT&quot; moodCode=&quot;EVN&quot;&gt;
+                                            &lt;templateId root=&quot;1.2.208.176.7.1.10.10&quot;/&gt;
+                                            &lt;templateId root=&quot;2.16.840.1.113883.10.12.301&quot;/&gt;
+                                            &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;højt specialiseret funktion&quot; code=&quot;ALFC4&quot;/&gt;
+                                        &lt;/act&gt;
+                                    &lt;/entryRelationship&gt;
+                                &lt;/act&gt;
+                            &lt;/entryRelationship&gt;
+                            &lt;entryRelationship typeCode=&quot;RSON&quot;&gt;
+                                &lt;observation classCode=&quot;OBS&quot; moodCode=&quot;EVN&quot;&gt;
+                                    &lt;templateId root=&quot;1.2.208.176.7.1.10.19&quot;/&gt;
+                                    &lt;templateId root=&quot;2.16.840.1.113883.10.12.303&quot;/&gt;
+                                    &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;Traumatisk blødning i lillehjernen&quot; code=&quot;DS068B&quot;/&gt;
+                                    &lt;entryRelationship typeCode=&quot;COMP&quot;&gt;
+                                        &lt;act classCode=&quot;REG&quot; moodCode=&quot;EVN&quot;&gt;
+                                            &lt;templateId root=&quot;1.2.208.176.7.1.10.5&quot;/&gt;
+                                            &lt;templateId root=&quot;2.16.840.1.113883.10.12.301&quot;/&gt;
+                                            &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;komplikation opstået i forbindelse med procedure&quot; code=&quot;ZDA01&quot;/&gt;
+                                        &lt;/act&gt;
+                                    &lt;/entryRelationship&gt;
+                                &lt;/observation&gt;
+                            &lt;/entryRelationship&gt;
+                            &lt;entryRelationship typeCode=&quot;REFR&quot;&gt;
+                                &lt;encounter classCode=&quot;ENC&quot; moodCode=&quot;EVN&quot;&gt;
+                                    &lt;templateId root=&quot;1.2.208.176.7.1.10.77&quot;/&gt;
+                                    &lt;templateId root=&quot;2.16.840.1.113883.10.12.301&quot;/&gt;
+                                    &lt;id root=&quot;1.2.208.176.7.1.2.2&quot; extension=&quot;3c56bc4d-c2ce-41f3-b921-87f5845302fb&quot;/&gt;
+                                    &lt;code nullFlavor=&quot;NA&quot;/&gt;
+                                &lt;/encounter&gt;
+                            &lt;/entryRelationship&gt;
+                        &lt;/observation&gt;
+                    &lt;/component&gt;
+                    &lt;component&gt;
+                        &lt;procedure classCode=&quot;PROC&quot; moodCode=&quot;EVN&quot;&gt;
+                            &lt;templateId root=&quot;1.2.208.176.7.1.10.30&quot;/&gt;
+                            &lt;templateId root=&quot;2.16.840.1.113883.10.12.306&quot;/&gt;
+                            &lt;id root=&quot;1.2.208.176.7.1.2.1&quot; extension=&quot;7dfa91a1-e19e-57d0-bdbe-fea7f8582df5&quot;/&gt;
+                            &lt;id root=&quot;1.2.208.176.7.1.2.2&quot; extension=&quot;96f2ea53-41c5-477a-bd02-69962f1be8d6&quot;/&gt;
+                            &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;Indlæggelse af intracerebralt trykmålingsudstyr&quot; code=&quot;KAAA27&quot;/&gt;
+                            &lt;effectiveTime&gt;
+                                &lt;low value=&quot;20170122084500+0200&quot;/&gt;
+                                &lt;high value=&quot;20170122123000+0200&quot;/&gt;
+                            &lt;/effectiveTime&gt;
+                            &lt;participant typeCode=&quot;PRF&quot;&gt;
+                                &lt;templateId root=&quot;1.2.208.176.7.1.10.16&quot;/&gt;
+                                &lt;templateId root=&quot;2.16.840.1.113883.10.12.321&quot;/&gt;
+                                &lt;participantRole classCode=&quot;ROL&quot;&gt;
+                                    &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;Overlæge&quot; code=&quot;APAA2&quot;/&gt;
+                                    &lt;scopingEntity classCode=&quot;ORG&quot;&gt;
+                                        &lt;id root=&quot;1.2.208.176.1.1&quot; extension=&quot;635841000016002&quot; assigningAuthorityName=&quot;SOR&quot;/&gt;
+                                    &lt;/scopingEntity&gt;
+                                &lt;/participantRole&gt;
+                            &lt;/participant&gt;
+                            &lt;entryRelationship typeCode=&quot;COMP&quot;&gt;
+                                &lt;act classCode=&quot;REG&quot; moodCode=&quot;EVN&quot;&gt;
+                                    &lt;templateId root=&quot;1.2.208.176.7.1.10.5&quot;/&gt;
+                                    &lt;templateId root=&quot;2.16.840.1.113883.10.12.301&quot;/&gt;
+                                    &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;Sedation og smertelindring uden bevidsthedstab&quot; code=&quot;NAAB&quot;/&gt;
+                                &lt;/act&gt;
+                            &lt;/entryRelationship&gt;
+                            &lt;entryRelationship typeCode=&quot;COMP&quot;&gt;
+                                &lt;act classCode=&quot;ACT&quot; moodCode=&quot;EVN&quot;&gt;
+                                    &lt;templateId root=&quot;1.2.208.176.7.1.10.7&quot;/&gt;
+                                    &lt;templateId root=&quot;2.16.840.1.113883.10.12.301&quot;/&gt;
+                                    &lt;id root=&quot;ASSDD&quot; extension=&quot;123123213&quot;/&gt;
+                                    &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;højt specialiseret&quot; code=&quot;ALFA2&quot;/&gt;
+                                    &lt;effectiveTime&gt;
+                                        &lt;low value=&quot;20170117123000+0200&quot;/&gt;
+                                        &lt;high value=&quot;20170117151500+0200&quot;/&gt;
+                                    &lt;/effectiveTime&gt;
+                                    &lt;participant typeCode=&quot;IND&quot;&gt;
+                                        &lt;templateId root=&quot;1.2.208.176.7.1.10.8&quot;/&gt;
+                                        &lt;templateId root=&quot;2.16.840.1.113883.10.12.321&quot;/&gt;
+                                        &lt;participantRole classCode=&quot;PAYOR&quot;&gt;
+                                            &lt;scopingEntity&gt;
+                                                &lt;id root=&quot;1.2.208.176.2.4&quot; extension=&quot;ALFB01&quot; assigningAuthorityName=&quot;Sundhedsdatastyrelsen&quot;/&gt;
+                                            &lt;/scopingEntity&gt;
+                                        &lt;/participantRole&gt;
+                                    &lt;/participant&gt;
+                                    &lt;entryRelationship typeCode=&quot;COMP&quot;&gt;
+                                        &lt;act classCode=&quot;ACT&quot; moodCode=&quot;EVN&quot;&gt;
+                                            &lt;templateId root=&quot;1.2.208.176.7.1.10.10&quot;/&gt;
+                                            &lt;templateId root=&quot;2.16.840.1.113883.10.12.301&quot;/&gt;
+                                            &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;højt specialiseret funktion&quot; code=&quot;ALFC4&quot;/&gt;
+                                        &lt;/act&gt;
+                                    &lt;/entryRelationship&gt;
+                                &lt;/act&gt;
+                            &lt;/entryRelationship&gt;
+                            &lt;entryRelationship typeCode=&quot;RSON&quot;&gt;
+                                &lt;observation classCode=&quot;OBS&quot; moodCode=&quot;EVN&quot;&gt;
+                                    &lt;templateId root=&quot;1.2.208.176.7.1.10.19&quot;/&gt;
+                                    &lt;templateId root=&quot;2.16.840.1.113883.10.12.301&quot;/&gt;
+                                    &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;Tumorer i hjerne- og rygmarvshinder af usikker og ukendt karakter&quot; code=&quot;DD42&quot;/&gt;
+                                &lt;/observation&gt;
+                            &lt;/entryRelationship&gt;
+                            &lt;entryRelationship typeCode=&quot;REFR&quot;&gt;
+                                &lt;encounter classCode=&quot;ENC&quot; moodCode=&quot;EVN&quot;&gt;
+                                    &lt;templateId root=&quot;1.2.208.176.7.1.10.77&quot;/&gt;
+                                    &lt;templateId root=&quot;2.16.840.1.113883.10.12.301&quot;/&gt;
+                                    &lt;id root=&quot;1.2.208.176.7.1.2.2&quot; extension=&quot;3c56bc4d-c2ce-41f3-b921-87f5845302fb&quot;/&gt;
+                                    &lt;code nullFlavor=&quot;NA&quot;/&gt;
+                                &lt;/encounter&gt;
+                            &lt;/entryRelationship&gt;
+                        &lt;/procedure&gt;
+                    &lt;/component&gt;
+                &lt;/section&gt;
+            &lt;/component&gt;
+        &lt;/structuredBody&gt;
+    &lt;/component&gt;
+&lt;/ClinicalDocument&gt; 
+</code></pre>
+<pre><code class="language-http">--uuid:a80594a2-e5de-425d-9fdc-f6ba27d58f05--
+</code></pre>
+<h2 id="sample-response-with-an-invalid-document">Sample response with an invalid document</h2>
+<pre><code class="language-http">HTTP/1.1 200 OK 
+Connection: keep-alive 
+X-Powered-By: Undertow/1 
+Server: WildFly/10 
+Transfer-Encoding: chunked 
+Content-Type: multipart/related; type=&quot;application/xop+xml&quot;; boundary=&quot;uuid:51e51260-f08c-4500-b486-5fd8ffaaddf9&quot;; start=&quot;&lt;root.message@cxf.apache.org&gt;&quot;; start-info=&quot;application/soap+xml&quot; 
+Date: Thu, 23 Nov 2017 07:51:32 GMT 
+</code></pre>
+<pre><code class="language-http">--uuid:51e51260-f08c-4500-b486-5fd8ffaaddf9 
+Content-Type: application/xop+xml; charset=UTF-8; type=&quot;application/soap+xml&quot; 
+Content-Transfer-Encoding: binary 
+Content-ID: &lt;root.message@cxf.apache.org&gt; 
+</code></pre>
+<pre><code class="language-xml">&lt;soap:Envelope 
+    xmlns:soap=&quot;http://www.w3.org/2003/05/soap-envelope&quot;&gt;
+    &lt;soap:Header&gt;
+        &lt;ns11:Header 
+            xmlns:ns12=&quot;http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd&quot; 
+            xmlns:ns11=&quot;http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd&quot; 
+            xmlns:ns10=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot; 
+            xmlns:ns9=&quot;http://www.w3.org/2000/09/xmldsig#&quot; 
+            xmlns:ns8=&quot;urn:oasis:names:tc:SAML:2.0:assertion&quot; 
+            xmlns:ns7=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&quot; 
+            xmlns:ns6=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0&quot; 
+            xmlns:ns5=&quot;urn:ihe:iti:xds-b:2007&quot; 
+            xmlns:ns4=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0&quot; 
+            xmlns:ns3=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0&quot; 
+            xmlns:ns2=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0&quot;&gt;
+            &lt;ns11:TimeOut&gt;3&lt;/ns11:TimeOut&gt;
+            &lt;ns11:FlowStatus&gt;flow_finalized_succesfully&lt;/ns11:FlowStatus&gt;
+        &lt;/ns11:Header&gt;
+    &lt;/soap:Header&gt;
+    &lt;soap:Body&gt;
+        &lt;ns2:RegistryResponse 
+            xmlns=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0&quot; 
+            xmlns:ns2=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0&quot; 
+            xmlns:ns3=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0&quot; 
+            xmlns:ns4=&quot;urn:ihe:iti:xds-b:2007&quot; 
+            xmlns:ns5=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0&quot; 
+            xmlns:ns6=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&quot; 
+            xmlns:ns7=&quot;urn:oasis:names:tc:SAML:2.0:assertion&quot; 
+            xmlns:ns8=&quot;http://www.w3.org/2000/09/xmldsig#&quot; 
+            xmlns:ns9=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot; 
+            xmlns:ns10=&quot;http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd&quot; 
+            xmlns:ns11=&quot;http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd&quot; status=&quot;urn:oasis:names:tc:ebxml-regrep:ResponseStatusType:Failure&quot;&gt;
+            &lt;ns2:RegistryErrorList highestSeverity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot;&gt;
+                &lt;ns2:RegistryError codeContext=&quot;XSD|||cvc-complex-type.2.4.a: Invalid content was found starting with element 'participtant'. One of '{&amp;quot;urn:hl7-org:v3&amp;quot;:subject, &amp;quot;urn:hl7-org:v3&amp;quot;:specimen, &amp;quot;urn:hl7-org:v3&amp;quot;:performer, &amp;quot;urn:hl7-org:v3&amp;quot;:author, &amp;quot;urn:hl7-org:v3&amp;quot;:informant, &amp;quot;urn:hl7-org:v3&amp;quot;:participant, &amp;quot;urn:hl7-org:v3&amp;quot;:entryRelationship, &amp;quot;urn:hl7-org:v3&amp;quot;:reference, &amp;quot;urn:hl7-org:v3&amp;quot;:precondition}' is expected.&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||188&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;XSD|||cvc-complex-type.2.4.b: The content of element 'entryRelationship' is not complete. One of '{&amp;quot;urn:hl7-org:v3&amp;quot;:realmCode, &amp;quot;urn:hl7-org:v3&amp;quot;:typeId, &amp;quot;urn:hl7-org:v3&amp;quot;:templateId, &amp;quot;urn:hl7-org:v3&amp;quot;:sequenceNumber, &amp;quot;urn:hl7-org:v3&amp;quot;:seperatableInd, &amp;quot;urn:hl7-org:v3&amp;quot;:act, &amp;quot;urn:hl7-org:v3&amp;quot;:encounter, &amp;quot;urn:hl7-org:v3&amp;quot;:observation, &amp;quot;urn:hl7-org:v3&amp;quot;:observationMedia, &amp;quot;urn:hl7-org:v3&amp;quot;:organizer, &amp;quot;urn:hl7-org:v3&amp;quot;:procedure, &amp;quot;urn:hl7-org:v3&amp;quot;:regionOfInterest, &amp;quot;urn:hl7-org:v3&amp;quot;:substanceAdministration, &amp;quot;urn:hl7-org:v3&amp;quot;:supply}' is expected.&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||266&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;XSD|||cvc-complex-type.2.4.a: Invalid content was found starting with element 'act'. One of '{&amp;quot;urn:hl7-org:v3&amp;quot;:realmCode, &amp;quot;urn:hl7-org:v3&amp;quot;:typeId, &amp;quot;urn:hl7-org:v3&amp;quot;:templateId, &amp;quot;urn:hl7-org:v3&amp;quot;:section}' is expected.&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||385&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;XSD|||cvc-complex-type.2.4.a: Invalid content was found starting with element 'observation'. One of '{&amp;quot;urn:hl7-org:v3&amp;quot;:realmCode, &amp;quot;urn:hl7-org:v3&amp;quot;:typeId, &amp;quot;urn:hl7-org:v3&amp;quot;:templateId, &amp;quot;urn:hl7-org:v3&amp;quot;:section}' is expected.&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||428&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;XSD|||cvc-complex-type.2.4.a: Invalid content was found starting with element 'procedure'. One of '{&amp;quot;urn:hl7-org:v3&amp;quot;:realmCode, &amp;quot;urn:hl7-org:v3&amp;quot;:typeId, &amp;quot;urn:hl7-org:v3&amp;quot;:templateId, &amp;quot;urn:hl7-org:v3&amp;quot;:section}' is expected.&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||548&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKEpisodeOfCareSummariesDocument): /setId/@root must have same value as /relatedDocument/parentDocument/setId/@root&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKEpisodeOfCareSummariesDocument): /versionNumber must be precisely 1 higher than /relatedDocument/parentDocument/versionNumber&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKEpisodeOfCareSummariesDocument): Initial documents require /id/@root has the same value as /setId/@root&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKEpisodeOfCareSummariesDocument): Initial documents require that /versionNumber has a value of 1&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKEpisodeOfCareSummariesDocument): The value for @codeSystem SHALL be '1.0.3166.2.2.2'.&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:realmCode[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKCustodian): The value for @assigningAuthorityName SHALL be 'Erhvervs- og Selskabsstyrelsen'.&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:custodian[namespace-uri()='urn:hl7-org:v3'][1]/*:assignedCustodian[namespace-uri()='urn:hl7-org:v3'][1]/*:representedCustodianOrganization[namespace-uri()='urn:hl7-org:v3'][1]/*:id[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKSpecializationLevelAct): The value for code SHALL be selected from value set '1.2.208.176.2.4.18' DK Specialization Level Act Codes (DYNAMIC).&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][2]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:entry[namespace-uri()='urn:hl7-org:v3'][1]/*:encounter[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][3]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][1]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKSpecializationLevelAct): The value for code SHALL be selected from value set '1.2.208.176.2.4.18' DK Specialization Level Act Codes (DYNAMIC).&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][3]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][2]/*:observation[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][4]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][1]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKSpecializationLevelAct): The value for code SHALL be selected from value set '1.2.208.176.2.4.18' DK Specialization Level Act Codes (DYNAMIC).&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][3]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][3]/*:procedure[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][2]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][1]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKEpisodeOfCareCompletionObservation): The value for code SHALL be selected from value set '1.2.208.176.2.4.3' DK Episode Of Care Completion Codes (DYNAMIC).&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:entry[namespace-uri()='urn:hl7-org:v3'][1]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][5]/*:observation[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKProcedureReasonObservation): The value for code SHALL be selected from value set '1.2.208.176.2.4.12' DK Condition Observation Primary Codes (DYNAMIC).&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][3]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][2]/*:observation[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][5]/*:observation[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKProcedureStatusAct): The value for code SHALL be selected from value set '1.2.208.176.2.4.23' DK Procedure Status Act Codes (DYNAMIC).&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][3]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][1]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKProcedureAct): choice (hl7:entryRelationShip or hl7:reference) does not contain enough elements [min 1x]&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][3]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:act[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKProcedureAct): The value for code SHALL be selected from value set '1.2.208.176.2.4.19' DK Procedure Act Primary Codes (DYNAMIC).&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][3]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKProcedureProducerParticipationBody): The value for code SHALL be selected from value set '1.2.208.176.2.4.25' DK Staff Category Codes (DYNAMIC).&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][3]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:participant[namespace-uri()='urn:hl7-org:v3'][1]/*:participantRole[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKProcedureObservation): element hl7:entryRelationship[hl7:act[hl7:templateId[@root='1.2.208.176.7.1.10.5']][hl7:templateId[@root='2.16.840.1.113883.10.12.301']]] appears too often [max 1x].&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][3]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][2]/*:observation[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKProcedureObservation): choice (hl7:entryRelationShip or hl7:reference) does not contain enough elements [min 1x]&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][3]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][2]/*:observation[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKProcedureObservation): The value for code SHALL be selected from value set '1.2.208.176.2.4.21' DK Procedure Observation Primary Codes (DYNAMIC).&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][3]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][2]/*:observation[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKProcedureProducerParticipationBody): The value for code SHALL be selected from value set '1.2.208.176.2.4.25' DK Staff Category Codes (DYNAMIC).&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][3]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][2]/*:observation[namespace-uri()='urn:hl7-org:v3'][1]/*:participant[namespace-uri()='urn:hl7-org:v3'][1]/*:participantRole[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKProcedureProcedure): choice (hl7:entryRelationShip or hl7:reference) does not contain enough elements [min 1x]&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][3]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][3]/*:procedure[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKProcedureProcedure): The value for code SHALL be selected from value set '1.2.208.176.2.4.20' DK Procedure Procedure Primary Codes (DYNAMIC).&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][3]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][3]/*:procedure[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKProcedureProducerParticipationBody): The value for code SHALL be selected from value set '1.2.208.176.2.4.25' DK Staff Category Codes (DYNAMIC).&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][3]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][3]/*:procedure[namespace-uri()='urn:hl7-org:v3'][1]/*:participant[namespace-uri()='urn:hl7-org:v3'][1]/*:participantRole[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKMetastasisObservation): The value for code SHALL be selected from value set '1.2.208.176.2.4.13' DK Metastasis Codes (DYNAMIC).&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][2]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:entry[namespace-uri()='urn:hl7-org:v3'][1]/*:encounter[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][1]/*:observation[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][2]/*:observation[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKLocalRecidivismObservation): The value for code SHALL be selected from value set '1.2.208.176.2.4.14' DK Local Recidivism Codes (DYNAMIC).&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][2]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:entry[namespace-uri()='urn:hl7-org:v3'][1]/*:encounter[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][1]/*:observation[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][1]/*:observation[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKConditionKindObservation): The value for code SHALL be selected from value set '1.2.208.176.2.4.11' DK Condition Observation Kind Codes (DYNAMIC).&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][2]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:entry[namespace-uri()='urn:hl7-org:v3'][1]/*:encounter[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][1]/*:observation[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][3]/*:observation[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKMainConditionObservation): element hl7:entryRelationship appears too often [max 1x].&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][2]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:entry[namespace-uri()='urn:hl7-org:v3'][1]/*:encounter[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][1]/*:observation[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKMainConditionObservation): choice (hl7:entryRelationShip or hl7:reference) does not contain enough elements [min 1x]&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][2]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:entry[namespace-uri()='urn:hl7-org:v3'][1]/*:encounter[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][1]/*:observation[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKMainConditionObservation): The value for code SHALL be selected from value set '1.2.208.176.2.4.12' DK Condition Observation Primary Codes (DYNAMIC).&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][2]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:entry[namespace-uri()='urn:hl7-org:v3'][1]/*:encounter[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][1]/*:observation[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKMainConditionObservation): The value for code SHALL be selected from value set '1.2.208.176.2.4.15' DK Condition Target Site Codes (DYNAMIC).&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][2]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:entry[namespace-uri()='urn:hl7-org:v3'][1]/*:encounter[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][1]/*:observation[namespace-uri()='urn:hl7-org:v3'][1]/*:targetSiteCode[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKEncounterReasonAct): The value for code SHALL be selected from value set '1.2.208.176.2.4.9' DK Encounter Reason Codes (DYNAMIC).&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][2]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:entry[namespace-uri()='urn:hl7-org:v3'][1]/*:encounter[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][4]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKSupplementaryCodeAct): The value for code SHALL be selected from value set '1.2.208.176.2.4.29' DK Supplementary Code Act Codes (DYNAMIC).&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:entry[namespace-uri()='urn:hl7-org:v3'][1]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][1]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][1]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][1]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKSupplementaryCodeAct): The value for code SHALL be selected from value set '1.2.208.176.2.4.29' DK Supplementary Code Act Codes (DYNAMIC).&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][2]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:entry[namespace-uri()='urn:hl7-org:v3'][1]/*:encounter[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][1]/*:observation[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][4]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKSupplementaryCodeAct): The value for code SHALL be selected from value set '1.2.208.176.2.4.29' DK Supplementary Code Act Codes (DYNAMIC).&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][2]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:entry[namespace-uri()='urn:hl7-org:v3'][1]/*:encounter[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][5]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][1]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][1]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKSupplementaryCodeAct): The value for code SHALL be selected from value set '1.2.208.176.2.4.29' DK Supplementary Code Act Codes (DYNAMIC).&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][3]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][2]/*:observation[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][1]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKSupplementaryCodeAct): The value for code SHALL be selected from value set '1.2.208.176.2.4.29' DK Supplementary Code Act Codes (DYNAMIC).&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][3]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][2]/*:observation[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][2]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKSupplementaryCodeAct): The value for code SHALL be selected from value set '1.2.208.176.2.4.29' DK Supplementary Code Act Codes (DYNAMIC).&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][3]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][2]/*:observation[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][5]/*:observation[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][1]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKSupplementaryCodeAct): The value for code SHALL be selected from value set '1.2.208.176.2.4.29' DK Supplementary Code Act Codes (DYNAMIC).&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][3]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][3]/*:procedure[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][1]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKRightToChooseHospitalAct): The value for code SHALL be selected from value set '1.2.208.176.2.4.6' DK Right To Choose Hospital Codes (DYNAMIC).&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:entry[namespace-uri()='urn:hl7-org:v3'][1]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][1]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][2]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKRightToChooseHospitalAct): The value for code SHALL be selected from value set '1.2.208.176.2.4.6' DK Right To Choose Hospital Codes (DYNAMIC).&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][2]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:entry[namespace-uri()='urn:hl7-org:v3'][1]/*:encounter[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][5]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][2]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKReferralOriginAct): The value for code SHALL be selected from value set '1.2.208.176.2.4.5' DK Referral Origin Codes (DYNAMIC).&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:entry[namespace-uri()='urn:hl7-org:v3'][1]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][1]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][3]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKReferralOriginAct): The value for code SHALL be selected from value set '1.2.208.176.2.4.5' DK Referral Origin Codes (DYNAMIC).&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][2]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:entry[namespace-uri()='urn:hl7-org:v3'][1]/*:encounter[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][5]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][3]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKReferralReasonAct): The value for code SHALL be selected from value set '1.2.208.176.2.4.30' DK Referral Primary Reason Codes (DYNAMIC).&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:entry[namespace-uri()='urn:hl7-org:v3'][1]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][1]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][1]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKReferralReasonAct): The value for code SHALL be selected from value set '1.2.208.176.2.4.30' DK Referral Primary Reason Codes (DYNAMIC).&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][2]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:entry[namespace-uri()='urn:hl7-org:v3'][1]/*:encounter[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][5]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][1]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKPaymentContractAct): The value for code SHALL be selected from value set '1.2.208.176.2.4.16' DK Payment Contract Act Codes (DYNAMIC).&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][2]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:entry[namespace-uri()='urn:hl7-org:v3'][1]/*:encounter[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][3]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKPaymentContractPayorParticipantBody): The value for extension SHALL be selected from value set '1.2.208.176.2.4.17' DK Payment Contract Payor Codes (DYNAMIC).&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][2]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:entry[namespace-uri()='urn:hl7-org:v3'][1]/*:encounter[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][3]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:participant[namespace-uri()='urn:hl7-org:v3'][1]/*:participantRole[namespace-uri()='urn:hl7-org:v3'][1]/*:scopingEntity[namespace-uri()='urn:hl7-org:v3'][1]/*:id[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKPaymentContractAct): The value for code SHALL be selected from value set '1.2.208.176.2.4.16' DK Payment Contract Act Codes (DYNAMIC).&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][3]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][2]/*:observation[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][4]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKPaymentContractPayorParticipantBody): The value for extension SHALL be selected from value set '1.2.208.176.2.4.17' DK Payment Contract Payor Codes (DYNAMIC).&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][3]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][2]/*:observation[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][4]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:participant[namespace-uri()='urn:hl7-org:v3'][1]/*:participantRole[namespace-uri()='urn:hl7-org:v3'][1]/*:scopingEntity[namespace-uri()='urn:hl7-org:v3'][1]/*:id[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKPaymentContractAct): The value for code SHALL be selected from value set '1.2.208.176.2.4.16' DK Payment Contract Act Codes (DYNAMIC).&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][3]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][3]/*:procedure[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][2]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKPaymentContractPayorParticipantBody): The value for extension SHALL be selected from value set '1.2.208.176.2.4.17' DK Payment Contract Payor Codes (DYNAMIC).&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][3]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][3]/*:procedure[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][2]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:participant[namespace-uri()='urn:hl7-org:v3'][1]/*:participantRole[namespace-uri()='urn:hl7-org:v3'][1]/*:scopingEntity[namespace-uri()='urn:hl7-org:v3'][1]/*:id[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKEncounter): element hl7:participant[hl7:templateId[@root='1.2.208.176.7.1.10.49']][hl7:templateId[@root='2.16.840.1.113883.10.12.321']] is mandatory [min 1x].&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][2]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:entry[namespace-uri()='urn:hl7-org:v3'][1]/*:encounter[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKEncounter): choice (hl7:entryRelationShip[hl7:act[hl7:templateId[@root='1.2.208.176.7.1.10.72']][hl7:templateId[@root='1.2.208.176.7.1.10.70']]] or hl7:reference[hl7:templateId[@root='1.2.208.176.7.1.10.69']][hl7:templateId[@root='2.16.840.1.113883.10.12.324']]) does not contain enough elements [min 1x]&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][2]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:entry[namespace-uri()='urn:hl7-org:v3'][1]/*:encounter[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKEncounter): The value for code SHALL be selected from value set '1.2.208.176.2.4.7' DK Encounter Codes (DYNAMIC).&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][2]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:entry[namespace-uri()='urn:hl7-org:v3'][1]/*:encounter[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||CONF-DK: 34: attribute @value SHALL be present.&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][2]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:entry[namespace-uri()='urn:hl7-org:v3'][1]/*:encounter[namespace-uri()='urn:hl7-org:v3'][1]/*:effectiveTime[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKEncounter): The representation of time SHALL use the format YYYYMMDDhhmmss..ZZzz&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][2]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:entry[namespace-uri()='urn:hl7-org:v3'][1]/*:encounter[namespace-uri()='urn:hl7-org:v3'][1]/*:effectiveTime[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKEncounter): The value for code SHALL be selected from value set '1.2.208.176.2.4.8' DK Priority Codes (DYNAMIC).&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][2]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:entry[namespace-uri()='urn:hl7-org:v3'][1]/*:encounter[namespace-uri()='urn:hl7-org:v3'][1]/*:priorityCode[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKEncounterServiceDeliveryLocationParticipantBody): The value for @nullFlavor SHALL be 'NI'.&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][2]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:entry[namespace-uri()='urn:hl7-org:v3'][1]/*:encounter[namespace-uri()='urn:hl7-org:v3'][1]/*:participant[namespace-uri()='urn:hl7-org:v3'][1]/*:participantRole[namespace-uri()='urn:hl7-org:v3'][1]/*:scopingEntity[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKProceduresSection): element hl7:entry[not(@nullFlavor)] is mandatory [min 1x].&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][3]/*:section[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+                &lt;ns2:RegistryError codeContext=&quot;SCHEMATRON|||(DKEpisodeOfCareMarkerAct): The value for code SHALL be selected from value set '1.2.208.176.2.4.4' DK Episode Of Care Marker Codes (DYNAMIC).&quot; errorCode=&quot;InvalidDocumentContent&quot; severity=&quot;urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error&quot; location=&quot;1.2.3.999-example4|||/*:ClinicalDocument[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:structuredBody[namespace-uri()='urn:hl7-org:v3'][1]/*:component[namespace-uri()='urn:hl7-org:v3'][1]/*:section[namespace-uri()='urn:hl7-org:v3'][1]/*:entry[namespace-uri()='urn:hl7-org:v3'][1]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:entryRelationship[namespace-uri()='urn:hl7-org:v3'][3]/*:act[namespace-uri()='urn:hl7-org:v3'][1]/*:code[namespace-uri()='urn:hl7-org:v3'][1]&quot;/&gt;
+            &lt;/ns2:RegistryErrorList&gt;
+        &lt;/ns2:RegistryResponse&gt;
+    &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt; 
+</code></pre>
+<pre><code class="language-http">--uuid:51e51260-f08c-4500-b486-5fd8ffaaddf9--
+</code></pre>
+<h2 id="sample-response-with-a-valid-document">Sample response with a valid document</h2>
+<pre><code class="language-http">HTTP/1.1 200 OK 
+Connection: keep-alive 
+X-Powered-By: Undertow/1 
+Server: WildFly/10 
+Transfer-Encoding: chunked 
+Content-Type: multipart/related; type=&quot;application/xop+xml&quot;; boundary=&quot;uuid:51e51260-f08c-4500-b486-5fd8ffaaddf9&quot;; start=&quot;&lt;root.message@cxf.apache.org&gt;&quot;; start-info=&quot;application/soap+xml&quot; 
+Date: Thu, 23 Nov 2017 07:51:32 GMT 
+</code></pre>
+<pre><code class="language-http">--uuid:51e51260-f08c-4500-b486-5fd8ffaaddf9 
+Content-Type: application/xop+xml; charset=UTF-8; type=&quot;application/soap+xml&quot; 
+Content-Transfer-Encoding: binary 
+Content-ID: &lt;root.message@cxf.apache.org&gt; 
+</code></pre>
+<pre><code class="language-xml">&lt;soap:Envelope xmlns:soap=&quot;http://www.w3.org/2003/05/soap-envelope&quot;&gt;
+    &lt;soap:Header&gt;
+        &lt;ns10:Header xmlns=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0&quot;
+            xmlns:ns10=&quot;http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd&quot;
+            xmlns:ns11=&quot;http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd&quot; xmlns:ns2=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0&quot;
+            xmlns:ns3=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0&quot; xmlns:ns4=&quot;urn:ihe:iti:xds-b:2007&quot;
+            xmlns:ns5=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0&quot;
+            xmlns:ns6=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&quot;
+            xmlns:ns7=&quot;urn:oasis:names:tc:SAML:2.0:assertion&quot; xmlns:ns8=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
+            xmlns:ns9=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot;&gt;
+            &lt;ns10:TimeOut&gt;3&lt;/ns10:TimeOut&gt;
+            &lt;ns10:FlowStatus&gt;flow_finalized_succesfully&lt;/ns10:FlowStatus&gt;
+        &lt;/ns10:Header&gt;
+    &lt;/soap:Header&gt;
+    &lt;soap:Body&gt;
+        &lt;ns2:RegistryResponse xmlns=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0&quot;
+            xmlns:ns10=&quot;http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd&quot;
+            xmlns:ns11=&quot;http://www.nsi.dk/hsuid/2016/08/hsuid-1.1.xsd&quot; xmlns:ns2=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0&quot;
+            xmlns:ns3=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0&quot; xmlns:ns4=&quot;urn:ihe:iti:xds-b:2007&quot;
+            xmlns:ns5=&quot;urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0&quot;
+            xmlns:ns6=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&quot;
+            xmlns:ns7=&quot;urn:oasis:names:tc:SAML:2.0:assertion&quot; xmlns:ns8=&quot;http://www.w3.org/2000/09/xmldsig#&quot;
+            xmlns:ns9=&quot;http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd&quot;
+            status=&quot;urn:oasis:names:tc:ebxml-regrep:ResponseStatusType:Success&quot; /&gt;
+    &lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;
+</code></pre>
+<pre><code class="language-http">--uuid:51e51260-f08c-4500-b486-5fd8ffaaddf9--
+</code></pre>
+<h2 id="example-usage-of-ids-and-uuidv4">Example usage of ID's and UUIDv4</h2>
+<p>The sample below shows the essential parts of the initial state of a given document containing a procedure. Note the use of ClinicalDocument.id, ClinicalDocument.setId and ClinicalDocument.versionNumber in the samples.</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;ClinicalDocument 
+    xmlns=&quot;urn:hl7-org:v3&quot; 
+    xmlns:voc=&quot;urn:hl7-org:v3/voc&quot; 
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; classCode=&quot;DOCCLIN&quot; moodCode=&quot;EVN&quot;&gt;
+    &lt;realmCode code=&quot;DK&quot; /&gt;
+    &lt;typeId extension=&quot;POCD_HD000040&quot; root=&quot;2.16.840.1.113883.1.3&quot; /&gt;
+    &lt;templateId root=&quot;1.2.208.176.7.1.10.71&quot; /&gt;
+    &lt;templateId root=&quot;2.16.840.1.113883.10.12.2&quot; /&gt;
+    &lt;templateId root=&quot;2.16.840.1.113883.10.12.1&quot; /&gt;
+    &lt;id root=&quot;1.2.345.6789.123&quot; /&gt;
+    &lt;code code=&quot;34133-9&quot; codeSystem=&quot;2.16.840.1.113883.6.1&quot; codeSystemName=&quot;LOINC&quot; displayName=&quot;Summary of episode note&quot; /&gt;
+    &lt;effectiveTime value=&quot;20000407&quot; /&gt;
+    &lt;confidentialityCode code=&quot;N&quot; codeSystem=&quot;2.16.840.1.113883.5.25&quot; /&gt;
+    &lt;setId root=&quot;1.2.345.6789.35&quot; /&gt;
+    &lt;versionNumber value=&quot;1&quot; /&gt;
+    &lt;recordTarget&gt;
+        &lt;templateId root=&quot;1.2.208.176.7.1.10.101&quot; /&gt;
+        &lt;templateId root=&quot;2.16.840.1.113883.10.12.101&quot; /&gt;
+        &lt;patientRole classCode=&quot;PAT&quot;&gt;
+            &lt;templateId root=&quot;1.2.208.176.7.1.10.107&quot; /&gt;
+            &lt;id root=&quot;2.16.840.1.113883.4.3&quot; extension=&quot;08119675AG1&quot; assigningAuthorityName=&quot;Region Nordjylland&quot; /&gt;
+            &lt;addr&gt;
+                &lt;streetAddressLine&gt;P.O. Pedersens Vej 2&lt;/streetAddressLine&gt;
+                &lt;postalCode&gt;8200&lt;/postalCode&gt;
+                &lt;city&gt;Aarhus N&lt;/city&gt;
+                &lt;county&gt;751&lt;/county&gt;
+                &lt;country&gt;5100&lt;/country&gt;
+            &lt;/addr&gt;
+            &lt;patient classCode=&quot;PSN&quot;&gt;
+                &lt;name&gt;
+                    &lt;family&gt;Soort-Nielsen&lt;/family&gt;
+                    &lt;given&gt;Jakob&lt;/given&gt;
+                &lt;/name&gt;
+                &lt;administrativeGenderCode code=&quot;M&quot; displayName=&quot;Male&quot; codeSystem=&quot;2.16.840.1.113883.5.1&quot; /&gt;
+            &lt;/patient&gt;
+        &lt;/patientRole&gt;
+    &lt;/recordTarget&gt;
+    &lt;author typeCode=&quot;AUT&quot;&gt;
+        &lt;templateId root=&quot;1.2.208.176.7.10.102&quot; /&gt;
+        &lt;templateId root=&quot;2.16.840.1.113883.10.12.102&quot; /&gt;
+        &lt;time value=&quot;20170228101500+0100&quot; /&gt;
+        &lt;assignedAuthor classCode=&quot;ASSIGNED&quot;&gt;
+            &lt;id nullFlavor=&quot;NI&quot; /&gt;
+            &lt;representedOrganization classCode=&quot;ORG&quot; determinerCode=&quot;INSTANCE&quot;&gt;
+                &lt;id root=&quot;1.2.208.176.1.1&quot; extension=&quot;6071000016008&quot; assigningAuthorityName=&quot;SOR&quot; /&gt;
+            &lt;/representedOrganization&gt;
+        &lt;/assignedAuthor&gt;
+    &lt;/author&gt;
+    &lt;custodian typeCode=&quot;CST&quot;&gt;
+        &lt;templateId root=&quot;1.2.208.176.7.1.10.103&quot; /&gt;
+        &lt;templateId root=&quot;2.16.840.1.113883.10.12.104&quot; /&gt;
+        &lt;assignedCustodian classCode=&quot;ASSIGNED&quot;&gt;
+            &lt;representedCustodianOrganization classCode=&quot;ORG&quot; determinerCode=&quot;INSTANCE&quot;&gt;
+                &lt;id root=&quot;2.16.840.1.113883.2.24.1.1&quot; extension=&quot;25469364&quot; assigningAuthorityName=&quot;Erhvervs- og Selskabsstyrelsen&quot; /&gt;
+            &lt;/representedCustodianOrganization&gt;
+        &lt;/assignedCustodian&gt;
+    &lt;/custodian&gt;
+    &lt;component contextConductionInd=&quot;true&quot;&gt;
+        &lt;structuredBody&gt;
+            &lt;component&gt;
+                &lt;section&gt;
+                    &lt;templateId root=&quot;1.2.208.176.7.1.10.95&quot; /&gt;
+                    &lt;templateId root=&quot;2.16.840.1.113883.10.12.201&quot; /&gt;
+                    &lt;entry&gt;
+                        &lt;act classCode=&quot;PCPR&quot; moodCode=&quot;EVN&quot;&gt;
+                            &lt;templateId root=&quot;1.2.208.176.7.1.10.80&quot; /&gt;
+                            &lt;templateId root=&quot;2.16.840.1.113883.10.12.301&quot; /&gt;
+                            &lt;id root=&quot;1.2.208.176.7.1.2.1&quot; extension=&quot;BBBFA3EA-2AD7-571C-986C-D72F7443BA4B&quot; /&gt;
+                            ...
+
+                        &lt;/act&gt;
+                    &lt;/entry&gt;
+                &lt;/section&gt;
+            &lt;/component&gt;
+            &lt;component&gt;
+                &lt;section&gt;
+                    &lt;!-- DK Procedures Section --&gt;
+                    &lt;templateId root=&quot;1.2.208.176.7.1.10.76&quot; /&gt;
+                    &lt;templateId root=&quot;2.16.840.1.113883.10.12.201&quot; /&gt;
+                    &lt;entry&gt;
+                        &lt;act classCode=&quot;ACT&quot; moodCode=&quot;EVN&quot;&gt;
+                            &lt;templateId root=&quot;1.2.208.176.7.1.10.25&quot; /&gt;
+                            &lt;templateId root=&quot;2.16.840.1.113883.10.12.301&quot; /&gt;
+                            &lt;id root=&quot;1.2.208.176.7.1.2.1&quot; extension=&quot;50009866-1B81-53FD-BD67-B132A68415FA&quot; /&gt;
+                            &lt;id root=&quot;1.2.208.176.7.1.2.2&quot; extension=&quot;94FF6BDB-2075-43DE-BA33-7DAFD7DC66CC&quot; /&gt;
+                            &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;Behandling med protesehæmmer&quot; code=&quot;BPHM91&quot; /&gt;
+                            &lt;effectiveTime&gt;
+                                &lt;low value=&quot;20170115080000+0200&quot; /&gt;
+                                &lt;high value=&quot;20170115083000+0200&quot; /&gt;
+                            &lt;/effectiveTime&gt;
+                            &lt;!-- ... --&gt;
+                        &lt;/act&gt;
+                    &lt;/entry&gt;
+                &lt;/section&gt;
+            &lt;/component&gt;
+        &lt;/structuredBody&gt;
+    &lt;/component&gt;
+&lt;/ClinicalDocument&gt;
+</code></pre>
+<p>The sample below shows the addendum to the initial state where a procedure is removed (nullified). In order to remove a previously submitted entity, the <em>Nullify</em> templates are used.</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;ClinicalDocument 
+    xmlns=&quot;urn:hl7-org:v3&quot; 
+    xmlns:voc=&quot;urn:hl7-org:v3/voc&quot; 
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; classCode=&quot;DOCCLIN&quot; moodCode=&quot;EVN&quot;&gt;
+    &lt;realmCode code=&quot;DK&quot; /&gt;
+    &lt;typeId extension=&quot;POCD_HD000040&quot; root=&quot;2.16.840.1.113883.1.3&quot; /&gt;
+    &lt;templateId root=&quot;1.2.208.176.7.1.10.71&quot; /&gt;
+    &lt;templateId root=&quot;2.16.840.1.113883.10.12.2&quot; /&gt;
+    &lt;templateId root=&quot;2.16.840.1.113883.10.12.1&quot; /&gt;
+    &lt;id root=&quot;1.2.345.6789.1234&quot; /&gt;
+    &lt;code code=&quot;34133-9&quot; codeSystem=&quot;2.16.840.1.113883.6.1&quot; codeSystemName=&quot;LOINC&quot; displayName=&quot;Summary of episode note&quot; /&gt;
+    &lt;effectiveTime value=&quot;20000407&quot; /&gt;
+    &lt;confidentialityCode code=&quot;N&quot; codeSystem=&quot;2.16.840.1.113883.5.25&quot; /&gt;
+    &lt;setId root=&quot;1.2.345.6789.35&quot; /&gt;
+    &lt;versionNumber value=&quot;2&quot; /&gt;
+    &lt;!-- ... --&gt;
+    &lt;relatedDocument typeCode=&quot;APND&quot;&gt;
+        &lt;parentDocument classCode=&quot;DOCCLIN&quot; moodCode=&quot;EVN&quot;&gt;
+            &lt;id root=&quot;1.2.345.6789.123&quot; /&gt;
+            &lt;setId root=&quot;1.2.345.6789.35&quot; /&gt;
+            &lt;versionNumber value=&quot;1&quot; /&gt;
+        &lt;/parentDocument&gt;
+    &lt;/relatedDocument&gt;
+    &lt;component contextConductionInd=&quot;true&quot;&gt;
+        &lt;structuredBody&gt;
+            &lt;component&gt;
+                &lt;section&gt;
+                    &lt;!-- DK Procedures Section --&gt;
+                    &lt;templateId root=&quot;1.2.208.176.7.1.10.76&quot; /&gt;
+                    &lt;templateId root=&quot;2.16.840.1.113883.10.12.201&quot; /&gt;
+                    &lt;entry&gt;
+                        &lt;act classCode=&quot;ACT&quot; moodCode=&quot;EVN&quot;&gt;
+                            &lt;templateId root=&quot;1.2.208.176.7.1.10.86&quot; /&gt;
+                            &lt;templateId root=&quot;2.16.840.1.113883.10.12.301&quot; /&gt;
+                            &lt;id root=&quot;1.2.208.176.7.1.2.1&quot; extension=&quot;50009866-1B81-53FD-BD67-B132A68415FA&quot; /&gt;
+                            &lt;code nullFlavor=&quot;NA&quot; /&gt;
+                            &lt;statusCode code=&quot;nullified&quot; /&gt;
+                        &lt;/act&gt;
+                    &lt;/entry&gt;
+                &lt;/section&gt;
+            &lt;/component&gt;
+        &lt;/structuredBody&gt;
+    &lt;/component&gt;
+&lt;/ClinicalDocument&gt;
+</code></pre>
+<p>The sample below shows the addendum to the initial state where two encounters and one procedure are added and one of the encounters are referenced from the procedure using temporary UUIDv4 identifiers. As can be seen, the reference link between encounter and procedure is stated within the procedure. This also means that when removing (nullifying) encounters, all entities (procedues, acts, observations) must be updated accordingly to point to the new encounter. Updating eg. a procedure does however not mean that an update is necessary on the encounter. The same goes for procedures that references an Episode Of Care.</p>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;ClinicalDocument xmlns=&quot;urn:hl7-org:v3&quot; xmlns:voc=&quot;urn:hl7-org:v3/voc&quot;
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; classCode=&quot;DOCCLIN&quot;
+    moodCode=&quot;EVN&quot;&gt;
+    &lt;realmCode code=&quot;DK&quot; /&gt;
+    &lt;typeId extension=&quot;POCD_HD000040&quot; root=&quot;2.16.840.1.113883.1.3&quot; /&gt;
+    &lt;templateId root=&quot;1.2.208.176.7.1.10.71&quot; /&gt;
+    &lt;templateId root=&quot;2.16.840.1.113883.10.12.2&quot; /&gt;
+    &lt;templateId root=&quot;2.16.840.1.113883.10.12.1&quot; /&gt;
+    &lt;id root=&quot;1.2.345.6789.1235&quot; /&gt;
+    &lt;code code=&quot;34133-9&quot; codeSystem=&quot;2.16.840.1.113883.6.1&quot;
+        codeSystemName=&quot;LOINC&quot; displayName=&quot;Summary of episode note&quot; /&gt;
+    &lt;effectiveTime value=&quot;20000407&quot; /&gt;
+    &lt;confidentialityCode code=&quot;N&quot; codeSystem=&quot;2.16.840.1.113883.5.25&quot; /&gt;
+    &lt;setId root=&quot;1.2.345.6789.35&quot; /&gt;
+    &lt;versionNumber value=&quot;2&quot; /&gt;
+    &lt;!-- ... --&gt;
+    &lt;relatedDocument typeCode=&quot;APND&quot;&gt;
+        &lt;parentDocument classCode=&quot;DOCCLIN&quot; moodCode=&quot;EVN&quot;&gt;
+            &lt;id root=&quot;1.2.345.6789.1235&quot; /&gt;
+            &lt;setId root=&quot;1.2.345.6789.35&quot; /&gt;
+            &lt;versionNumber value=&quot;1&quot; /&gt;
+        &lt;/parentDocument&gt;
+    &lt;/relatedDocument&gt;
+    &lt;component contextConductionInd=&quot;true&quot;&gt;
+        &lt;structuredBody&gt;
+            &lt;component&gt;
+                &lt;section&gt;
+                    &lt;!-- DK Procedures Section --&gt;
+                    &lt;templateId root=&quot;1.2.208.176.7.1.10.76&quot; /&gt;
+                    &lt;templateId root=&quot;2.16.840.1.113883.10.12.201&quot; /&gt;
+                    &lt;entry&gt;
+                        &lt;act classCode=&quot;ACT&quot; moodCode=&quot;EVN&quot;&gt;
+                            &lt;templateId root=&quot;1.2.208.176.7.1.10.25&quot; /&gt;
+                            &lt;templateId root=&quot;2.16.840.1.113883.10.12.301&quot; /&gt;
+                            &lt;id root=&quot;1.2.208.176.7.1.2.1&quot; extension=&quot;94FF6BDB-2075-43DE-BA33-7DAFD7DC66CE&quot; /&gt;
+                            &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot;
+                                codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;Behandling med direkte aktive antivirale lægemidler&quot;
+                                code=&quot;BPHM92&quot; /&gt;
+                            &lt;effectiveTime&gt;
+                                &lt;low value=&quot;20170115080000+0200&quot; /&gt;
+                                &lt;high value=&quot;20170115083000+0200&quot; /&gt;
+                            &lt;/effectiveTime&gt;
+                            &lt;!-- Reference to the encounter with id 1.2.208.176.7.1.2.2#187EAC1A-D053-4D1C-92DF-F66B429F9B51 --&gt;
+                            &lt;entryRelationship typeCode=&quot;REFR&quot;&gt;
+                                &lt;encounter classCode=&quot;ENC&quot; moodCode=&quot;EVN&quot;&gt;
+                                    &lt;templateId root=&quot;1.2.208.176.7.1.10.77&quot; /&gt;
+                                    &lt;templateId root=&quot;2.16.840.1.113883.10.12.301&quot; /&gt;
+                                    &lt;id root=&quot;1.2.208.176.7.1.2.2&quot; extension=&quot;187EAC1A-D053-4D1C-92DF-F66B429F9B51&quot; /&gt;
+                                    &lt;code nullFlavor=&quot;NA&quot; /&gt;
+                                &lt;/encounter&gt;
+                            &lt;/entryRelationship&gt;
+                        &lt;/act&gt;
+                    &lt;/entry&gt;
+                &lt;/section&gt;
+            &lt;/component&gt;
+            &lt;component&gt;
+                &lt;section&gt;
+                    &lt;!-- DK Encounters Section --&gt;
+                    &lt;templateId root=&quot;1.2.208.176.7.1.10.75&quot; /&gt;
+                    &lt;templateId root=&quot;2.16.840.1.113883.10.12.201&quot; /&gt;
+                    &lt;entry&gt;
+                        &lt;encounter classCode=&quot;ENC&quot; moodCode=&quot;EVN&quot;&gt;
+                            &lt;templateId root=&quot;1.2.208.176.7.1.10.74&quot; /&gt;
+                            &lt;templateId root=&quot;2.16.840.1.113883.10.12.302&quot; /&gt;
+                            &lt;id root=&quot;1.2.208.176.7.1.2.2&quot; extension=&quot;187EAC1A-D053-4D1C-92DF-F66B429F9B51&quot; /&gt;
+                            &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot;
+                                codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;fysisk fremmøde&quot; code=&quot;ALCA00&quot; /&gt;
+                            &lt;effectiveTime&gt;
+                                &lt;low value=&quot;20170216060000+0200&quot; /&gt;
+                                &lt;high value=&quot;20170224120000+0200&quot; /&gt;
+                            &lt;/effectiveTime&gt;
+                            &lt;reference typeCode=&quot;REFR&quot;&gt;
+                                &lt;templateId root=&quot;1.2.208.176.7.1.10.69&quot;/&gt;
+                                &lt;templateId root=&quot;2.16.840.1.113883.10.12.324&quot;/&gt;
+                                &lt;externalAct classCode=&quot;ACT&quot; moodCode=&quot;EVN&quot;&gt;
+                                    &lt;templateId root=&quot;1.2.208.176.7.1.10.65&quot;/&gt;
+                                    &lt;templateId root=&quot;2.16.840.1.113883.10.12.325&quot;/&gt;
+                                    &lt;id root=&quot;1.2.208.176.1.2.1&quot; extension=&quot;BBBFA3EA-2AD7-571C-986C-D72F7443BA4B&quot;/&gt;
+                                &lt;/externalAct&gt;
+                            &lt;/reference&gt;
+                        &lt;/encounter&gt;
+                    &lt;/entry&gt;
+                    &lt;entry&gt;
+                        &lt;encounter classCode=&quot;ENC&quot; moodCode=&quot;EVN&quot;&gt;
+                            &lt;templateId root=&quot;1.2.208.176.7.1.10.74&quot; /&gt;
+                            &lt;templateId root=&quot;2.16.840.1.113883.10.12.302&quot; /&gt;
+                            &lt;id root=&quot;1.2.208.176.7.1.2.1&quot; extension=&quot;94FF6BDB-2075-43DE-BA33-7DAFD7DC66CF&quot; /&gt;
+                            &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot;
+                                codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;fysisk fremmøde&quot; code=&quot;ALCA00&quot; /&gt;
+                            &lt;effectiveTime&gt;
+                                &lt;low value=&quot;20160216060000+0200&quot; /&gt;
+                                &lt;high value=&quot;20160224120000+0200&quot; /&gt;
+                            &lt;/effectiveTime&gt;
+                            &lt;reference typeCode=&quot;REFR&quot;&gt;
+                                &lt;templateId root=&quot;1.2.208.176.7.1.10.69&quot;/&gt;
+                                &lt;templateId root=&quot;2.16.840.1.113883.10.12.324&quot;/&gt;
+                                &lt;externalAct classCode=&quot;ACT&quot; moodCode=&quot;EVN&quot;&gt;
+                                    &lt;templateId root=&quot;1.2.208.176.7.1.10.65&quot;/&gt;
+                                    &lt;templateId root=&quot;2.16.840.1.113883.10.12.325&quot;/&gt;
+                                    &lt;id root=&quot;1.2.208.176.1.2.1&quot; extension=&quot;BBBFA3EA-2AD7-571C-986C-D72F7443BA4B&quot;/&gt;
+                                &lt;/externalAct&gt;
+                            &lt;/reference&gt;
+                            ...
+                        &lt;/encounter&gt;
+                    &lt;/entry&gt;
+                &lt;/section&gt;
+            &lt;/component&gt;
+        &lt;/structuredBody&gt;
+    &lt;/component&gt;
+&lt;/ClinicalDocument&gt;
+</code></pre>
+<h2 id="updating-values-in-documents">Updating values in documents</h2>
+<p>Below shows the inital state of a fragment of a reported encounter within a CDA document.</p>
+<pre><code class="language-xml">&lt;entry&gt;
+    &lt;encounter classCode=&quot;ENC&quot; moodCode=&quot;EVN&quot;&gt;
+        &lt;templateId root=&quot;1.2.208.176.7.1.10.74&quot;/&gt;
+        &lt;templateId root=&quot;2.16.840.1.113883.10.12.302&quot;/&gt;
+        &lt;id root=&quot;1.2.208.176.7.1.2.1&quot; extension=&quot;47041012-132F-5DE1-B16A-DF273F8F000F&quot;/&gt;
+        &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;fysisk fremmøde&quot; code=&quot;ALCA00&quot;/&gt;
+        &lt;effectiveTime&gt;
+            &lt;low value=&quot;20170216060000+0200&quot;/&gt;
+            &lt;high value=&quot;20170224120000+0200&quot;/&gt;
+        &lt;/effectiveTime&gt;
+        &lt;priorityCode codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;Akut&quot; code=&quot;ATA1&quot;/&gt;
+    ...
+
+    &lt;/encounter&gt;
+&lt;/entry&gt;
+</code></pre>
+<p>In order to eg. update the priorityCode on the encounter either the entire document can be replaced or the encounter can be nullified and replaced with a new encounter containing all the same data but the <code>id</code>. A fragment of the updated CDA is shown below. </p>
+<pre><code class="language-xml">&lt;entry&gt;
+    &lt;encounter classCode=&quot;ENC&quot; moodCode=&quot;EVN&quot;&gt;
+        &lt;templateId root=&quot;1.2.208.176.7.1.10.87&quot;/&gt;
+        &lt;templateId root=&quot;2.16.840.1.113883.10.12.301&quot;/&gt;
+        &lt;id root=&quot;1.2.208.176.7.1.2.1&quot; extension=&quot;47041012-132F-5DE1-B16A-DF273F8F000F&quot;/&gt;
+        &lt;code nullFlavor=&quot;NA&quot;/&gt;
+        &lt;statusCode code=&quot;nullified&quot;/&gt;
+    &lt;/encounter&gt;
+&lt;/entry&gt;
+&lt;entry&gt;
+    &lt;encounter classCode=&quot;ENC&quot; moodCode=&quot;EVN&quot;&gt;
+        &lt;templateId root=&quot;1.2.208.176.7.1.10.74&quot;/&gt;
+        &lt;templateId root=&quot;2.16.840.1.113883.10.12.302&quot;/&gt;
+        &lt;id root=&quot;1.2.208.176.7.1.2.1&quot; extension=&quot;CB7F4122-9963-56B6-8A34-2FB4E7C640D7&quot;/&gt;
+        &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;fysisk fremmøde&quot; code=&quot;ALCA00&quot;/&gt;
+        &lt;effectiveTime&gt;
+            &lt;low value=&quot;20170216060000+0200&quot;/&gt;
+            &lt;high value=&quot;20170224120000+0200&quot;/&gt;
+        &lt;/effectiveTime&gt;
+        &lt;priorityCode codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;Akut i dagarbejdstiden, uden konsekvens for dagsprogram&quot; code=&quot;ATA11B&quot;/&gt;
+    ...
+
+        &lt;reference typeCode=&quot;REFR&quot;&gt;
+            &lt;templateId root=&quot;1.2.208.176.7.1.10.69&quot;/&gt;
+            &lt;templateId root=&quot;2.16.840.1.113883.10.12.324&quot;/&gt;
+            &lt;externalAct classCode=&quot;ACT&quot; moodCode=&quot;EVN&quot;&gt;
+                &lt;templateId root=&quot;1.2.208.176.7.1.10.65&quot;/&gt;
+                &lt;templateId root=&quot;2.16.840.1.113883.10.12.325&quot;/&gt;
+                &lt;id root=&quot;1.2.208.176.1.2.1&quot; extension=&quot;BBBFA3EA-2AD7-571C-986C-D72F7443BA4B&quot;/&gt;
+            &lt;/externalAct&gt;
+        &lt;/reference&gt;
+    &lt;/encounter&gt;
+&lt;/entry&gt;
+</code></pre>
+<h2 id="adding-new-procedures-to-a-previous-submitted-document">Adding new procedures to a previous submitted document</h2>
+<p>When in a need to add eg. new procedure to a previous submitted document the procedure can reference either an existing encounter or an existing episode of care. Both types of references are shown below. They must however not be present at the same time in submissions.</p>
+<pre><code class="language-xml">&lt;procedure classCode=&quot;PROC&quot; moodCode=&quot;EVN&quot;&gt;
+    &lt;templateId root=&quot;1.2.208.176.7.1.10.30&quot;/&gt;
+    &lt;templateId root=&quot;2.16.840.1.113883.10.12.306&quot;/&gt;
+    &lt;id root=&quot;1.2.208.176.7.1.2.1&quot; extension=&quot;7dfa91a1-e19e-57d0-bdbe-fea7f8582df5&quot;/&gt;
+    &lt;code codeSystemName=&quot;Sundhedsvæsenets Klassifikations System&quot; codeSystem=&quot;1.2.208.176.2.4&quot; displayName=&quot;Indlæggelse af intracerebralt trykmålingsudstyr&quot; code=&quot;KAAA27&quot;/&gt;
+    &lt;effectiveTime&gt;
+        &lt;low value=&quot;20170122084500+0200&quot;/&gt;
+        &lt;high value=&quot;20170122123000+0200&quot;/&gt;
+    &lt;/effectiveTime&gt;
+...
+    &lt;!-- External Episode of Care Reference --&gt;
+    &lt;reference typeCode=&quot;REFR&quot;&gt;
+        &lt;templateId root=&quot;1.2.208.176.7.1.10.69&quot;/&gt;
+        &lt;templateId root=&quot;2.16.840.1.113883.10.12.324&quot;/&gt;
+        &lt;externalAct classCode=&quot;ACT&quot; moodCode=&quot;EVN&quot;&gt;
+            &lt;templateId root=&quot;1.2.208.176.7.1.10.65&quot;/&gt;
+            &lt;templateId root=&quot;2.16.840.1.113883.10.12.325&quot;/&gt;
+            &lt;id root=&quot;1.2.208.176.1.2.1&quot; extension=&quot;bbbfa3ea-2ad7-571c-986c-d72f7443ba4b&quot;/&gt;
+        &lt;/externalAct&gt;
+    &lt;/reference&gt;
+
+    &lt;!-- External Encounter Reference --&gt;
+    &lt;reference typeCode=&quot;REFR&quot;&gt;
+        &lt;templateId root=&quot;1.2.208.176.7.1.10.69&quot;/&gt;
+        &lt;templateId root=&quot;2.16.840.1.113883.10.12.324&quot;/&gt;
+        &lt;externalAct classCode=&quot;ACT&quot; moodCode=&quot;EVN&quot;&gt;
+            &lt;templateId root=&quot;1.2.208.176.7.1.10.78&quot;/&gt;
+            &lt;templateId root=&quot;2.16.840.1.113883.10.12.325&quot;/&gt;
+            &lt;id root=&quot;1.2.208.176.1.2.1&quot; extension=&quot;47041012-132f-5de1-b16a-df273f8f000f&quot;/&gt;
+        &lt;/externalAct&gt;
+    &lt;/reference&gt;
+&lt;/procedure&gt;
+</code></pre>
+<h3 id="sample-of-how-to-create-a-uuidv5">Sample of how to create a UUIDv5</h3>
+<pre><code class="language-bash">#!/bin/bash
+
+EPISODE_OF_CARE_IDENTIFIER_OID=1.2.208.176.7.1.10.80
+AUTHOR_SOR_IDENTIFIER=$1
+INTERNAL_EPISODE_OF_CARE_UID=$2
+
+CMD='uuid -v5 ns:OID '$EPISODE_OF_CARE_IDENTIFIER_OID
+EPISODE_OF_CARE_IDENTIFIER_UUID=`$CMD`
+CMD='uuid -v5 '$EPISODE_OF_CARE_IDENTIFIER_UUID' '$AUTHOR_SOR_IDENTIFIER
+AUTHOR_SOR_UUID=`$CMD`
+CMD='uuid -v5 '$AUTHOR_SOR_UUID' '$INTERNAL_EPISODE_OF_CARE_UID
+EPISODE_OF_CARE_UUID=`$CMD`
+
+
+echo 'EpisodeOfCareIdentifierUUID: '$EPISODE_OF_CARE_IDENTIFIER_UUID
+echo 'AuthorSORUUID: '$AUTHOR_SOR_UUID
+echo 'EpisodeOfCareUUID: '$EPISODE_OF_CARE_UUID
+</code></pre>
+<h3 id="examples-from-selected-scenarios">Examples from selected scenarios</h3>
+<p><a href="/examples/Removal.Procedure.xml">Indberetning af sletning af procedure uden kontakt</a></p>
+<p><a href="/examples/Removal.EpisodeOfCare.xml">Indberetning af sletning af forløbselement</a></p>
+<p><a href="/examples/Removal.Encounter.xml">Indberetning af sletning af kontaktelement</a></p>
+<p><a href="/examples/Procedure.ReferenceToEpisodeOfCare.xml">Indberetning af procedure uden kontakt med reference til forløbselement</a></p>
+<p><a href="/examples/EpisodeOfCare.xml">Indberetning kun med forløbselement</a></p>
+<p><a href="/examples/Encounter.ReferenceToEpisodeOfCare.Results-Mother.xml">Indberetning af kontakt med reference til forløbselement og hvor der i samme besked er en resultatindberetning af typen ”Fødselsanmeldelse - mor” på kontakten med flere</a></p>
+<p><a href="/examples/Encounter.ReferenceToEpisodeOfCare.Results-Hearingtests.xml">Indberetning af kontakt med reference til forløbselement og hvor der i samme besked er en resultatindberetning af typen ”Neonatal hørescreening” på kontakten med flere resultater</a></p>
+<p><a href="/examples/Encounter.ReferenceToEpisodeOfCare.Results-Decision.Alarm.xml">Indberetning af kontakt med reference til forløbselement og hvor der i samme besked er en resultatindberetning af typen ”Beslutning vedrørende personligt alarm- og pejlesystem” på kontakten med flere resultater</a></p>
+<p><a href="/examples/Encounter.ReferenceToEpisodeOfCare.Results-Child.xml">Indberetning af kontakt med reference til forløbselement og hvor der i samme besked er en resultatindberetning af typen ”Fødselsanmeldelse - barn” på kontakten med flere resultater</a></p>
+<p><a href="/examples/Encounter.ReferenceToEpisodeOfCare.Results-Cancer.xml">Indberetning af kontakt med reference til forløbselement og hvor der i samme besked er en resultatindberetning af typen ”Canceranmeldelse” på kontakten med flere resultater</a></p>
+<p><a href="/examples/Encounter.ReferenceToEpisodeOfCare.Results-Accident.xml">Indberetning af kontakt med reference til forløbselement og hvor der i samme besked er en resultatindberetning af typen ”Canceranmeldelse” på kontakten med flere resultater</a></p>
+<p><a href="/examples/Encounter.ReferenceToEpisodeOfCare.Results-Abortion.xml">Indberetning af kontakt med reference til forløbselement og hvor der i samme besked er en resultatindberetning af typen ”Abortoplysninger” på kontakten med flere resultater</a></p>
+<p><a href="/examples/Encounter.ReferenceToEpisodeOfCare.Proceduce.Diagnose-Cancer.xml">Indberetning af komplet kontakt med reference til forløbselement og med tilhørende procedurer og diagnoser og til diagnoserne (cancer) hørende metastaser og lokalrecidiv</a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="developmentresources.html" class="btn btn-neutral float-right" title="Development resources">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="scenarios.html" class="btn btn-neutral" title="Scenarios"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="scenarios.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="developmentresources.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme_extra.js" defer></script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

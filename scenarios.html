@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>Introduction to the material - Landspatientregisteret 3 - Technical documentation</title>
+  <title>Scenarios - Landspatientregisteret 3 - Technical documentation</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="css/theme.css" />
@@ -20,8 +20,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Introduction to the material";
-    var mkdocs_page_input_path = "index.md";
+    var mkdocs_page_name = "Scenarios";
+    var mkdocs_page_input_path = "scenarios.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -49,12 +49,8 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
                 <p class="caption"><span class="caption-text">Documentation</span></p>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="index.html">Introduction to the material</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#what-is-not-the-concern-of-lpr3">What is not the concern of LPR3</a>
-    </li>
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="index.html">Introduction to the material</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="definitions.html">Definitions</a>
                     </li>
@@ -78,8 +74,26 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Examples</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="scenarios.html">Scenarios</a>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="scenarios.html">Scenarios</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#scenarie-udredning-af-patient-henvist-fra-frrne">Scenarie - Udredning af patient henvist fra Færørne</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#henvisning-dag-1">Henvisning - dag 1</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#neurologisk-udredning-dag-6">Neurologisk udredning - dag 6</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#neurokirurgisk-udredning-dag-7">Neurokirurgisk udredning - dag 7</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#operation">Operation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#onkologisk-behandling">Onkologisk behandling</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#dd">Død</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="examples.html">Samples</a>
                     </li>
@@ -116,11 +130,11 @@
     
       
         
-          <li>Documentation &raquo;</li>
+          <li>Examples &raquo;</li>
         
       
     
-    <li>Introduction to the material</li>
+    <li>Scenarios</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -132,10 +146,32 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="introduction-to-the-material">Introduction to the material</h1>
-<p>This documentation covers the aspects and usage of the national Danish patient register 'Landspatientregisteret 3' (LPR3) from a technical integration point of view. LPR is one of the cornerstones in the danish national healthcare infrastructure and is responsible for exposing services that allows the danish regions to report conducted medical services and treatments to a central hub with the primary purpose of supporting billing. This documentation outlines the technical aspects of what the requirements are to support such infrastructure from a regional perspective aka. a client to the LPR3 services and what functionality is supported. As the client-faced services are based an IHE XDR infrastructure with the content being modelled in HL7 CDA R2, it is expected that the reader is somewhat familiar with such standards and frameworks.</p>
-<h2 id="what-is-not-the-concern-of-lpr3">What is not the concern of LPR3</h2>
-<p>This documentation will not cover the clinical/administrative user oriented aspects of reporting but instead focus on functional aspects. As such, user stories are not part of this documentation.</p>
+                <h1 id="scenarios">Scenarios</h1>
+<p>The following scenarios can assist reporting authorities to test end-to-end conformance with "lægers anmeldelse til Landspatientregisteret af behandling udført på private sygehuse og klinikker og af mandlige omskæringer udført uden for sygehuse og klinikker."</p>
+<p>The scenarios are written in danish.</p>
+<h2 id="scenarie-udredning-af-patient-henvist-fra-frrne">Scenarie - Udredning af patient henvist fra Færørne</h2>
+<p>Det følgende scenarie er en kladde.</p>
+<h3 id="henvisning-dag-1">Henvisning - dag 1</h3>
+<p>Færøingen Brandur Jákupsson med personnummer 080272313 bor sammen med sin kone og to døtre i deres hus på Steigabrekka 201 i Sandavágur, FO 360.
+Brandurs lider af hukommelsestab, stærkt ændret personadfærd og svære hovedpiner.<br />
+Neurologisk amb. på Landssjúkráhúsið henviser Brandur til Danmark med formodning om personligheds- og adfærdsforstyrrelser som følge af sygdom, skade eller dysfunktion af hjerne. I henvisningen oplyses forløbsid <code>bfd13011-90ac-58ed-abe0-42219f7269fe</code>.</p>
+<h3 id="neurologisk-udredning-dag-6">Neurologisk udredning - dag 6</h3>
+<p>En neurolog tilser Brandur og Brandur og indleder et kræftpakkeforløb med "begrundet mistanke om kræft i hjernen"
+Brandur indlægges akut på neurologisk afdeling.
+Brandur henvises til radiologi for MR scanning.
+MR scanningen finder sted samme dag og bestyrker mistanken om primær kræft i hjernen.
+Brandur viderehenvises til neurokirurgisk afdeling.</p>
+<h3 id="neurokirurgisk-udredning-dag-7">Neurokirurgisk udredning - dag 7</h3>
+<p>Neurokirurgen gennemgår Brandurs sygehistorie, foretager en klinisk undersøgelse, gennemgår og informerer Brandur om de billeddiagnostiske
+fund, den formodede kræft i hjernens tindingelap og behandling.
+Neurokirurgen henviser til radiologi mhp. at foretage en ekstra MR-scanning til anvendelse af Computer-Assisted Navigation under operationen.</p>
+<h3 id="operation">Operation</h3>
+<h3 id="onkologisk-behandling">Onkologisk behandling</h3>
+<p>Brandurs 3-grads tumor behandles ved stråleterapi dagligt de næste 6 uger. Efter afsluttet strålebehandling holdes pause
+i fire uger, hvorefter kemoterapi med temozolamid optages og gives over fem dage i tabletform.
+Kemoterapien gentages hver fjerde uge med i alt seks behandlingsserier.</p>
+<h3 id="dd">Død</h3>
+<p>På vej hjem til Færøerne omkommer Brandur i en flyulykke.</p>
               
             </div>
           </div>
@@ -143,8 +179,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="definitions.html" class="btn btn-neutral float-right" title="Definitions">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="examples.html" class="btn btn-neutral float-right" title="Samples">Next <span class="icon icon-circle-arrow-right"></span></a>
       
+      
+        <a href="testenvironment.html" class="btn btn-neutral" title="Test"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -170,8 +208,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
+      <span><a href="testenvironment.html" style="color: #fcfcfc">&laquo; Previous</a></span>
     
-      <span><a href="definitions.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+      <span><a href="examples.html" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

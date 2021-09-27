@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>Introduction to the material - Landspatientregisteret 3 - Technical documentation</title>
+  <title>Test - Landspatientregisteret 3 - Technical documentation</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="css/theme.css" />
@@ -20,8 +20,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Introduction to the material";
-    var mkdocs_page_input_path = "index.md";
+    var mkdocs_page_name = "Test";
+    var mkdocs_page_input_path = "testenvironment.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -49,12 +49,8 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
                 <p class="caption"><span class="caption-text">Documentation</span></p>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="index.html">Introduction to the material</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#what-is-not-the-concern-of-lpr3">What is not the concern of LPR3</a>
-    </li>
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="index.html">Introduction to the material</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="definitions.html">Definitions</a>
                     </li>
@@ -71,10 +67,26 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Environments</span></p>
-                <ul>
+                <ul class="current">
                     <li class="toctree-l1"><a class="reference internal" href="productionenvironment.html">Production</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="testenvironment.html">Test</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="testenvironment.html">Test</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#access">Access</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#cda-reporting-endpoints">CDA reporting endpoints</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#accumulated-error-list">Accumulated Error List</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#deployments">Deployments</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#weekly-data-purge">Weekly data purge</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#rules-implemented-on-test-system">Rules implemented on Test System</a>
+    </li>
+    </ul>
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Examples</span></p>
@@ -116,11 +128,11 @@
     
       
         
-          <li>Documentation &raquo;</li>
+          <li>Environments &raquo;</li>
         
       
     
-    <li>Introduction to the material</li>
+    <li>Test</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -132,10 +144,55 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="introduction-to-the-material">Introduction to the material</h1>
-<p>This documentation covers the aspects and usage of the national Danish patient register 'Landspatientregisteret 3' (LPR3) from a technical integration point of view. LPR is one of the cornerstones in the danish national healthcare infrastructure and is responsible for exposing services that allows the danish regions to report conducted medical services and treatments to a central hub with the primary purpose of supporting billing. This documentation outlines the technical aspects of what the requirements are to support such infrastructure from a regional perspective aka. a client to the LPR3 services and what functionality is supported. As the client-faced services are based an IHE XDR infrastructure with the content being modelled in HL7 CDA R2, it is expected that the reader is somewhat familiar with such standards and frameworks.</p>
-<h2 id="what-is-not-the-concern-of-lpr3">What is not the concern of LPR3</h2>
-<p>This documentation will not cover the clinical/administrative user oriented aspects of reporting but instead focus on functional aspects. As such, user stories are not part of this documentation.</p>
+                <h1 id="test-environment">Test environment</h1>
+<p>Dedalus hosts a test environment that integrators can use do finalize their solution.</p>
+<h2 id="access">Access</h2>
+<p>Accessing the test environment requires access to the <a href="https://www.medcom.dk/opslag/support">Sundhedsdatanettet (SDN)</a>.  </p>
+<h3 id="cda-reporting-endpoints">CDA reporting endpoints</h3>
+<p>The following three endpoint are available:</p>
+<ul>
+<li><a href="https://lprws-test.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareSaveIfNoErrorsReportingService?wsdl">Save if no errors</a><ul>
+<li>https://lprws-test.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareSaveIfNoErrorsReportingService</li>
+</ul>
+</li>
+<li><a href="https://lprws-test.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareReportingService?wsdl">Save with errors</a><ul>
+<li>https://lprws-test.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareReportingService</li>
+</ul>
+</li>
+<li><a href="https://lprws-test.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareValidateReportingService?wsdl">Validate</a><ul>
+<li>https://lprws-test.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareValidateReportingService </li>
+</ul>
+</li>
+</ul>
+<p>The same three endpoints are also available where the <code>medcom</code> header is defined by the medcom namespace <code>http://svn.medcom.dk/svn/releases/Standarder/DGWS/Schemas/medcom-1.0.1.xsd</code> (see <a href="https://github.com/scandihealth/lpr3-docs/issues/240">#240</a> and <a href="https://github.com/scandihealth/lpr3-docs/blob/master/src/interface/wsdl/ihe-xdr-medcom-1.0.1.wsdl">ihe-xdr-medcom-1.0.1.wsdl</a>)</p>
+<ul>
+<li><a href="https://lprws-test.sds.dsdn.dk/cda-ws/medcom-1.0.1/DocumentRepository_Service/PatientHealthcareSaveIfNoErrorsReportingService?wsdl">Save if no errors</a><ul>
+<li>https://lprws-test.sds.dsdn.dk/cda-ws/medcom-1.0.1/DocumentRepository_Service/PatientHealthcareSaveIfNoErrorsReportingService</li>
+</ul>
+</li>
+<li><a href="https://lprws-test.sds.dsdn.dk/cda-ws/medcom-1.0.1/DocumentRepository_Service/PatientHealthcareReportingService?wsdl">Save with errors</a><ul>
+<li>https://lprws-test.sds.dsdn.dk/cda-ws/medcom-1.0.1/DocumentRepository_Service/PatientHealthcareReportingService</li>
+</ul>
+</li>
+<li><a href="https://lprws-test.sds.dsdn.dk/cda-ws/medcom-1.0.1/DocumentRepository_Service/PatientHealthcareValidateReportingService?wsdl">Validate</a><ul>
+<li>https://lprws-test.sds.dsdn.dk/cda-ws/medcom-1.0.1/DocumentRepository_Service/PatientHealthcareValidateReportingService</li>
+</ul>
+</li>
+</ul>
+<h3 id="accumulated-error-list">Accumulated Error List</h3>
+<p>Access the <a href="/interface/accumulated-error-list.html">Accumulated Error List</a> files:</p>
+<blockquote>
+<p>sftp://lpr2indberet-test.sds.dsdn.dk:2222</p>
+</blockquote>
+<p>Access to FTP servers are done thorugh sFTP and requires a dedicated user setup by Dedalus.</p>
+<h2 id="deployments">Deployments</h2>
+<p>To increase velocity and success Dedalus will continuously deliver new versions of the LPR3 solution. Time of deployment will be communicated by SDS project management and communication through milestones.</p>
+<h2 id="weekly-data-purge">Weekly data purge</h2>
+<p>As the test progresses and issues are resolved, it may be necessary to delete data in the test enviroment.<br />
+Therefore, Dedalus may purge data during weekends.<br />
+Data purges will be notified through GitHub no later than friday end of business day.</p>
+<h2 id="rules-implemented-on-test-system">Rules implemented on Test System</h2>
+<p>The document <a href="/res/Regel-liste incl fejltekst.xlsx">Regel-liste incl fejltekst.xlsx</a> contains a list of rules from the Indberetningsvejledning implemented on the environment.</p>
               
             </div>
           </div>
@@ -143,8 +200,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="definitions.html" class="btn btn-neutral float-right" title="Definitions">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="scenarios.html" class="btn btn-neutral float-right" title="Scenarios">Next <span class="icon icon-circle-arrow-right"></span></a>
       
+      
+        <a href="productionenvironment.html" class="btn btn-neutral" title="Production"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -170,8 +229,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
+      <span><a href="productionenvironment.html" style="color: #fcfcfc">&laquo; Previous</a></span>
     
-      <span><a href="definitions.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+      <span><a href="scenarios.html" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

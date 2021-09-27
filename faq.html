@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="img/favicon.ico">
-  <title>Introduction to the material - Landspatientregisteret 3 - Technical documentation</title>
+  <title>FAQ - Landspatientregisteret 3 - Technical documentation</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="css/theme.css" />
@@ -20,8 +20,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Introduction to the material";
-    var mkdocs_page_input_path = "index.md";
+    var mkdocs_page_name = "FAQ";
+    var mkdocs_page_input_path = "faq.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -49,12 +49,8 @@
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
                 <p class="caption"><span class="caption-text">Documentation</span></p>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="index.html">Introduction to the material</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#what-is-not-the-concern-of-lpr3">What is not the concern of LPR3</a>
-    </li>
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="index.html">Introduction to the material</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="definitions.html">Definitions</a>
                     </li>
@@ -85,14 +81,20 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Miscellaneous</span></p>
-                <ul>
+                <ul class="current">
                     <li class="toctree-l1"><a class="reference internal" href="developmentresources.html">Development resources</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="links.html">Related material and links</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="governance.html">Governance</a>
                     </li>
-                    <li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="faq.html">FAQ</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#why-are-there-three-different-templates-for-procedure">Why are there three different templates for procedure</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#i-want-to-report-a-procedure-which-template-should-i-use">I want to report a procedure, which template should I use</a>
+    </li>
+    </ul>
                     </li>
                 </ul>
       </div>
@@ -116,11 +118,11 @@
     
       
         
-          <li>Documentation &raquo;</li>
+          <li>Miscellaneous &raquo;</li>
         
       
     
-    <li>Introduction to the material</li>
+    <li>FAQ</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -132,10 +134,38 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="introduction-to-the-material">Introduction to the material</h1>
-<p>This documentation covers the aspects and usage of the national Danish patient register 'Landspatientregisteret 3' (LPR3) from a technical integration point of view. LPR is one of the cornerstones in the danish national healthcare infrastructure and is responsible for exposing services that allows the danish regions to report conducted medical services and treatments to a central hub with the primary purpose of supporting billing. This documentation outlines the technical aspects of what the requirements are to support such infrastructure from a regional perspective aka. a client to the LPR3 services and what functionality is supported. As the client-faced services are based an IHE XDR infrastructure with the content being modelled in HL7 CDA R2, it is expected that the reader is somewhat familiar with such standards and frameworks.</p>
-<h2 id="what-is-not-the-concern-of-lpr3">What is not the concern of LPR3</h2>
-<p>This documentation will not cover the clinical/administrative user oriented aspects of reporting but instead focus on functional aspects. As such, user stories are not part of this documentation.</p>
+                <h1 id="faq">FAQ</h1>
+<h2 id="why-are-there-three-different-templates-for-procedure">Why are there three different templates for procedure</h2>
+<p>The three different templates
+<a href="http://lpr-art-decor.westeurope.cloudapp.azure.com:8080/art-decor/decor-templates--lpr-?section=templates&amp;id=1.2.208.176.7.1.10.25">DK Procedure Act</a>,
+<a href="http://lpr-art-decor.westeurope.cloudapp.azure.com:8080/art-decor/decor-templates--lpr-?section=templates&amp;id=1.2.208.176.7.1.10.29">DK Procedure Observation</a>, and
+<a href="http://lpr-art-decor.westeurope.cloudapp.azure.com:8080/art-decor/decor-templates--lpr-?section=templates&amp;id=1.2.208.176.7.1.10.30">DK Procedure Procedure</a>
+are used to report procedures.</p>
+<p>HL7 defines act, observation, and procedure in the following terms:</p>
+<p><strong>Act:</strong></p>
+<blockquote>
+<p><em>A record of something that is being done, has been done, can be done, or is intended or requested to be done.</em> <a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=7"><em>- see 3.1.1 in the specification</em></a></p>
+</blockquote>
+<p><strong>Observation:</strong></p>
+<blockquote>
+<p><em>An Act of recognizing and noting information about the subject, and whose immediate and primary outcome (post-condition) is new data about a subject.<br />
+Observations often involve measurement or other elaborate methods of investigation, but may also be simply assertive statements</em> <a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=7"><em>- see 3.1.13 in the specification</em></a></p>
+</blockquote>
+<p><strong>Procedure:</strong></p>
+<blockquote>
+<p><em>An Act whose immediate and primary outcome (post-condition) is the alteration of the physical condition of the subject</em> <a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=7"><em>- see 3.1.15 in the specification</em></a></p>
+</blockquote>
+<p>The LPR term <a href="definitions.html#Procedure">Procedure</a> can cover all three HL7 defined terms, but doing so violates the standard. Hence, when reporting to LPR, submitters of reports must differenciate between the types <code>Procedure</code>, <code>Observation</code> and <code>Act</code>. The distinction between these three types is defined by three different value sets maintained externally to LPR by <strong>Sundhedsdatastyrelsen</strong>; the valueset <code>proc.act</code> <code>urn:oid:1.2.208.176.2.4.19</code> for <code>Act</code>,<code>proc.und</code> <code>urn:oid:1.2.208.176.2.4.21</code> for <code>Observation</code>, and <code>proc.oper</code> <code>urn:oid:1.2.208.176.2.4.20</code> for <code>Procedure</code>.</p>
+<h2 id="i-want-to-report-a-procedure-which-template-should-i-use">I want to report a procedure, which template should I use</h2>
+<p>If you want to report a procedure you must choose a template that can contain the primary procedure code you want to report.
+If the primary procedure code is present in the value set</p>
+<ol>
+<li><code>urn:oid:1.2.208.176.2.4.19</code> you can use <a href="http://lpr-art-decor.westeurope.cloudapp.azure.com:8080/art-decor/decor-templates--lpr-?section=templates&amp;id=1.2.208.176.7.1.10.25">DK Procedure Act</a>,</li>
+<li><code>urn:oid:1.2.208.176.2.4.21</code> you can use <a href="http://lpr-art-decor.westeurope.cloudapp.azure.com:8080/art-decor/decor-templates--lpr-?section=templates&amp;id=1.2.208.176.7.1.10.29">DK Procedure Observation</a>,</li>
+<li><code>urn:oid:1.2.208.176.2.4.20</code> you can use <a href="http://lpr-art-decor.westeurope.cloudapp.azure.com:8080/art-decor/decor-templates--lpr-?section=templates&amp;id=1.2.208.176.7.1.10.30">DK Procedure Procedure</a>.</li>
+</ol>
+<p>If your code is present in more than one value set, you can choose which corresponding template to use.</p>
+<p><strong><em><em>UPDATE</em></em></strong> To ease integration <strong>Sundhedsdatastyrelsen</strong> has decided that <code>proc.opr</code> <code>urn:oid:1.2.208.176.2.4.20</code> will contain values for <code>Act</code>, <code>Procedure</code>, and <code>Observation</code> while the two other valuesets <code>proc.act</code> <code>urn:oid:1.2.208.176.2.4.19</code> and <code>proc.und</code> <code>urn:oid:1.2.208.176.2.4.21</code> will be empty allowing organizations to use the template <a href="http://lpr-art-decor.westeurope.cloudapp.azure.com:8080/art-decor/decor-templates--lpr-?section=templates&amp;id=1.2.208.176.7.1.10.30&amp;language=en-US"><code>DK Procedure Procedure</code></a> for all mandatory procedure reporting to LPR3.</p>
               
             </div>
           </div>
@@ -143,8 +173,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="definitions.html" class="btn btn-neutral float-right" title="Definitions">Next <span class="icon icon-circle-arrow-right"></span></a>
       
+        <a href="governance.html" class="btn btn-neutral" title="Governance"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -170,8 +200,8 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
+      <span><a href="governance.html" style="color: #fcfcfc">&laquo; Previous</a></span>
     
-      <span><a href="definitions.html" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
