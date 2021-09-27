@@ -34,7 +34,7 @@ The 503 (Service Unavailable) status code indicates that the server is currently
 ## IHE XDR WSDL with national SSI additions
 The following section shows the IHE XDR WSDL with the danish national SSI additions.
 
-The raw WSDL file can be found [here](interface/wsdl/ihe-xdr.wsdl).
+The raw WSDL file can be found [here](wsdl/ihe-xdr.wsdl).
 
 ```xml
 <?xml version='1.0' encoding='UTF-8'?>
