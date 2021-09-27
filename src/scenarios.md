@@ -1,7 +1,9 @@
 # Scenarios
 The following scenarios can assist reporting authorities to test end-to-end conformance with "lægers anmeldelse til Landspatientregisteret af behandling udført på private sygehuse og klinikker og af mandlige omskæringer udført uden for sygehuse og klinikker."
 
-## Scenarie 1 - Udredning af patient henvist fra Færørne
+The scenarios are written in danish.
+
+## Scenarie - Udredning af patient henvist fra Færørne
 Det følgende scenarie er en kladde.
 
 ### Henvisning - dag 1

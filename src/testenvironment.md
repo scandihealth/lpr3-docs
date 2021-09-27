@@ -1,9 +1,13 @@
 # Test environment
-DXC hosts a test environment that integrators can use do finalize their solution.
+Dedalus hosts a test environment that integrators can use do finalize their solution.
 
-## Address
+## Access
+
 Accessing the test environment requires access to the [Sundhedsdatanettet (SDN)](https://www.medcom.dk/opslag/support).  
-The following three endpoint are available.
+
+### CDA reporting endpoints
+
+The following three endpoint are available:
 
 * [Save if no errors](https://lprws-test.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareSaveIfNoErrorsReportingService?wsdl)
     * https://lprws-test.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareSaveIfNoErrorsReportingService
@@ -21,12 +25,20 @@ The same three endpoints are also available where the `medcom` header is defined
 * [Validate](https://lprws-test.sds.dsdn.dk/cda-ws/medcom-1.0.1/DocumentRepository_Service/PatientHealthcareValidateReportingService?wsdl)
     * https://lprws-test.sds.dsdn.dk/cda-ws/medcom-1.0.1/DocumentRepository_Service/PatientHealthcareValidateReportingService
 
+### Accumulated Error List
+
+Access the [Accumulated Error List](/interface/accumulated-error-list.html) files:
+
+> sftp://lpr2indberet-test.sds.dsdn.dk:2222
+
+Access to FTP servers are done thorugh sFTP and requires a dedicated user setup by Dedalus.
+
 ## Deployments
-To increase velocity and success DXC will continuously deliver new versions of the LPR3 solution. Time of deployment will be communicated by SDS project management and communication through milestones.
+To increase velocity and success Dedalus will continuously deliver new versions of the LPR3 solution. Time of deployment will be communicated by SDS project management and communication through milestones.
 
 ## Weekly data purge
 As the test progresses and issues are resolved, it may be necessary to delete data in the test enviroment.  
-Therefore, DXC may purge data during weekends.  
+Therefore, Dedalus may purge data during weekends.  
 Data purges will be notified through GitHub no later than friday end of business day.
 
 ## Rules implemented on Test System

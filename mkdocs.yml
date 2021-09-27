@@ -1,27 +1,30 @@
 docs_dir: src
 site_name: Landspatientregisteret 3 - Technical documentation
-pages:
-- Home: index.md
-- Definitions: definitions.md
-- Governace: governance.md
+nav:
 - Documentation:
+  - Introduction to the material: index.md
+  - Definitions: definitions.md
   - Interface aspects and usage: aspects.md
   - Submission scheme: submission-scheme.md
 - Interfaces:
   - XDR: interface/xdr.md
   - Accumulated error list: interface/accumulated-error-list.md
-- Production environment: productionenvironment.md
-- Test environment: testenvironment.md
-- Development resources: developmentresources.md
-- Scenarios: scenarios.md
-- Examples: examples.md
-- FAQ: faq.md  
-- Related material and links: links.md
+- Environments:
+  - Production: productionenvironment.md
+  - Test: testenvironment.md
+- Examples: 
+  - Scenarios: scenarios.md
+  - Samples : examples.md
+- Miscellaneous:
+  - Development resources: developmentresources.md
+  - Related material and links: links.md
+  - Governance: governance.md
+  - FAQ: faq.md  
 #- LPR 2 specifik dokumentation:
 theme: readthedocs
 
-repo_url: https://github.com/scandihealth/lpr3-docs/
-edit_uri: edit/master/src
+# repo_url: https://github.com/scandihealth/lpr3-docs/
+# edit_uri: edit/master/src
 
 use_directory_urls: false
 markdown_extensions: [fenced_code]

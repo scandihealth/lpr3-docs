@@ -1,3 +1,5 @@
+# Interface aspects and usage
+
 ## The document paradigm and CDA R2
 LPR3 is based on a profiled version CDA R2 according to the needs of the LPR3 data model. The reported documents can be considered as containers of information that are bound to a single patient. Each document can contain zero to many elements, where elements can e.g. be episode of care, encounter, procedure, observation and act. The elements are arranged into sections according to CDA R2. Each element shall be marked up with the appropriate templateId in order to be evaluated and stored as part of LPR3. While elements that are not marked up with the corresponding templateId's according to the LPR3 CDA specification are permitted, they are not evaluated and as such should be avoided.
 
@@ -114,7 +116,7 @@ The value of `location` is split into 1 mandatory segment and 3 conditional segm
     * `<rule name>` is the name of the Drools rule in the kjar that raised the error. `rule name` uniquely identifies the rule inside the exportable kjar file.
     * Example: `sds:lpr:3.0.0|||01.01` has the maven coordinate sds:lpr:3.0.0 and the rule name 01.01
 
-###Data integrity rules
+### Data integrity rules
 * The following is a complete list of all `INTEGRITY_CHECK` errors:
     * AUTHOR_INSTITUTION_NOT_FOUND
         * The submission set must have an ihe-xdr Classification/Slot element with an authorInstitution attribute that conforms to the 'XDS Metadata for Document Sharing. Danish Profile'
@@ -243,6 +245,14 @@ The value of `location` is split into 1 mandatory segment and 3 conditional segm
     * ENCOUNTER_ALREADY_HAS_MAIN_CONDITION_OBSERVATION
         * MainConditionObservation `<extension>` cannot be added as the Encounter already has a MainConditonObservation
         * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245
+    * CPR_AND_ALTERNATIVE_IDENTIFICATION_NOT_ALLOWED
+		* Cpr and alternative patient identification are not allowed at the same time 
+    * MULTIPLE_ALTERNATIVE_IDENTIFIERS_NOT_ALLOWED
+		* Multiple alternative patient identifiers are not allowed
+    * INVALID_REPLACEMENT_NUMBER
+		* Specified literal value is not a valid replacement number  
+    * ALTERNATIVE_IDENTIFIER_WITH_CPR_SYSTEMID_NOT_ALLOWED
+		* Alternative patient identification with cpr systemid not allowed
 
 
 ## Service endpoint setup

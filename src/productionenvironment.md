@@ -1,7 +1,11 @@
 # Production environment
 
-## Address
+## Access
+
 Accessing the production environment requires access to the [Sundhedsdatanettet (SDN)](https://www.medcom.dk/opslag/support).  
+
+### CDA reporting endpoints
+
 The following three endpoint are available.
 
 * [Save if no errors](https://lprws.sds.dsdn.dk/cda-ws/DocumentRepository_Service/PatientHealthcareSaveIfNoErrorsReportingService?wsdl)
@@ -21,3 +25,10 @@ The same three endpoints are also available where the `medcom` header is defined
 * [Validate](https://lprws.sds.dsdn.dk/cda-ws/medcom-1.0.1/DocumentRepository_Service/PatientHealthcareValidateReportingService?wsdl)
     * https://lprws.sds.dsdn.dk/cda-ws/medcom-1.0.1/DocumentRepository_Service/PatientHealthcareValidateReportingService
  
+### Accumulated Error List
+
+Access the [Accumulated Error List](/interface/accumulated-error-list.html) files:
+
+> sftp://lpr2indberet.sds.dsdn.dk:2222
+
+Access to FTP servers are done thorugh sFTP and requires a dedicated user setup by Dedalus.
