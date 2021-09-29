@@ -27,7 +27,7 @@ The same three endpoints are also available where the `medcom` header is defined
  
 ### Accumulated Error List
 
-Access the [Accumulated Error List](/interface/accumulated-error-list.html) files:
+Access the [Accumulated Error List](interface/accumulated-error-list.html) files:
 
 > sftp://lpr2indberet.sds.dsdn.dk:2222
 

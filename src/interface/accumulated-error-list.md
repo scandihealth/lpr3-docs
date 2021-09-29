@@ -1,7 +1,7 @@
 # Accumulated error list
 
 ## About
-The accumulated error list is a list of all episode of care elements with outstanding dynamic rule issues as definited by the [issue transitive closure](/definitions.md#Issue transitive closure).  
+The accumulated error list is a list of all episode of care elements with outstanding dynamic rule issues as definited by the [issue transitive closure](../definitions.md#Issue transitive closure).  
 The list is represented as a set of files, one for every episode of care element.
 
 ## Access
