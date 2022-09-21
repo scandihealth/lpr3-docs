@@ -253,7 +253,8 @@ The value of `location` is split into 1 mandatory segment and 3 conditional segm
 		* Specified literal value is not a valid replacement number  
     * ALTERNATIVE_IDENTIFIER_WITH_CPR_SYSTEMID_NOT_ALLOWED
 		* Alternative patient identification with cpr systemid not allowed
-
+    * MALFORMED_DOCUMENT_FOUND
+		* The document is malformed. Fx. æøå characters not in UTF-8 format.
 
 ## Service endpoint setup
 In order to support both synchronous and asynchronous reporting three services endpoints are available:
