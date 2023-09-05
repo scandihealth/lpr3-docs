@@ -256,7 +256,7 @@ The value of `location` is split into 1 mandatory segment and 3 conditional segm
     * MALFORMED_DOCUMENT_FOUND
 		* The document is malformed. Fx. æøå characters not in UTF-8 format.
     * ELEMENT_CAN_NOT_BE_MOVED_FROM_DELETED_EOC
-		* It is not allowed to delete an element from a deleted episode of care
+		* It is not allowed to move an element from a deleted episode of care
 
 ## Service endpoint setup
 In order to support both synchronous and asynchronous reporting three services endpoints are available:
