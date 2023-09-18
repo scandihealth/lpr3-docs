@@ -245,6 +245,8 @@ The value of `location` is split into 1 mandatory segment and 3 conditional segm
     * ENCOUNTER_ALREADY_HAS_MAIN_CONDITION_OBSERVATION
         * MainConditionObservation `<extension>` cannot be added as the Encounter already has a MainConditonObservation
         * Example `<extension>`: b7023d7e-11ab-4270-9c20-3de02e908245
+    * WEBSERVICE_CHANGE_NOT_ALLOWED
+		* When an episode of care have been edited in GUI, it can not be reported by webservice any more
     * CPR_AND_ALTERNATIVE_IDENTIFICATION_NOT_ALLOWED
 		* Cpr and alternative patient identification are not allowed at the same time 
     * MULTIPLE_ALTERNATIVE_IDENTIFIERS_NOT_ALLOWED
