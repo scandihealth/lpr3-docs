@@ -31,6 +31,9 @@ The 501 (Not Implemented) status code indicates that the server does not support
 ### 503 Service Unavailable
 The 503 (Service Unavailable) status code indicates that the server is currently unable to handle the request due to a temporary overload or scheduled maintenance, which will likely be alleviated after some delay.
 
+### 504 Gateway Time-out
+The 504 (Gateway Time-out) status code indicates that the server took too long to process the request. When the error occurs everything is rolled back and nothing is stored in the database. The answer is returned in html.
+
 ## IHE XDR WSDL with national SSI additions
 The following section shows the IHE XDR WSDL with the danish national SSI additions.
 
